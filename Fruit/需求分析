@@ -41,12 +41,18 @@ User(	uid int,
 		upwd varchar(32),
 		uaddress varchar(64),
 		utel int);
-5、账单（账单编号，用户 编号，果蔬编号，购买数量，产品单价）
+5、账单（账单编号，用户编号，账单日期）
 Check(	cid int,
 		uid int,
 		fin int,
 		cnum int,
 		cprice int);
+		
+	商品(账单编号，果蔬编号，购买数量，产品单价	)
+food(	cid int,
+		fid int,
+		buynum int,
+		perprice int);
 6、评价（果蔬编号，用户编号，产品评星，评价内容，评价时间）
 Evaluate(	fid int,
 			uid int,
@@ -63,3 +69,9 @@ Introduce(	fid int,
 			ipic varchar(64),
 			fplace varchar(32),
 			details varchar(128));
+图片（果蔬编号，展示图，详情图，介绍图，宣传图）
+pic(	fid int,
+		showpic varchar(64),
+		detailpic varchar(64),
+		introducepic varchar(64),
+		advpic varchar(64));
