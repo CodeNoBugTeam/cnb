@@ -76,3 +76,4 @@ pic(	fid int,
 		detailpic varchar(64),
 		introducepic varchar(64),
 		advpic varchar(64));
+		

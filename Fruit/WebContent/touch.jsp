@@ -15,7 +15,6 @@
 <!--顶部导航结束-->
 <!--banner图片-->
 <div class="her-banner">
-
 </div>
 <!--banner图片结束-->
 <div class="content">
@@ -45,7 +44,6 @@
                                 </span></p></span><p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"></p></div></span><div style="">
                             <p style="color: rgb(0, 0, 0); font-family: 宋体; font-size: 12px;"></p></div></span>
                     </div>
-
                 </div>
                 <div class="fk-editor simpleText  ">
                         <font style="color: rgb(5, 160, 69);" color="#05a045">
@@ -92,14 +90,9 @@
                         </div>
                     </div>
                     <div class="s_ibutton">
-
                     </div>
                 </div>
-
-
             </div>
-
-
         </div>
     </div>
 
