@@ -25,37 +25,37 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>åé¡µ</title>
+<title>单页</title>
 </head>
 
 <body>
 <div class="margin" id="page_style">
 <div class="add_style">
  <ul>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>æç« æ é¢ï¼&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>ç®åæè¿°ï¼&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-6"/></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>å³&nbsp;é®&nbsp;å­ï¼&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/><em class="Prompt"> è¯·ç¨","åéå³é®å­</em></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>æå±åç±»ï¼&nbsp;&nbsp;</label>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>文章标题：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-6"/></div></li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div></li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>所属分类：&nbsp;&nbsp;</label>
        <div class="Add_content col-xs-11">
          <select class="form-control" id="form-field-select-1">
-          <option value="">--éæ©æå±åç±»--</option>
-          <option value="1">å¸®å©ä¸­å¿</option>
-          <option value="2">è´­ç©æå</option>
-          <option value="3">å®åæå¡</option>
+          <option value="">--选择所属分类--</option>
+          <option value="1">帮助中心</option>
+          <option value="2">购物指南</option>
+          <option value="3">售后服务</option>
        </select>
        </div>
       </li>
-    <li class="clearfix"><label class="label_name col-xs-1">è®¾ç½®æ¶é´ï¼&nbsp;&nbsp;</label> 
+    <li class="clearfix"><label class="label_name col-xs-1">设置时间：&nbsp;&nbsp;</label> 
     <div class="Add_content col-xs-11">
     <label class="l_f checkbox_time"><input type="checkbox" name="checkbox" class="ace" id="checkbox"><span class="lbl"></span></label>
     <div class="Date_selection display_none">
         <span class="date_Select">
         <em class="laydate-icon timebox" id="start" style="width:200px; line-height: 30px; margin-left:10px; height: 30px; padding-left:5px; margin-right:10px; display:block; float:left"></em>
-        <em style="display:block; float:left;margin-right:10px;">è³</em>
+        <em style="display:block; float:left;margin-right:10px;">至</em>
         <em class="laydate-icon" id="end" style="width:200px; line-height: 30px; padding-left:5px;height: 30px; display:block ;float:left"></em>
         </span>
     </div>
-     <b  style=" margin-left:10px; font-weight:normal; color:#F63">æ³¨ï¼(è¯¥æ¶é´ç¨äºè®¾ç½®æç« åå®¹å¨ç½ç«æ¾ç¤ºçæ¶é´æ®µï¼è¿äºæ¾ç¤ºæ¶é´æ®µè¯¥æç« å°ä¸åç½ç«ä¸æ¾ç¤ºï¼æ éåæ¬¡æä½ï¼éåæ´»å¨ä½¿ç¨)</b>
+     <b  style=" margin-left:10px; font-weight:normal; color:#F63">注：(该时间用于设置文章内容在网站显示的时间段，过了显示时间段该文章将不再网站上显示，无需再次操作，适合活动使用)</b>
     </div>   
     </li>
    <li class="clearfix">
@@ -63,9 +63,9 @@
      </li>   
   </ul>
     <div class="Button_operation btn_width">
-    <button class="btn button_btn bg-deep-blue" type="button">ä¿å­å¹¶æäº¤</button>
-    <button class="btn button_btn bg-orange" type="button">ä¿å­èç¨¿</button>
-    <button class="btn button_btn bg-gray" type="button">åæ¶æ·»å </button>
+    <button class="btn button_btn bg-deep-blue" type="button">保存并提交</button>
+    <button class="btn button_btn bg-orange" type="button">保存草稿</button>
+    <button class="btn button_btn bg-gray" type="button">取消添加</button>
  </div>
 </div>
 </div>
@@ -75,7 +75,7 @@
     <script type="text/javascript" charset="utf-8" src="js/utf8-jsp/ueditor.all.min.js"> </script>
     <script type="text/javascript" charset="utf-8" src="js/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
-	 /*checkboxæ¿åäºä»¶*/
+	 /*checkbox激发事件*/
 $('#checkbox').on('click',function(){
 	if($('input[name="checkbox"]').prop("checked")){
 		 $('.Date_selection ').css('display','block');
@@ -85,7 +85,7 @@ $('#checkbox').on('click',function(){
 		 $('.Date_selection').css('display','none');
 		}	
 	});
-/**æäº¤æä½**/
+/**提交操作**/
 function article_save_submit(){
 	     var num=0;
 		 var str="";
@@ -93,8 +93,8 @@ function article_save_submit(){
           if($(this).val()=="")
           {
                
-			   layer.alert(str+=""+$(this).attr("name")+"ä¸è½ä¸ºç©ºï¼\r\n",{
-                title: 'æç¤ºæ¡',				
+			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',				
 				icon:0,								
           }); 
 		    num++;
@@ -103,8 +103,8 @@ function article_save_submit(){
 		 });
 		  if(num>0){  return false;}	 	
           else{
-			  layer.alert('æ·»å æåï¼',{
-               title: 'æç¤ºæ¡',				
+			  layer.alert('添加成功！',{
+               title: '提示框',				
 			icon:1,		
 			  });
 			   layer.close(index);	
@@ -113,20 +113,20 @@ function article_save_submit(){
 $(function(){
 	var ue = UE.getEditor('editor');
 });
-/*radioæ¿åäºä»¶*/
+/*radio激发事件*/
 function Enable(){ $('.date_Select').css('display','block');}
 function closes(){$('.date_Select').css('display','none')}
-/**æ¥æéæ©**/
+/**日期选择**/
 var start = {
     elem: '#start',
     format: 'YYYY/MM/DD',
-    min: laydate.now(), //è®¾å®æå°æ¥æä¸ºå½åæ¥æ
-    max: '2099-06-16', //æå¤§æ¥æ
+    min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
     istime: true,
     istoday: false,
     choose: function(datas){
-         end.min = datas; //å¼å§æ¥éå¥½åï¼éç½®ç»ææ¥çæå°æ¥æ
-         end.start = datas //å°ç»ææ¥çåå§å¼è®¾å®ä¸ºå¼å§æ¥
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
     }
 };
 var end = {
@@ -137,9 +137,10 @@ var end = {
     istime: true,
     istoday: false,
     choose: function(datas){
-        start.max = datas; //ç»ææ¥éå¥½åï¼éç½®å¼å§æ¥çæå¤§æ¥æ
+        start.max = datas; //结束日选好后，重置开始日的最大日期
     }
 };
 laydate(start);
 laydate(end);
 </script>
+

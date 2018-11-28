@@ -23,58 +23,58 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>åçè¯¦ç»</title>
+<title>品牌详细</title>
 </head>
 
 <body>
 <div class="margin clearfix" id="page_style">
  <div class="brand_detailed same_module  mb15">
   <div class="brand_info clearfix">
-   <div class="title_brand">åçä¿¡æ¯</div>
+   <div class="title_brand">品牌信息</div>
    <form>
     <ul class="Info_style clearfix">
-     <li><label class="label_name">åçåç§°ï¼</label> <span class="name">çå°æ²¹OLAY</span></li>
-      <li><label class="label_name">åçç±»åï¼</label><span class="name">å½å¤åç</span></li>
-      <li><label class="label_name">æå±å½å®¶ï¼</label><span class="name">æ³å½</span></li>
-      <li><label class="label_name">åçç¼å·ï¼</label><span class="name">HG3452</span></li>
-      <li><label class="label_name">åçååï¼</label><span class="name">å±3456ä»¶</span></li>
-      <li><label class="label_name">æ·»å æ¶é´ï¼</label><span class="name">2016-6-21 34ï¼23</span></li>
-      <li><label class="label_name">ç¶&nbsp;&nbsp;&nbsp;&nbsp;æï¼</label><span class="name">å¯ç¨</span></li>
-      <li class="b_Introduce"><label class="label_name">åçä»ç»ï¼</label><span class="name">çå°æ²¹OLAYï¼æ¯å®æ´å¬å¸å¨çèåçæ¤è¤åçï¼æ¯ä¸­å½åºæå¤§æ¤è¤åçï¼å¨å¤§éå·²æç»­åå¹´åä¸¤ä½æ°å¢é¿ãOLAYä»¥å¨çé«ç§ææ¤è¤ç åææ¯ä¸ºåç¾ï¼å¨æ·±å¥äºè§£ä¸­å½å¥³æ§å¯¹æ¤è¤åç¾çéè¦çåºç¡ä¸ï¼ä¸æ­æ©å¤§äº§åèå´ï¼ç®åå·²ç»æ¶µçäºæ¤è¤åæ²æµ´ç³»åï¼çæ­£å¸®å©å¥³æ§å¨é¢å¨å°å°åµæ¤èªå·±çèè¤ãçå°æ²¹å¨çéå®é¢è¿åäº¿ç¾éï¼æä¸ºä¸çä¸æå¤§ãæèåçæ¤è¤åçä¹ä¸ãåè¶çæ¤è¤åæè·å¾ä¸çç±ç¾å¥³æ§è¯å®ï¼è¿éçé150å¤ä¸ªå½å®¶ãçå°æ²¹OLAYï¼æ¯å®æ´å¬å¸å¨çèåçæ¤è¤åçï¼æ¯ä¸­å½åºæå¤§æ¤è¤åçï¼å¨å¤§éå·²æç»­åå¹´åä¸¤ä½æ°å¢é¿ãOLAYä»¥å¨çé«ç§ææ¤è¤ç åææ¯ä¸ºåç¾ï¼å¨æ·±å¥äºè§£ä¸­å½å¥³æ§å¯¹æ¤è¤åç¾çéè¦çåºç¡ä¸ï¼ä¸æ­æ©å¤§äº§åèå´ï¼ç®åå·²ç»æ¶µçäºæ¤è¤åæ²æµ´ç³»åï¼çæ­£å¸®å©å¥³æ§å¨é¢å¨å°å°åµæ¤èªå·±çèè¤ãçå°æ²¹å¨çéå®é¢è¿åäº¿ç¾éï¼æä¸ºä¸çä¸æå¤§ãæèåçæ¤è¤åçä¹ä¸ãåè¶çæ¤è¤åæè·å¾ä¸çç±ç¾å¥³æ§è¯å®ï¼è¿éçé150å¤ä¸ªå½å®¶ã</span></li>
+     <li><label class="label_name">品牌名称：</label> <span class="name">玉兰油OLAY</span></li>
+      <li><label class="label_name">品牌类型：</label><span class="name">国外品牌</span></li>
+      <li><label class="label_name">所属国家：</label><span class="name">法国</span></li>
+      <li><label class="label_name">品牌编号：</label><span class="name">HG3452</span></li>
+      <li><label class="label_name">品牌商品：</label><span class="name">共3456件</span></li>
+      <li><label class="label_name">添加时间：</label><span class="name">2016-6-21 34：23</span></li>
+      <li><label class="label_name">状&nbsp;&nbsp;&nbsp;&nbsp;态：</label><span class="name">启用</span></li>
+      <li class="b_Introduce"><label class="label_name">品牌介绍：</label><span class="name">玉兰油OLAY，是宝洁公司全球著名的护肤品牌，是中国区最大护肤品牌，在大陆已持续十年呈两位数增长。OLAY以全球高科技护肤研发技术为后盾，在深入了解中国女性对护肤和美的需要的基础上，不断扩大产品范围，目前已经涵盖了护肤和沐浴系列，真正帮助女性全面周到地呵护自己的肌肤。玉兰油全球销售额近十亿美金，成为世界上最大、最著名的护肤品牌之一。卓越的护肤功效获得世界爱美女性肯定，迅速畅销150多个国家。玉兰油OLAY，是宝洁公司全球著名的护肤品牌，是中国区最大护肤品牌，在大陆已持续十年呈两位数增长。OLAY以全球高科技护肤研发技术为后盾，在深入了解中国女性对护肤和美的需要的基础上，不断扩大产品范围，目前已经涵盖了护肤和沐浴系列，真正帮助女性全面周到地呵护自己的肌肤。玉兰油全球销售额近十亿美金，成为世界上最大、最著名的护肤品牌之一。卓越的护肤功效获得世界爱美女性肯定，迅速畅销150多个国家。</span></li>
     </ul>
     <div class="brand_logo">
       <img src="products/logo/156.jpg"  width="120px" height="60px"/>
-      <p class="name">çå°æ²¹OLAY</p>
+      <p class="name">玉兰油OLAY</p>
     </div>
    </form>
    </div>
 	</div>
-     <!--äº§ååè¡¨-->
+     <!--产品列表-->
   <div class="h_products_list clearfix" id="Sellerber">
-    <!--äº§ååç±»å±ç¤º-->
+    <!--产品分类展示-->
   <div class="Sellerber_left menu" id="menuBar">
     <div class="show_btn" id="rightArrow"><span></span></div>
-    <div class="side_title"><a title="éè" class="close_btn"><span></span></a></div>
+    <div class="side_title"><a title="隐藏" class="close_btn"><span></span></a></div>
    
     <div class="menu_style" id="menu_style">
     <div class="list_content">
      <div class="side_list">
-        <div class="column_title"><h4 class="lighter smaller">äº§åç±»ååè¡¨</h4></div>
+        <div class="column_title"><h4 class="lighter smaller">产品类型列表</h4></div>
        <div class="st_tree_style tree">
       </div>
     </div>
   </div>
  </div>
 </div>
-     <!--åè¡¨å±ç¤º-->
+     <!--列表展示-->
     <div class="list_Exhibition list_show padding15 same_module">
-         <!--åçåå-->
+         <!--品牌商品-->
  <div class="operation clearfix mb15  searchs_style">
        <span class="l_f">
-        <a href="add_product.html"  title="æ·»å åå" class="btn bg-deep-blue button_btn"><i class="fa fa-plus"></i>æ·»å åå</a>
-        <a href="javascript:ovid()" class="btn button_btn btn-danger"><i class="fa fa-trash"></i>æ¹éå é¤</a>
+        <a href="add_product.html"  title="添加商品" class="btn bg-deep-blue button_btn"><i class="fa fa-plus"></i>添加商品</a>
+        <a href="javascript:ovid()" class="btn button_btn btn-danger"><i class="fa fa-trash"></i>批量删除</a>
        </span>
-       <span class="r_f">è¯¥åçä¸å±ï¼<b>234</b>ä»¶åå</span>
+       <span class="r_f">该品牌下共：<b>234</b>件商品</span>
   </div>
       <div class="datalist_show">
        <div class="datatable_height">
@@ -82,195 +82,195 @@
 		<thead>
 		 <tr>
 				<th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
-				<th width="80px">äº§åç¼å·</th>
-				<th width="250px">äº§ååç§°</th>
-				<th width="100px">åä»·æ ¼</th>
-				<th width="100px">ç°ä»·</th>
-                <th width="100px">æå±å°åº/å½å®¶</th>				
-				<th width="180px">å å¥æ¶é´</th>
-                <th width="80px">å®¡æ ¸ç¶æ</th>
-				<th width="70px">ç¶æ</th>                
-				<th width="200px">æä½</th>
+				<th width="80px">产品编号</th>
+				<th width="250px">产品名称</th>
+				<th width="100px">原价格</th>
+				<th width="100px">现价</th>
+                <th width="100px">所属地区/国家</th>				
+				<th width="180px">加入时间</th>
+                <th width="80px">审核状态</th>
+				<th width="70px">状态</th>                
+				<th width="200px">操作</th>
 			</tr>
 		</thead>
 	<tbody>
      <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">45631</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ æ°çå¡é¢éçº¯é¢é50gï¼å¤§çº¢ç¶ï¼ </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 新生塑颜金纯面霜50g（大红瓶） </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">45631</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">çå°æ²¹ Olay æ°çå¡é¢éçº¯é¢éè½»çæ é¦ç²¾å50g (å¤§çº¢ç¶æç±ç´§è´ è¡¥æ°´ä¿æ¹¿) </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">玉兰油 Olay 新生塑颜金纯面霜轻盈无香精型50g (大红瓶抗皱紧致 补水保湿) </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">45631</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">çå°æ²¹ Olay å¤æä¿®æ¤é50g(ä¹³æ¶²é¢é è¡¥æ°´ä¿æ¹¿ ææç´§è´) </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">玉兰油 Olay 多效修护霜50g(乳液面霜 补水保湿 提拉紧致) </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">543346</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ å¤æä¿®æ¤ç²å«©æ°è²é50gï¼ä¿å»çº§BBé è£¸å¦ï¼ 4GææºY</u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 多效修护粉嫩气色霜50g（保养级BB霜 裸妆） 4G手机Y</u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">987767</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ å¤æä¿®æ¤æ¶¦èé50gï¼è¡¥æ°´ä¿æ¹¿ãç»è»èè¤ï¼ </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 多效修护润舒霜50g（补水保湿、细腻肌肤） </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">54343</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ æ°´æéçè¹èäº®è¤æ¶² 150ml 4GææºY</u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 水感透皙莹肌亮肤液 150ml 4G手机Y</u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">786554</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ æ°´æéç½äº®è¤åä¹³75mlï¼æäº®è¤è²ï¼ </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 水感透白亮肤凝乳75ml（提亮肤色） </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
              <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">32122</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ æ´»è¤èåé50gï¼è¡¥æ°´ ä¿æ¹¿ ï¼ </u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 活肤菁华霜50g（补水 保湿 ） </u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
 
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">767544</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olayçå°æ²¹ ç½ééçº¢å«©ç½ä¹³æ¶²75mlï¼ä¿æ¹¿ æ»æ¶¦) 4GææºY</u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">Olay玉兰油 白里透红嫩白乳液75ml（保湿 滋润) 4G手机Y</u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+       <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
 
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">23466</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">å°ç±³ Max å¨ç½é é«éç 3GBåå­ 64GB ROM éè² ç§»å¨èéçµä¿¡4GææºY</u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">小米 Max 全网通 高配版 3GB内存 64GB ROM 金色 移动联通电信4G手机Y</u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 	  </tr>
 
        <tr>
         <td width="25px"><label><input type="checkbox" class="ace" ><span class="lbl"></span></label></td>
         <td width="80px">54533</td>               
-        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">å°ç±³ Max å¨ç½é é«éç 3GBåå­ 64GB ROM éè² ç§»å¨èéçµä¿¡4GææºY</u></td>
+        <td width="250px"><u style="cursor:pointer" class="text-primary" onclick="">小米 Max 全网通 高配版 3GB内存 64GB ROM 金色 移动联通电信4G手机Y</u></td>
         <td width="100px">5467</td>
         <td width="100px">4525</td> 
-        <td width="100px">æ³å½</td>         
+        <td width="100px">法国</td>         
         <td width="180px">2014-6-11 11:11:42</td>
-        <td class="text-l">éè¿</td>
-        <td class="td-status"><span class="label label-success radius">å·²å¯ç¨</span></td>
+        <td class="text-l">通过</td>
+        <td class="td-status"><span class="label label-success radius">已启用</span></td>
         <td class="td-manage">
-        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="ä¸æ¶"  class="btn btn-xs btn-status">ä¸æ¶</a> 
-        <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >ç¼è¾</a> 
-        <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+        <a onClick="member_stop(this,'10001')"  href="javascript:;" title="下架"  class="btn btn-xs btn-status">下架</a> 
+        <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
        </td>
 		</tr>
      </tbody>
@@ -283,59 +283,60 @@
 </body>
 </html>
 <script type="text/javascript">
-		//è®¾ç½®åé¡µæ¡æ¶å¸å±
+		//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
 		float : 'left',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
-		page_content:'.list_show',//åå®¹
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:200,//èåæ å®½åº¦
-		mode:true,//åæ¢æ¨¡å¼
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:200,//菜单栏宽度
+		mode:true,//切换模式
 		
 	});
 });
 var arr=[
-	  {id: 1,name: "åå¦å",amount:234,pid: 0,},
-	  {id: 2,name: "é¢è",amount:234,pid: 0,},
-	  {id: 3,name: "å®å¦",amount:234,pid: 0,},
+	  {id: 1,name: "化妆品",amount:234,pid: 0,},
+	  {id: 2,name: "面膜",amount:234,pid: 0,},
+	  {id: 3,name: "定妆",amount:234,pid: 0,},
 	
 ];
-	//æ ç¶å¾æä»¶
+	//树状图插件
 $(".tree").ProTree({
-	arr: arr,//æ°æ®
-	simIcon: "fa fa-file-text-o",//åä¸ªæ é¢å­ä½å¾æ  ä¸ä¼ é»è®¤glyphicon-file
-	mouIconOpen: "fa fa-folder-open",//å«å¤ä¸ªæ é¢çæå¼å­ä½å¾æ   ä¸ä¼ é»è®¤glyphicon-folder-open
-	mouIconClose:"fa fa-folder",//å«å¤ä¸ªæ é¢çå³é­çå­ä½å¾æ   ä¸ä¼ é»è®¤glyphicon-folder-close
+	arr: arr,//数据
+	simIcon: "fa fa-file-text-o",//单个标题字体图标 不传默认glyphicon-file
+	mouIconOpen: "fa fa-folder-open",//含多个标题的打开字体图标  不传默认glyphicon-folder-open
+	mouIconClose:"fa fa-folder",//含多个标题的关闭的字体图标  不传默认glyphicon-folder-close
 
 })
-/*åç-åç¨*/
+/*品牌-停用*/
 function member_stop(obj,id){
-	layer.confirm('ç¡®è®¤è¦åç¨åï¼',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="å¯ç¨"><i class="icon-ok bigger-120"></i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">å·²åç¨</span>');
+	layer.confirm('确认要停用吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="icon-ok bigger-120"></i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
 		$(obj).remove();
-		layer.msg('å·²åç¨!',{icon: 5,time:1000});
+		layer.msg('已停用!',{icon: 5,time:1000});
 	});
 }
 
-/*ç¨æ·-å¯ç¨*/
+/*用户-启用*/
 function member_start(obj,id){
-	layer.confirm('ç¡®è®¤è¦å¯ç¨åï¼',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="åç¨"><i class="icon-ok bigger-120"></i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">å·²å¯ç¨</span>');
+	layer.confirm('确认要启用吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="icon-ok bigger-120"></i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
 		$(obj).remove();
-		layer.msg('å·²å¯ç¨!',{icon: 6,time:1000});
+		layer.msg('已启用!',{icon: 6,time:1000});
 	});
 }
 
-/*åç-å é¤*/
+/*品牌-删除*/
 function member_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤åï¼',function(index){
+	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 </script>
+

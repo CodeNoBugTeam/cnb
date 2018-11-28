@@ -20,7 +20,7 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>çé¢æ¨¡æ¿</title>
+<title>界面模板</title>
 </head>
 <style type="text/css">
  .template_prompt{ margin-top:200px; width:300px; margin-left:auto; margin-right:auto; text-align:center; font-size:16px;}
@@ -29,9 +29,10 @@
 <body>
 <div class="margin" id="page_style">
  <div class="template_prompt">
-  <h2>éç¨é¡µé¢-è¯·å°æ­¤é¡µæ¨¡æ¿ä¸è½½ä¸æ¥è¿è¡ç¼è¾</h2>
-    <a href="" class="btn bg-deep-blue operation_btn">ä¸è½½æ­¤é¡µé¢</a>
+  <h2>通用页面-请将此页模板下载下来进行编辑</h2>
+    <a href="" class="btn bg-deep-blue operation_btn">下载此页面</a>
  </div>
 </div>
 </body>
 </html>
+

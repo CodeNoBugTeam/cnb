@@ -19,7 +19,7 @@
 <script src="js/Sellerber.js" type="text/javascript"></script>
 <script src="js/layer/layer.js" type="text/javascript"></script>
 <script src="js/laydate/laydate.js" type="text/javascript"></script>
-<title>è¡¨åæå»ºå¨</title>
+<title>表单构建器</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -42,71 +42,71 @@
         <div class="row">
             <div class="col-sm-5">
                 <div class="ibox float-e-margins">
-                    <div class="ibox-title"><h5>åç´ </h5></div>
+                    <div class="ibox-title"><h5>元素</h5></div>
                     <div class="ibox-content">
                         <div class="alert alert-info">
-                        <p>ææ½å·¦ä¾§çè¡¨ååç´ å°å³ä¾§åºåï¼å³å¯çæç¸åºçHTMLä»£ç ï¼è¡¨åä»£ç ï¼è½»æ¾æå®ï¼</p>
-                        <p>æ¶é´è®¾ç½®éå¼ç¨laydate.jså°é¡µé¢é</p></div>
+                        <p>拖拽左侧的表单元素到右侧区域，即可生成相应的HTML代码，表单代码，轻松搞定！</p>
+                        <p>时间设置需引用laydate.js到页面里</p></div>
                         <form role="form" class="form-horizontal m-t">
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">ææ¬æ¡ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">文本框：</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="" class="form-control" placeholder="è¯·è¾å¥ææ¬">
-                                    <span class="help-block">è¯´ææå­</span>
+                                    <input type="text" name="" class="form-control" placeholder="请输入文本">
+                                    <span class="help-block">说明文字</span>
                                 </div>
                             </div>
                              <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">ææ¬æ¡ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">文本框：</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="" class="form-control"  placeholder="è¯·è¾å¥ææ¬">
-                                    <span class="help-block m-b-none">è¯´ææå­</span>
+                                    <input type="text" name="" class="form-control"  placeholder="请输入文本">
+                                    <span class="help-block m-b-none">说明文字</span>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">å¤è¡ææ¬ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">多行文本：</label>
                                 <div class="col-sm-9">
                                     <textarea name="" cols="" rows=""></textarea>
-                                    <span class="help-block m-b-none">è¯´ææå­</span>
+                                    <span class="help-block m-b-none">说明文字</span>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">å¯ç æ¡ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">密码框：</label>
                                 <div class="col-sm-9">
-                                    <input type="password" class="form-control" name="password" placeholder="è¯·è¾å¥å¯ç ">
+                                    <input type="password" class="form-control" name="password" placeholder="请输入密码">
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">éæ©æ¶é´ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">选择时间：</label>
                                 <div class="col-sm-9">
                                    <input type="text" name="" class="form-control laydate-icon"  id="times"  style=" height:30px;">
                                    <script>laydate({
 									              elem: '#times',
 												  format: 'YYYY/MM/DD',
-												  min: laydate.now(), //è®¾å®æå°æ¥æä¸ºå½åæ¥æ
-												  max: '2099-06-16', //æå¤§æ¥æ
+												  min: laydate.now(), //设定最小日期为当前日期
+												  max: '2099-06-16', //最大日期
 												  istime: true,
 												  istoday: false,})
                                     </script>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">æ¶é´æ®µï¼</label>
+                                <label class="col-sm-3 label_nameedit ">时间段：</label>
                                 <div class="col-sm-9">
                                      <span class="laydate-icon" id="start" style="width:150px;height:30px; line-height:30px; float:left"></span>
-                                     <span  style=" float:left; margin:0px 5px; color:#666; line-height:32px;">è³</span>
+                                     <span  style=" float:left; margin:0px 5px; color:#666; line-height:32px;">至</span>
                                      <span class="laydate-icon" id="end" style="width:150px;height:30px; line-height:30px; float:left"></span>
                                 </div>
                                 <script>
                                 var start = {
 								  elem: '#start',
 								  format: 'YYYY/MM/DD ',
-								  min: laydate.now(), //è®¾å®æå°æ¥æä¸ºå½åæ¥æ
-								  max: '2099-06-16 23:59:59', //æå¤§æ¥æ
+								  min: laydate.now(), //设定最小日期为当前日期
+								  max: '2099-06-16 23:59:59', //最大日期
 								  istime: true,
 								  istoday: false,
 								  choose: function(datas){
-									   end.min = datas; //å¼å§æ¥éå¥½åï¼éç½®ç»ææ¥çæå°æ¥æ
-									   end.start = datas //å°ç»ææ¥çåå§å¼è®¾å®ä¸ºå¼å§æ¥
+									   end.min = datas; //开始日选好后，重置结束日的最小日期
+									   end.start = datas //将结束日的初始值设定为开始日
 								  }
 							  };
 							  var end = {
@@ -117,7 +117,7 @@
 								  istime: true,
 								  istoday: false,
 								  choose: function(datas){
-									  start.max = datas; //ç»ææ¥éå¥½åï¼éç½®å¼å§æ¥çæå¤§æ¥æ
+									  start.max = datas; //结束日选好后，重置开始日的最大日期
 								  }
 							  };
 							  laydate(start);
@@ -125,58 +125,58 @@
                                 </script>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">ä¸æåè¡¨ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">下拉列表：</label>
                                 <div class="col-sm-9">
                                     <select class="form-control"  style=" width:200px" name="">
-                                        <option>éé¡¹ 1</option>
-                                        <option>éé¡¹ 2</option>
-                                        <option>éé¡¹ 3</option>
-                                        <option>éé¡¹ 4</option>
+                                        <option>选项 1</option>
+                                        <option>选项 2</option>
+                                        <option>选项 3</option>
+                                        <option>选项 4</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                              <label class="col-sm-3 label_nameedit ">æä»¶åï¼</label>
+                              <label class="col-sm-3 label_nameedit ">文件域：</label>
                               <div class="col-sm-9">
                                 <div class="line"> 
                                 <span class="span"> 
                                 <input name="" type="text" id="viewfile" onmouseout="document.getElementById('upload').style.display='none';" class="inputstyle form-control" /> 
                                 </span> 
-                                <label for="unload" onmouseover="document.getElementById('upload').style.display='block';" class="file1">æµè§...</label> 
+                                <label for="unload" onmouseover="document.getElementById('upload').style.display='block';" class="file1">浏览...</label> 
                                 <input type="file" onchange="document.getElementById('viewfile').value=this.value;this.style.display='none';" class="file" id="upload" /> 
                                 </div>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">çº¯ææ¬ï¼</label>
+                                <label class="col-sm-3 label_nameedit ">纯文本：</label>
 
                                 <div class="col-sm-9">
-                                    <p class="form-control-static">è¿éæ¯çº¯æå­ä¿¡æ¯</p>
+                                    <p class="form-control-static">这里是纯文字信息</p>
                                 </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">åéæ¡ï¼
+                                <label class="col-sm-3 label_nameedit ">单选框：
                                 </label>
 
                                 <div class="col-sm-9">
-                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">åéæ¡</span></label>
-                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">åéæ¡</span></label>
+                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">单选框</span></label>
+                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">单选框</span></label>
                                </div>
                             </div>
                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit">å¤éæ¡ï¼</label>
+                                <label class="col-sm-3 label_nameedit">复选框：</label>
 
                                 <div class="col-sm-9">
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">å¤éæ¡åç§°</span></label>
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">å¤éæ¡åç§°</span></label>
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">å¤éæ¡åç§°</span></label>
+                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
+                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
+                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group draggable">
                                 <div class="Button_operation">
-                                    <button class="btn button_btn bg-deep-blue" type="submit">ä¿å­åå®¹</button>
-                                    <button class="btn button_btn bg-gray" type="submit">åæ¶</button>
+                                    <button class="btn button_btn bg-deep-blue" type="submit">保存内容</button>
+                                    <button class="btn button_btn bg-gray" type="submit">取消</button>
                                 </div>
                             </div>
                         </form>
@@ -186,12 +186,12 @@
     <div class="col-sm-7">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>ææ½å·¦ä¾§è¡¨ååç´ å°æ­¤åºå</h5>
+                <h5>拖拽左侧表单元素到此区域</h5>
                 <div class="ibox-tools ibox-columns" >
-                    è¯·éæ©æ¾ç¤ºçåæ°ï¼
+                    请选择显示的列数：
                     <select id="n-columns">
-                        <option value="1">æ¾ç¤º1å</option>
-                        <option value="2">æ¾ç¤º2å</option>
+                        <option value="1">显示1列</option>
+                        <option value="2">显示2列</option>
                     </select>
                 </div>
             </div>
@@ -204,7 +204,7 @@
                     <div class="col-md-6 droppable sortable" style="display: none;">
                     </div>
                 </div>
-                <button type="submit" class="btn button_btn bg-deep-blue" data-clipboard-text="testing" id="copy-to-clipboard">å¤å¶ä»£ç </button>
+                <button type="submit" class="btn button_btn bg-deep-blue" data-clipboard-text="testing" id="copy-to-clipboard">复制代码</button>
         </div>
      </div>
     </div>        
@@ -219,15 +219,15 @@
 		float : 'left',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
-		page_content:'.list_show',//åå®¹
-		datalist:".ibox",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:200,//èåæ å®½åº¦
+		page_content:'.list_show',//内容
+		datalist:".ibox",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:200,//菜单栏宽度
 		
 	});
 });
 	
-/***********æå»ºå¨***********/
+/***********构建器***********/
 $(document).ready(function () {
 	setup_draggable();
 	$("#n-columns").on("change", function () {
@@ -256,7 +256,7 @@ $(document).ready(function () {
 		$copy.remove();
 		$modal = get_modal(html).modal("show");
 		$modal.find(".btn").remove();
-		$modal.find(".modal-title").html("å¤å¶HTMLä»£ç ");
+		$modal.find(".modal-title").html("复制HTML代码");
 		$modal.find(":input:first").select().focus();
 		return false;
 	})
@@ -293,8 +293,8 @@ var setup_draggable = function () {
 				}
 				// tools
 				$('<p class="tools col-sm-12 col-sm-offset-3 margin-top">\
-				<a class="edit-link">ç¼è¾HTML<a> | \
-				<a class="remove-link">ç§»é¤</a></p>').appendTo($el);
+				<a class="edit-link">编辑HTML<a> | \
+				<a class="remove-link">移除</a></p>').appendTo($el);
 			} else {
 				if ($(this)[0] != $orig.parent()[0]) {
 					var $el = $orig
@@ -318,13 +318,13 @@ var get_modal = function (content) {
 			<div class="modal-header">\
 				<a type="button" class="close"\
 					data-dismiss="modal" aria-hidden="true">&times;</a>\
-				<h4 class="modal-title">ç¼è¾HTML</h4>\
+				<h4 class="modal-title">编辑HTML</h4>\
 			</div>\
 			<div class="modal-body ui-front">\
 				<textarea class="form-control" \
 					style="min-height: 200px; margin-bottom: 10px;\
 					font-family: Monaco, Fixed">' + content + '</textarea>\
-				<button class="btn button_btn bg-deep-blue">æ´æ°HTML</button>\
+				<button class="btn button_btn bg-deep-blue">更新HTML</button>\
 			</div>\
 		</div>\
 	</div>\
@@ -353,3 +353,4 @@ $(document).on("click", ".remove-link", function (ev) {
 	$(this).parent().parent().remove();
 });
 </script>
+

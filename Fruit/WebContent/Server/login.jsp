@@ -16,16 +16,16 @@
 <script src="js/Sellerber.js" type="text/javascript"></script>
 <script src="js/shopFrame.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
-<title>ç¨æ·ç»å½</title>
+<title>用户登录</title>
 </head>
 
 <body class="login-layout Reg_log_style">
 <div class="logintop">    
-    <span>æ¬¢è¿åå°ç®¡ççé¢å¹³å°</span>    
+    <span>欢迎后台管理界面平台</span>    
     <ul>
-    <li><a href="#">è¿åé¦é¡µ</a></li>
-    <li><a href="#">å¸®å©</a></li>
-    <li><a href="#">å³äº</a></li>
+    <li><a href="#">返回首页</a></li>
+    <li><a href="#">帮助</a></li>
+    <li><a href="#">关于</a></li>
     </ul>    
     </div>
     <div class="loginbody">
@@ -41,18 +41,18 @@
                                     <h4 class="title_name"><img src="images/login_title.png" /></h4>
 										<fieldset>
 										<ul>
-   <li class="frame_style form_error"><label class="user_icon"></label><input name="" type="text" data-name="ç¨æ·å" id="username"/><i>ç¨æ·å</i></li>
-   <li class="frame_style form_error"><label class="password_icon"></label><input name="" type="password"   data-name="å¯ç " id="userpwd"/><i>å¯ç </i></li>
-   <li class="frame_style form_error"><label class="Codes_icon"></label><input name="" type="text"   data-name="éªè¯ç " id="Codes_text"/><i>éªè¯ç </i><div class="Codes_region"><img src="images/yanzhengma.png" width="100%" height="38px"></div></li>  
+   <li class="frame_style form_error"><label class="user_icon"></label><input name="" type="text" data-name="用户名" id="username"/><i>用户名</i></li>
+   <li class="frame_style form_error"><label class="password_icon"></label><input name="" type="password"   data-name="密码" id="userpwd"/><i>密码</i></li>
+   <li class="frame_style form_error"><label class="Codes_icon"></label><input name="" type="text"   data-name="验证码" id="Codes_text"/><i>验证码</i><div class="Codes_region"><img src="images/yanzhengma.png" width="100%" height="38px"></div></li>  
   </ul>
     <div class="space"></div>
                               <div class="clearfix">
                                   <label class="inline">
                                       <input type="checkbox" class="ace">
-                                      <span class="lbl">ä¿å­å¯ç </span>
+                                      <span class="lbl">保存密码</span>
                                   </label>
 
-                                  <button type="button" class="login_btn" id="login_btn"> ç»&nbsp;é </button>
+                                  <button type="button" class="login_btn" id="login_btn"> 登&nbsp;陆 </button>
                               </div>
 
                               <div class="space-4"></div>
@@ -60,11 +60,11 @@
                       </form>
 </div>
                       <div class="social-or-login center">
-                          <span class="bigger-110">éç¥</span>
+                          <span class="bigger-110">通知</span>
                       </div>
 
                       <div class="social-login ">
-                      ä¸ºäºæ´å¥½çä½éªæ§ï¼æ¬ç½ç«ç³»ç»ä¸åå¯¹IE8ï¼å«IE8ï¼ä»¥ä¸æµè§å¨æ¯æï¼è¯·è§è°ã
+                      为了更好的体验性，本网站系统不再对IE8（含IE8）以下浏览器支持，请见谅。
                       </div>
                   </div><!-- /login-main -->
 
@@ -74,7 +74,7 @@
       </div><!-- /position-relative -->
   </div>
  </div>
-                        <div class="loginbm">çæææ  2016  <a href=""></a> </div><strong></strong>
+                        <div class="loginbm">版权所有  2016  <a href=""></a> </div><strong></strong>
 </body>
 </html>
 <script type="text/javascript">
@@ -85,8 +85,8 @@ $('#login_btn').on('click', function(){
           if($(this).val()=="")
           {
                
-			   layer.alert(str+=""+$(this).attr("data-name")+"ãå¥åãã¦ãã ãã!",{
-                title: 'æç¤ºæ¡',				
+			   layer.alert(str+=""+$(this).attr("data-name")+"を入力してください!",{
+                title: '提示框',				
 				icon:0,								
           }); 
 		    num++;
@@ -95,8 +95,8 @@ $('#login_btn').on('click', function(){
 		 });
 		  if(num>0){  return false;}	 	
           else{
-			  layer.alert('ç»éæåï¼',{
-               title: 'æç¤ºæ¡',				
+			  layer.alert('登陆成功！',{
+               title: '提示框',				
 			   icon:1,		
 			  });
 	          location.href="shops_index.html";
@@ -123,4 +123,5 @@ $('#login_btn').on('click', function(){
 		}
 	});
  })
+</script>
 </script>

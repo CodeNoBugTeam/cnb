@@ -17,7 +17,7 @@
 <script src="js/shopFrame.js" type="text/javascript"></script>
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script> 
-<title>åºéºç®¡ç</title>
+<title>店铺管理</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -26,7 +26,7 @@
  <![endif]-->
 <body>
  <div class="Sellerber" id="Sellerber">
- <!--é¡¶é¨-->
+ <!--顶部-->
   <div class="Sellerber_header apex clearfix" id="Sellerber_header">
    <div class="l_f logo header"><img src="images/logo_03.png" /></div>
    <div class="r_f Columns_top clearfix header">
@@ -40,22 +40,22 @@
      </div>
    <div class="news l_f "><a href="#" class="fa fa-bell Notice prompt" id="promptbtn"></a><em>5</em></div>
      <div class="administrator l_f">
-       <img src="images/avatar.png"  width="36px"/><span class="user-info">æ¬¢è¿ä½ ,è¶çº§ç®¡çå</span><i class="glyph-icon fa  fa-caret-down"></i>
+       <img src="images/avatar.png"  width="36px"/><span class="user-info">欢迎你,超级管理员</span><i class="glyph-icon fa  fa-caret-down"></i>
        <ul class="dropdown-menu">
-        <li><a href="#"><i class="fa fa-user"></i>ä¸ªäººä¿¡æ¯</a></li>
-        <li><a href="#"><i class="fa fa-cog"></i>ç³»ç»è®¾ç½®</a></li>
-        <li><a href="javascript:void(0)" id="Exit_system"><i class="fa fa-user-times"></i>éåº</a></li>
+        <li><a href="#"><i class="fa fa-user"></i>个人信息</a></li>
+        <li><a href="#"><i class="fa fa-cog"></i>系统设置</a></li>
+        <li><a href="javascript:void(0)" id="Exit_system"><i class="fa fa-user-times"></i>退出</a></li>
        </ul>
      </div> 
    </div>
   </div>
-<!--å·¦ä¾§-->
+<!--左侧-->
   <div class="Sellerber_left menu" id="menuBar">
     <div class="show_btn" id="rightArrow"><span></span></div>
-    <div class="side_title"><a title="éè" class="close_btn"><span></span></a></div>
+    <div class="side_title"><a title="隐藏" class="close_btn"><span></span></a></div>
     <div class="menu_style" id="menu_style">
     <div class="list_content">
-    <!--æ ç®åæ¢-->
+    <!--栏目切换-->
     <div class="switch_style">
     	<em class="fa fa-th-large switch"></em>
     	<em class="fa fa-list switch_unfold"></em>
@@ -70,7 +70,7 @@
          <li><a class="colorpick-btn" href="javascript:void(0)" data-val="purple" style="background-color:#6F036B;" ></a></li>
         </ul>     
      </div>
-     <!--å·¦ä¾§èåæ ç®-->  
+     <!--左侧菜单栏目-->  
      <div class="column_list" >
 		 <ul class="menuUl menu_list" id="column_list"> 	
 		 </ul>
@@ -78,60 +78,60 @@
     </div>
   </div>
  </div>
-<!--åå®¹-->
+<!--内容-->
   <div class="Sellerber_content" id="contents">
     <div class="breadcrumbs" id="breadcrumbs">
        <a id="js-tabNav-prev" class="radius btn-default left_roll" href="javascript:;"><i class="fa fa-backward"></i></a>
        <div class="breadcrumb_style clearfix">
 	     <ul class="breadcrumb clearfix" id="min_title_list">
-          <li class="active home"><span title="æçæ¡é¢" data-href="index.html"><i class="fa fa-home home-icon"></i>é¦é¡µ</span></li>
+          <li class="active home"><span title="我的桌面" data-href="index.html"><i class="fa fa-home home-icon"></i>首页</span></li>
          </ul>
       </div>
        <a id="js-tabNav-next" class="radius btn-default right_roll" href="javascript:;"><i class="fa fa-forward"></i></a>
        <div class="btn-group radius roll-right">
-		 <a class="dropdown tabClose" data-toggle="dropdown" aria-expanded="false">é¡µç­¾æä½<i class="fa fa-caret-down" style="padding-left: 3px;"></i></a>
+		 <a class="dropdown tabClose" data-toggle="dropdown" aria-expanded="false">页签操作<i class="fa fa-caret-down" style="padding-left: 3px;"></i></a>
 			<ul class="dropdown-menu dropdown-menu-right" id="dropdown_menu">
-				<li><a class="tabReload" href="javascript:void(0);">å·æ°å½å</a></li>
-				<li><a class="tabCloseCurrent" href="javascript:void(0);">å³é­å½å</a></li>
-				<li><a class="tabCloseAll" href="javascript:void(0);">å¨é¨å³é­(é¦é¡µ)</a></li>
-				<li><a class="tabCloseOther" href="javascript:void(0);">é¤æ­¤ä¹å¤å¨é¨å³é­</a></li>
+				<li><a class="tabReload" href="javascript:void(0);">刷新当前</a></li>
+				<li><a class="tabCloseCurrent" href="javascript:void(0);">关闭当前</a></li>
+				<li><a class="tabCloseAll" href="javascript:void(0);">全部关闭(首页)</a></li>
+				<li><a class="tabCloseOther" href="javascript:void(0);">除此之外全部关闭</a></li>
 			</ul>
 		</div>
 		<a href="javascript:void()" class="radius roll-right fullscreen"><i class="fa fa-arrows-alt"></i></a>
     </div>
-  <!--å·ä½åå®¹-->  
+  <!--具体内容-->  
   <div id="iframe_box" class="iframe_content">
   <div class="show_iframe index_home" id="show_iframe">
        <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="index.html" name="iframepage" data-href="index.html"></iframe>
        </div>
       </div>
   </div>
-<!--åºé¨-->
+<!--底部-->
   <div class="Sellerber_bottom info" id="bottom">
-  <span class="l_f">çæææï¼åäº¬çç³è½¯ä»¶ç³»ç»æéå¬å¸</span>
+  <span class="l_f">版权所有：南京版石软件系统有限公司</span>
   </div>
-  <!--æ¶æ¯æç¤ºæ¿ååå®¹-->
+  <!--消息提示板块内容-->
 <div class="prompt_style prompt">
-	<div class="prompt_title">éç¥æ¶æ¯</div>
+	<div class="prompt_title">通知消息</div>
 	<div class="prompt_info clearfix">
-	  <div class="tz_title">è®¢åæ¶æ¯ï¼5ï¼</div>
-	  <a href="" class=""><i class="fa fa-user icon_prompt label-danger"></i>ä½ æè®¢åè¿æ²¡æå¤çè¯·åæ¶å¤çï¼ç¹å»æ¥çè¯¦ç»</a>
+	  <div class="tz_title">订单消息（5）</div>
+	  <a href="" class=""><i class="fa fa-user icon_prompt label-danger"></i>你有订单还没有处理请及时处理，点击查看详细</a>
     </div>
     <div class="prompt_info clearfix">
-	  <div class="tz_title">è®¢åæ¶æ¯ï¼5ï¼</div>
-	  <a href="" class=""><i class="fa fa-volume-up icon_prompt label-success"></i>ä½ æè®¢åè¿æ²¡æå¤çè¯·åæ¶å¤çï¼ç¹å»æ¥çè¯¦ç»</a>
+	  <div class="tz_title">订单消息（5）</div>
+	  <a href="" class=""><i class="fa fa-volume-up icon_prompt label-success"></i>你有订单还没有处理请及时处理，点击查看详细</a>
     </div>
     <div class="prompt_info clearfix">
-	  <div class="tz_title">è®¢åæ¶æ¯ï¼5ï¼</div>
-	  <a href="" class=""><i class="fa fa-user icon_prompt label-warning"></i>ä½ æè®¢åè¿æ²¡æå¤çè¯·åæ¶å¤çï¼ç¹å»æ¥çè¯¦ç»</a>
+	  <div class="tz_title">订单消息（5）</div>
+	  <a href="" class=""><i class="fa fa-user icon_prompt label-warning"></i>你有订单还没有处理请及时处理，点击查看详细</a>
     </div>
     <div class="prompt_info clearfix">
-	  <div class="tz_title">è®¢åæ¶æ¯ï¼5ï¼</div>
-	  <a href="" class=""><i class="fa fa-user icon_prompt label-danger"></i>ä½ æè®¢åè¿æ²¡æå¤çè¯·åæ¶å¤çï¼ç¹å»æ¥çè¯¦ç»</a>
+	  <div class="tz_title">订单消息（5）</div>
+	  <a href="" class=""><i class="fa fa-user icon_prompt label-danger"></i>你有订单还没有处理请及时处理，点击查看详细</a>
     </div>
     <div class="prompt_info clearfix submenu">
-	  <div class="tz_title">è®¢åæ¶æ¯ï¼5ï¼</div>
-	  <a href="javascript:void()" class="" name="Personal_info.html" title="è®¢åæ¶æ¯"><i class="fa fa-user icon_prompt label-danger"></i>ä½ æè®¢åè¿æ²¡æå¤çè¯·åæ¶å¤ç</a>
+	  <div class="tz_title">订单消息（5）</div>
+	  <a href="javascript:void()" class="" name="Personal_info.html" title="订单消息"><i class="fa fa-user icon_prompt label-danger"></i>你有订单还没有处理请及时处理</a>
     </div>
   </div> 
  </div>
@@ -144,107 +144,107 @@
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-home',
-         name:'ç³»ç»é¦é¡µ',
+         name:'系统首页',
     },
     {
 		 id:2,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-desktop',
-		 name:'ååç®¡ç',
+		 name:'商品管理',
     },
     {
 		 id:3,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-database',
-		 name:'äº¤æç®¡ç',
+		 name:'交易管理',
     },
     {
 		 id:4,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-credit-card',
-		 name:'æ¯ä»ç®¡ç',
+		 name:'支付管理',
     },
     {
 		 id:5,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-cogs',
-		 name:'ç³»ç»ç®¡ç',
+		 name:'系统管理',
     },
     {
 		 id:6,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-file-text-o',
-		 name:'æç« ç®¡ç',
+		 name:'文章管理',
     },
     {
 		 id:7,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-users',
-		 name:'ç®¡çå',
+		 name:'管理员',
     },
     {
 		 id:8,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-user',
-		 name:'ä¼åç®¡ç',	  
+		 name:'会员管理',	  
     },
     {
 		 id:9,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-bar-chart',
-		 name:'æ¥è¡¨ç®¡ç',
+		 name:'报表管理',
     },
     {
 		 id:10,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-file-photo-o',
-		 name:'å¹¿åç®¡ç',
+		 name:'广告管理',
     },{
 		 id:11,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-file-photo-o',
-		 name:'åé¡µç®¡ç',
+		 name:'单页管理',
     },{
 		 id:12,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-home',
-		 name:'åç«¯ç®¡ç',
+		 name:'前端管理',
     },{
 		 id:13,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-comments',
-		 name:'çè¨ç®¡ç',
+		 name:'留言管理',
     },{
 		 id:14,
 		 pid:0,
 		 url:"#",
 		 icon:'fa fa-laptop',
-		 name:'åºéºç®¡ç',
+		 name:'店铺管理',
     },{
 		 id:20,
 		 pid:11,
 		 url:"page_list.html",
 		 icon:'fa fa-angle-double-right',
-		 name:'åååè¡¨',
+		 name:'商城列表',
     },
 		{
 		  id:25,
 		  pid:1,
 		  icon:'fa fa-angle-double-right',
 		  url:'home.html',
-		  name:'å°å¾å±ç¤º',
+		  name:'地图展示',
 
 	},
 		{
@@ -252,7 +252,7 @@
 		  pid:8,
 		  icon:'fa fa-angle-double-right',
 		  url:'member_list.html',
-		  name:'ä¼ååè¡¨',
+		  name:'会员列表',
 
 	},
 	{
@@ -260,7 +260,7 @@
 		 pid:1,
 		 icon:'fa fa-angle-double-right',
 		 url:'index.html',
-		 name:'é¦é¡µ',
+		 name:'首页',
 
   },
 	{
@@ -268,7 +268,7 @@
 		  pid:2,
 		  icon:'fa fa-angle-double-right',
 		  url:'add_product.html',
-		  name:'æ·»å åå',
+		  name:'添加商品',
 
 	},
 	{
@@ -276,7 +276,7 @@
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
 		 url:'Brand_Manage.html',
-		 name:'åçç®¡ç',
+		 name:'品牌管理',
 
   },
 	{
@@ -284,7 +284,7 @@
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
 		 url:'Products.html',
-		 name:'åååç±»',
+		 name:'商品分类',
 
 	},
 	{
@@ -292,21 +292,21 @@
 		 pid:12,
 		 icon:'fa fa-angle-double-right',
 		 url:'Columns.html',
-		 name:'æ ç®ç®¡ç',
+		 name:'栏目管理',
 
 	},{
 		 id:38,
 		 pid:9,
 		 icon:'fa fa-angle-double-right',
 		 url:'',
-		 name:'è®¿é®ç»è®¡',
+		 name:'访问统计',
 
 	},{
 		 id:39,
 		 pid:9,
 		 icon:'fa fa-angle-double-right',
 		 url:'',
-		 name:'ä¸ç»©ç»è®¡',
+		 name:'业绩统计',
 
 	},
 	
@@ -315,35 +315,35 @@
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
 		 url:'admin_Competence.html',
-		 name:'æéè®¾ç½®',
+		 name:'权限设置',
 
 	},{
 		 id:46,
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
 		 url:'Order_form.html',
-		 name:'è®¢åç®¡ç',
+		 name:'订单管理',
 
 	},{
 		 id:47,
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
 		 url:'Refund.html',
-		 name:'éæ¬¾ç®¡ç',
+		 name:'退款管理',
 
 	},{
 		 id:54,
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
 		 url:'administrator_list.html',
-		 name:'ç®¡çåè®¾ç½®',
+		 name:'管理员设置',
 
 	},{
 		 id:55,
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
 		 url:'Personal_info.html',
-		 name:'ç®¡çåä¿¡æ¯',
+		 name:'管理员信息',
 
 	},
 		{
@@ -351,7 +351,7 @@
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
 		 url:'Products.html',
-		 name:'åç±»ç®¡ç',
+		 name:'分类管理',
 
 	},
 	{
@@ -359,7 +359,7 @@
 		  pid:3,
 		  icon:'fa fa-angle-double-right',
 		  url:'Order.html',
-		  name:'äº¤æç»è®¡',
+		  name:'交易统计',
 
 	},
 	{
@@ -367,7 +367,7 @@
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
 		 url:'Brand_Manage.html',
-		 name:'è®¢åå¤ç',
+		 name:'订单处理',
 
   },
 	{
@@ -375,7 +375,7 @@
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
 		 url:'Order_Logistics.html',
-		 name:'ç©æµç®¡ç',
+		 name:'物流管理',
 
 	},
 	{
@@ -383,7 +383,7 @@
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
 		 url:'Order_Chart.html',
-		 name:'è®¢åç»è®¡ï¼å¨å½å¾ï¼',
+		 name:'订单统计（全国图）',
 
 	},
 
@@ -392,7 +392,7 @@
 		 pid:4,
 		 icon:'fa fa-angle-double-right',
 		 url:'payment_method.html',
-		 name:'æ¯ä»ç®¡ç',
+		 name:'支付管理',
 
   },
 	{
@@ -400,14 +400,14 @@
 		 pid:4,
 		 icon:'fa fa-angle-double-right',
 		 url:'Payment_Configure.html',
-		 name:'æ¯ä»éç½®',
+		 name:'支付配置',
 
 	},{
 		 id:43,
 		 pid:10,
 		 icon:'fa fa-angle-double-right',
 		 url:'Advertising_list.html',
-		 name:'å¹¿ååè¡¨',
+		 name:'广告列表',
 
 	},
 		{
@@ -415,14 +415,14 @@
 		 pid:10,
 		 icon:'fa fa-angle-double-right',
 		 url:'Advertising_sort.html',
-		 name:'å¹¿ååç±»',
+		 name:'广告分类',
 
 	},{
 		 id:45,
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
 		 url:'system_columns.html',
-		 name:'æ ç®è®¾ç½®',
+		 name:'栏目设置',
 
 	},
 		{
@@ -430,7 +430,7 @@
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
 		 url:'form_builder.html',
-		 name:'èªå®é¡µé¢',
+		 name:'自定页面',
 
 	},
 		{
@@ -438,7 +438,7 @@
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
 		 url:'system_info.html',
-		 name:'ç³»ç»è®¾ç½®',
+		 name:'系统设置',
 
 	},
 		{
@@ -446,21 +446,21 @@
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
 		 url:'rizhi_list.html',
-		 name:'ç³»ç»æ¥å¿',
+		 name:'系统日志',
 
 	},{
 		 id:48,
 		 pid:13,
 		 icon:'fa fa-angle-double-right',
 		 url:'feedback.html',
-		 name:'çè¨åé¦',
+		 name:'留言反馈',
 
 	},{
 		 id:49,
 		 pid:13,
 		 icon:'fa fa-angle-double-right',
 		 url:'Notice.html',
-		 name:'æ¶æ¯éç¥',
+		 name:'消息通知',
 
 	},
 		
@@ -469,37 +469,37 @@
 		 pid:6,
 		 icon:'fa fa-angle-double-right',
 		 url:'Article_list.html',
-		 name:'æç« åè¡¨',
+		 name:'文章列表',
 
 	}]
-//è®¾ç½®æ¡æ¶
+//设置框架
  $(function() {  		 
 	 $("#Sellerber").frame({
-		float : 'left',//è®¾ç½®èåæ ç®æ¹åå±æ§
-		minStatue:true,//åæ¢æ¨¡å¼
-		hheight:70,//è®¾ç½®é¡¶é¨é«åº¦ é«åº¦ä¸º0æ¶èªå¨æ ·å¼åæ¢ï¼è¾¾å°å¦å¤ä¸ç§çé¢ææï¼
-		bheight:30,//è®¾ç½®åºé¨é«åº¦
-		mwidth:200,//èåæ å®½åº¦ï¼æå¥½ä¸è¦æ¹å¨è¯¥æ°å¼ï¼ä¸è¬200çå®½åº¦å¼æå¥½ï¼
-		switchwidth:50,//åæ¢èåæ ç®å®½åº¦
-		color_btn:'.skin_select',//è®¾ç½®é¢è²
-		menu_nav:'.menu_list',//è®¾ç½®æ ç®å±æ§
-		column_list:'.column_list',//è®¾ç½®æ ç®åç§°
-		time:'.date_time',//è®¾ç½®æ¶é´å±æ§(ä¸å¡«åä¸æ¾ç¤º)
-		logo_img:'images/logo_01.png',//logoå°åé¾æ¥ï¼å½headerä¸º0æ¶æ¾ç¤ºè¯¥å±æ§ï¼
-	    Sellerber_content:'.Sellerber_content',//å³ä¾§åç§°
-		Sellerber_menu:'.list_content', //å·¦ä¾§æ ç®
-		header:'.Sellerber_header',//é¡¶é¨æ ç®	
+		float : 'left',//设置菜单栏目方向属性
+		minStatue:true,//切换模式
+		hheight:70,//设置顶部高度 高度为0时自动样式切换（达到另外一种界面效果）
+		bheight:30,//设置底部高度
+		mwidth:200,//菜单栏宽度（最好不要改动该数值，一般200的宽度值最好）
+		switchwidth:50,//切换菜单栏目宽度
+		color_btn:'.skin_select',//设置颜色
+		menu_nav:'.menu_list',//设置栏目属性
+		column_list:'.column_list',//设置栏目名称
+		time:'.date_time',//设置时间属性(不填写不显示)
+		logo_img:'images/logo_01.png',//logo地址链接（当header为0时显示该属性）
+	    Sellerber_content:'.Sellerber_content',//右侧名称
+		Sellerber_menu:'.list_content', //左侧栏目
+		header:'.Sellerber_header',//顶部栏目	
 		prompt:'.prompt_style',
-		prompt_btn:'#promptbtn',//ç¹å»äºä»¶
-		data:data,//æ°æ®
-		mouIconOpen:"fa fa-angle-down",// èå(å±å¼)å¾æ 
-	    mouIconClose:"fa fa-angle-up" , // èåï¼éèï¼å¾æ 
-		Rightclick:true//æ¯å¦ç¦ç¨å³é®
+		prompt_btn:'#promptbtn',//点击事件
+		data:data,//数据
+		mouIconOpen:"fa fa-angle-down",// 菜单(展开)图标
+	    mouIconClose:"fa fa-angle-up" , // 菜单（隐藏）图标
+		Rightclick:true//是否禁用右键
 	 }); 
 });
 $('#Exit_system').on('click', function(){
-      layer.confirm('æ¯å¦ç¡®å®éåºç³»ç»ï¼', {
-     btn: ['æ¯','å¦'] ,//æé®
+      layer.confirm('是否确定退出系统？', {
+     btn: ['是','否'] ,//按钮
 	 icon:2,
     }, 
 	function(){
@@ -507,4 +507,6 @@ $('#Exit_system').on('click', function(){
     });
 });
 </script>
+
+
 

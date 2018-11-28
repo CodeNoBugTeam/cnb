@@ -15,43 +15,43 @@
 <script src="js/Sellerber.js" type="text/javascript"></script>
 <script src="js/layer/layer.js" type="text/javascript"></script>
 <script src="js/laydate/laydate.js" type="text/javascript"></script>        
-<title>æ¯ä»è¯¦ç»</title>
+<title>支付详细</title>
 </head>
 
 <body>
 <div class="margin" id="page_style">
- <!--ç¹å»æä½-->
+ <!--点击操作-->
   <div class="border clearfix">
      <span class="l_f">
-        <a href="javascript:ovid()" onclick="add_payment()" class="btn button_btning bg-deep-blue"><i class="fa fa-mail-reply"></i>&nbsp;è¿åä¸ä¸æ­¥</a>
+        <a href="javascript:ovid()" onclick="add_payment()" class="btn button_btning bg-deep-blue"><i class="fa fa-mail-reply"></i>&nbsp;返回上一步</a>
        </span>
     </div>
  <div class="Payment_details">
     <div class="brand_detailed">
   <div class="brand_info clearfix">
-   <div class="title_brand">æ¯ä»ä¿¡æ¯</div>
+   <div class="title_brand">支付信息</div>
    <form>
     <ul class="Info_style clearfix">
-     <li><label class="label_name">æ¯ä»åç§°ï¼</label> <span class="name">é¶èæ¯ä»</span></li>
-      <li><label class="label_name">å¼éæ¶é´ï¼</label><span class="name">2016-7-1</span></li>
-       <li><label class="label_name">ç»ææ¶é´ï¼</label><span class="name">2020-6-21</span></li>
-      <li><label class="label_name">æå±å½å®¶ï¼</label><span class="name">ä¸­å½</span></li>
-      <li><label class="label_name">äº¤æç±»åï¼</label><span class="name">äººåå¸</span></li>
-      <li><label class="label_name">ç¶&nbsp;&nbsp;&nbsp;&nbsp;æï¼</label><span class="name">å¯ç¨</span></li>
-      <li class="b_Introduce"><label class="label_name">æ¯ä»ä»ç»ï¼</label><span class="name">ä¸­å½é¶èæ¯ä¸­å½é¶è¡å¡èåç»ç»ï¼éè¿é¶èè·¨è¡äº¤ææ¸ç®ç³»ç»ï¼å®ç°åä¸é¶è¡ç³»ç»é´çäºèäºéåèµæºå±äº«ï¼ä¿è¯é¶è¡å¡è·¨è¡ãè·¨å°åºåè·¨å¢çä½¿ç¨ãé¶èç½ç»éå¸ä¸­å½åä¹¡ï¼å¹¶å·²å»¶ä¼¸è³äºæ´²ãæ¬§æ´²ãç¾æ´²ãå¤§æ´æ´²ãéæ´²ç­å¢å¤150ä¸ªå½å®¶åå°åº(æªè³2015å¹´1æ20æ¥)ã</span></li>
+     <li><label class="label_name">支付名称：</label> <span class="name">银联支付</span></li>
+      <li><label class="label_name">开通时间：</label><span class="name">2016-7-1</span></li>
+       <li><label class="label_name">结束时间：</label><span class="name">2020-6-21</span></li>
+      <li><label class="label_name">所属国家：</label><span class="name">中国</span></li>
+      <li><label class="label_name">交易类型：</label><span class="name">人名币</span></li>
+      <li><label class="label_name">状&nbsp;&nbsp;&nbsp;&nbsp;态：</label><span class="name">启用</span></li>
+      <li class="b_Introduce"><label class="label_name">支付介绍：</label><span class="name">中国银联是中国银行卡联合组织，通过银联跨行交易清算系统，实现商业银行系统间的互联互通和资源共享，保证银行卡跨行、跨地区和跨境的使用。银联网络遍布中国城乡，并已延伸至亚洲、欧洲、美洲、大洋洲、非洲等境外150个国家和地区(截至2015年1月20日)。</span></li>
     </ul>
     <div class="brand_logo">
       <img src="product_img/black/yinglian.jpg" width="120px" height="60px">
-      <p class="name">ä¸­å½é¶è</p>
+      <p class="name">中国银联</p>
     </div>
    </form>
    </div>
  </div>
    <div class="bank_style clearfix" id="Bank_operations">
-      <div class="title_name">æ¯æé¶è¡</div>
+      <div class="title_name">支持银行</div>
       <div class="operating">
-      <a href="javascript:ovid()" onclick="modify()" class="btn button_btns btn-danger btn_delete"><i class="fa fa-trash"></i>&nbsp;å é¤æä½</a>
-      <a href="javascript:ovid()" onclick="Add_Bank()" class="btn button_btns bg-deep-blue"><i class="fa fa-credit-card"></i>&nbsp;æ·»å é¶è¡</a></div>
+      <a href="javascript:ovid()" onclick="modify()" class="btn button_btns btn-danger btn_delete"><i class="fa fa-trash"></i>&nbsp;删除操作</a>
+      <a href="javascript:ovid()" onclick="Add_Bank()" class="btn button_btns bg-deep-blue"><i class="fa fa-credit-card"></i>&nbsp;添加银行</a></div>
       <div class="bank_list clearfix">
         <ul class="bank_logo clearfix">
          <li>
@@ -92,9 +92,9 @@
  </div>
 
 </div>
-<!--æ·»å é¶è¡-->
+<!--添加银行-->
 <div id="add_bankstyle" style=" display:none">
-<div class="prompt">è¯·ç¡®ä¿ä½ å¼éäºè¯¥é¶è¡çä»æ¬¾ä¸å¡ï¼å¦ææªå¼éï¼å¯è½é æç¨æ·ä»æ¬¾å¤±è´¥ã</div>
+<div class="prompt">请确保你开通了该银行的付款业务，如果未开通，可能造成用户付款失败。</div>
   <div class="add_bank_list margin">
    <ul>
          <li><label><input name="form-field-checkbox" type="checkbox" class="ace"><span class="lbl"><img src="product_img/black/black6.png" width="160px;"/></span></label></li>
@@ -113,7 +113,7 @@
 </body>
 </html>
 <script>
-  //æé®ç¹å»äºä»¶
+  //按钮点击事件
 	var banks =$("#Bank_operations")
 function modify(){	  
 	 $('.ace').attr("disabled", false);
@@ -121,10 +121,10 @@ function modify(){
 	  banks.find('.bank_logo').addClass("delete");
 	  banks.find('.Push_button').addClass("btn_delete");
 	  banks.find('.operating .btn_delete').hide();
-	  banks.find('.Push_button').prepend('<span class="Button"><a style="text-decoration:none" class="btn button_btns btn-Dark-success" onClick="bank_complete(this,id)" href="javascript:;" title="å¯ç¨"><i class=""></i>ç¡®è®¤æä½</a></span>');
+	  banks.find('.Push_button').prepend('<span class="Button"><a style="text-decoration:none" class="btn button_btns btn-Dark-success" onClick="bank_complete(this,id)" href="javascript:;" title="启用"><i class=""></i>确认操作</a></span>');
 	};
-	 banks.find('.Push_button').html('<label><input name="checkbox" type="checkbox" class="ace" id="select_all"><span class="lbl">å¨é</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-	/**å¨é**/
+	 banks.find('.Push_button').html('<label><input name="checkbox" type="checkbox" class="ace" id="select_all"><span class="lbl">全选</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+	/**全选**/
 $('#select_all').on('click' , function(){
 					var that = this;
 					$(this).closest('.bank_list').find('li input:checkbox')
@@ -135,14 +135,14 @@ $('#select_all').on('click' , function(){
 						
 				});
 
-/*ç¡®è®¤æä½*/	
+/*确认操作*/	
 function bank_complete(obj,id){
 	var checkbox=$('input[name="form-field-checkbox"]');
 	if(checkbox.length){
 			 for(var i=0; i<checkbox.length; i++){ 
 			   if(checkbox[i].checked){
-					layer.alert('å é¤æåï¼',{
-                    title: 'æç¤ºæ¡',				
+					layer.alert('删除成功！',{
+                    title: '提示框',				
 			        icon:0,		
 			        }) 
 			         break;					
@@ -160,10 +160,10 @@ function bank_complete(obj,id){
 			 }	 		
 		  }		
 		  if($('input[name="checkbox"]').prop("checked")){ 
-		  layer.alert('æ¯å¦å é¤å¨é¨é¶è¡ï¼',{
-               title: 'æç¤ºæ¡',				
+		  layer.alert('是否删除全部银行！',{
+               title: '提示框',				
 			  icon:0,
-			   btn:['ç¡®å®','åæ¶'],	
+			   btn:['确定','取消'],	
 				   yes: function(index){
 					    $('#Bank_operations').find('.bank_logo').empty();
 						$('#Bank_operations').find('.Push_button').empty();					   
@@ -175,31 +175,31 @@ function bank_complete(obj,id){
 			
 				 
 	}	
-/**æ·»å é¶è¡æä½**/
+/**添加银行操作**/
 function Add_Bank(index){
 	var index = layer.open({
         type: 1,
-        title: 'æ·»å é¶è¡',
+        title: '添加银行',
 		maxmin: true, 
 		shadeClose:false,
         area : ['830px' , ''],
         content:$('#add_bankstyle'),
-		btn:['ç¡®å®','åæ¶'],
+		btn:['确定','取消'],
 		yes:function(index, layero){
 		var checkbox=$('input[name="form-field-checkbox"]');
 	         if(checkbox.length){
 			 for(var i=0; i<checkbox.length; i++){ 
 			   if(checkbox[i].checked){
-					layer.alert('æ·»å æåï¼',{
-                    title: 'æç¤ºæ¡',				
+					layer.alert('添加成功！',{
+                    title: '提示框',				
 			        icon:0,		
 			        }) 
 					 layer.close(index); 
 			         break;					
 				}
 		     else{
-			layer.alert('è¯·éæ©é¶è¡ï¼',{
-               title: 'æç¤ºæ¡',				
+			layer.alert('请选择银行！',{
+               title: '提示框',				
 			  icon:0,		
 			  });
 			 }
@@ -208,11 +208,12 @@ function Add_Bank(index){
 	 }			  
 })		
 }
-/*é¶è¡-å é¤*/
+/*银行-删除*/
 function bank_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤è¯¥é¶è¡åï¼',function(index){
+	layer.confirm('确认要删除该银行吗？',function(index){
 		$(obj).parents("li").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 </script>
+

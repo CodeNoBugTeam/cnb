@@ -16,7 +16,7 @@
 <script src="js/layer/layer.js" type="text/javascript"></script>
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/jquery.dataTables.bootstrap.js"></script>
-<title>ç®¡çå</title>
+<title>管理员</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -26,10 +26,10 @@
 <body>
 <div class="margin Competence_style" id="page_style">
    <div class="operation clearfix">
-<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;å é¤</button>
-<span class="submenu"><a href="add_Competence.html"  class="btn button_btn bg-deep-blue" title="æ·»å æé"><i class="fa  fa-edit"></i>&nbsp;æ·»å æé</a></span>
+<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+<span class="submenu"><a href="add_Competence.html"  class="btn button_btn bg-deep-blue" title="添加权限"><i class="fa  fa-edit"></i>&nbsp;添加权限</a></span>
    <div class="search  clearfix">
-   <input name="" type="text"  class="form-control col-xs-8"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;æç´¢</button>
+   <input name="" type="text"  class="form-control col-xs-8"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
 </div>
 </div>
 <div class="compete_list">
@@ -37,45 +37,45 @@
 		 <thead>
 			<tr>
 			  <th class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
-			  <th>æéåç§°</th>
-			  <th>äººæ°</th>
-              <th>ç¨æ·åç§°</th>
-			  <th class="hidden-480">æè¿°</th>             
-			  <th class="hidden-480">æä½</th>
+			  <th>权限名称</th>
+			  <th>人数</th>
+              <th>用户名称</th>
+			  <th class="hidden-480">描述</th>             
+			  <th class="hidden-480">操作</th>
              </tr>
 		    </thead>
              <tbody>
 			  <tr>
 				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>è¶çº§ç®¡çå</td>
+				<td>超级管理员</td>
 				<td>1</td>
 				<td class="hidden-480">admin</td>
-				<td>æ¥æè³é«æ ä¸çæå©,æä½ç³»ç»çæææé</td>
+				<td>拥有至高无上的权利,操作系统的所有权限</td>
 				<td>
-                 <a title="ç¼è¾" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">ç¼è¾</a>        
-                 <a title="å é¤" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">å é¤</a>
+                 <a title="编辑" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
+                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">删除</a>
 				</td>
 			   </tr>
                <tr>
 				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>æ®éç®¡çå</td>
+				<td>普通管理员</td>
 				<td>3</td>
-				<td class="hidden-480">admin123 , å¼ å°æ³ ,åé·é²</td>
-				<td>æ¥æç½ç«çç³»ç»å¤§é¨åä½¿ç¨æéï¼æ²¡ææéç®¡çåè½ã</td>
+				<td class="hidden-480">admin123 , 张小泉 ,克雷鲍</td>
+				<td>拥有网站的系统大部分使用权限，没有权限管理功能。</td>
 				<td>
-                 <a title="ç¼è¾" onclick="Competence_modify('561')" href="javascript:;" class="btn button_btn bg-deep-blue">ç¼è¾</a>        
-                 <a title="å é¤" href="javascript:;" onclick="Competence_del(this,'2')" class="btn button_btn btn-danger">å é¤</a>
+                 <a title="编辑" onclick="Competence_modify('561')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
+                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'2')" class="btn button_btn btn-danger">删除</a>
 				</td>
 			   </tr>	
                <tr>
 				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>ç¼è¾ç®¡çå</td>
+				<td>编辑管理员</td>
 				<td>5</td>
 				<td class="hidden-480">admin345,stysty,adminstyle,admin45678,admin123455</td>
-				<td>æ¥æé¨åæéï¼ä¸»è¦è¿è¡ç¼è¾åè½ï¼æ è¾¹çè®¢ååè½ï¼æéåéåè½ã</td>
+				<td>拥有部分权限，主要进行编辑功能，无边界订单功能，权限分配功能。</td>
 				<td>
-                 <a title="ç¼è¾" onclick="Competence_modify('562')" href="javascript:;" class="btn button_btn bg-deep-blue">ç¼è¾</a>        
-                 <a title="å é¤" href="javascript:;" onclick="Competence_del(this,'3')" class="btn button_btn btn-danger">å é¤</a>
+                 <a title="编辑" onclick="Competence_modify('562')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
+                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'3')" class="btn button_btn btn-danger">删除</a>
 				</td>
 			   </tr>												
 		      </tbody>
@@ -85,11 +85,11 @@
 </body>
 </html>
 <script>
-	/*æéå é¤*/
+	/*权限删除*/
 function Competence_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤åï¼',{icon:0,},function(index){
+	layer.confirm('确认要删除吗？',{icon:0,},function(index){
 		$(obj).parents("tr").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 $('table th input:checkbox').on('click' , function(){
@@ -101,7 +101,7 @@ $('table th input:checkbox').on('click' , function(){
 					});
 						
 				});
-/*******æ»å¨æ¡*******/
+/*******滚动条*******/
 $("body").niceScroll({  
 	cursorcolor:"#888888",  
 	cursoropacitymax:1,  
@@ -111,3 +111,4 @@ $("body").niceScroll({
 	cursorborderradius:"5px"  
 });
 </script>
+

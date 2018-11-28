@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <meta charset="utf-8">
@@ -20,10 +20,10 @@
 
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZQVKW0dvz0tgMy6ZytmY5RxZ"></script>
-<!-- å è½½ç¾åº¦å°å¾æ ·å¼ä¿¡æ¯çªå£ -->
+<!-- 加载百度地图样式信息窗口 -->
 <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
-<!-- å è½½åå¸åè¡¨ -->
+<!-- 加载城市列表 -->
 <script type="text/javascript" src="http://api.map.baidu.com/library/CityList/1.2/src/CityList_min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
@@ -32,7 +32,7 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>é¦é¡µ</title>
+<title>首页</title>
 </head>
 
 <body>
@@ -46,12 +46,12 @@
 	<div id="result">
 	  <div class="box_inset">
 		 <dl>
-    	<dt>åºæ¬æä½</dt>
+    	<dt>基本操作</dt>
         <dd>
                 <div class="search_style">
                  <form action="#" method="get" class="sidebar_form">
 		           <div class="input-group">
-			       <input type="text" name="q" id="jiansuo1" class="form-control" title="è¯·è¾å¥å³é®å­è¿è¡æ¥è¯¢">
+			       <input type="text" name="q" id="jiansuo1" class="form-control" title="请输入关键字进行查询">
 			       <span class="input-group-btn"><a class="btn_flat" href="javascript:" id="open1" onclick="refresh()" ><i class="fa fa-search"></i></a></span>
 		         </div>
                  </form>
@@ -60,9 +60,9 @@
         <dd>
         	<div class="area-text">
                         <b class="animation-line1"></b>
-                        <h4>å£å¾è¯´æï¼</h4>
+                        <h4>口径说明：</h4>
                          <p class="text_container">
-                            <script>var s = 'ï¼å½æ¥VLRç»è®°ç¨æ·æ°ãæ¨æ¥VLRç»è®°ç¨æ·æ°ãä¸æå¹³åå¼å½æ¥è¯­é³ç½ç»æ¥éçãæ¨æ¥è¯­é³ç½ç»æ¥é'; var con = $('.text_container'); var index = 0; var length = s.length; var tId = null; function start(){ con.text(''); tId=setInterval(function(){ con.append(s.charAt(index)); if(index++ === length){ clearInterval(tId); index = 0; start() } },100); } start();</script>
+                            <script>var s = '（当日VLR登记用户数、昨日VLR登记用户数、上月平均值当日语音网络接通率、昨日语音网络接通'; var con = $('.text_container'); var index = 0; var length = s.length; var tId = null; function start(){ con.text(''); tId=setInterval(function(){ con.append(s.charAt(index)); if(index++ === length){ clearInterval(tId); index = 0; start() } },100); } start();</script>
                         </p>
                         <b class="animation-line2"></b>
                     </div>
@@ -71,12 +71,12 @@
 		  </dl>
 	</div>
 	</div>
-	<!--åå¸åè¡¨-->
+	<!--城市列表-->
 	<input type="text" id="jiansuo" value="">
-	<div class="sel_container"><div class="city_select"><strong id="curCity">åäº¬å¸</strong> [<a id="curCityText" href="javascript:void(0)">æ´æ¢åå¸</a>]</div></div>
+	<div class="sel_container"><div class="city_select"><strong id="curCity">北京市</strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div></div>
 	<div class="map_popup" id="cityList" style="display:none;">
 		<div class="popup_main">
-			<div class="title">åå¸åè¡¨</div>
+			<div class="title">城市列表</div>
 			<div class="cityList" id="citylist_container"></div>
 			<button id="popup_close"></button>
 		</div>
@@ -84,7 +84,7 @@
 </body>
 </html>
 <script type="text/javascript">
-	//éèæ¾ç¤º
+	//隐藏显示
 $(function(){
 	var oWidth=$(".Introduction_Box").width();
 	$(".display_layer").click(function(){
@@ -102,11 +102,11 @@ $(function(){
 		$(".display_layer").show();
 	});
 });
-//åå§åå®½åº¦ãé«åº¦  
+//初始化宽度、高度  
 $(".map_style").height($(window).height());
 	$(".map_style").width($(window).width());
 	$(".Introduction_Box").width($(window).width()-20);
-  //å½ææ¡£çªå£åçæ¹åæ¶ è§¦å  
+  //当文档窗口发生改变时 触发  
     $(window).resize(function(){
 	 $(".map_style").height($(window).height());
 		$(".map_style").width($(window).width());
@@ -121,21 +121,21 @@ $(".map_style").height($(window).height());
             [
                 'echarts',
 				'echarts/theme/macarons',
-                'echarts/chart/line',   // æéå è½½æéå¾è¡¨ï¼å¦éå¨æç±»ååæ¢åè½ï¼å«å¿äºåæ¶å è½½ç¸åºå¾è¡¨
+                'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
                 'echarts/chart/bar'
             ],
             function (ec,theme) {
                 var myChart = ec.init(document.getElementById('main'),theme);
                option = {
     title : {
-        text: 'æè´­ä¹°è®¢åäº¤æè®°å½',
-        subtext: 'å®æ¶è·åç¨æ·è®¢åè´­ä¹°è®°å½'
+        text: '月购买订单交易记录',
+        subtext: '实时获取用户订单购买记录'
     },
     tooltip : {
         trigger: 'axis'
     },
     legend: {
-        data:['ææè®¢å','å¾ä»æ¬¾','å·²ä»æ¬¾','ä»£åè´§']
+        data:['所有订单','待付款','已付款','代发货']
     },
     toolbox: {
         show : true,
@@ -151,7 +151,7 @@ $(".map_style").height($(window).height());
     xAxis : [
         {
             type : 'category',
-            data : ['1æ','2æ','3æ','4æ','5æ','6æ','7æ','8æ','9æ','10æ','11æ','12æ']
+            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
         }
     ],
     yAxis : [
@@ -161,49 +161,49 @@ $(".map_style").height($(window).height());
     ],
     series : [
         {
-            name:'ææè®¢å',
+            name:'所有订单',
             type:'bar',
             data:[120, 49, 70, 232, 256, 767, 1356, 1622, 326, 200,164, 133],
             markPoint : {
                 data : [
-                    {type : 'max', name: 'æå¤§å¼'},
-                    {type : 'min', name: 'æå°å¼'}
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
                 ]
             }           
         },
         {
-            name:'å¾ä»æ¬¾',
+            name:'待付款',
             type:'bar',
             data:[26, 59, 30, 84, 27, 77, 176, 1182, 487, 188, 60, 23],
             markPoint : {
                 data : [
-                    {name : 'å¹´æé«', value : 1182, xAxis: 7, yAxis: 1182, symbolSize:18},
-                    {name : 'å¹´æä½', value : 23, xAxis: 11, yAxis: 3}
+                    {name : '年最高', value : 1182, xAxis: 7, yAxis: 1182, symbolSize:18},
+                    {name : '年最低', value : 23, xAxis: 11, yAxis: 3}
                 ]
             },
            
 			
         }
 		, {
-            name:'å·²ä»æ¬¾',
+            name:'已付款',
             type:'bar',
             data:[26, 59, 60, 264, 287, 77, 176, 122, 247, 148, 60, 23],
             markPoint : {
                 data : [
-                    {name : 'å¹´æé«', value : 172, xAxis: 7, yAxis: 172, symbolSize:18},
-                    {name : 'å¹´æä½', value : 23, xAxis: 11, yAxis: 3}
+                    {name : '年最高', value : 172, xAxis: 7, yAxis: 172, symbolSize:18},
+                    {name : '年最低', value : 23, xAxis: 11, yAxis: 3}
                 ]
             },
            
 		}
 		, {
-            name:'ä»£åè´§',
+            name:'代发货',
             type:'bar',
             data:[26, 59, 80, 24, 87, 70, 175, 1072, 48, 18, 69, 63],
             markPoint : {
                 data : [
-                    {name : 'å¹´æé«', value : 1072, xAxis: 7, yAxis: 1072, symbolSize:18},
-                    {name : 'å¹´æä½', value : 22, xAxis: 11, yAxis: 3}
+                    {name : '年最高', value : 1072, xAxis: 7, yAxis: 1072, symbolSize:18},
+                    {name : '年最低', value : 22, xAxis: 11, yAxis: 3}
                 ]
             },
            

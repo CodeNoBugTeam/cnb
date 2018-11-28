@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	
 <html>
 <head>
 <meta charset="utf-8">
@@ -21,20 +21,20 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>éæ¬¾æä½</title>
+<title>退款操作</title>
 </head>
 <body>
- <div class="margin" id="page_style"> <div class="Promp_plate label-success same_module"><b>æç¤ºï¼</b>ææ¶åªæ¯ææªåè´§çè®¢åéæ¬¾ç³è¯·ï¼å·²åè´§è®¢ååä¸æ¯æéæ¬¾æ¢è´§ï¼è¯·æ¬è¯·è°è§£ã<a href="javascript:void()" class="fa fa-close close_Promp"></a></div>
+ <div class="margin" id="page_style"> <div class="Promp_plate label-success same_module"><b>提示：</b>暂时只支持未发货的订单退款申请，已发货订单咋不支持退款换货，请敬请谅解。<a href="javascript:void()" class="fa fa-close close_Promp"></a></div>
     <div class="refund_style " id="refund">
    		     
     		   <div class="operation clearfix mb15  searchs_style">
        <span class="l_f">
-        <a href="Add_Brand.html"  title="æ·»å åç" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>æ¹éå¤ç</a>
-        <a href="javascript:ovid()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>æ¹éå é¤</a>
-        <a href="javascript:ovid()" class="btn  button_btn bg-yellow"><i class="fa fa-credit-card"></i>å·²éæ¬¾</a>
-        <a href="javascript:ovid()" class="btn  button_btn bg-green "><i class="fa  fa-credit-card-alt"></i>æªéæ¬¾</a>
+        <a href="Add_Brand.html"  title="添加品牌" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>批量处理</a>
+        <a href="javascript:ovid()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+        <a href="javascript:ovid()" class="btn  button_btn bg-yellow"><i class="fa fa-credit-card"></i>已退款</a>
+        <a href="javascript:ovid()" class="btn  button_btn bg-green "><i class="fa  fa-credit-card-alt"></i>未退款</a>
        </span>
-       <span class="r_f line30">å±ï¼<b>234</b>æ¡</span>
+       <span class="r_f line30">共：<b>234</b>条</span>
      </div>
        <div class=" datalist_show">
        <div class="datatable_height confirm">
@@ -42,16 +42,16 @@
            	<thead>
 		 <tr>
 				<th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
-				<th width="120px">è®¢åç¼å·</th>
-				<th width="250px">äº§ååç§°</th>
-				<th width="100px">äº¤æéé¢</th>				
-                <th width="100px">äº¤ææ¶é´</th>				
-				<th width="100px">éæ¬¾éé¢</th>
-                <th width="80px">æ°é</th>
-                <th width="200px">è¯´æ</th>
-                <th width="70px">è®¢åç¶æ</th>   
-				<th width="70px">éæ¬¾ç¶æ</th>         
-				<th width="200px">æä½</th>
+				<th width="120px">订单编号</th>
+				<th width="250px">产品名称</th>
+				<th width="100px">交易金额</th>				
+                <th width="100px">交易时间</th>				
+				<th width="100px">退款金额</th>
+                <th width="80px">数量</th>
+                <th width="200px">说明</th>
+                <th width="70px">订单状态</th>   
+				<th width="70px">退款状态</th>         
+				<th width="200px">操作</th>
 			</tr>
 		</thead>
 		 <tbody>
@@ -59,231 +59,231 @@
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
          	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
          	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
          	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-defaunt radius">å·²éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-defaunt radius">已退款</span></td>
      <td>
 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-defaunt radius">å·²éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-defaunt radius">已退款</span></td>
      <td>
 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                   	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
                          	         <tr>
            <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg" title="äº§ååç§°"></a>
+      <a href="#"><img src="product_img/p_1.jpg" title="产品名称"></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg" title="äº§ååç§°"></a>
+       <a href="#"><img src="product_img/p_2.jpg" title="产品名称"></a>
      </td>
      <td>456.5</td>    
      <td>2016-7-5</td>
      <td>145</td>
      <td>1</td>
-     <td>éå¤è´­ä¹°ååééæ¬¾ä¸ä»¶</td>
-     <td>æªåè´§</td>
-     <td class="td-status"><span class="label label-success radius">å¾éæ¬¾</span></td>
+     <td>重复购买商品需退款一件</td>
+     <td>未发货</td>
+     <td class="td-status"><span class="label label-success radius">待退款</span></td>
      <td>
-     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="éæ¬¾"  class="btn btn-xs btn-status">ç´æ¥éæ¬¾</a> 
-     <a title="éæ¬¾è®¢åè¯¦ç»"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >å é¤</a>    
+     <a onClick="Delivery_Refund(this,'10001')"  href="javascript:;" title="退款"  class="btn btn-xs btn-status">直接退款</a> 
+     <a title="退款订单详细"  href="Refund_detailed.html"  class="btn btn-xs btn-info Refund_detailed" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-danger" >删除</a>    
      </td>
          </tr>
 		 </tbody>
@@ -295,34 +295,35 @@
 </body>
 </html>
 <script type="text/javascript">
-//è®¾ç½®åé¡µæ¡æ¶å¸å±
+//设置内页框架布局
 $(function() { 
 	$("#refund").frame({
 		float : 'left',
-		Promp:'.close_Promp',//å é¤æç¤º
+		Promp:'.close_Promp',//删除提示
 		Sellerber_menu:'.list_content',
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:350,//å®½åº¦èªå®ä¹
+		datalist:".datatable_height",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:350,//宽度自定义
 		minStatue:true,
 		
 	});
 });
 	function Delivery_Refund(obj,id){
 			
-			 layer.confirm('æ¯å¦éæ¬¾å½åååä»·æ ¼ï¼ç´æ¥éæ¬¾åé±ç´æ¥éæ¢å°ç¨æ·ç¸åºçè´¦å·ä¸­ã',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style=" display:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="å·²éæ¬¾">éæ¬¾</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt  radius">å·²éæ¬¾</span>');
+			 layer.confirm('是否退款当前商品价格，直接退款后钱直接退换到用户相应的账号中。',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style=" display:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="已退款">退款</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt  radius">已退款</span>');
 		$(obj).remove();
-		layer.msg('éæ¬¾æå!',{icon: 6,time:1000});
+		layer.msg('退款成功!',{icon: 6,time:1000});
 			});  
 			  
 		  
 };
 	function Order_form_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤åï¼',function(index){
+	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 </script>
+

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 <meta charset="utf-8">
@@ -21,34 +21,34 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>æ æ é¢ææ¡£</title>
+<title>无标题文档</title>
 </head>
 
 <body>
 <div class="margin" id="page_style">
     <div class="operation clearfix mb15 same_module">
 <ul class="choice_search">
-      <li class="clearfix col-xs-2 col-lg-3 col-ms-3 "><label class="label_name ">ç¨æ·åï¼</label>
-      <input placeholder="ç¨æ·å"  name="" type="text" class="form-control col-xs-8 col-lg-8 col-ms-8">
+      <li class="clearfix col-xs-2 col-lg-3 col-ms-3 "><label class="label_name ">用户名：</label>
+      <input placeholder="用户名"  name="" type="text" class="form-control col-xs-8 col-lg-8 col-ms-8">
       </li>
-      <li class="clearfix col-xs-2 col-lg-3 col-ms-3"><label class="label_name ">çè¨æ¶é´ï¼</label>
+      <li class="clearfix col-xs-2 col-lg-3 col-ms-3"><label class="label_name ">留言时间：</label>
       <input class="inline laydate-icon form-control Select_Date" id="start">
       </li>
       <li class="clearfix col-xs-2 col-lg-3 col-ms-3 ">
-       <select name="" class="margin-right l_f select_style"><option  value="1">å·²æµè§</option><option value="2">æªæµè§</option></select>
-       <button type="button" class="btn button_btn bg-deep-blue "><i class="icon-search"></i>æ¥è¯¢</button></li>
+       <select name="" class="margin-right l_f select_style"><option  value="1">已浏览</option><option value="2">未浏览</option></select>
+       <button type="button" class="btn button_btn bg-deep-blue "><i class="icon-search"></i>查询</button></li>
     </ul>
 	</div>
 	<div class="h_products_list clearfix " id="Sellerber">
      <div class="padding15 clearfix">
 	   <div class="operation clearfix mb15  searchs_style">
        <span class="l_f">
-        <a href="Add_Brand.html"  title="æ·»å åç" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>æ¹éåå¤</a>
-        <a href="javascript:ovid()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>æ¹éå é¤</a>
-        <a href="javascript:ovid()" class="btn  button_btn bg-yellow"><i class="fa fa-commenting"></i>å·²åå¤</a>
-        <a href="javascript:ovid()" class="btn  button_btn bg-green "><i class="fa  fa-comments-o"></i>æªåå¤</a>
+        <a href="Add_Brand.html"  title="添加品牌" class="btn button_btn bg-deep-blue"><i class="fa fa-plus"></i>批量回复</a>
+        <a href="javascript:ovid()" class="btn  button_btn btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+        <a href="javascript:ovid()" class="btn  button_btn bg-yellow"><i class="fa fa-commenting"></i>已回复</a>
+        <a href="javascript:ovid()" class="btn  button_btn bg-green "><i class="fa  fa-comments-o"></i>未回复</a>
        </span>
-       <span class="r_f">å±ï¼<b>234</b>æ¡</span>
+       <span class="r_f">共：<b>234</b>条</span>
      </div>
      <div class=" datalist_show">
        <div class="datatable_height confirm">
@@ -56,195 +56,195 @@
               <thead>
 		 <tr>
           <th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
-          <th width="150px">ç¨æ·å</th>
-          <th width="">çè¨åå®¹</th>
-          <th width="200px">æ¶é´</th>
-          <th width="70">ç¶æ</th> 
-          <th width="120">æ¯å¦åå¤</th>              
-          <th width="250">æä½</th>
+          <th width="150px">用户名</th>
+          <th width="">留言内容</th>
+          <th width="200px">时间</th>
+          <th width="70">状态</th> 
+          <th width="120">是否回复</th>              
+          <th width="250">操作</th>
           </tr>
       </thead>
 	<tbody>
 		<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>å·²åå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>已回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">å·²æµè§</span></td>
-          <td>å·²åå¤</td>
+          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
+          <td>已回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
         	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          	<tr>
           <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('å¼ å°æ³','member-show.html','1031','500','400')">å¼ å°æ³</u></td>
+          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
           <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">âç¬¬äºå±ä¸­å½æ é¡æ°´èæ¡å¼æèâåæ¶å¼å¹ï¼ä¸ºæä¸ä¸ªæçèæ¡å­£å¨é¢å¯å¨ãå¼æ­¤äº¬ä¸â618åè´¨çæ¬¢èâä¹éï¼ä¸­å½ç¹äº§æ é¡é¦ééä¸çº¿618ä»½...</a></td>
+          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份...</a></td>
           <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-defaunt radius">æªæµè§</span></td>
-          <td>æªåå¤</td>
+          <td class="td-status"><span class="label label-defaunt radius">未浏览</span></td>
+          <td>未回复</td>
           <td class="td-manage">
-           <a title="ç¼è¾" onclick="member_edit('ç¼è¾','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >åå¤</a> 
-           <a title="å é¤" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>
+           <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >回复</a> 
+           <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
           </td>
         </tr>
          </tbody>
@@ -254,21 +254,21 @@
 	</div>
    </div>
 </div>
-<!--çè¨è¯¦ç»-->
+<!--留言详细-->
 <div id="Guestbook" style="display:none">
  <div class="content_style padding15">
-  <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">çè¨ç¨æ· </label>
-       <div class="col-sm-9">è¡æµ·å¤©å </div>
+  <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">留言用户 </label>
+       <div class="col-sm-9">胡海天堂</div>
 	</div>
-   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> çè¨åå®¹ </label>
-       <div class="col-sm-9">ä¸å¹´åçªï¼ä¸èµ·æ²æµ´äºä¸çéè²çé³åï¼ä¸èµ·åº¦è¿äºä¸åä¸ªæ¥å¤ï¼æä»¬å±åè°±åäºå¤å°åè°çç¯ç« ?æ¿éå»çé£äºéªäº®çæ¥å­ï¼é½åä½ç¾å¥½çè®°å¿ï¼æ°¸è¿çå¨å¿æ¿ãè®¤è¯æ¨ï¼ä¸è®ºæ¯çå½ä¸­çä¸æ®µææ²ï¼è¿æ¯æ°¸ä¹çç¥å·²ï¼æé½ä¼çæï¼å½æç²å¦æèå»ï¼ä¸åæ¥æéæ¥çæ¶åï¼è¿æ®µæå¾ä¼æ»æ¶¦æçå½çæ¯ä¸å»ãå¨æ­¤æåªæ³è¯´ï¼ææ¨çå¥½!æ è®ºä½ èº«å¨ä½æ¹ï¼æçç¥ç¦æ°¸è¿å¨æ¨èº«è¾¹!</div>
+   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 留言内容 </label>
+       <div class="col-sm-9">三年同窗，一起沐浴了一片金色的阳光，一起度过了一千个日夜，我们共同谱写了多少友谊的篇章?愿逝去的那些闪亮的日子，都化作美好的记忆，永远留在心房。认识您，不论是生命中的一段插曲，还是永久的知已，我都会珍惜，当我疲倦或老去，不再拥有青春的时候，这段旋律会滋润我生命的每一刻。在此我只想说：有您真好!无论你身在何方，我的祝福永远在您身边!</div>
 	</div>
-    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">æ¯å¦åå¤ </label>
+    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">是否回复 </label>
        <div class="col-sm-9">
-       <label><input name="checkbox" type="checkbox" class="ace" id="checkbox"><span class="lbl"> åå¤</span></label>
+       <label><input name="checkbox" type="checkbox" class="ace" id="checkbox"><span class="lbl"> 回复</span></label>
        <div class="Reply_style">
-          <textarea name="æéæè¿°" class="form-control" id="form_textarea" placeholder="" onkeyup="checkLength(this);"></textarea>
-          <span class="wordage">å©ä½å­æ°ï¼<span id="sy" style="color:Red;">200</span>å­</span>
+          <textarea name="权限描述" class="form-control" id="form_textarea" placeholder="" onkeyup="checkLength(this);"></textarea>
+          <span class="wordage">剩余字数：<span id="sy" style="color:Red;">200</span>字</span>
        </div>
        </div>
 	</div>
@@ -277,33 +277,33 @@
 </body>
 </html>
 <script>
-	//è®¾ç½®åé¡µæ¡æ¶å¸å±
+	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
-		float : 'left',//æ¾ç¤ºæ¹å
-		color_btn:'.skin_select',//æé®åç§°
-		Sellerber_menu:'.list_content',//åå®¹é¡µ
-		page_content:'.list_show',//åå®¹
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:350,//å®½åº¦èªå®ä¹
-		minStatue:true,//éèææ¾ç¤ºæ ç®
+		float : 'left',//显示方向
+		color_btn:'.skin_select',//按钮名称
+		Sellerber_menu:'.list_content',//内容页
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:350,//宽度自定义
+		minStatue:true,//隐藏或显示栏目
 		
 	});
 });
-	 /*ç¨æ·-æ¥ç*/
+	 /*用户-查看*/
 function member_show(title,url,id,w,h){
 	layer_show(title,url+'#?='+id,w,h);
 }
-/*çè¨-å é¤*/
+/*留言-删除*/
 function member_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤åï¼',function(index){
+	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 
-/*checkboxæ¿åäºä»¶*/
+/*checkbox激发事件*/
 $('#checkbox').on('click',function(){
 	if($('input[name="checkbox"]').prop("checked")){
 		 $('.Reply_style').css('display','block');
@@ -313,36 +313,36 @@ $('#checkbox').on('click',function(){
 		 $('.Reply_style').css('display','none');
 		}	
 	})
-/*çè¨æ¥ç*/
+/*留言查看*/
 function Guestbook_iew(id){
 	var index = layer.open({
         type: 1,
-        title: 'çè¨ä¿¡æ¯',
+        title: '留言信息',
 		maxmin: true, 
 		shadeClose:false,
         area : ['600px' , ''],
         content:$('#Guestbook'),
-		btn:['ç¡®å®','åæ¶'],
+		btn:['确定','取消'],
 		yes: function(index, layero){		 
 		  if($('input[name="checkbox"]').prop("checked")){			 
 			 if($('.form-control').val()==""){
-				layer.alert('åå¤åå®¹ä¸è½ä¸ºç©ºï¼',{
-               title: 'æç¤ºæ¡',				
+				layer.alert('回复内容不能为空！',{
+               title: '提示框',				
 			  icon:0,		
 			  }) 
 			 }else{			
-			      layer.alert('ç¡®å®åå¤è¯¥åå®¹ï¼',{
-				   title: 'æç¤ºæ¡',				
+			      layer.alert('确定回复该内容？',{
+				   title: '提示框',				
 				   icon:0,	
-				   btn:['ç¡®å®','åæ¶'],	
+				   btn:['确定','取消'],	
 				   yes: function(index){					   
 					     layer.closeAll();
 					   }
 				  }); 		  
 		   }			
 	      }else{			
-			 layer.alert('æ¯å¦è¦åæ¶åå¤ï¼',{
-               title: 'æç¤ºæ¡',				
+			 layer.alert('是否要取消回复！',{
+               title: '提示框',				
 			icon:0,		
 			  }); 
 			  layer.close(index);      		  
@@ -350,22 +350,23 @@ function Guestbook_iew(id){
 	   }
 	})	
 };
-	/*å­æ°éå¶*/
+	/*字数限制*/
 function checkLength(which) {
 	var maxChars = 200; //
 	if(which.value.length > maxChars){
 	   layer.open({
 	   icon:2,
-	   title:'æç¤ºæ¡',
-	   content:'æ¨è¾å¥çå­æ°è¶è¿éå¶!',	
+	   title:'提示框',
+	   content:'您输入的字数超过限制!',	
     });
-		// è¶è¿éå¶çå­æ°äºå°±å° ææ¬æ¡ä¸­çåå®¹æè§å®çå­æ° æªå
+		// 超过限制的字数了就将 文本框中的内容按规定的字数 截取
 		which.value = which.value.substring(0,maxChars);
 		return false;
 	}else{
-		var curr = maxChars - which.value.length; //250 åå» å½åè¾å¥ç
+		var curr = maxChars - which.value.length; //250 减去 当前输入的
 		document.getElementById("sy").innerHTML = curr.toString();
 		return true;
 	}
 };
+</script>
 </script>

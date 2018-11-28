@@ -20,7 +20,7 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>é¦é¡µ</title>
+<title>首页</title>
 </head>
 
 <body  id="iframe_box">
@@ -32,9 +32,9 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_bule">
     <i class="fa fa-cny"></i>
-    <h3>æäº¤éé¢</h3>
+    <h3>成交金额</h3>
    </div>
-   <div class="right_info">4567.89å</div>
+   <div class="right_info">4567.89元</div>
    </div>
    </a>
   </div>
@@ -43,9 +43,9 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_green">
     <i class="fa  fa-comments-o"></i>
-    <h3>çè¨</h3>
+    <h3>留言</h3>
    </div>
-   <div class="right_info">4567æ¡</div>
+   <div class="right_info">4567条</div>
    </div>
    </a>
   </div>
@@ -54,9 +54,9 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_red">
     <i class="fa fa-shopping-cart"></i>
-    <h3>è®¢å</h3>
+    <h3>订单</h3>
    </div>
-   <div class="right_info">4567ç¬</div>
+   <div class="right_info">4567笔</div>
    </div>
    </a>
   </div> 
@@ -65,9 +65,9 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_orange">
     <i class="fa  fa-volume-up "></i>
-    <h3>éç¥</h3>
+    <h3>通知</h3>
    </div>
-   <div class="right_info">456æ¡</div>
+   <div class="right_info">456条</div>
    </div>
    </a>
   </div>
@@ -76,9 +76,9 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_purple">
     <i class="fa  fa-clock-o "></i>
-    <h3>å¾å¤ç</h3>
+    <h3>待处理</h3>
    </div>
-   <div class="right_info">17æ¡</div>
+   <div class="right_info">17条</div>
    </div>
    </a>
   </div>
@@ -87,15 +87,15 @@
    <div class="carousel Module_info">
    <div class="left_img bg_color_yellow">
     <i class="fa  fa-clock-o "></i>
-    <h3>ç´§æ¥éç¥</h3>
+    <h3>紧急通知</h3>
    </div>
-   <div class="right_info">10æ¡</div>
+   <div class="right_info">10条</div>
    </div>
    </a>
   </div>
  </div>
  <div class="center  clearfix margin-bottom">
- <!--åºéºä¿¡æ¯-->
+ <!--店铺信息-->
  <div class="col-lg-2 col-xs-3 col-md-3 ">
  	<div class="com_plate_style clearfix">
 			<div class="set-time clearfix" id="set-time"></div>
@@ -106,50 +106,50 @@
   <div class="left_shop">
   <div class="left_shop_logo">
    <div class="shop_logo"><span class="bg_yuan"></span><img src="images/dp_logo.jpg" /></div>
-   <a href="#" class="btn bg-deep-blue paddings">è¿å¥é¦é¡µ</a>
+   <a href="#" class="btn bg-deep-blue paddings">进入首页</a>
    </div>
    <div class="Shops_content">
-   <p><label class="name">åååç§°ï¼</label>ä¸å°å±±è´­ç©ç½</p>
+   <p><label class="name">商城名称：</label>三台山购物网</p>
    <ul class="clearfix">
-    <li><label class="name">åºéºç­çº§ï¼</label>ä¸çº§</li>
-    <li><label class="name">ååç±»åï¼</label>çµå­åå¡</li>
-    <li><label class="name">éå®ç±»åï¼</label>ç»¼å</li>
-    <li><label class="name">åºéºIDï¼</label>234565</li>
-    <li><label class="name">åå®¶IDï¼</label>34656565</li>
-    <li><label class="name">å¼éæ¶é´ï¼</label>2016-08-21</li>
+    <li><label class="name">店铺等级：</label>三级</li>
+    <li><label class="name">商城类型：</label>电子商务</li>
+    <li><label class="name">销售类型：</label>综合</li>
+    <li><label class="name">店铺ID：</label>234565</li>
+    <li><label class="name">商家ID：</label>34656565</li>
+    <li><label class="name">开通时间：</label>2016-08-21</li>
     </ul>
    </div>
   
   
   <div class="right_shop">
-   <p> åºéºå¨æè¯åï¼</p>
+   <p> 店铺动态评分：</p>
    <ul>
-   <li><label class="name">ç¸ç¬¦æè¿°</label><span class="score">4.5å</span></li>
-   <li><label class="name">æå¡æåº¦</label><span class="score">4.0å</span></li>
-   <li><label class="name">åè´§éåº¦</label><span class="score">4.6å</span></li>
+   <li><label class="name">相符描述</label><span class="score">4.5分</span></li>
+   <li><label class="name">服务态度</label><span class="score">4.0分</span></li>
+   <li><label class="name">发货速度</label><span class="score">4.6分</span></li>
    </ul>
   </div>
   </div>
   <div class="operating_style Quick_operation menuUl" >
   <ul class="submenu">
-   <li class=""><a href="javascript:void(0)" name="add_product.html" class="btn" title="æ·»å äº§å">æ·»å äº§å</a></li> 
-   <li class=""><a href="javascript:void(0)" name="add_Advertising.html" class="btn" title="æ·»å å¹¿å">æ·»å å¹¿å</a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Article.html" class="btn" title="æ·»å æç« ">æ·»å æç« </a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Singlepag.html" class="btn" title="æ°å¢åé¡µé¢">æ°å¢åé¡µé¢</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_product.html" class="btn" title="添加产品">添加产品</a></li> 
+   <li class=""><a href="javascript:void(0)" name="add_Advertising.html" class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Article.html" class="btn" title="添加文章">添加文章</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Singlepag.html" class="btn" title="新增单页面">新增单页面</a></li>
   </ul>  
   </div>
  </div>
  </div>
  <div class=" col-xs-3">
   <div class="admin_info frame clearfix">
-  <div class="title_name"><i></i>ç»éè®°å½ <a href="#">+æ´å¤</a></div>
+  <div class="title_name"><i></i>登陆记录 <a href="#">+更多</a></div>
   <table class="record_list table table_list">
   <tbody>
-   <tr><td>ç®¡çå</td><td>2016-08-04 12:45:43</td></tr>
-   <tr><td>ç®¡çå</td><td>2016-08-14 23:34:23</td></tr>
-   <tr><td>ç®¡çå</td><td>2016-08-24 11:34:53</td></tr>
-   <tr><td>ç®¡çå</td><td>2016-08-24 11:34:53</td></tr>
-   <tr><td>ç®¡çå</td><td>2016-08-24 11:34:53</td></tr>
+   <tr><td>管理员</td><td>2016-08-04 12:45:43</td></tr>
+   <tr><td>管理员</td><td>2016-08-14 23:34:23</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
    </tbody>
   </table>
   </div>
@@ -159,37 +159,37 @@
  <div class="Order_form ">
   <div class="col-xs-6 col-lg-7">
   <div class="frame margin-right clearfix">
-  <div class="title_name"><i></i>åºéº/è®¢åç¶ææç¤º</div>
+  <div class="title_name"><i></i>店铺/订单状态提示</div>
   <div class="clearfix">
   <div class="col-xs-3 col-lg-6 ">   
-   <div class="prompt_name"><i class="icon_Order"></i>è®¢å& åå</div>
+   <div class="prompt_name"><i class="icon_Order"></i>订单& 商品</div>
    <ul class="padding list_info">   
-   <li>ä»£åè´§è®¢å &nbsp;<a href="">(02)</a></li>
-   <li>å·²å®æè®¢å &nbsp;<a href="">(32)</a></li>
-   <li>æªå®æè®¢å &nbsp;<a href="">(02)</a></li>
+   <li>代发货订单 &nbsp;<a href="">(02)</a></li>
+   <li>已完成订单 &nbsp;<a href="">(32)</a></li>
+   <li>未完成订单 &nbsp;<a href="">(02)</a></li>
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6">    
-   <div class="prompt_name"><i class="icon_Promotions"></i>ä¿é</div>
+   <div class="prompt_name"><i class="icon_Promotions"></i>促销</div>
    <ul class="padding list_info">   
-   <li>å¾å®¡æ ¸çä¿é &nbsp;<a href="">(02)</a></li>
-   <li>åå¸çä¿é &nbsp;<a href="">(32)</a></li>
-   <li>å³å°ç»æçä¿é &nbsp;<a href="">(02)</a></li>
+   <li>待审核的促销 &nbsp;<a href="">(02)</a></li>
+   <li>发布的促销 &nbsp;<a href="">(32)</a></li>
+   <li>即将结束的促销 &nbsp;<a href="">(02)</a></li>
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6">    
-   <div class="prompt_name"><i class="icon_Aftermarket"></i>å®å</div>
+   <div class="prompt_name"><i class="icon_Aftermarket"></i>售后</div>
    <ul class="padding list_info"> 
-   <li>å¾å¤çè®¢å &nbsp;<a href="">(02)</a></li>
-   <li>å¾éæ¬¾è®¢å &nbsp;<a href="">(32)</a></li>
-   <li>å¾å¤çå®åå &nbsp;<a href="">(02)</a></li>  
+   <li>待处理订单 &nbsp;<a href="">(02)</a></li>
+   <li>待退款订单 &nbsp;<a href="">(32)</a></li>
+   <li>待处理售后单 &nbsp;<a href="">(02)</a></li>  
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6 ">  
-   <div class="prompt_name"><i class="icon_Billing"></i>ç»ç®</div>
+   <div class="prompt_name"><i class="icon_Billing"></i>结算</div>
     <ul class="padding list_info">  
-   <li>å¾æ¯ä» &nbsp;<a href="">(02)</a></li>
-   <li>å¾ç»ç®ç¡®è®¤ &nbsp;<a href="">(32)</a></li>
+   <li>待支付 &nbsp;<a href="">(02)</a></li>
+   <li>待结算确认 &nbsp;<a href="">(32)</a></li>
    </ul>
   </div>
   </div>
@@ -200,73 +200,73 @@
   </div>
   <div class="col-xs-6 ranking_style col-lg-5" >
   <div class="frame clearfix">
-   <div class="title_name"><i></i>ååéå®æè¡ </div>
+   <div class="title_name"><i></i>商品销售排行 </div>
    <table  class="table table_list ranking_list">
     <thead>
-     <th width="50">æå</th>
-     <th>ååç¼å·</th>
-     <th>åååç§°</th>
-     <th width="80">éå®æ°é</th>
+     <th width="50">排名</th>
+     <th>商品编号</th>
+     <th>商品名称</th>
+     <th width="80">销售数量</th>
     </thead>
     <tbody>
      <tr>
       <td ><em>1</em></td>
       <td>2345776</td>
-      <td><a href="#">èæ³ï¼ThinkPad ï¼è½»èç³»å</a></td>
+      <td><a href="#">联想（ThinkPad ）轻薄系列</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>2</em></td>
       <td>2345776</td>
-      <td><a href="#">æ½å·´ï¼sebamedï¼å©´å¿æ³¡æ³¡æ²æµ´é²200mlå®¶åº­è£</a></td>
+      <td><a href="#">施巴（sebamed）婴儿泡泡沐浴露200ml家庭装</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>3</em></td>
       <td>2345776</td>
-      <td><a href="#">ä¸å¹ç¼çº¯æ£æ¶å°ä¼é²æ¡çº¹ç¿»é¢POLOè¡«Tæ¤</a></td>
+      <td><a href="#">七匹狼纯棉时尚休闲条纹翻领POLO衫T恤</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>4</em></td>
       <td>2345776</td>
-      <td><a href="#">æ¡æ ¼å³é£çéº¦çè¶å¼è£1478g</a></td>
+      <td><a href="#">桂格即食燕麦片超值装1478g</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>5</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>6</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>7</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>8</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>9</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
       <tr>
       <td ><em>10</em></td>
       <td>2345776</td>
-      <td><a href="#">é©å½ç±æ¬æç±é¦æ°è±é¦æ´æ¤å¥è£ï¼æ´åæ°´600ml+æ¤åç´ </a></td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
       <td>23</td>
      </tr>
     </tbody>
@@ -278,15 +278,15 @@
 </body>
 </html>
 <script>
-//è®¾ç½®æ¡æ¶
+//设置框架
 $(function() {  		 
 	 $("#iframe_box").frame({
 	    float : 'left',
 		Scroll:'#index_style',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
-		page_content:'.list_show',//åå®¹
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
 		 time:'#set-time', 
 	 });
 });
@@ -301,21 +301,21 @@ $(function() {
             [
                 'echarts',
 				'echarts/theme/macarons',
-                'echarts/chart/line',   // æéå è½½æéå¾è¡¨ï¼å¦éå¨æç±»ååæ¢åè½ï¼å«å¿äºåæ¶å è½½ç¸åºå¾è¡¨
+                'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
                 'echarts/chart/bar'
             ],
             function (ec,theme) {
                 var myChart = ec.init(document.getElementById('main'),theme);
                option = {
     title : {
-        text: 'å½å¨äº¤æè®°å½',
-        subtext: 'æ¯å¨7å¤©çäº¤æè®°å½'
+        text: '当周交易记录',
+        subtext: '每周7天的交易记录'
     },
     tooltip : {
         trigger: 'axis'
     },
     legend: {
-        data:['ææè®¢å','å·²å®æ','æªå®æ']
+        data:['所有订单','已完成','未完成']
     },
     toolbox: {
         show : true,
@@ -332,61 +332,61 @@ $(function() {
         {
             type : 'category',
             boundaryGap : false,
-            data : ['å¨ä¸','å¨äº','å¨ä¸','å¨å','å¨äº','å¨å­','å¨æ¥']
+            data : ['周一','周二','周三','周四','周五','周六','周日']
         }
     ],
     yAxis : [
         {
             type : 'value',
             axisLabel : {
-                formatter: '{value}å'
+                formatter: '{value}单'
             }
         }
     ],
     series : [
         {
-            name:'ææè®¢å',
+            name:'所有订单',
             type:'line',
             data:[110, 110, 150, 130, 125, 133, 106],
             markPoint : {
                 data : [
-                    {type : 'max', name: 'æå¤§å¼'},
-                    {type : 'min', name: 'æå°å¼'}
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
                 ]
             },
             markLine : {
                 data : [
-                    {type : 'average', name: 'å¹³åå¼'}
+                    {type : 'average', name: '平均值'}
                 ]
             }
         },
         {
-            name:'å·²å®æ',
+            name:'已完成',
             type:'line',
             data:[110, 105, 140, 130, 110, 121, 100],
             markPoint : {
                 data : [
-                    {name : 'å¨æä½', value : -2, xAxis: 1, yAxis: -1.5}
+                    {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
                 ]
             },
             markLine : {
                 data : [
-                    {type : 'average', name : 'å¹³åå¼'}
+                    {type : 'average', name : '平均值'}
                 ]
             }
         },
 		   {
-            name:'æªå®æ',
+            name:'未完成',
             type:'line',
             data:[0, 5, 10, 0, 15, 12, 6],
             markPoint : {
                 data : [
-                    {name : 'å¨æä½', value : -2, xAxis: 1, yAxis: -1.5}
+                    {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
                 ]
             },
             markLine : {
                 data : [
-                    {type : 'average', name : 'å¹³åå¼'}
+                    {type : 'average', name : '平均值'}
                 ]
             }
         }
@@ -397,3 +397,4 @@ $(function() {
 			}
 			);
 </script>
+

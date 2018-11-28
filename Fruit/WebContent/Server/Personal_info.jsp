@@ -18,7 +18,7 @@
  <script type="text/javascript" src="js/json2.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/jquery.dataTables.bootstrap.js"></script>
-<title>ä¸ªäººä¿¡æ¯</title>
+<title>个人信息</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -33,64 +33,64 @@
    <div class="user_left_info">
     <div class="clearfix">
         <div class="form-group clearfix col-xs-3">
-        <label class="col-xs-3 label_name col-md-5" for="form-field-1">ç¨æ·åï¼</label>
+        <label class="col-xs-3 label_name col-md-5" for="form-field-1">用户名：</label>
          <div class="col-xs-9 line_height1 col-md-6">
-         <input type="text" name="username" data-name="ç¨æ·å" id="username" value="admin123" class="col-xs-12 text_info" disabled="disabled"></div>         
+         <input type="text" name="username" data-name="用户名" id="username" value="admin123" class="col-xs-12 text_info" disabled="disabled"></div>         
           </div>
               <div class="form-group clearfix col-xs-3">
-        <label class="col-xs-3 label_name col-md-5" for="form-field-1">çå®å§åï¼</label>
-         <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="surname" data-name="çå®å§å" id="surname" value="å¼ å°æ³" class="col-xs-12 text_info" disabled="disabled"></div>         
+        <label class="col-xs-3 label_name col-md-5" for="form-field-1">真实姓名：</label>
+         <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="surname" data-name="真实姓名" id="surname" value="张小泉" class="col-xs-12 text_info" disabled="disabled"></div>         
           </div>
-          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">æ§å«ï¼ </label>
+          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">性别： </label>
           <div class="col-xs-9 line_height1 col-md-6">
-          <span class="sex">ç·</span>
+          <span class="sex">男</span>
             <div class="add_sex">
-            <label><input name="form-field-radio" type="radio" id="" class="ace" value="ä¿å¯" checked="checked"><span class="lbl">ä¿å¯</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" id="" class="ace" value="ç·"><span class="lbl">ç·</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" id="" class="ace" value="å¥³"><span class="lbl">å¥³</span></label>
+            <label><input name="form-field-radio" type="radio" id="" class="ace" value="保密" checked="checked"><span class="lbl">保密</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" id="" class="ace" value="男"><span class="lbl">男</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" id="" class="ace" value="女"><span class="lbl">女</span></label>
             </div>
            </div>
           </div>
-          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">å¹´é¾ï¼ </label>
-          <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="age" data-name="å¹´é¾" id="age" value="24" class="col-xs-12 text_info" disabled="disabled"></div>
+          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">年龄： </label>
+          <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="age" data-name="年龄" id="age" value="24" class="col-xs-12 text_info" disabled="disabled"></div>
           </div>
-          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">ç§»å¨çµè¯ï¼ </label>
-          <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="phone" data-name="ç§»å¨çµè¯" id="phone" value="13567878908" class="col-xs-12 text_info" disabled="disabled"></div>
+          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">移动电话： </label>
+          <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="phone" data-name="移动电话" id="phone" value="13567878908" class="col-xs-12 text_info" disabled="disabled"></div>
           </div>
-          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">çµå­é®ç®±ï¼ </label>
-          <div class="col-xs-9 line_height1 col-md-6" ><input type="text" name="mailbox"  data-name="çµå­é®ç®±" id="mailbox" value="567890@qq.com" class="col-xs-12 text_info" disabled="disabled"></div>
+          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 col-md-6 label_name col-md-5" for="form-field-1">电子邮箱： </label>
+          <div class="col-xs-9 line_height1 col-md-6" ><input type="text" name="mailbox"  data-name="电子邮箱" id="mailbox" value="567890@qq.com" class="col-xs-12 text_info" disabled="disabled"></div>
           </div>
-          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">QQï¼ </label>
+          <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">QQ： </label>
           <div class="col-xs-9 line_height1 col-md-6"><input type="text" name="QQ" id="QQ" data-name="QQ"  value="456789787" class="col-xs-12 text_info" disabled="disabled"> </div>
           </div>
-           <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">æéï¼ </label>
-          <div class="col-xs-9 line_height1 col-md-6"> <span>æ®éç®¡çå</span></div>
+           <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">权限： </label>
+          <div class="col-xs-9 line_height1 col-md-6"> <span>普通管理员</span></div>
           </div>
-           <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">æ³¨åæ¶é´ï¼ </label>
+           <div class="form-group clearfix col-xs-3"><label class="col-xs-3 label_name col-md-5" for="form-field-1">注册时间： </label>
           <div class="col-xs-9 line_height1 col-md-6"> <span>2016-7-5</span></div>
           </div>
           
           </div>
            <div class="Button_operation clearfix"> 
-                <input type="button" onclick="modify();" class="btn btn-danger operation_btn"  value="ä¿®æ¹ä¿¡æ¯"/>
-                <input type="button" onclick="change_Password();" class="btn bg-green operation_btn"  value="ä¿®æ¹å¯ç "/>
-                <input type="button" id="save_info" class="btn bg-deep-blue operation_btn save "  value="ä¿å­ä¿®æ¹"/>			     
+                <input type="button" onclick="modify();" class="btn btn-danger operation_btn"  value="修改信息"/>
+                <input type="button" onclick="change_Password();" class="btn bg-green operation_btn"  value="修改密码"/>
+                <input type="button" id="save_info" class="btn bg-deep-blue operation_btn save "  value="保存修改"/>			     
 	        </div>
            </div>
            <div class="user_avatar">
       <img src="products/logo/156.jpg" width="120px" height="60px">
-      <p class="name">çå°æ²¹OLAY</p>
+      <p class="name">玉兰油OLAY</p>
     </div>
             </form>
             </div>
             <div id="text_name"></div>
    </div>
   
-   <!--æä½è®°å½-->
+   <!--操作记录-->
   <div class="h_products_list clearfix same_module" id="Sellerber">
      <div class="Sellerber_left menu" id="menuBar">
     <div class="show_btn" id="rightArrow"><span></span></div>
-    <div class="side_title"><a title="éè" class="close_btn"><span></span></a></div> 
+    <div class="side_title"><a title="隐藏" class="close_btn"><span></span></a></div> 
     <div class="menu_style" id="menu_style">
     <div class="list_content">
      <div class="side_list">
@@ -100,44 +100,44 @@
 </div>
   <div class="list_Exhibition list_show padding15">
    <div class="searchs_style clearfix operation mb15">
-     <label class="label_name l_f">è®°å½æç´¢ï¼</label>
+     <label class="label_name l_f">记录搜索：</label>
      <input class="inline laydate-icon " id="start" type="text"  style="margin-right:10px; height:auto; float:left; width:150px;" />
      <input name="" type="text"  class="form-control col-xs-1" style="width:250px"/>
-     <button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;æç´¢</button>
+     <button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
    </div> 
        <div class="datalist_show ">
        <div class="datatable_height confirm">
         <table id="sample_table" class="table table_list table_striped table-bordered dataTable no-footer">
            <thead>
 			<tr>
-              <th  width="80px">æåº</th>
-			  <th>åå®¹</th>
-			  <th width="150px">æä½æ¶é´</th>
-              <th width="300px">å¤æ³¨</th>       
+              <th  width="80px">排序</th>
+			  <th>内容</th>
+			  <th width="150px">操作时间</th>
+              <th width="300px">备注</th>       
              </tr>
 		    </thead>
             <tbody>
-             <tr><td>1</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>2</td><td>æ·»å äº20ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>3</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-28 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>4</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-27 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>5</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-26 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>6</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-24 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>7</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-19 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>1</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>2</td><td>æ·»å äº20ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>3</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-28 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>4</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-27 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>5</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-26 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>6</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-24 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>7</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-19 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>1</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>2</td><td>æ·»å äº20ä¸ªååä¿¡æ¯</td><td>2016-9-29 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>3</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-28 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>4</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-27 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>5</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-26 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>6</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-24 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
-             <tr><td>7</td><td>æ·»å äº10ä¸ªååä¿¡æ¯</td><td>2016-9-19 12:23</td><td>ä¸ä¸ªæªä¿å­æå</td></tr>
+             <tr><td>1</td><td>添加了10个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>2</td><td>添加了20个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>3</td><td>添加了10个商品信息</td><td>2016-9-28 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>4</td><td>添加了10个商品信息</td><td>2016-9-27 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>5</td><td>添加了10个商品信息</td><td>2016-9-26 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>6</td><td>添加了10个商品信息</td><td>2016-9-24 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>7</td><td>添加了10个商品信息</td><td>2016-9-19 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>1</td><td>添加了10个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>2</td><td>添加了20个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>3</td><td>添加了10个商品信息</td><td>2016-9-28 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>4</td><td>添加了10个商品信息</td><td>2016-9-27 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>5</td><td>添加了10个商品信息</td><td>2016-9-26 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>6</td><td>添加了10个商品信息</td><td>2016-9-24 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>7</td><td>添加了10个商品信息</td><td>2016-9-19 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>1</td><td>添加了10个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>2</td><td>添加了20个商品信息</td><td>2016-9-29 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>3</td><td>添加了10个商品信息</td><td>2016-9-28 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>4</td><td>添加了10个商品信息</td><td>2016-9-27 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>5</td><td>添加了10个商品信息</td><td>2016-9-26 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>6</td><td>添加了10个商品信息</td><td>2016-9-24 12:23</td><td>一个未保存成功</td></tr>
+             <tr><td>7</td><td>添加了10个商品信息</td><td>2016-9-19 12:23</td><td>一个未保存成功</td></tr>
             </tbody>
          </table> 
 		   </div> 
@@ -145,42 +145,42 @@
    </div>
 </div>
 </div>
- <!--ä¿®æ¹å¯ç æ ·å¼-->
+ <!--修改密码样式-->
          <div class="change_Pass_style display" id="change_Pass">
             <ul class="change_Password clearfix">
              <li>
-             <label class="label_name">å&nbsp;&nbsp;å¯&nbsp;ç </label><span class="change_text"><input name="password" data-name="åå¯ç " type="password" class="" id="password"></span></li>
+             <label class="label_name">原&nbsp;&nbsp;密&nbsp;码</label><span class="change_text"><input name="password" data-name="原密码" type="password" class="" id="password"></span></li>
              <li>
-             <label class="label_name">æ°&nbsp;&nbsp;å¯&nbsp;ç </label><span class="change_text"><input name="Nes_pas"  data-name="æ°å¯ç " type="password" class="" id="Nes_pas"></span></li>
+             <label class="label_name">新&nbsp;&nbsp;密&nbsp;码</label><span class="change_text"><input name="Nes_pas"  data-name="新密码" type="password" class="" id="Nes_pas"></span></li>
              <li>
-             <label class="label_name">ç¡®è®¤å¯ç </label><span class="change_text"><input name="c_mew_pas" type="password" data-name="åæ¬¡ç¡®è®¤å¯ç " class="" id="c_mew_pas"></span></li>              
+             <label class="label_name">确认密码</label><span class="change_text"><input name="c_mew_pas" type="password" data-name="再次确认密码" class="" id="c_mew_pas"></span></li>              
             </ul>          
          </div>
 </body>
 </html>
 <script>
-	//è®¾ç½®åé¡µæ¡æ¶å¸å±
+	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
 		float : 'left',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
-		page_content:'.list_show',//åå®¹
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:300,//èåæ å®½åº¦
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:300,//菜单栏宽度
 		
 	});
 });
-/****ä¿®æ¹å¯ç ****/
+/****修改密码****/
 function change_Password(){
 	layer.open({
     type: 1,
-	title:'ä¿®æ¹å¯ç ',
+	title:'修改密码',
 	area: ['300px','300px'],
 	shadeClose: true,
 	content: $('#change_Pass'),
-	btn:['ç¡®è®¤ä¿®æ¹'],
+	btn:['确认修改'],
 	yes:function(index, layero){		
 	 var num=0;
      var str="";
@@ -190,8 +190,8 @@ function change_Password(){
           if($(this).val()=="")
           {
                
-			   layer.alert(str+=""+$(this).attr("data-name")+"ä¸è½ä¸ºç©ºï¼\r\n",{
-                title: 'æç¤ºæ¡',				
+			   layer.alert(str+=""+$(this).attr("data-name")+"不能为空！\r\n",{
+                title: '提示框',				
 				icon:0,								
           }); 
 		    num++;
@@ -201,8 +201,8 @@ function change_Password(){
 	       if(num>0){  return false;}	
 	      if(!$("#c_mew_pas").val || $("#c_mew_pas").val() != $("#Nes_pas").val() )
         {
-            layer.alert('å¯ç ä¸ä¸è´!',{
-              title: 'æç¤ºæ¡',				
+            layer.alert('密码不一致!',{
+              title: '提示框',				
 				icon:0,
 			    
 			 });
@@ -210,8 +210,8 @@ function change_Password(){
         }   
 		 else{	
 		     		  
-			  layer.alert('ä¿®æ¹æåï¼',{
-               title: 'æç¤ºæ¡',				
+			  layer.alert('修改成功！',{
+               title: '提示框',				
 			icon:1,		
 			  }); 
 			  layer.close(index);      
@@ -219,12 +219,12 @@ function change_Password(){
 	}
     });
 }
-/*æ¶é´*/
+/*时间*/
 	laydate({
     elem: '#start',
     event: 'focus' 
 });
-/********ä¸ªäººä¿¡æ¯æä½*******/
+/********个人信息操作*******/
 function modify(){
 	 $('.text_info').attr("disabled", false);
 	 $('.text_info').addClass("add");
@@ -239,8 +239,8 @@ $("#save_info").click(function(){
           if($(this).val()=="")
           {
                
-			   layer.alert(str+=""+$(this).attr("name")+"ä¸è½ä¸ºç©ºï¼\r\n",{
-                title: 'æç¤ºæ¡',				
+			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
+                title: '提示框',				
 				icon:0,								
           }); 
 		    num++;
@@ -250,7 +250,7 @@ $("#save_info").click(function(){
 		  if(num>0){  return false;}	 	
           else{
 			  var sex = $("input[name='form-field-radio']:checked").serialize();
-		      var params=$('#user_info input').serialize(); //åºååè¡¨åçå¼
+		      var params=$('#user_info input').serialize(); //序列化表单的值
 			  alert(params);
 			  $.post(
 			      "user_json.php",
@@ -275,15 +275,15 @@ $("#save_info").click(function(){
 				   success:User_Info  		  
 				  });
 				  function User_Info(json){
-					  var str="å§å:"+json.username+"<br />";
-						  str+="å¹´é¾:"+json.age+"<br />";
-						  str+="æ§å«:"+json.sex+"<br />";
-						  str+="å·¥ä½:"+json.mailbox+"<br />";
-						  str+="è¿½å æµè¯:"+json.phone;						  
+					  var str="姓名:"+json.username+"<br />";
+						  str+="年龄:"+json.age+"<br />";
+						  str+="性别:"+json.sex+"<br />";
+						  str+="工作:"+json.mailbox+"<br />";
+						  str+="追加测试:"+json.phone;						  
 						  $("#text_name").html(str);				  					  				  
 					 }
-			   layer.alert('ä¿®æ¹æåï¼',{
-               title: 'æç¤ºæ¡',				
+			   layer.alert('修改成功！',{
+               title: '提示框',				
 			   icon:1,			   		
 			  });
 			  $('#page_style').find('.add_style').removeClass("hover");
@@ -301,3 +301,4 @@ $(function(){
 	})
 	});
 </script>
+

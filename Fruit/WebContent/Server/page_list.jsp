@@ -21,16 +21,16 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>åé¡µé¢</title>
+<title>单页面</title>
 </head>
 
 <body>
 <div class="margin" id="page_style">
  <div class="Single_page">
-  <div class="Prompt"><b>æç¤ºï¼</b>æ¬ç®¡çé¡¹ç®ä¸­ççé¢ä¸ºéæåçé¢,å¯ä½ä¸ºæ´»å¨é¡µ,ç´§æ¥éç¥ç­ç­æçé¢ä½¿ç¨ã</div>
+  <div class="Prompt"><b>提示：</b>本管理项目中的界面为静态单界面,可作为活动页,紧急通知等短期界面使用。</div>
   <div class="operation margin-sx">
-<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;å é¤</button>
-<span class="submenu"><a href="add_Singlepag.html" class="btn button_btn bg-deep-blue" title="æ·»å åé¡µ"  onclick="add_columns()"><i class="fa  fa-edit"></i>&nbsp;æ·»å åé¡µ</a></span>
+<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+<span class="submenu"><a href="add_Singlepag.html" class="btn button_btn bg-deep-blue" title="添加单页"  onclick="add_columns()"><i class="fa  fa-edit"></i>&nbsp;添加单页</a></span>
 </div>
   <div class="Single_page_list margin-sx">
     <ul>
@@ -38,45 +38,45 @@
       <a href="#" class="link_name"></a>
      <a  href="javascript:void(0)" onclick="page_delete(this,'2')" class="page_delete fa fa-times display"></a>
      <a  href="javascript:void(0)" onclick="page_modify(this,'2')" class="page_modify fa fa-edit display"></a>
-       <div class="title_name">2016å¹´ç§å­£å¤§ä¿ææ°æ´»å¨1</div>
+       <div class="title_name">2016年秋季大促最新活动1</div>
        <div class="page_info">
-       åºæ¬ç®ä»å°±æ¯ä¸ºäºä¿è¿æç§ååææå¡çéå®èè¿è¡éä»·ææ¯èµ éç¤¼åç­çè¡ä¸ºæ´»å¨ï¼è½å¨ç­æåè¾¾å°ä¿è¿éå®ï¼æåä¸ç»©ï¼å¢å æ¶çãä¿éæ´»å¨ç§ç±»1ãéæ¶ææ£
+       基本简介就是为了促进某种商品或服务的销售而进行降价或是赠送礼品等的行为活动，能在短期内达到促进销售，提升业绩，增加收益。促销活动种类1、限时折扣
        </div>
        <div class="time">2016-05-12 12:23:34</div>
      </li>
       <li class="page_list_content">
      <a  href="javascript:void(0)" onclick="page_delete(this,'2')" class="page_delete fa fa-times display"></a>
      <a  href="javascript:void(0)" onclick="page_modify(this,'2')" class="page_modify fa fa-edit display"></a>
-       <div class="title_name">2016å¹´ç§å­£å¤§ä¿ææ°æ´»å¨2</div>
+       <div class="title_name">2016年秋季大促最新活动2</div>
        <div class="page_info">
-       åºæ¬ç®ä»å°±æ¯ä¸ºäºä¿è¿æç§ååææå¡çéå®èè¿è¡éä»·ææ¯èµ éç¤¼åç­çè¡ä¸ºæ´»å¨ï¼è½å¨ç­æåè¾¾å°ä¿è¿éå®ï¼æåä¸ç»©ï¼å¢å æ¶çãä¿éæ´»å¨ç§ç±»1ãéæ¶ææ£
+       基本简介就是为了促进某种商品或服务的销售而进行降价或是赠送礼品等的行为活动，能在短期内达到促进销售，提升业绩，增加收益。促销活动种类1、限时折扣
        </div>
        <div class="time">2016-05-12 12:23:34</div>
      </li>
       <li class="page_list_content">
      <a  href="javascript:void(0)" onclick="page_delete(this,'2')" class="page_delete fa fa-times display"></a>
      <a  href="javascript:void(0)" onclick="page_modify(this,'2')" class="page_modify fa fa-edit display"></a>
-       <div class="title_name">2016å¹´ç§å­£å¤§ä¿ææ°æ´»å¨3</div>
+       <div class="title_name">2016年秋季大促最新活动3</div>
        <div class="page_info">
-       åºæ¬ç®ä»å°±æ¯ä¸ºäºä¿è¿æç§ååææå¡çéå®èè¿è¡éä»·ææ¯èµ éç¤¼åç­çè¡ä¸ºæ´»å¨ï¼è½å¨ç­æåè¾¾å°ä¿è¿éå®ï¼æåä¸ç»©ï¼å¢å æ¶çãä¿éæ´»å¨ç§ç±»1ãéæ¶ææ£
+       基本简介就是为了促进某种商品或服务的销售而进行降价或是赠送礼品等的行为活动，能在短期内达到促进销售，提升业绩，增加收益。促销活动种类1、限时折扣
        </div>
        <div class="time">2016-05-12 12:23:34</div>
      </li>
       <li class="page_list_content">
      <a  href="javascript:void(0)" onclick="page_delete(this,'2')" class="page_delete fa fa-times display"></a>
      <a  href="javascript:void(0)" onclick="page_modify(this,'2')" class="page_modify fa fa-edit display"></a>
-       <div class="title_name">2016å¹´ç§å­£å¤§ä¿ææ°æ´»å¨4</div>
+       <div class="title_name">2016年秋季大促最新活动4</div>
        <div class="page_info">
-       åºæ¬ç®ä»å°±æ¯ä¸ºäºä¿è¿æç§ååææå¡çéå®èè¿è¡éä»·ææ¯èµ éç¤¼åç­çè¡ä¸ºæ´»å¨ï¼è½å¨ç­æåè¾¾å°ä¿è¿éå®ï¼æåä¸ç»©ï¼å¢å æ¶çãä¿éæ´»å¨ç§ç±»1ãéæ¶ææ£
+       基本简介就是为了促进某种商品或服务的销售而进行降价或是赠送礼品等的行为活动，能在短期内达到促进销售，提升业绩，增加收益。促销活动种类1、限时折扣
        </div>
        <div class="time">2016-05-12 12:23:34</div>
      </li>
       <li class="page_list_content">
      <a  href="javascript:void(0)" onclick="page_delete(this,'2')" class="page_delete fa fa-times display"></a>
      <a  href="javascript:void(0)" onclick="page_modify(this,'2')" class="page_modify fa fa-edit display"></a>
-       <div class="title_name">20 16å¹´ç§å­£å¤§ä¿ææ°æ´»å¨5</div>
+       <div class="title_name">20 16年秋季大促最新活动5</div>
        <div class="page_info">
-       åºæ¬ç®ä»å°±æ¯ä¸ºäºä¿è¿æç§ååææå¡çéå®èè¿è¡éä»·ææ¯èµ éç¤¼åç­çè¡ä¸ºæ´»å¨ï¼è½å¨ç­æåè¾¾å°ä¿è¿éå®ï¼æåä¸ç»©ï¼å¢å æ¶çãä¿éæ´»å¨ç§ç±»1ãéæ¶ææ£
+       基本简介就是为了促进某种商品或服务的销售而进行降价或是赠送礼品等的行为活动，能在短期内达到促进销售，提升业绩，增加收益。促销活动种类1、限时折扣
        </div>
        <div class="time">2016-05-12 12:23:34</div>
      </li>
@@ -87,7 +87,7 @@
 </body>
 </html>
 <script>
-//è®¾ç½®æ¡æ¶
+//设置框架
  $(function() { 
 	$("#page_style").frame({
 		hover_btn:'.Single_page_list li',
@@ -95,7 +95,7 @@
 		minStatue : false,
 	}); 	 
 });
-/*******æ»å¨æ¡*******/
+/*******滚动条*******/
 $("body").niceScroll({  
 	cursorcolor:"#888888",  
 	cursoropacitymax:1,  
@@ -105,3 +105,4 @@ $("body").niceScroll({
 	cursorborderradius:"5px"  
 });
 </script>
+

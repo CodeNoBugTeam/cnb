@@ -22,33 +22,33 @@
 <script src="js/respond.min.js"></script>
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
-<title>è®¢ååè¡¨</title>
+<title>订单列表</title>
 </head>
 <body>
 <div class="margin" id="page_style">
 <div class="operation clearfix mb15 same_module cover_style p0" id="Order_form_style">
-       <div class="type_title">è´­ç©äº§åæ¯ä¾</div>
+       <div class="type_title">购物产品比例</div>
         <div class="hide_style clearfix">
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="20" data-color="#D15B47"><span class="percent">20</span>%</div><span class="name">é£åç±»</span></div>									
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="55" data-color="#87CEEB"><span class="percent">55</span>%</div><span class="name">æè£ç±»</span></div>									
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="90" data-color="#87B87F"><span class="percent">90</span>%</div><span class="name">æ°ç éä»¶</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="30" data-color="#d63116"><span class="percent">30</span>%</div><span class="name">ææº</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="60" data-color="#ff6600"><span class="percent">60</span>%</div><span class="name">çµè</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="40" data-color="#2ab023"><span class="percent">40</span>%</div><span class="name">çµå­äº§å</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="46" data-color="#1e3ae6"><span class="percent">46</span>%</div><span class="name">å¨æ¿ç¨å</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="65" data-color="#c316a9"><span class="percent">65</span>%</div><span class="name">å®¶ç¨çµå¨</span></div>
-       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="56" data-color="#13a9e1"><span class="percent">56</span>%</div><span class="name">å«æµ´</span></div>  
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="20" data-color="#D15B47"><span class="percent">20</span>%</div><span class="name">食品类</span></div>									
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="55" data-color="#87CEEB"><span class="percent">55</span>%</div><span class="name">服装类</span></div>									
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="90" data-color="#87B87F"><span class="percent">90</span>%</div><span class="name">数码配件</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="30" data-color="#d63116"><span class="percent">30</span>%</div><span class="name">手机</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="60" data-color="#ff6600"><span class="percent">60</span>%</div><span class="name">电脑</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="40" data-color="#2ab023"><span class="percent">40</span>%</div><span class="name">电子产品</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="46" data-color="#1e3ae6"><span class="percent">46</span>%</div><span class="name">厨房用品</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="65" data-color="#c316a9"><span class="percent">65</span>%</div><span class="name">家用电器</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="56" data-color="#13a9e1"><span class="percent">56</span>%</div><span class="name">卫浴</span></div>  
     </div>
 </div>
-<!--åè¡¨å±ç¤º-->
+<!--列表展示-->
 <div class="h_products_list clearfix" id="Sellerber">
   <div class="Sellerber_left menu" id="menuBar">
     <div class="show_btn" id="rightArrow"><span></span></div>
-    <div class="side_title"><a title="éè" class="close_btn"><span></span></a></div> 
+    <div class="side_title"><a title="隐藏" class="close_btn"><span></span></a></div> 
     <div class="menu_style" id="menu_style">
     <div class="list_content">
      <div class="side_list">
-        <div class="column_title"><h4 class="lighter smaller">è®¢åç±»å</h4></div>
+        <div class="column_title"><h4 class="lighter smaller">订单类型</h4></div>
        <div class="st_tree_style tree">
       </div>
     </div>
@@ -57,16 +57,16 @@
 </div>
 <div class="list_Exhibition list_show padding15">
 <div class="operation clearfix mb15 searchs_style">
-<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;å é¤</button>
+<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
 <span class="submenu">
 </span>
 <div class="search  clearfix">
- <label class="label_name">ååæç´¢ï¼</label>
+ <label class="label_name">商品搜索：</label>
  <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="start" type="text">
- <span style=" float:left; padding:0px 10px; line-height:32px;">è³</span>
+ <span style=" float:left; padding:0px 10px; line-height:32px;">至</span>
  <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="end" type="text">
- <input name="" type="text"  class="form-control col-xs-3 col-lg-4"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;æç´¢</button>
- <span>æ°éï¼3433ä»¶</span>
+ <input name="" type="text"  class="form-control col-xs-3 col-lg-4"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
+ <span>数量：3433件</span>
 </div>
 </div>
  <div class="datalist_show">
@@ -75,15 +75,15 @@
   <thead>
     <tr>
 		<th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
-		<th width="120px">è®¢åç¼å·</th>
-		<th width="250px">äº§ååç§°</th>
-		<th width="100px">æ»ä»·</th>
-		<th width="100px">ä¼æ </th>
-		<th width="100px">è®¢åæ¶é´</th>				
-		<th width="180px">æå±ç±»å</th>
-		<th width="80px">æ°é</th>
-		<th width="70px">ç¶æ</th>                
-		<th width="200px">æä½</th>
+		<th width="120px">订单编号</th>
+		<th width="250px">产品名称</th>
+		<th width="100px">总价</th>
+		<th width="100px">优惠</th>
+		<th width="100px">订单时间</th>				
+		<th width="180px">所属类型</th>
+		<th width="80px">数量</th>
+		<th width="70px">状态</th>                
+		<th width="200px">操作</th>
 	</tr>  
   </thead>
   <tbody>
@@ -91,196 +91,196 @@
          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-      <td class="td-status"><span class="label label-success radius">ä»£åè´§</span></td>
+      <td class="td-status"><span class="label label-success radius">代发货</span></td>
      <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="åè´§"  class="btn btn-xs btn-status">åè´§</a> 
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>    
+     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
      </td>
      </tr>
      <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-      <td class="td-status"><span class="label label-success radius">ä»£åè´§</span></td>
+      <td class="td-status"><span class="label label-success radius">代发货</span></td>
      <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="åè´§"  class="btn btn-xs btn-status">åè´§</a> 
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>    
+     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
      </td>
      </tr>
      <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-      <td class="td-status"><span class="label label-success radius">ä»£åè´§</span></td>
+      <td class="td-status"><span class="label label-success radius">代发货</span></td>
      <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="åè´§"  class="btn btn-xs btn-status">åè´§</a> 
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>    
+     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
      </td>
      </tr>
      <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-      <td class="td-status"><span class="label label-success radius">ä»£åè´§</span></td>
+      <td class="td-status"><span class="label label-success radius">代发货</span></td>
      <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="åè´§"  class="btn btn-xs btn-status">åè´§</a> 
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
      <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_12.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_12.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_4.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_4.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-      <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+      <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>      
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>      
      </td>
      </tr>
      <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
           <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
           <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
           <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
           <tr>
      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
      <td>20160705445622</td>
      <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="äº§ååç§°"/></a>
+      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
        <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_8.jpg"  title="äº§ååç§°"/></a>
+       <a href="#"><img src="product_img/p_8.jpg"  title="产品名称"/></a>
      </td>
      <td>456.5</td>
      <td>14</td>
      <td>2016-7-5</td>
-     <td>é£å</td>
+     <td>食品</td>
      <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">ä»£åè´§</span></td>
+       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
      <td>
-     <a title="è®¢åè¯¦ç»"  href="order_detailed.html"  class="btn btn-xs btn-info" >è¯¦ç»</a> 
-     <a title="å é¤" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >å é¤</a>       
+     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
+     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
      </td>
      </tr>
      </tbody>
@@ -290,27 +290,27 @@
 	</div>
    </div>
  </div>
-  <!--åè´§-->
+  <!--发货-->
  <div id="Delivery_stop" style=" display:none">
   <div class="padding15">
     <div class="content_style">
-  <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">å¿«éå¬å¸ </label>
+  <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">快递公司 </label>
        <div class="col-sm-9"><select class="form-control col-xs-8 col-sm-8 col-md-8" id="form-field-select-1">
-																<option value="">--éæ©å¿«é--</option>
-																<option value="1">å¤©å¤©å¿«é</option>
-																<option value="2">åéå¿«é</option>
-																<option value="3">ä¸­éå¿«é</option>
-																<option value="4">é¡ºä¸°å¿«é</option>
-																<option value="5">ç³éå¿«é</option>
-																<option value="6">é®æ¿EMS</option>
-																<option value="7">é®æ¿å°å</option>
-																<option value="8">éµè¾¾å¿«é</option>
+																<option value="">--选择快递--</option>
+																<option value="1">天天快递</option>
+																<option value="2">圆通快递</option>
+																<option value="3">中通快递</option>
+																<option value="4">顺丰快递</option>
+																<option value="5">申通快递</option>
+																<option value="6">邮政EMS</option>
+																<option value="7">邮政小包</option>
+																<option value="8">韵达快递</option>
 															</select></div>
 	</div>
-   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> å¿«éå· </label>
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9"><input type="text" id="form-field-1" placeholder="å¿«éå·" class="col-xs-10 col-sm-8 col-xs-8" style="margin-left:0px;"></div>
+   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 快递号 </label>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9"><input type="text" id="form-field-1" placeholder="快递号" class="col-xs-10 col-sm-8 col-xs-8" style="margin-left:0px;"></div>
 	</div>
-    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">è´§å°ä»æ¬¾ </label>
+    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">货到付款 </label>
      <div class="col-sm-9"><label class="col-sm-2 " style="display: block; margin-top:6px"><input name="checkbox" type="checkbox" class="ace" id="checkbox"><span class="lbl"></span></label></div>
 	</div>
  </div>
@@ -319,139 +319,139 @@
 </body>
 </html>
 <script type="text/javascript">
-	//è®¾ç½®åé¡µæ¡æ¶å¸å±
+	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
 		float : 'left',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
-		page_content:'.list_show',//åå®¹
-		datalist:".datatable_height",//æ°æ®åè¡¨é«åº¦åå¼
-		header:65,//é¡¶é¨é«åº¦
-		mwidth:200,//èåæ å®½åº¦
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
+		header:65,//顶部高度
+		mwidth:200,//菜单栏宽度
 		minStatue:true,
 		
 	});
 });
-//åå°ä¼ å¥ç æ é¢åè¡¨
+//后台传入的 标题列表
 var arr = [{
 		id: 1,
-		name: "é£å/éç±»/ç¹äº§",
+		name: "食品/酒类/特产",
 	    amount:234,
 		pid: 0,
 	    
 	}, {
 		id: 2,
-		name: "æ°ç å®¶çµ",
+		name: "数码家电",
 		amount:64,
 		pid: 0,
 		
 	}, {
 		id: 3,
-		name: "å®¶å·/å®¶å±",
+		name: "家具/家居",
 		amount:64,
 		pid: 0,
 		
 	}, {
 		id: 4,
-		name: "çµèåå¬",
+		name: "电脑办公",
 		amount:64,
 		pid: 0,
 		
 	}, {
 		id: 5,
-		name: "å¾ä¹¦å½±å",
+		name: "图书影响",
 		amount:64,
 		pid: 0,
 		
 	}, {
 		id: 6,
-		name: "æ¯å©´ç¨å",
+		name: "母婴用品",
 		amount:64,
 		pid: 0,
 		
 	}, {
 		id: 13,
-		name: "çå¥¶",
+		name: "牛奶",
 		amount:64,
 		pid:1
 	}, {
 		id: 14,
-		name: "é¢å",
+		name: "面包",
 		amount:64,
 		pid:1
 	}, {
 		id: 15,
-		name: "é¥¼å¹²",
+		name: "饼干",
 		amount:64,
 		pid:1
 	}, {
 		id: 16,
-		name: "ç½é",
+		name: "白酒",
 		amount:64,
 		pid:1
 	}, {
 		id: 17,
-		name: "å¤é",
+		name: "啤酒",
 		amount:64,
 		pid:1
 	},  {
 		id: 18,
-		name: "çº¢é",
+		name: "红酒",
 		amount:64,
 		pid:1
 	}, {
 		id: 19,
-		name: "é³å",
+		name: "音响",
 		amount:64,
 		pid:2
 	}, {
 		id: 20,
-		name: "å°ç®±",
+		name: "冰箱",
 		amount:64,
 		pid:2
 	}, {
 		id: 21,
-		name: "æ´è¡£æº",
+		name: "洗衣机",
 		amount:64,
 		pid:2
 	}, {
 		id: 21,
-		name: "æ´è¡£æº",
+		name: "洗衣机",
 		amount:64,
 		pid:3
 	}, {
 		id: 21,
-		name: "æ´è¡£æº",
+		name: "洗衣机",
 		amount:64,
 		pid:4
 	}, {
 		id: 21,
-		name: "æ´è¡£æº",
+		name: "洗衣机",
 		amount:64,
 		pid:5
 	}
 
 ];
-//æ ç¶å¾æä»¶
+//树状图插件
 $(".tree").ProTree({
-	arr: arr,//æ°æ®
-	simIcon: "fa fa-file-text-o",//åä¸ªæ é¢å­ä½å¾æ  ä¸ä¼ é»è®¤glyphicon-file
-	mouIconOpen: "fa fa-folder-open",//å«å¤ä¸ªæ é¢çæå¼å­ä½å¾æ   ä¸ä¼ é»è®¤glyphicon-folder-open
-	mouIconClose:"fa fa-folder",//å«å¤ä¸ªæ é¢çå³é­çå­ä½å¾æ   ä¸ä¼ é»è®¤glyphicon-folder-close
+	arr: arr,//数据
+	simIcon: "fa fa-file-text-o",//单个标题字体图标 不传默认glyphicon-file
+	mouIconOpen: "fa fa-folder-open",//含多个标题的打开字体图标  不传默认glyphicon-folder-open
+	mouIconClose:"fa fa-folder",//含多个标题的关闭的字体图标  不传默认glyphicon-folder-close
 
 })
-	/******æ¶é´è®¾ç½®*******/
+	/******时间设置*******/
   var start = {
     elem: '#start',
     format: 'YYYY-MM-DD',
-   // min: laydate.now(), //è®¾å®æå°æ¥æä¸ºå½åæ¥æ
-    max: '2099-06-16', //æå¤§æ¥æ
+   // min: laydate.now(), //设定最小日期为当前日期
+    max: '2099-06-16', //最大日期
     istime: true,
     istoday: false,
     choose: function(datas){
-         end.min = datas; //å¼å§æ¥éå¥½åï¼éç½®ç»ææ¥çæå°æ¥æ
-         end.start = datas //å°ç»ææ¥çåå§å¼è®¾å®ä¸ºå¼å§æ¥
+         end.min = datas; //开始日选好后，重置结束日的最小日期
+         end.start = datas //将结束日的初始值设定为开始日
     }
 };
 var end = {
@@ -462,41 +462,41 @@ var end = {
     istime: true,
     istoday: false,
     choose: function(datas){
-        start.max = datas; //ç»ææ¥éå¥½åï¼éç½®å¼å§æ¥çæå¤§æ¥æ
+        start.max = datas; //结束日选好后，重置开始日的最大日期
     }
 };
 laydate(start);
 laydate(end);
-/*è®¢å-å é¤*/
+/*订单-删除*/
 function Order_form_del(obj,id){
-	layer.confirm('ç¡®è®¤è¦å é¤åï¼',function(index){
+	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();
-		layer.msg('å·²å é¤!',{icon:1,time:1000});
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
-/**åè´§**/
+/**发货**/
 function Delivery_stop(obj,id){
 	layer.open({
         type: 1,
-        title: 'åè´§',
+        title: '发货',
 		maxmin: true, 
 		shadeClose:false,
         area : ['500px' , ''],
         content:$('#Delivery_stop'),
-		btn:['ç¡®å®','åæ¶'],
+		btn:['确定','取消'],
 		yes: function(index, layero){		
 		if($('#form-field-1').val()==""){
-			layer.alert('å¿«éå·ä¸è½ä¸ºç©ºï¼',{
-               title: 'æç¤ºæ¡',				
+			layer.alert('快递号不能为空！',{
+               title: '提示框',				
 			  icon:0,		
 			  }) 
 			
 			}else{			
-			 layer.confirm('æäº¤æåï¼',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style=" display:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="å·²åè´§"><i class="fa fa-cubes bigger-120"></i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">å·²åè´§</span>');
+			 layer.confirm('提交成功！',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style=" display:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="已发货"><i class="fa fa-cubes bigger-120"></i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已发货</span>');
 		$(obj).remove();
-		layer.msg('å·²åè´§!',{icon: 6,time:1000});
+		layer.msg('已发货!',{icon: 6,time:1000});
 			});  
 			layer.close(index);    		  
 		  }
@@ -517,3 +517,4 @@ function Delivery_stop(obj,id){
 				}).css('color', $(this).data('color'));
 			});
 </script>
+
