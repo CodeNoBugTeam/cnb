@@ -29,21 +29,24 @@
 <div class="add_style clearfix relative">
   <!--品牌展示 当通过品牌管理添加产品是显示该-->
   <div class="Brand_title">
-  	 <div class="Brand_img"><img src="product_img/logo/458.jpg"><h3>卡姿兰</h3></div>
+  	 <div class="Brand_img"><img src="product_img/rc-2.jpg"><h3>南非柠檬</h3></div>
   </div>
  <ul>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/></div></li>
-   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div></li>
-     <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label><div class="Add_content col-xs-11">
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label><div class="Add_content col-xs-11">
      <span id="cityDanXuan" class="width200px fl_hsCheckData"></span></div>
      </li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品编号：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/></div></li>
+ 
   <li class="clearfix">
    <label class="label_name col-xs-1"><i>*</i>发布栏：&nbsp;&nbsp;</label>
    <div class="Add_content col-xs-11">
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">新品发布</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">限时促销</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">特价处理</span></label></span>
+   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">果园推荐</span></label></span>
+   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">蔬果热卖</span></label></span>
+   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">进口水果</span></label></span>
+   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">国产水果</span></label></span>
+   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">新鲜时蔬</span></label></span>
+
    <span class="relative l_f">
    <button  type="button" onclick="add_category()" class="btn bg-deep-blue operation_btn margin-left">添加分类</button>
    <div class="add_category_style">
@@ -57,15 +60,9 @@
    </li>
      <li class="clearfix">
       <div class="col-xs-4">
-     <label class="label_name col-xs-3"><i>*</i>商品原价：&nbsp;&nbsp;</label> 
+     <label class="label_name col-xs-3"><i>*</i>商品单价：&nbsp;&nbsp;</label> 
     <div class="Add_content col-xs-9">
     <input name="" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
-    </div>   
-    </div>
-    <div class="col-xs-4">
-    <label class="label_name col-xs-3"><i>*</i>商品现价：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-9">
-   <input name="" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
     </div>   
     </div>
     <div class="col-xs-4">
@@ -84,11 +81,7 @@
     </div>
     </div>   
     </li>
-    <li class="clearfix"><label class="label_name col-xs-1">设置规格：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-11">    
-       <input name="" type="text"  class="col-xs-6"/><em class="Prompt">如"颜色,尺寸,型号"中间以英文逗号隔开</em>
-    </div>   
-    </li>
+  
      <li class="clearfix">
       <div class="col-xs-4">
      <label class="label_name col-xs-3">是否上架：&nbsp;&nbsp;</label> 
@@ -136,22 +129,23 @@
 <script>
 var cityData=[
 {
-		"2":"食品/保健/酒/饮料",
+		"2":"水果",
 		"childCity":[
-			{"201":"面包"},
-			{"202":"饼干"},
-			{"203":"白酒"},
-			{"204":"啤酒"},
-			{"205":"葡萄酒"},
-			{"206":"香肠"},
-			{"207":"火腿肠"},
-			{"208":"牛奶"},
+			{"201":"南非柠檬"},
+			{"202":"智利蓝莓"},
+			{"203":"美国红啤梨"},
+			{"204":"美国红提"},
+			{"205":"国产奇异果"},
+			{"206":"浙江蜜桔"},
+			{"207":"菲律宾凤梨"},
+			{"208":"福建蜜柚"},
+			{"209":"水蜜桃"},
 		]},
 	{
-		"3":"数码影像",
+		"3":"蔬菜",
 		"childCity":[
-			{"301":"面包"},
-			{"302":"饼干"},
+			{"301":"菠菜"},
+			{"302":"莲藕"},
 			{"303":"白酒"},
 			{"304":"啤酒"},
 			{"305":"葡萄酒"},
@@ -237,9 +231,9 @@ $("body").niceScroll({
 	cursorcolor:"#888888",  
 	cursoropacitymax:1,  
 	touchbehavior:false,  
+
 	cursorwidth:"5px",  
 	cursorborder:"0",  
 	cursorborderradius:"5px"  
 });
-</script>
 </script>
