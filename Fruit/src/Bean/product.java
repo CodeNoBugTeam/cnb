@@ -2,7 +2,7 @@ package Bean;
 
 import java.sql.Timestamp;
 
-public class fruveg {
+public class product {
 	private int fid;
 	private String fanme;
 	private String fvariety;

@@ -84,7 +84,7 @@
        <a id="js-tabNav-prev" class="radius btn-default left_roll" href="javascript:;"><i class="fa fa-backward"></i></a>
        <div class="breadcrumb_style clearfix">
 	     <ul class="breadcrumb clearfix" id="min_title_list">
-          <li class="active home"><span title="我的桌面" data-href="index.html"><i class="fa fa-home home-icon"></i>首页</span></li>
+          <li class="active home"><span title="我的桌面" data-href="index.jsp"><i class="fa fa-home home-icon"></i>首页</span></li>
          </ul>
       </div>
        <a id="js-tabNav-next" class="radius btn-default right_roll" href="javascript:;"><i class="fa fa-forward"></i></a>
@@ -102,7 +102,7 @@
   <!--具体内容-->  
   <div id="iframe_box" class="iframe_content">
   <div class="show_iframe index_home" id="show_iframe">
-       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="index.html" name="iframepage" data-href="index.html"></iframe>
+       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="index.jsp" name="iframepage" data-href="index.jsp"></iframe>
        </div>
       </div>
   </div>
@@ -131,7 +131,7 @@
     </div>
     <div class="prompt_info clearfix submenu">
 	  <div class="tz_title">订单消息（5）</div>
-	  <a href="javascript:void()" class="" name="Personal_info.html" title="订单消息"><i class="fa fa-user icon_prompt label-danger"></i>你有订单还没有处理请及时处理</a>
+	  <a href="javascript:void()" class="" name="Personal_info.jsp" title="订单消息"><i class="fa fa-user icon_prompt label-danger"></i>你有订单还没有处理请及时处理</a>
     </div>
   </div> 
  </div>
@@ -195,13 +195,7 @@
 		 icon:'fa fa-user',
 		 name:'会员管理',	  
     },
-    {
-		 id:9,
-		 pid:0,
-		 url:"#",
-		 icon:'fa fa-bar-chart',
-		 name:'报表管理',
-    },
+    
     {
 		 id:10,
 		 pid:0,
@@ -235,23 +229,14 @@
     },{
 		 id:20,
 		 pid:11,
-		 url:"page_list.html",
+		 url:"page_list.jsp",
 		 icon:'fa fa-angle-double-right',
 		 name:'商城列表',
-    },
-		{
-		  id:25,
-		  pid:1,
-		  icon:'fa fa-angle-double-right',
-		  url:'home.html',
-		  name:'地图展示',
-
-	},
-		{
+    },{
 		  id:26,
 		  pid:8,
 		  icon:'fa fa-angle-double-right',
-		  url:'member_list.html',
+		  url:'member_list.jsp',
 		  name:'会员列表',
 
 	},
@@ -259,7 +244,7 @@
 		 id:26,
 		 pid:1,
 		 icon:'fa fa-angle-double-right',
-		 url:'index.html',
+		 url:'index.jsp',
 		 name:'首页',
 
   },
@@ -267,23 +252,14 @@
 		  id:34,
 		  pid:2,
 		  icon:'fa fa-angle-double-right',
-		  url:'add_product.html',
+		  url:'add_product.jsp',
 		  name:'添加商品',
 
-	},
-	{
-		 id:35,
-		 pid:2,
-		 icon:'fa fa-angle-double-right',
-		 url:'Brand_Manage.html',
-		 name:'品牌管理',
-
-  },
-	{
+	},{
 		 id:36,
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
-		 url:'Products.html',
+		 url:'Products.jsp',
 		 name:'商品分类',
 
 	},
@@ -291,58 +267,43 @@
 		 id:37,
 		 pid:12,
 		 icon:'fa fa-angle-double-right',
-		 url:'Columns.html',
+		 url:'Columns.jsp',
 		 name:'栏目管理',
 
-	},{
-		 id:38,
-		 pid:9,
-		 icon:'fa fa-angle-double-right',
-		 url:'',
-		 name:'访问统计',
-
-	},{
-		 id:39,
-		 pid:9,
-		 icon:'fa fa-angle-double-right',
-		 url:'',
-		 name:'业绩统计',
-
 	},
-	
 		{
 		 id:45,
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
-		 url:'admin_Competence.html',
+		 url:'admin_Competence.jsp',
 		 name:'权限设置',
 
 	},{
 		 id:46,
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
-		 url:'Order_form.html',
+		 url:'Order_form.jsp',
 		 name:'订单管理',
 
 	},{
 		 id:47,
 		 pid:3,
 		 icon:'fa fa-angle-double-right',
-		 url:'Refund.html',
+		 url:'Refund.jsp',
 		 name:'退款管理',
 
 	},{
 		 id:54,
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
-		 url:'administrator_list.html',
+		 url:'administrator_list.jsp',
 		 name:'管理员设置',
 
 	},{
 		 id:55,
 		 pid:7,
 		 icon:'fa fa-angle-double-right',
-		 url:'Personal_info.html',
+		 url:'Personal_info.jsp',
 		 name:'管理员信息',
 
 	},
@@ -350,7 +311,7 @@
 		 id:56,
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
-		 url:'Products.html',
+		 url:'Products.jsp',
 		 name:'分类管理',
 
 	},
@@ -358,55 +319,22 @@
 		  id:37,
 		  pid:3,
 		  icon:'fa fa-angle-double-right',
-		  url:'Order.html',
+		  url:'Order.jsp',
 		  name:'交易统计',
 
 	},
 	{
-		 id:38,
-		 pid:3,
-		 icon:'fa fa-angle-double-right',
-		 url:'Brand_Manage.html',
-		 name:'订单处理',
-
-  },
-	{
-		 id:39,
-		 pid:3,
-		 icon:'fa fa-angle-double-right',
-		 url:'Order_Logistics.html',
-		 name:'物流管理',
-
-	},
-	{
-		 id:40,
-		 pid:3,
-		 icon:'fa fa-angle-double-right',
-		 url:'Order_Chart.html',
-		 name:'订单统计（全国图）',
-
-	},
-
-	{
 		 id:41,
 		 pid:4,
 		 icon:'fa fa-angle-double-right',
-		 url:'payment_method.html',
+		 url:'payment_method.jsp',
 		 name:'支付管理',
 
-  },
-	{
-		 id:42,
-		 pid:4,
-		 icon:'fa fa-angle-double-right',
-		 url:'Payment_Configure.html',
-		 name:'支付配置',
-
-	},{
+  },{
 		 id:43,
 		 pid:10,
 		 icon:'fa fa-angle-double-right',
-		 url:'Advertising_list.html',
+		 url:'Advertising_list.jsp',
 		 name:'广告列表',
 
 	},
@@ -414,14 +342,14 @@
 		 id:44,
 		 pid:10,
 		 icon:'fa fa-angle-double-right',
-		 url:'Advertising_sort.html',
+		 url:'Advertising_sort.jsp',
 		 name:'广告分类',
 
 	},{
 		 id:45,
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
-		 url:'system_columns.html',
+		 url:'system_columns.jsp',
 		 name:'栏目设置',
 
 	},
@@ -429,46 +357,29 @@
 		 id:46,
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
-		 url:'form_builder.html',
+		 url:'form_builder.jsp',
 		 name:'自定页面',
 
-	},
-		{
-		 id:46,
-		 pid:5,
-		 icon:'fa fa-angle-double-right',
-		 url:'system_info.html',
-		 name:'系统设置',
-
-	},
-		{
+	},{
 		 id:47,
 		 pid:5,
 		 icon:'fa fa-angle-double-right',
-		 url:'rizhi_list.html',
+		 url:'rizhi_list.jsp',
 		 name:'系统日志',
 
 	},{
 		 id:48,
 		 pid:13,
 		 icon:'fa fa-angle-double-right',
-		 url:'feedback.html',
+		 url:'feedback.jsp',
 		 name:'留言反馈',
 
-	},{
-		 id:49,
-		 pid:13,
-		 icon:'fa fa-angle-double-right',
-		 url:'Notice.html',
-		 name:'消息通知',
-
-	},
-		
+	},	
 	{
 		 id:55,
 		 pid:6,
 		 icon:'fa fa-angle-double-right',
-		 url:'Article_list.html',
+		 url:'Article_list.jsp',
 		 name:'文章列表',
 
 	}]
@@ -503,7 +414,7 @@ $('#Exit_system').on('click', function(){
 	 icon:2,
     }, 
 	function(){
-	  location.href="login.html";  
+	  location.href="login.jsp";  
     });
 });
 </script>
