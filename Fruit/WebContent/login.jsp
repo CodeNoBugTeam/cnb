@@ -46,6 +46,7 @@
 							</div>
 <form action="user.s" method="post">
 								<input type="hidden" name="op" value="login"/>
+								<input />
 								<h4 class="title_name">
 									<img src="images/login_title.png" />
 								</h4>
