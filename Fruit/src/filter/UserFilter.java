@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -20,10 +21,10 @@ public class UserFilter implements Filter {
 
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-HttpServletRequest httpRequest = (HttpServletRequest) request;
+		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		String path = httpRequest.getServletPath();
 		
-		//���岻��Ҫ���˵�ҳ��
-		/*String path = httpRequest.getServletPath();
+		
 		if(path.endsWith("login.jsp") || path.endsWith("user.s")) {
 			chain.doFilter(request, response);
 			return;
@@ -32,11 +33,10 @@ HttpServletRequest httpRequest = (HttpServletRequest) request;
 		if(httpRequest.getSession().getAttribute("longinUser") != null) {
 			chain.doFilter(request, response);
 		}else {
-			request.setAttribute("msg", "���ȵ�¼��");
+			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 			
-		}*/
-		chain.doFilter(request, response);
+		}
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

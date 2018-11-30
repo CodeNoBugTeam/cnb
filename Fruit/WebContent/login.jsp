@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,7 +47,7 @@
 							</div>
 <form action="user.s" method="post">
 								<input type="hidden" name="op" value="login"/>
-								<input />
+								
 								<h4 class="title_name">
 									<img src="images/login_title.png" />
 								</h4>
@@ -54,18 +55,18 @@
 				<ul>
 						<li class="frame_style form_error">
 						<label class="user_icon"></label>
-      <input name="" type="text" id="username" name="username" placeholder="用户名"/>
+      <input name="username" type="text" id="username" placeholder="用户名" value="${param.username}"/>
       							</li>
 					<li class="frame_style form_error">
 						<label class="password_icon"></label>
-						<input name="" type="password" id="userpwd" name="userpwd" placeholder="密码"/>
+		<input name="userpwd" type="password" id="userpwd" placeholder="密码"/>
 					</li>
 					
 					<li class="frame_style form_error">
 				     <label class="Codes_icon"></label>
-					  <input name="" type="text" id="Codes_text" placeholder="验证码"/>
+					  <input  type="text" id="Codes_text" name="code" placeholder="验证码"/>
 						<div class="Codes_region">
-							<img src="images/yanzhengma.png" width="100%" height="38px">
+							<img src="imageServlet" width="100%" height="38px"/>
 						</div>
 					</li>
 				</ul>
@@ -73,7 +74,7 @@
 				</div>
 				<div class="clearfix">
 					<label class="inline">
-					<input type="checkbox"class="ace"> 
+					<input type="checkbox" class="ace" name="checkbox"/> 
 					<span class="lbl">保存密码</span>
 					</label>
 
@@ -109,6 +110,11 @@
 	<strong></strong>
 </body>
 </html>
+	<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+	</c:if>
 <script type="text/javascript">
 	/*$('#login_btn').on(
 			'click',
