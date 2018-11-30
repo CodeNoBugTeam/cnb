@@ -1,363 +1,400 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>果然新鲜</title>
-    <link href="css/index.css"rel="stylesheet">
-    <link href="css/share.css"rel="stylesheet">
-    <script src="js/jquery-1.12.3.js"></script>
-    </script><script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="css/shop.css" type="text/css" rel="stylesheet" />
+<link href="css/Sellerber.css" type="text/css"  rel="stylesheet" />
+<link href="css/bkg_ui.css" type="text/css"  rel="stylesheet" />
+<link href="font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/Sellerber.js" type="text/javascript"></script>
+<script src="js/shopFrame.js" type="text/javascript"></script>
+<script src="js/dist/echarts.js" type="text/javascript"></script>
+<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js" type="text/javascript"></script>
+<script src="js/respond.min.js"></script>
+<script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
+  <![endif]-->
+<title>首页</title>
 </head>
-<body>
-<!--顶部导航-->
-<jsp:include page="/public/head.jsp"></jsp:include>
-<!--顶部导航结束-->
-<!--banner图片-->
-<div class="her-banner">
 
+<body  id="iframe_box">
+<div id="index_style" style="height:100%" class="clearfix">
+<div class="spacing_style" ></div>
+ <div class="margin-bottom clearfix ">
+  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-deep-blue">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_bule">
+    <i class="fa fa-cny"></i>
+    <h3>成交金额</h3>
+   </div>
+   <div class="right_info">4567.89元</div>
+   </div>
+   </a>
+  </div>
+   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-green">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_green">
+    <i class="fa  fa-comments-o"></i>
+    <h3>留言</h3>
+   </div>
+   <div class="right_info">4567条</div>
+   </div>
+   </a>
+  </div>
+   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-red ">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_red">
+    <i class="fa fa-shopping-cart"></i>
+    <h3>订单</h3>
+   </div>
+   <div class="right_info">4567笔</div>
+   </div>
+   </a>
+  </div> 
+ <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-orange">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_orange">
+    <i class="fa  fa-volume-up "></i>
+    <h3>通知</h3>
+   </div>
+   <div class="right_info">456条</div>
+   </div>
+   </a>
+  </div>
+  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-purple">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_purple">
+    <i class="fa  fa-clock-o "></i>
+    <h3>待处理</h3>
+   </div>
+   <div class="right_info">17条</div>
+   </div>
+   </a>
+  </div>
+   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4">
+   <a href="javascript:ovid()" class="tile-button btn_Plate bg-yellow">
+   <div class="carousel Module_info">
+   <div class="left_img bg_color_yellow">
+    <i class="fa  fa-clock-o "></i>
+    <h3>紧急通知</h3>
+   </div>
+   <div class="right_info">10条</div>
+   </div>
+   </a>
+  </div>
+ </div>
+ <div class="center  clearfix margin-bottom">
+ <!--店铺信息-->
+ <div class="col-lg-2 col-xs-3 col-md-3 ">
+ 	<div class="com_plate_style clearfix">
+			<div class="set-time clearfix" id="set-time"></div>
+		</div>
+ </div>
+ <div class="col-lg-7 col-xs-6 col-md-6 ">
+ <div class="Shops_info clearfix frame">
+  <div class="left_shop">
+  <div class="left_shop_logo">
+   <div class="shop_logo"><span class="bg_yuan"></span><img src="images/dp_logo.jpg" /></div>
+   <a href="#" class="btn bg-deep-blue paddings">进入首页</a>
+   </div>
+   <div class="Shops_content">
+   <p><label class="name">商城名称：</label>三台山购物网</p>
+   <ul class="clearfix">
+    <li><label class="name">店铺等级：</label>三级</li>
+    <li><label class="name">商城类型：</label>电子商务</li>
+    <li><label class="name">销售类型：</label>综合</li>
+    <li><label class="name">店铺ID：</label>234565</li>
+    <li><label class="name">商家ID：</label>34656565</li>
+    <li><label class="name">开通时间：</label>2016-08-21</li>
+    </ul>
+   </div>
+  
+  
+  <div class="right_shop">
+   <p> 店铺动态评分：</p>
+   <ul>
+   <li><label class="name">相符描述</label><span class="score">4.5分</span></li>
+   <li><label class="name">服务态度</label><span class="score">4.0分</span></li>
+   <li><label class="name">发货速度</label><span class="score">4.6分</span></li>
+   </ul>
+  </div>
+  </div>
+  <div class="operating_style Quick_operation menuUl" >
+  <ul class="submenu">
+   <li class=""><a href="javascript:void(0)" name="add_product.html" class="btn" title="添加产品">添加产品</a></li> 
+   <li class=""><a href="javascript:void(0)" name="add_Advertising.html" class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Article.html" class="btn" title="添加文章">添加文章</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Singlepag.html" class="btn" title="新增单页面">新增单页面</a></li>
+  </ul>  
+  </div>
+ </div>
+ </div>
+ <div class=" col-xs-3">
+  <div class="admin_info frame clearfix">
+  <div class="title_name"><i></i>登陆记录 <a href="#">+更多</a></div>
+  <table class="record_list table table_list">
+  <tbody>
+   <tr><td>管理员</td><td>2016-08-04 12:45:43</td></tr>
+   <tr><td>管理员</td><td>2016-08-14 23:34:23</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+   </tbody>
+  </table>
+  </div>
+ </div>
+ </div>
+ <!---->
+ <div class="Order_form ">
+  <div class="col-xs-6 col-lg-7">
+  <div class="frame margin-right clearfix">
+  <div class="title_name"><i></i>店铺/订单状态提示</div>
+  <div class="clearfix">
+  <div class="col-xs-3 col-lg-6 ">   
+   <div class="prompt_name"><i class="icon_Order"></i>订单& 商品</div>
+   <ul class="padding list_info">   
+   <li>代发货订单 &nbsp;<a href="">(02)</a></li>
+   <li>已完成订单 &nbsp;<a href="">(32)</a></li>
+   <li>未完成订单 &nbsp;<a href="">(02)</a></li>
+   </ul>
+  </div>
+   <div class="col-xs-3 col-lg-6">    
+   <div class="prompt_name"><i class="icon_Promotions"></i>促销</div>
+   <ul class="padding list_info">   
+   <li>待审核的促销 &nbsp;<a href="">(02)</a></li>
+   <li>发布的促销 &nbsp;<a href="">(32)</a></li>
+   <li>即将结束的促销 &nbsp;<a href="">(02)</a></li>
+   </ul>
+  </div>
+   <div class="col-xs-3 col-lg-6">    
+   <div class="prompt_name"><i class="icon_Aftermarket"></i>售后</div>
+   <ul class="padding list_info"> 
+   <li>待处理订单 &nbsp;<a href="">(02)</a></li>
+   <li>待退款订单 &nbsp;<a href="">(32)</a></li>
+   <li>待处理售后单 &nbsp;<a href="">(02)</a></li>  
+   </ul>
+  </div>
+   <div class="col-xs-3 col-lg-6 ">  
+   <div class="prompt_name"><i class="icon_Billing"></i>结算</div>
+    <ul class="padding list_info">  
+   <li>待支付 &nbsp;<a href="">(02)</a></li>
+   <li>待结算确认 &nbsp;<a href="">(32)</a></li>
+   </ul>
+  </div>
+  </div>
+  <div class="dd_echarts">
+   <div id="main" style="width:100%; height:225px"></div>
+  </div>
+  </div>
+  </div>
+  <div class="col-xs-6 ranking_style col-lg-5" >
+  <div class="frame clearfix">
+   <div class="title_name"><i></i>商品销售排行 </div>
+   <table  class="table table_list ranking_list">
+    <thead>
+     <th width="50">排名</th>
+     <th>商品编号</th>
+     <th>商品名称</th>
+     <th width="80">销售数量</th>
+    </thead>
+    <tbody>
+     <tr>
+      <td ><em>1</em></td>
+      <td>2345776</td>
+      <td><a href="#">联想（ThinkPad ）轻薄系列</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>2</em></td>
+      <td>2345776</td>
+      <td><a href="#">施巴（sebamed）婴儿泡泡沐浴露200ml家庭装</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>3</em></td>
+      <td>2345776</td>
+      <td><a href="#">七匹狼纯棉时尚休闲条纹翻领POLO衫T恤</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>4</em></td>
+      <td>2345776</td>
+      <td><a href="#">桂格即食燕麦片超值装1478g</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>5</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>6</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>7</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>8</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>9</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+      <tr>
+      <td ><em>10</em></td>
+      <td>2345776</td>
+      <td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
+      <td>23</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  </div>
+ </div>
 </div>
-<!--banner图片结束-->
-<!--主页内容-->
-<div class="content">
-    <div class="ban-boot clear">
-        <div class="ban-zs">
-            <img src="images/ban-1.jpg" width="100%">
-        </div>
-        <div class="ban-zs">
-            <img src="images/ban-2.jpg" width="100%">
-        </div>
-        <div class="ban-zs">
-            <img src="images/ban-3.jpg" width="100%">
-        </div>
-    </div>
-    <!--果园推荐开始-->
-    <div class="recommand clear">
-        <div class="rec-nav clear">
-            <h2>果园推荐 <span>RECOMMAND</span></h2>
-        </div>
-        <div class="rec-cont clear">
-            <div class="rec-left">
-                <img src="images/rc-1.jpg">
-            </div>
-
-            <div class="rec-right">
-
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-2.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            南非进口黄柠檬 6个装
-                        </div>
-                            <div class="second_P">
-                                <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">29
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                                <span class="second_Marketprice">￥0.00</span>
-                            </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="lemon.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-3.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            智利进口新鲜蓝莓 4盒
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">99
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="blueberry.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-4.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            美国进口红啤梨 6个
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">48
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="redpears.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-5.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            美国进口无籽红提 1kg
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">39
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="redgrape.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-6.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            国产绿奇异果 16颗
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">49
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="kiwi.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-2.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            浙江涌泉蜜桔无核桔子5斤
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">39
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="orange.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-    <!--果园推荐结束-->
-</div>
-<!--每日新品特卖-->
-    <div class="rec-bottom clear">
-        <div class="rbt-con">
-                <div class="banner_1">
-                    <img src="images/rb-1.jpg"width="1424px">
-                    <img src="images/rb-2.jpg"width="1424px">
-                </div>
-        </div>
-                <ul class="banner-bottom">
-
-                </ul>
-    </div>
-<div class="content">
-    <div class="new-nav clear">
-        <div class="nwn-con">
-            <div style="text-align: center;">
-                <span style="">
-                    <span style="font-size: 31px;">
-                        <font style="color: rgb(33, 33, 33);" color="#212121">
-                        <font style="color: rgb(231, 231, 231);" color="#e7e7e7">
-                            ———————
-                        </font>
-                            <b>&nbsp; 每日新品特卖 &nbsp;</b>
-                        </font></span></span>
-                <span style="font-size: 31px;">
-                <font style="color: rgb(231, 231, 231);" color="#e7e7e7">
-                    ———————
-                </font>
-            </span>
-            </div>
-       <div style="text-align: center;">
-                <font color="#353535" style="">
-                    <span style="font-size: 16px;">
-                            <font style= color:#888888>
-                                新鲜水果每一天，健康生活每一刻
-                            </font>
-                    </span>
-                </font></div>
-
-        </div>
-
-
-    </div>
-    <div class="new-con clear">
-        <div class="nec-lift">
-            <div class="fk-editor simpleText  ">
-                <font color="#4b4b4b">
-                    <span style="">
-                        <span style="line-height: 29px;">
-                            <span style="color: rgb(75, 75, 75); font-size: 16px;">
-                                有机生鲜
-                            </span>
-                            <div style="color: rgb(75, 75, 75);">
-                                <span style="font-size: 20px;">
-                                    天然无污染水果
-                                </span>
-                            </div>
-                        </span>
-                    </span>
-                    <div style="color: rgb(75, 75, 75);">
-                        <span style="font-size: 20px;">
-                            <br>
-                        </span>
-                    </div>
-                    <div>
-                        <font style="color: rgb(243, 151, 0);" color="#f39700">
-                    <b>
-                        <span style="font-size: 42px;">6.8</span>
-                    </b><span style="font-size: 42px;">
-                    <b>折</b>
-                    <span style="font-size: 18px;">
-                        <font style="color: rgb(53, 53, 53);" color="#353535">起</font>
-                    </span></span></font></div>
-                </font>
-            </div>
-            <div class="xiqing">
-                <a  href="/col.jsp?id=105"style="color: white">查看详情 &gt;</a>
-            </div>
-        </div>
-        <div class="nec-right">
-            <img src="images/nw-1.jpg">
-
-        </div>
-
-    </div>
-    <div class="new-bottom clear">
-        <div class="nw-b">
-            <img src="images/nw-2.jpg">
-        </div>
-        <div class="nw-b">
-            <img src="images/nw-3.jpg">
-        </div>
-        <div class="nw-b">
-            <img src="images/nw-4.jpg">
-        </div>
-        <div class="nw-b" style="margin:0">
-            <img src="images/nw-5.jpg">
-        </div>
-    </div>
-    <!--每日新品特卖结束-->
-    <!--蔬果资讯-->
-    <div class="fruits">
-        <div class="fru-nav">
-            <div class="fk-editorb ">
-                <font style="color: rgb(103, 141, 30);" color="#678d1e">蔬果资讯</font>
-            </div>
-            <font style="color: rgb(53, 53, 53);float: right" color="#353535">更多资讯</font>
-        </div>
-        <div class="fru-lift">
-            <div class="frl-nav">
-                <ul>
-                    <li>品种</li>
-                    <li>地区</li>
-                    <li>价格</li>
-                  <span>时间</span>
-                </ul>
-            </div>
-            <div class="txtMarquee-top">
-                <div class="bd">
-                    <ul class="infoList">
-
-                        <li><p>苹果</p>
-                            <p>河南省济源市</p>
-                            <p >5.5/kg</p>
-                            04-09
-                        </li>
-                        <li><p> 西瓜</p>
-                            <p>	内蒙古鄂尔多斯</p>
-                            <p >10/kg</p>
-                            04-09
-                        </li>
-                        <li><p>葡萄</p>
-                            <p>新疆乌鲁木齐</p>
-                            <p >19/kg</p>
-                            04-09
-                        </li>
-                        <li><p>车厘子</p><p>河南省郑州市</p><p>	58.5/kg</p> 04-09</li>
-                        <li><p>菜心	</p><p>河南省新乡市</p><p>	5.5/kg</p>	04-09</li>
-                        <li><p>西兰花</p>	<p>河南省信阳市</p><p>	3.5/kg</p>	04-09</li>
-                        <li><p>苹果	</p><p>河南省济源市</p><p>	5.5/kg	</p>04-09</li>
-                        <li><p>西瓜	</p><p>内蒙古鄂尔多斯</p><p>10/kg</p>	04-09</li>
-                        <li><p>葡萄	</p><p>新疆乌鲁木齐	</p><p>19/kg</p>	04-09</li>
-                        <li><p>菜心	</p><p>河南省新乡市</p><p>	5.5/kg	</p>04-09</li>
-                        <li><p>西兰花</p><p>	河南省信阳市</p><p>	3.5/kg	</p>04-09</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="fru-right">
-            <div id="slideBox" class="slideBox">
-                <div class="hd">
-                    <!--<ul><li>蜜橘首发</li>-->
-                        <!--<li>智利车厘子</li>-->
-                        <!--<li>进口青苹果</li>-->
-                    <!--</ul>-->
-                    <ul><li>1</li><li>2</li><li>3</li></ul>
-                </div>
-                <div class="bd">
-                    <ul>
-                        <li><a href="#" target="_blank"><img src="images/fr-1.jpg" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/fr-2.jpg" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/fr-3.jpg" /></a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    <!--蔬果资讯结束-->
-</div>
-<!--主页内容结束-->
-<!--底部-->
-<jsp:include page="/public/foot.jsp"></jsp:include>
 </body>
-<script src="js/index.js"></script>
 </html>
+<script>
+//设置框架
+$(function() {  		 
+	 $("#iframe_box").frame({
+	    float : 'left',
+		Scroll:'#index_style',
+		color_btn:'.skin_select',
+		Sellerber_menu:'.list_content',
+		page_content:'.list_show',//内容
+		datalist:".datatable_height",//数据列表高度取值
+		 time:'#set-time', 
+	 });
+});
+
+/*********************/
+   require.config({
+            paths: {
+                echarts: './js/dist'
+            }
+        });
+        require(
+            [
+                'echarts',
+				'echarts/theme/macarons',
+                'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+                'echarts/chart/bar'
+            ],
+            function (ec,theme) {
+                var myChart = ec.init(document.getElementById('main'),theme);
+               option = {
+    title : {
+        text: '当周交易记录',
+        subtext: '每周7天的交易记录'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['所有订单','已完成','未完成']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['周一','周二','周三','周四','周五','周六','周日']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value}单'
+            }
+        }
+    ],
+    series : [
+        {
+            name:'所有订单',
+            type:'line',
+            data:[110, 110, 150, 130, 125, 133, 106],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'已完成',
+            type:'line',
+            data:[110, 105, 140, 130, 110, 121, 100],
+            markPoint : {
+                data : [
+                    {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        },
+		   {
+            name:'未完成',
+            type:'line',
+            data:[0, 5, 10, 0, 15, 12, 6],
+            markPoint : {
+                data : [
+                    {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+    ]
+};
+                  
+			myChart.setOption(option);
+			}
+			);
+</script>
+
