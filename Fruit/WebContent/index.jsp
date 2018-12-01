@@ -132,10 +132,10 @@
   </div>
   <div class="operating_style Quick_operation menuUl" >
   <ul class="submenu">
-   <li class=""><a href="javascript:void(0)" name="add_product.html" class="btn" title="添加产品">添加产品</a></li> 
-   <li class=""><a href="javascript:void(0)" name="add_Advertising.html" class="btn" title="添加广告">添加广告</a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Article.html" class="btn" title="添加文章">添加文章</a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Singlepag.html" class="btn" title="新增单页面">新增单页面</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_product.jsp" class="btn" title="添加产品">添加产品</a></li> 
+   <li class=""><a href="javascript:void(0)" name="add_Advertising.jsp" class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
+   <li class=""><a href="javascript:void(0)" name="add_Singlepag.jsp" class="btn" title="新增单页面">新增单页面</a></li>
   </ul>  
   </div>
  </div>
@@ -281,7 +281,7 @@
 //设置框架
 $(function() {  		 
 	 $("#iframe_box").frame({
-	    float : 'left',
+	    float: 'left',
 		Scroll:'#index_style',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
