@@ -26,7 +26,7 @@ import java.util.Vector;
  *
  */
 public class DBHelper {
-	public static String URL = "jdbc:mysql://localhost:3306/blog";
+	public static String URL = "jdbc:mysql://localhost:3306/fruit";
 	public static String USR = "root";
 	public static String PWD = "a";
 	public static String DRV = "com.mysql.jdbc.Driver";
