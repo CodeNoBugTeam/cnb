@@ -8,13 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.user;
+import ly.BeanUtils;
+
 import Bize.BizeMethod;
 import Expection.LoginException;
 
 @WebServlet("/user.s")
 public class userServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	BizeMethod bmtd = new BizeMethod();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -24,6 +27,8 @@ public class userServlet extends HttpServlet {
 
 		if ("login".equals(op)) {
 			login(request, response);
+		}else if("query".equals(op)) {
+			query(request,response);
 		}
 	}
 
@@ -70,7 +75,12 @@ public class userServlet extends HttpServlet {
 			request.setAttribute("msg", e.getMessage());
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
-
+	}
+	private void query(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		user u = BeanUtils.asBean(request, user.class);
+		request.setAttribute("userList", bmtd.find(u));
+		request.getRequestDispatcher("manage-user.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
