@@ -1,7 +1,9 @@
 package Bize;
 
-import Bean.user;
+import java.util.ArrayList;
 
+import Bean.user;
+import Bean.worker;
 import Expection.LoginException;
 import ly.DBHelper;
 
@@ -24,6 +26,20 @@ public class BizeMethod {
 		Bean.user user = DBHelper.unique(sql, Bean.user.class,name,pwd);
 		return user;
 		
+	}
+
+	public static Object find(worker workers) {
+		String sql = "select * from worker where 1=1 ";
+		ArrayList<Object> param = new ArrayList<Object>();
+		if(workers.getWname() != null && workers.getWname().trim().isEmpty() == false) {
+			sql += "and name like ?";
+			param.add("%"+workers.getWname()+"%");
+		}
+		if(workers.getWtel() != null && workers.getWtel().trim().isEmpty() == false) {
+			sql += "and tel like ?";
+			param.add("%"+workers.getWtel()+"%");
+		}
+		return DBHelper.select(sql, worker.class, param);
 	}
 
 }

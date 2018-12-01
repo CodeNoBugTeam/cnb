@@ -114,9 +114,6 @@
     <li><label class="name">店铺等级：</label>三级</li>
     <li><label class="name">商城类型：</label>电子商务</li>
     <li><label class="name">销售类型：</label>综合</li>
-    <li><label class="name">店铺ID：</label>234565</li>
-    <li><label class="name">商家ID：</label>34656565</li>
-    <li><label class="name">开通时间：</label>2016-08-21</li>
     </ul>
    </div>
   
@@ -132,10 +129,11 @@
   </div>
   <div class="operating_style Quick_operation menuUl" >
   <ul class="submenu">
-   <li class=""><a href="javascript:void(0)" name="add_product.jsp" class="btn" title="添加产品">添加产品</a></li> 
-   <li class=""><a href="javascript:void(0)" name="add_Advertising.jsp" class="btn" title="添加广告">添加广告</a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
-   <li class=""><a href="javascript:void(0)" name="add_Singlepag.jsp" class="btn" title="新增单页面">新增单页面</a></li>
+   <li class=""><a href="add_product.jsp"  class="btn" title="添加产品">添加产品</a></li> 
+   <li class=""><a href="add_Advertising.jsp"  class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
+   <li class=""><a href="add_Singlepag.jsp"  class="btn" title="新增单页面">新增单页面</a></li>
+   <li class=""><a href="administrator_list.jsp"  class="btn" title="新增单页面">查看管理员</a></li>
   </ul>  
   </div>
  </div>

@@ -78,8 +78,15 @@
 					<span class="lbl">保存密码</span>
 					</label>
 
-				<input type="submit" value="请确认登陆"/>
-					
+					<label class="inline">
+					<input type="checkbox" class="ace" name="checkbox"/> 
+					<input type="submit" value="请确认登陆"/>
+					</label>
+					<label class="inline">
+					<input type="checkbox" class="ace" name="checkbox"/> 
+					<a href="">注册管理员--></a>
+					</label>
+	
 				</div>
 
 				<div class="space-4"></div>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import javax.management.Query;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -12,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.user;
+import Bean.worker;
 import Bize.BizeMethod;
 import Expection.LoginException;
+import ly.BeanUtils;
 
 @WebServlet("/user.s")
 public class userServlet extends HttpServlet {
@@ -28,7 +31,17 @@ public class userServlet extends HttpServlet {
 
 		if ("login".equals(op)) {
 			login(request, response);
+		}else if("query".equals(op)){
+			query(request, response);
 		}
+	}
+
+	private void query(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		worker workers = BeanUtils.asBean(request, worker.class);
+		request.setAttribute("workerList",BizeMethod.find(workers));
+		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
+		
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

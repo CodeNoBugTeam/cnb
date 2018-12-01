@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+	if(request.getAttribute("workerList") == null){
+		request.getRequestDispatcher("user.s?op=query").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,12 +34,6 @@
     <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
  <a href="javascript:ovid()" id="administrator_add" class="btn button_btn bg-deep-blue"><i class="fa  fa-edit"></i>&nbsp;添加管理员</a>
-  <select class="select Competence_sort" name="admin-role" size="1" id="Competence_sort">
-					<option value="0">--选择分类--</option>
-					<option value="1">超级管理员</option>
-					<option value="2">普通管理员</option>
-					<option value="3">栏目编辑</option>
-				</select>
    <div class="search  clearfix">
 
    <input name="" type="text"  class="form-control col-xs-8"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
@@ -46,62 +47,35 @@
 			  <th>登录名</th>
 			  <th>手机</th>
               <th>邮箱</th>
-              <th>角色</th>
 			  <th class="hidden-480">加入时间</th>  
               <th>状态</th>         
 			  <th class="hidden-480">操作</th>
              </tr>
 		    </thead>
              <tbody>
-			  <tr>
-				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>admin123456</td>
-				<td>13567878908</td>
-				<td >3456778@qq.com</td>
-				<td>超级管理员</td>
-                <td>2016-9-20 10:23:23</td>
-                <td class="td-status"><span class="label label-success label-sm">已启用</span></td>
-				<td class="td-manage">
-                 <a title="停用" onclick="Competence_close(this,'12')" href="javascript:;" class="btn button_btn btn-Dark-success">停用</a> 
-                 <a title="编辑" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
-                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">删除</a>
-                 <a title="查看" href="javascript:;" onclick="Competence_View(this,'1')" class="btn button_btn btn-green">查看</a>
-				</td>
-			   </tr>
-               <tr>
-				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>化海天堂</td>
-				<td>13567878908</td>
-				<td >3456778@qq.com</td>
-				<td>普通管理员</td>
-                <td>2016-9-20 10:23:23</td>
-                <td class="td-status"><span class="label label-success label-sm">已启用</span></td>
-				<td class="td-manage">
-                  <a title="停用" onclick="Competence_close(this,'12')" href="javascript:;" class="btn button_btn btn-Dark-success">停用</a> 
-                 <a title="编辑" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
-                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">删除</a>
-                 <a title="查看" href="javascript:;" onclick="Competence_View(this,'1')" class="btn button_btn btn-green">查看</a>
-				</td>
-			   </tr>
-               <tr>
-				<td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-				<td>admin</td>
-				<td>13567878908</td>
-				<td >3456778@qq.com</td>
-				<td>普通管理员</td>
-                <td>2016-9-10 10:23:23</td>
-                <td class="td-status"><span class="label label-success label-sm">已启用</span></td>
-				<td class="td-manage">
-                   <a title="停用" onclick="Competence_close(this,'12')" href="javascript:;" class="btn button_btn btn-Dark-success">停用</a> 
-                 <a title="编辑" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
-                 <a title="删除" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">删除</a>
-                 <a title="查看" href="javascript:;" onclick="Competence_View(this,'1')" class="btn button_btn btn-green">查看</a>
-				</td>
-			   </tr>												
+			   <c:forEach items="${workerList}" var="i">
+	              <tr>
+	              <td class="center"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	                <td>${i.wid}</td>
+	                <td>${i.wname}</td>
+	                <td>${i.wtel}</td>
+	                <td>${i.wemail}</td>
+	                <td>${i.jointime}</td>
+	                <td class="td-manage">
+	                 	<a title="停用" onclick="Competence_close(this,'12')" href="javascript:;" class="btn button_btn btn-Dark-success">停用</a> 
+	                 	<a title="编辑" onclick="Competence_modify('560')" href="javascript:;" class="btn button_btn bg-deep-blue">编辑</a>        
+	                 	<a title="删除" href="javascript:;" onclick="Competence_del(this,'1')" class="btn button_btn btn-danger">删除</a>
+	                	<a title="查看" href="javascript:;" onclick="Competence_View(this,'1')" class="btn button_btn btn-green">查看</a>
+					</td>
+	              </tr>
+              </c:forEach>
+               												
 		      </tbody>
 	        </table>
      </div>
 </div>
+
+
  <!--添加管理员-->
  <div id="add_administrator" class=" add_administrator" style="display:none">
    <div class="add_style add_administrator_style">
@@ -110,7 +84,7 @@
      <li class="clearfix">
      <label class="label_name col-xs-2 col-lg-2"><i>*</i>用户名：</label>
      <div class="formControls col-xs-6">
-     <input type="text" class="input-text col-xs-12" value="" placeholder="" id="user-name" name="user-name" datatype="*2-16" nullmsg="用户名不能为空"></div>
+     <input type="text" placeholder="用户名" class="input-text col-xs-12" value="" placeholder="" id="user-name" name="user-name" datatype="*2-16" nullmsg="用户名不能为空"></div>
     <div class="col-4"> <span class="Validform_checktip"></span></div>
      </li>
      <li class="clearfix">
@@ -148,18 +122,6 @@
 		<input type="text" class="input-text col-xs-12" placeholder="@" name="email" id="email" datatype="e" nullmsg="请输入邮箱！">
 	   </div>
 		<div class="col-4"> <span class="Validform_checktip"></span></div>
-     </li>
-     <li class="clearfix">
-      <label class="label_name col-xs-2 col-lg-2"><i class="c-red">*</i>角&nbsp;色：</label>
-      <div class="formControls col-xs-6"> <span class="select-box" style="width:150px;">
-				<select class="select" name="admin-role" size="1">
-					<option value="0">超级管理员</option>
-					<option value="1">管理员</option>
-					<option value="2">栏目主辑</option>
-					<option value="3">栏目编辑</option>
-				</select>
-				</span>
-         </div>
      </li>
      <li class="clearfix">
 			<label class="label_name col-xs-2 col-lg-2">备&nbsp;注：</label>

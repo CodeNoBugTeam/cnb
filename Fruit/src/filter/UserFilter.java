@@ -37,6 +37,7 @@ public class UserFilter implements Filter {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 			
 		}
+		//chain.doFilter(request, response);
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
