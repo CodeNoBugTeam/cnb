@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -9,8 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.user;
+<<<<<<< HEAD
 import ly.BeanUtils;
 
+=======
+>>>>>>> branch 'master' of https://github.com/CodeNoBugTeam/cnb.git
 import Bize.BizeMethod;
 import Expection.LoginException;
 
@@ -57,10 +63,10 @@ public class userServlet extends HttpServlet {
 			}
 		}
 		try {
-			BizeMethod.login(code, name, pwd);
+			user users = BizeMethod.login(code, name, pwd);
 			if (s.equalsIgnoreCase(code)) {
 
-				if ("admin".equals(name) && "123456".equals(pwd)) {
+				if (users != null) {
 					request.getSession().setAttribute("longinUser", name);
 					request.getRequestDispatcher("index.jsp").forward(request, response);
 				} else {
