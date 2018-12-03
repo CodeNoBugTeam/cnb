@@ -68,7 +68,7 @@ public class DBHelper {
 		Connection con = getCon();
 		PreparedStatement pstm = null;
 		try {
-			//System.out.println("SQL:" + sql);
+			System.out.println("SQL:" + sql);
 			pstm = con.prepareStatement(sql);
 			doParams(pstm, params);
 			int rows = pstm.executeUpdate();

@@ -9,6 +9,8 @@ public class worker {
 	private String wemail;
 	private Timestamp jointime;
 	private String wpwd;
+	private String wsex;
+	private String wage;
 	public int getWid() {
 		return wid;
 	}
@@ -44,6 +46,20 @@ public class worker {
 	}
 	public void setWpwd(String wpwd) {
 		this.wpwd = wpwd;
+	}
+	
+	public String getWsex() {
+		return wsex;
+	}
+	public void setWsex(String wsex) {
+		this.wsex = wsex;
+	}
+	
+	public String getWage() {
+		return wage;
+	}
+	public void setWage(String wage) {
+		this.wage = wage;
 	}
 	@Override
 	public String toString() {

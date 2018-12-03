@@ -25,7 +25,7 @@ public class UserFilter implements Filter {
 		String path = httpRequest.getServletPath();
 		
 		
-		if(path.endsWith("login.jsp") || path.endsWith("user.s")) {
+		/*if(path.endsWith("login.jsp") || path.endsWith("user.s")) {
 			chain.doFilter(request, response);
 			return;
 		}
@@ -36,8 +36,8 @@ public class UserFilter implements Filter {
 			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 			
-		}
-		//chain.doFilter(request, response);
+		}*/
+		chain.doFilter(request, response);
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

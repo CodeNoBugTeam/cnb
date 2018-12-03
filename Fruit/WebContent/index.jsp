@@ -131,9 +131,10 @@
   <ul class="submenu">
    <li class=""><a href="add_product.jsp"  class="btn" title="添加产品">添加产品</a></li> 
    <li class=""><a href="add_Advertising.jsp"  class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="administrator_list.jsp"  class="btn" title="查看管理员">查看管理员</a></li>
    <li class=""><a href="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
    <li class=""><a href="add_Singlepag.jsp"  class="btn" title="新增单页面">新增单页面</a></li>
-   <li class=""><a href="administrator_list.jsp"  class="btn" title="新增单页面">查看管理员</a></li>
+   
   </ul>  
   </div>
  </div>

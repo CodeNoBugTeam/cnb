@@ -4,13 +4,13 @@ import java.sql.Timestamp;
 
 public class user {
 	private int uid;
-	private String uname;
-	private String truename;
-	private String email;
-	private String upwd;
-	private String uaddress;
-	private Timestamp jointime;
-	private String utel;
+	private String uname;//会员名称
+	private String truename;//真实姓名
+	private String email;//邮箱
+	private String upwd;//密码
+	private String uaddress;//地址
+	private Timestamp jointime;//加入时间
+	private String utel;//电话
 	public int getUid() {
 		return uid;
 	}

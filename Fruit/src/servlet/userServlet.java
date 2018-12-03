@@ -14,32 +14,83 @@ import javax.servlet.http.HttpServletResponse;
 
 import Bean.user;
 import Bean.worker;
+import ly.BeanUtils;
+
 import Bize.BizeMethod;
 import Expection.LoginException;
-import ly.BeanUtils;
 
 @WebServlet("/user.s")
 public class userServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	BizeMethod bmtd = new BizeMethod();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
 		String op = request.getParameter("op");
-
+		
 		if ("login".equals(op)) {
 			login(request, response);
-		}else if("query".equals(op)){
-			query(request, response);
+		}else if("queryWorker".equals(op)){
+			queryWorker(request, response);
+
+		}else if("query".equals(op)) {
+			queryUser(request,response);
+		}else if("addWorker".equals(op)) {
+			addWorker(request,response);
+		}else if("edit".equals(op)) {
+			edit(request,response);
+		}else if("wupdate".equals(op)) {
+			wupdate(request,response);
+		}else if("move".equals(op)) {
+			wmove(request,response);
 		}
 	}
 
-	private void query(HttpServletRequest request, HttpServletResponse response) 
+	private void wmove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("workerId");
+		BizeMethod.move(id);
+		request.setAttribute("msg", "删除成功！");
+		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
+	}
+
+	private void wupdate(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		worker workers = BeanUtils.asBean(request, worker.class);
-		request.setAttribute("workerList",BizeMethod.find(workers));
+		BizeMethod.wupdate(workers);
+		request.setAttribute("msg", "修改成功！");
+		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);	
+	}
+
+	private void edit(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String id = request.getParameter("workerId");
+		worker workers = BizeMethod.editquery(id);
+		request.setAttribute("editWorker", workers);
+		request.getRequestDispatcher("Personal_info.jsp").forward(request, response);
+	}
+
+	private void addWorker(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		worker workers = BeanUtils.asBean(request, worker.class);
+		String newpwd = request.getParameter("newpwd");
+		String nwpwd = request.getParameter("wpwd");
+		System.out.println(newpwd+""+nwpwd);
+		try {
+			BizeMethod.addWorker(workers,newpwd);
+			queryWorker(request,response);
+		} catch (LoginException e) {
+			e.printStackTrace();
+			request.setAttribute("msg", e.getMessage());
+		}
+	
+	}
+
+	private void queryWorker(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		worker workers = BeanUtils.asBean(request, worker.class);
+		request.setAttribute("workerList",BizeMethod.findWorker(workers));
 		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
 		
 	}
@@ -87,7 +138,12 @@ public class userServlet extends HttpServlet {
 			request.setAttribute("msg", e.getMessage());
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
-
+	}
+	private void queryUser(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		user u = BeanUtils.asBean(request, user.class);
+		request.setAttribute("userList", bmtd.findUser(u));
+		request.getRequestDispatcher("manage-user.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
