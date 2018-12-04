@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	//判断有没有用户列表数据，如果没有则跳转到user.s?op=query
 	if (request.getAttribute("userList") == null) {
 		request.getRequestDispatcher("user.s?op=query").forward(request, response);
 	}
@@ -34,26 +33,15 @@
 <body>
 	<div class="margin" id="page_style">
 		<div class="operation clearfix same_module mb15">
-			<ul class="choice_search">
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">会员名称：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">电话：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">地址：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">邮箱：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<button class="btn button_btn bg-deep-blue " onclick=""
-					type="button">
-					<i class="fa  fa-search"></i>&nbsp;搜索
-				</button>
-			</ul>
+			<form action="user.s">
+				<input name="op" type="hidden" value="query"> 会员名称：<input
+					name="account" value="${param.account}"> 电话：<input
+					name="tel" value="${param.tel}"> 地址：<input name="tel"
+					value="${u.uaddress}"> 邮箱：<input name="tel"
+						value="${u.email}"><input type="submit" value="查询">
+			</form>
 		</div>
-		<div class="h_products_list clearfix" id="Sellerber">
+		<!-- <div class="h_products_list clearfix" id="Sellerber">
 			<div class="Sellerber_left menu" id="menuBar">
 
 				<div class="menu_style" id="menu_style">
@@ -63,7 +51,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
+			
 			<div class="bkg_List_style list_Exhibition list_show padding15">
 				<div class="bkg_List_operation clearfix searchs_style"></div>
 				<div class="datalist_show">
@@ -82,7 +71,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
 								<c:forEach items="${userList}" var="u">
 									<tr>
 										<td>${u.uid}</td>
@@ -107,72 +95,42 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	
 	<!--添加用户图层-->
 	<div class="add_menber" id="add_menber_style" style="display: none">
-
 		<ul class=" page-content">
 			<li>
 			<label class="label_name">会员名称：</label>
 			<span class="add_name">
-			<input value="" name="会员名称" type="text" class="text_add" />
+			<input value="" name="会员名称" type="text" class="text_add" value="${u.uname}"/>
 			</span>
 				<div class="prompt r_f"></div>
 			</li>
-			
 			<li>
 			<label class="label_name">真实姓名：</label>
 			<span class="add_name">
-			<input name="真实姓名" type="text" class="text_add" /></span>
+			<input name="真实姓名" type="text" class="text_add" value="${u.truename}"/></span>
 				<div class="prompt r_f"></div>
 			</li>
 			<li>
 			<label class="label_name">邮箱：</label>
 			<span class="add_name">
-			<input name="邮箱" type="text" class="text_add" /></span>
+			<input name="邮箱" type="text" class="text_add" value="${u.email}"/></span>
 				<div class="prompt r_f"></div>
 			</li>
-			
 			<li class="adderss">
 			<label class="label_name">地址：</label>
 			<span class="add_name">
-			<input name="地址" type="text" class="text_add" style="width: 350px" /></span>
+			<input name="地址" type="text" class="text_add" style="width: 350px" value="${u.uaddress}"/></span>
 				<div class="prompt r_f"></div>
 			</li>
 			<li>
 			<label class="label_name">电话：</label>
 			<span class="add_name">
-			<input name="电话" type="text" class="text_add" /></span>
+			<input name="电话" type="text" class="text_add" value="${u.utel}"/></span>
 				<div class="prompt r_f"></div>
 			</li>
 		</ul>
-	</div>
-	<!--用户信息-->
-	<div class="userinfo_style" id="userinfo_style" style="display: none">
-		<div class="member_show">
-			<div class="member_jbxx clearfix">
-				<img class="img" src="images/user.png">
-					<dl class="right_xxln">
-						<dt>
-							<span class="">张三</span> <span class="">余额：40</span>
-						</dt>
-						<dd class="" style="margin-left: 0">这家伙很懒，什么也没有留下</dd>
-					</dl>
-			</div>
-			<div class="member_content">
-				<!-- <ul>
-					
-					<li><label class="label_name">手机：</label><span class="name">13456765555</span></li>
-					<li><label class="label_name">固定电话：</label><span class="name">021-454443344</span></li>
-					<li><label class="label_name">邮箱：</label><span class="name">admin@mail.com</span></li>
-					<li><label class="label_name">地址：</label><span class="name">江苏南京市雨花台区创业路5号紫荆花园2懂4单元402</span></li>
-					<li><label class="label_name">注册时间：</label><span class="name">2014.12.20</span></li>
-					<li><label class="label_name">积分：</label><span class="name">330</span></li>
-					<li><label class="label_name">等级：</label><span class="name">普通用户</span></li>
-
-				</ul> -->
-			</div>
-		</div>
 	</div>
 </body>
 </html>
