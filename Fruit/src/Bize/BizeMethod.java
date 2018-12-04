@@ -36,11 +36,11 @@ public class BizeMethod {
 			params.add("%" + u.getUname() + "%");
 		}
 		if(u.getUtel() != null && u.getUtel().trim().isEmpty() == false) {
-			sql += " and tel like ? ";
+			sql += " and utel like ? ";
 			params.add("%" + u.getUtel() + "%");
 		}
 		if(u.getUaddress() != null && u.getUaddress().trim().isEmpty() == false) {
-			sql += " and address like ?";
+			sql += " and uaddress like ?";
 			params.add("%" + u.getUaddress() + "%");
 		}
 		if(u.getEmail() != null && u.getEmail().trim().isEmpty() == false) {
@@ -48,9 +48,6 @@ public class BizeMethod {
 			params.add("%" + u.getEmail() + "%");
 		}
 		return DBHelper.select(sql,user.class, params);
-		/*String sql = "SELECT * from user where uname = ? and upwd = ?";
-		Bean.user user = DBHelper.unique(sql, Bean.user.class,name,pwd);
-		return user;*/
 	}
 
 	public static Object findWorker(worker workers) {

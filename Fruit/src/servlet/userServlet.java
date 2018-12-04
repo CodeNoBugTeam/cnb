@@ -34,8 +34,7 @@ public class userServlet extends HttpServlet {
 			login(request, response);
 		}else if("queryWorker".equals(op)){
 			queryWorker(request, response);
-
-		}else if("query".equals(op)) {
+		}else if("queryUser".equals(op)) {
 			queryUser(request,response);
 		}else if("addWorker".equals(op)) {
 			addWorker(request,response);
