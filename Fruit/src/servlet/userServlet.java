@@ -44,7 +44,18 @@ public class userServlet extends HttpServlet {
 			wupdate(request,response);
 		}else if("move".equals(op)) {
 			wmove(request,response);
+		}else if("edituser".equals(op)) {
+			edituser(request,response);
+		}else if("moveuser".equals(op)) {
+			moveuser(request,response);
 		}
+	}
+
+	private void moveuser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("userId");
+		BizeMethod.moveuser(id);
+		request.setAttribute("msg", "删除成功！");
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
 	}
 
 	private void wmove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -91,9 +102,14 @@ public class userServlet extends HttpServlet {
 		worker workers = BeanUtils.asBean(request, worker.class);
 		request.setAttribute("workerList",BizeMethod.findWorker(workers));
 		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
-		
 	}
-
+	private void edituser(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String id = request.getParameter("u");
+		user u = BizeMethod.equery(id);
+		request.setAttribute("editUser", u);
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
+	}
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String code = request.getParameter("code");

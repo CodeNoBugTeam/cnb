@@ -28,6 +28,7 @@ public class BizeMethod {
 		Bean.user user = DBHelper.unique(sql,user.class,name,pwd);
 		return user;
 	}
+	
 	public Object findUser(user u) {
 		String sql = "select * from user where 1=1";
 		ArrayList<Object> params = new ArrayList<Object>();
@@ -75,25 +76,38 @@ public class BizeMethod {
 		
 		if(! w.getWpwd().equals(newpwd)) {
 			throw new LoginException("两次输入的密码不一致，注意字母大小写！");
-			
 		}
 		//String date = getDate();
 		java.sql.Timestamp now = new Timestamp(System.currentTimeMillis());
 		String sql = "insert into worker(wname,wpwd,wsex,wtel,wemail,jointime) values(?,?,?,?,?,?)";
 		DBHelper.insert(sql,w.getWname(),w.getWpwd(),w.getWsex(),w.getWtel(),w.getWemail(), now);	
 	}
+	
 	public static worker editquery(String id) {
 		String sql = "select * from worker where wid = ?";
 		worker workers = DBHelper.unique(sql, worker.class, id);
 		return workers;
 		
 	}
+	public static user equery(String id) {
+		String sql = "selecct * from user where uid = ?";
+		user u = DBHelper.unique(sql, user.class,id);
+		return u;
+	}
+	
 	public static void wupdate(worker w) {
 		String sql = "update worker set wname=?,wtel=?,wemail=?,wage=?,wsex=? where wid=?";
 		DBHelper.update(sql,w.getWname(),w.getWtel(),w.getWemail(),w.getWage(),w.getWsex(),w.getWid() );	
 	}
+	
 	public static void move(String id) {
 		String sql = "delete from worker where wid=? ";
+		DBHelper.update(sql, id);
+		
+	}
+
+	public static void moveuser(String id) {
+		String sql = "delete from user where uid = ?";
 		DBHelper.update(sql, id);
 		
 	}
