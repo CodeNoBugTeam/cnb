@@ -1,10 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
-import javax.management.Query;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -12,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.introduce;
+import Bean.record;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
@@ -45,7 +44,27 @@ public class userServlet extends HttpServlet {
 			wupdate(request,response);
 		}else if("move".equals(op)) {
 			wmove(request,response);
+		}else if("productadd".equals(op)) {
+			productadd(request,response);
 		}
+	}
+
+	private void productadd(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		introduce introduces = BeanUtils.asBean(request, introduce.class);
+		String family = request.getParameter("family");
+		String[] name = request.getParameterValues("fname");
+		System.out.println(name);
+		try {
+			BizeMethod.productadd(introduces,family);
+			request.setAttribute("msg", "商品添加成功！");
+			request.getRequestDispatcher("add_product.jsp").forward(request, response);
+		} catch (LoginException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("失败");
+		}
+		
 	}
 
 	private void wmove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -95,11 +114,14 @@ public class userServlet extends HttpServlet {
 		
 	}
 
-	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void login(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String code = request.getParameter("code");
-		String name = request.getParameter("username");
+		String name = request.getParameter("username"); 
 		String pwd = request.getParameter("userpwd");
+		request.setAttribute("recordsList", BizeMethod.records(name));
+		
 		String s = (String) request.getSession().getAttribute("piccode");
 		String[] arr = request.getParameterValues("checkbox");
 		if (arr != null) {
@@ -120,7 +142,7 @@ public class userServlet extends HttpServlet {
 			}
 		}
 		try {
-			user users = BizeMethod.login(code, name, pwd);
+			worker users = BizeMethod.login(code, name, pwd);
 			if (s.equalsIgnoreCase(code)) {
 
 				if (users != null) {

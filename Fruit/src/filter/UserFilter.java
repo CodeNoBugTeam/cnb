@@ -22,10 +22,10 @@ public class UserFilter implements Filter {
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		String path = httpRequest.getServletPath();
+		/*String path = httpRequest.getServletPath();
 		
 		
-		/*if(path.endsWith("login.jsp") || path.endsWith("user.s")) {
+		if(path.endsWith("login.jsp") || path.endsWith("user.s")) {
 			chain.doFilter(request, response);
 			return;
 		}

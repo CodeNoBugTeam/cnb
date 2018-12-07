@@ -25,101 +25,112 @@
 </head>
 
 <body>
-<div class="margin inside_pages clearfix">
-<div class="add_style clearfix relative">
-  <!--品牌展示 当通过品牌管理添加产品是显示该-->
-  <div class="Brand_title">
-  	 <div class="Brand_img"><img src="product_img/rc-2.jpg"><h3>南非柠檬</h3></div>
-  </div>
- <ul>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label><div class="Add_content col-xs-11">
-     <span id="cityDanXuan" class="width200px fl_hsCheckData"></span></div>
-     </li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品编号：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div></li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/></div></li>
- 
-  <li class="clearfix">
-   <label class="label_name col-xs-1"><i>*</i>发布栏：&nbsp;&nbsp;</label>
-   <div class="Add_content col-xs-11">
-   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">果园推荐</span></label></span>
-   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">蔬果热卖</span></label></span>
-   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">进口水果</span></label></span>
-   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">国产水果</span></label></span>
-   <span class="classification_name l_f"><label ><input type="checkbox" name="form-field-radio" class="ace"><span class="lbl">新鲜时蔬</span></label></span>
+<form action="user.s" method="post">
+	<input name="op" value="productadd" type="hidden"/>
+	<div class="margin inside_pages clearfix">
+	<div class="add_style clearfix relative">
+	  <!--品牌展示 当通过品牌管理添加产品是显示该-->
 
-   <span class="relative l_f">
-   <button  type="button" onclick="add_category()" class="btn bg-deep-blue operation_btn margin-left">添加分类</button>
-   <div class="add_category_style">
-     <p class="clearfix">
-     <input name="" type="text"  class="l_f form-control" style="width:220px;"/><button style="margin:0px" class="btn button_btn bg-deep-blue l_f" id="add_category" type="button">添加</button>
-     </p>
-     <p class="Prompt"><em>该分类最多添加10个</em></p>
-   </div>
-   </span>
-   </div> 
-   </li>
-     <li class="clearfix">
-      <div class="col-xs-4">
-     <label class="label_name col-xs-3"><i>*</i>商品单价：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-9">
-    <input name="" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
-    </div>   
-    </div>
-    <div class="col-xs-4">
-    <label class="label_name col-xs-3"><i>*</i>商品数量：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-9">
-   <input name="" type="text"  class="col-xs-7"/><em class="Prompt">件</em>
-    </div>   
-    </div>
-    </li>
-   <li class="clearfix"><label class="label_name col-xs-1">设置时间：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-11">
-    <label class="l_f checkbox_time"><input type="checkbox" name="checkbox" class="ace" id="checkbox"><span class="lbl">是</span></label>
-    <div class="Date_selection" style="display:none">
-      <span class="label_name">开始日：</span><p class="laydate-icon" id="start" style="width:200px; margin-right:10px; height:30px; line-height:30px; float:left"></p>
-      <span class="label_name">结束日：</span><p class="laydate-icon" id="end" style="width:200px;height:30px; line-height:30px; float:left"></p>
-    </div>
-    </div>   
-    </li>
-  
-     <li class="clearfix">
-      <div class="col-xs-4">
-     <label class="label_name col-xs-3">是否上架：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-9">
-    <label><input type="radio" name="checkbox" class="ace" checked="checked"><span class="lbl">是</span></label>
-    <label><input type="radio" name="checkbox" class="ace"><span class="lbl">否</span></label>
-    </div>   
-    </div>
-    <div class="col-xs-4">
-    <label class="label_name col-xs-3">允许评论：&nbsp;&nbsp;</label> 
-    <div class="Add_content col-xs-9">
-       
-    <label class="l_f checkbox_time"><input type="checkbox" name="checkbox" class="ace" checked="checked"><span class="lbl"></span></label>
-    </div>   
-    </div>
-    </li>
-      <li class="clearfix">
-     <label class="label_name col-xs-1"><i>*</i>产品图片：&nbsp;&nbsp;</label>
-     <div class="Add_content col-xs-11" id="Upload">
-     <div class="images_Upload clearfix margin-bottom" id="images_Upload">
-      <span class="Upload_img"><input name="" type="file" /></span>
-      <a href="javascript:ovid()" class="operating delete_Upload" onclick="delete_Upload(this.id)"><i class="fa fa-remove"></i></a>
-      <a href="javascript:ovid()" class="operating" title="预览" onclick="preview_img(this.id)"><i class="fa  fa-image"></i></a>
-    </div>
-    <button type="button" class="add_Upload bg-deep-blue" id="add_Upload" onclick="add_Upload()"><i class="fa  fa-plus"></i></button>
-     </div>
-     </li>
-     <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>内容介绍：&nbsp;&nbsp;</label>
-     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:500px;"></script></div>
-     </li>  
- </ul>
- <div class="Button_operation btn_width">
-    <button class="btn button_btn bg-deep-blue" type="button">保存并提交</button>
-    <button class="btn button_btn bg-orange" type="button">保存草稿</button>
-    <button class="btn button_btn bg-gray" type="button">取消添加</button>
- </div>
-</div>
-</div>
+	  <div class="Brand_title">
+	  	 <div class="Brand_img"><img src="product_img/rc-2.jpg"/><h3>南非柠檬</h3></div>
+	  </div>
+	 <ul>
+	  <li class="clearfix">
+		  <label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label>
+		  <div class="Add_content col-xs-11"><span id="cityDanXuan" name="fname" class="width200px fl_hsCheckData"></span></div>
+	  </li>
+	  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品编号：&nbsp;&nbsp;
+	  </label><div class="Add_content col-xs-11"><input name="fin" type="text" class="col-xs-4"/></div></li>
+	  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;
+	  </label><div class="Add_content col-xs-11"><input name="details" type="text" class="col-xs-4"/></div></li>
+	 
+	  <li class="clearfix">
+	   <label class="label_name col-xs-1"><i>*</i>发布栏：&nbsp;&nbsp;</label>
+	   <span class="classification_name l_f"><label >
+	   <input type="checkbox" name="family" class="ace" value="果园推荐" /><span class="lbl">果园推荐</span></label></span>
+	   <span class="classification_name l_f"><label >
+	   <input type="checkbox" name="family" class="ace" value="蔬果热卖" /><span class="lbl">蔬果热卖</span></label></span>
+	   <span class="classification_name l_f"><label >
+	   <input type="checkbox" name="family" class="ace" value="进口水果" /><span class="lbl">进口水果</span></label></span>
+	   <span class="classification_name l_f"><label >
+	   <input type="checkbox" name="family" class="ace" value="国产水果" /><span class="lbl">国产水果</span></label></span>
+	   <span class="classification_name l_f"><label >
+	   <input type="checkbox" name="family" class="ace" value="新鲜时蔬" /><span class="lbl">新鲜时蔬</span></label></span>
+	
+	   <span class="relative l_f">
+	   <button  type="button" onclick="add_category()" class="btn bg-deep-blue operation_btn margin-left">添加分类</button>
+	   <div class="add_category_style">
+	     <p class="clearfix">
+	     <input name="" type="text"  class="l_f form-control" style="width:220px;"/>
+	     <button style="margin:0px" class="btn button_btn bg-deep-blue l_f" id="add_category" type="button">添加</button>
+	     </p>
+	     <p class="Prompt"><em>该分类最多添加10个</em></p>
+	   </div>
+	   </span>
+	   </div> 
+	   </li>
+	     <li class="clearfix">
+	      <div class="col-xs-4">
+	     <label class="label_name col-xs-3"><i>*</i>商品单价：&nbsp;&nbsp;</label> 
+	    <div class="Add_content col-xs-9">
+	    <input name="price" type="text"  class="col-xs-7"/><em class="Prompt">元</em>
+	    </div>   
+	    </div>
+	    <div class="col-xs-4">
+	    <label class="label_name col-xs-3"><i>*</i>商品数量：&nbsp;&nbsp;</label> 
+	    <div class="Add_content col-xs-9">
+	   <input name="number" type="text"  class="col-xs-7"/><em class="Prompt">件</em>
+	    </div>   
+	    </div>
+	    </li>
+	  
+	     <li class="clearfix">
+	      <div class="col-xs-4">
+	     <label class="label_name col-xs-3">是否上架：&nbsp;&nbsp;</label> 
+	    <div class="Add_content col-xs-9">
+	    <label><input type="radio" name="checkbox" class="ace" checked="checked"/><span class="lbl">是</span></label>
+	    <label><input type="radio" name="checkbox" class="ace"/><span class="lbl">否</span></label>
+	    </div>   
+	    </div>
+	    <div class="col-xs-4">
+	    <!-- <label class="label_name col-xs-3">允许评论：&nbsp;&nbsp;</label>  --> 
+	    </div>
+	    </li>
+	      <li class="clearfix">
+	     <label class="label_name col-xs-1"><i>*</i>产品图片：&nbsp;&nbsp;</label>
+	     <div class="Add_content col-xs-11" id="Upload">
+	     <div class="images_Upload clearfix margin-bottom" id="images_Upload">
+	      <span class="Upload_img">
+	      <input name="ipic" type="file" /></span>
+	      <a href="javascript:ovid()" class="operating delete_Upload" onclick="delete_Upload(this.id)">
+	      <i class="fa fa-remove"></i></a>
+	      
+	      
+	      <!-- ajax刷新 -->
+	      <a href="javascript:ovid()" class="operating" title="预览图片" onclick="preview_img(this.id)">
+	      <i class="fa  fa-image"></i></a>
+	    </div>
+	    <button type="button" class="add_Upload bg-deep-blue" id="add_Upload" onclick="add_Upload()">
+	    <i class="fa  fa-plus"></i></button>
+	     </div>
+	     </li>
+	    <!-- <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>内容介绍：&nbsp;&nbsp;</label>
+	     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:500px;">
+	</script></div>
+	     </li>  
+	     -->
+	 </ul>
+	 <div class="Button_operation btn_width">
+	    <button class="btn button_btn bg-deep-blue" type="submit">保存并提交</button>
+	    <button class="btn button_btn bg-orange" type="button">保存草稿</button>
+	    <button class="btn button_btn bg-gray" type="button">取消添加</button>
+	 </div>
+
+	</div>
+	
+	</div>
+</form>
+
 </body>
 </html>
    <!--复文本编辑框-->

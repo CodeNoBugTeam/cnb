@@ -3,15 +3,18 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import Bean.introduce;
 import Bean.user;
 import Bean.worker;
 import Expection.LoginException;
 import ly.DBHelper;
+import Bean.record;
 
 public class BizeMethod {
 
-	public static user login(String code, String name, String pwd)
+	public static worker login(String code, String name, String pwd)
 			throws LoginException {
 		if(name == null || name.trim().isEmpty()) {
 			throw new LoginException("用户名不能为空！");
@@ -24,8 +27,8 @@ public class BizeMethod {
 		if(pwd == null || pwd.trim().isEmpty()) {
 			throw new LoginException("密码不能为空！");
 		}
-		String sql = "SELECT * from user where uname = ? and upwd = ?";
-		Bean.user user = DBHelper.unique(sql,user.class,name,pwd);
+		String sql = "select * from worker where wname = ? and wpwd = ?";
+		worker user = DBHelper.unique(sql,worker.class,name,pwd);
 		return user;
 	}
 	public Object findUser(user u) {
@@ -97,8 +100,27 @@ public class BizeMethod {
 	}
 	public static void move(String id) {
 		String sql = "delete from worker where wid=? ";
-		DBHelper.update(sql, id);
+		DBHelper.update(sql,id);
 		
+	}
+	public static void productadd(introduce intro, String family) throws LoginException {
+		if(intro.getFin() > 10000 || intro.getFin() < 1000) {
+			throw new LoginException("编码只能有四位！");
+		}
+		java.sql.Timestamp now = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into introduce(fin,ipic,fplace,details,family,"
+				+ "number,price,jointime,fname) values(?,?,?,?,?,?,?,?,?)";
+		DBHelper.insert(sql,intro.getFin(),intro.getIpic(),intro.getFplace(),intro.getDetails(),
+				family,intro.getNumber(),intro.getPrice(),now,intro.getFname());
+		
+		
+		}
+	public static List<record> records(String name) {
+		Timestamp time = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into record (wname,logintime)values(?,?)";
+		String sql1 = "select * from record";
+		DBHelper.insert(sql, name,time);
+		return DBHelper.select(sql1, record.class);
 	}
 	
 

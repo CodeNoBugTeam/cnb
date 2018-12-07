@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -144,11 +145,13 @@
   <div class="title_name"><i></i>登陆记录 <a href="#">+更多</a></div>
   <table class="record_list table table_list">
   <tbody>
-   <tr><td>管理员</td><td>2016-08-04 12:45:43</td></tr>
-   <tr><td>管理员</td><td>2016-08-14 23:34:23</td></tr>
-   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
-   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
-   <tr><td>管理员</td><td>2016-08-24 11:34:53</td></tr>
+  <!--  recordsList -->
+  
+  <c:forEach items="${recordsList}" var="i">
+   <tr><td>${i.wname }</td><td>${i.logintime }</td></tr>
+  </c:forEach>
+  
+  
    </tbody>
   </table>
   </div>
