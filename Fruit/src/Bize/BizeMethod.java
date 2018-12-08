@@ -90,7 +90,7 @@ public class BizeMethod {
 		
 	}
 	public static user equery(String id) {
-		String sql = "selecct * from user where uid = ?";
+		String sql = "select * from user where uid = ?";
 		user u = DBHelper.unique(sql, user.class,id);
 		return u;
 	}

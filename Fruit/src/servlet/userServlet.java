@@ -158,7 +158,7 @@ public class userServlet extends HttpServlet {
 			throws ServletException, IOException{
 		user u = BeanUtils.asBean(request, user.class);
 		request.setAttribute("userList", bmtd.findUser(u));
-		request.getRequestDispatcher("manage-list.jsp").forward(request, response);
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

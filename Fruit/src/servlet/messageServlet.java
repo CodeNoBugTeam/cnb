@@ -48,13 +48,13 @@ public class messageServlet extends HttpServlet {
 		
 		try {
 			mbBiz.add(messag);
+			response.sendRedirect("Article_list.jsp");
 		} catch (BizException e) {
 			e.printStackTrace();
 			request.setAttribute("msg", e.getMessage());
-		}finally {
-			response.sendRedirect("Article_list.jsp");
-		}
 		
+			request.getRequestDispatcher("add_Article.jsp").forward(request,response);	
+		}
 	}
 
 	private void messa(HttpServletRequest request, HttpServletResponse response) 
