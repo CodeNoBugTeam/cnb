@@ -60,7 +60,7 @@
                                 <span class="second_Marketprice">￥0.00</span>
                             </div>
                         <div class="buy">
-                            <a class="second_mallBuy" href="lemon.jsp">
+                            <a class="second_mallBuy" href="<%=request.getContextPath() %>/customer.s?buy=lemon">
                                 <span style="color: white;">购买</span>
                             </a>
                         </div>

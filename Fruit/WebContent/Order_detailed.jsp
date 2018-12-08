@@ -36,23 +36,23 @@
      <div class="Info_style clearfix padding15">
         <div class="col-xs-3">  
          <label class="label_name" for="form-field-2"> 收件人姓名： </label>
-         <div class="o_content">张孝全</div>
+         <input type="text" name="name" style="height: 25px"/>
         </div>
         <div class="col-xs-3">  
          <label class="label_name" for="form-field-2"> 收件人电话： </label>
-         <div class="o_content">16543432343</div>
+         <input type="text" name="name" style="height: 25px"/>
         </div>
          <div class="col-xs-3">  
          <label class="label_name" for="form-field-2"> 收件地邮编： </label>
-         <div class="o_content">104545</div>
+      	 <input type="text" name="name" style="height: 25px"/>	
         </div>
          <div class="col-xs-3">  
          <label class="label_name" for="form-field-2"> 收件地址： </label>
-         <div class="o_content">江苏南京市雨花台区郁金香软件大厦3懂3单元302室</div>
+         <input type="text" name="name" style="height: 25px"/>
         </div>
           <div class="col-xs-12">  
          <label class="label_name" for="form-field-2">备注说明： </label>
-         <div class="o_content">包装要好点</div>
+         <input type="text" name="name" style="height: 25px"/>
         </div>
      </div>
     </div>
@@ -140,30 +140,7 @@
                                 <p>2015-04-28 11:23:28</p>
                                 <p>妥投投递并签收，签收人：他人收 他人收</p>
                                 <span class="before"></span><span class="after"></span><i class="mh-icon mh-icon-new"></i></li>
-                            <li>
-                                <p>2015-04-28 07:38:44</p>
-                                <p>深圳市南油速递营销部安排投递（投递员姓名：蔡远发<a href="tel:18718860573">18718860573</a>;联系电话：）</p>
-                                <span class="before"></span><span class="after"></span></li>
-                            <li>
-                                <p>2015-04-28 05:08:00</p>
-                                <p>到达广东省邮政速递物流有限公司深圳航空邮件处理中心处理中心（经转）</p>
-                                <span class="before"></span><span class="after"></span></li>
-                            <li>
-                                <p>2015-04-28 00:00:00</p>
-                                <p>离开中山市 发往深圳市（经转）</p>
-                                <span class="before"></span><span class="after"></span></li>
-                            <li>
-                                <p>2015-04-27 15:00:00</p>
-                                <p>到达广东省邮政速递物流有限公司中山三角邮件处理中心处理中心（经转）</p>
-                                <span class="before"></span><span class="after"></span></li>
-                            <li>
-                                <p>2015-04-27 08:46:00</p>
-                                <p>离开泉州市 发往中山市</p>
-                                <span class="before"></span><span class="after"></span></li>
-                            <li>
-                                <p>2015-04-26 17:12:00</p>
-                                <p>泉州市速递物流分公司南区电子商务业务部已收件，（揽投员姓名：王晨光;联系电话：<a href="tel:13774826403">13774826403</a>）</p>
-                                <span class="before"></span><span class="after"></span></li>
+                            
                         </ul>
                     </div>
                 </div>

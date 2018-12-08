@@ -10,6 +10,27 @@
     <script src="<%=request.getContextPath() %>/js/jquery-1.12.3.js"></script>
     </script><script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
+<script type="text/javascript">
+	function add(){
+		var b = document.getElementById("price");
+		var a = document.getElementById("number");
+		var v = document.getElementById("prices");
+		a.value = parseInt(a.value)+1;
+		var c = parseInt(b.innerText) * parseInt(a.value);
+		v.innerText=c;
+	}
+	function reduce(){
+		
+		var a = document.getElementById("number");
+		if(a.value > 0){
+			a.value = parseInt(a.value)-1;	
+			var b = document.getElementById("price");
+			var v = document.getElementById("prices");
+			var c = parseInt(v.innerText) - parseInt(b.innerText);
+			v.innerText=c;
+		}
+	}
+</script>
 <body>
 <!--顶部导航-->
 <jsp:include page="/public/head.jsp"></jsp:include>
@@ -20,6 +41,7 @@
 </div>
 <!--banner图片结束-->
 <!--主页内容-->
+<form action="<%=request.getContextPath() %>/customer.s" method="post">
 <div class="content">
     <div class="cont-top">
         <div class="cont-left">
@@ -61,9 +83,13 @@
                 </span>
             </div>
            <div class="pic">
-               <span class="ppi">价格:</span>
+           	   <span class="ppi">单价:</span>
                <span class="f-mallUnit">￥</span>
-               <span class="pcc">29.00</span>
+               <span class="pcc" id="price" value="0">29.00</span>
+               
+               <span class="ppi">总价格:</span>
+               <span class="f-mallUnit">￥</span>
+               <span class="pcc" id="prices" value="0">29.00</span>
            </div>
             <div class="pict">
                 <div class="f-proSatifySumWrap">
@@ -80,25 +106,27 @@
             <div class="fk-pd5MallCartCount">
                 <div class="f-cartbuyCountWrap">
                     <span class="f-propName g_minor" style="width:75px;min-width:75px;max-width: 75px;">购买数量：</span>
-                    <input type="text"  value="1" class="g_itext cartBuyCount f-cartBuyCount">
+                    
+                    <input type="text"  value="1" class="g_itext cartBuyCount f-cartBuyCount" id="number">
                 </div>
                 <div class="f-buyCountBtn">
-                    <div  class="f-countBtn mallJian"></div>
-                    <div  class="f-countBtn disableMallJian"></div>
+                    <div  class="f-countBtn mallJian" onclick="add()"></div>
+                    <div  class="f-countBtn disableMallJian" onclick="reduce()"></div>
                 </div>
             </div>
             <div class="fk-pd5MallActBtns">
-                <div class="buttn">
+                <Button class="buttn" type="submit" name="buy" value="add">
                     加入购物车
-                </div>
-                <div class="buttn butto">
+                </Button>
+                <Button class="buttn butto" type="submit" name="buy" value="buy">
                     立即购买
-                </div>
+                </Button>
 
             </div>
 
         </div>
     </div>
+ </form>
 
     <div class="cont-bot">
         <div class="hd">
@@ -150,99 +178,7 @@
 <!--底部-->
 <jsp:include page="/public/foot.jsp"></jsp:include>
 <!--底部结束-->
-<!--弹框-->
-<div class="popup">
-    <div class="login">
-        <div class="del">×</div>
-        <div class="lg-cont">
-            <div class="lhd">
-                <ul>
-                    <li class="active">登录</li>
-                    <li>注册</li>
-                </ul>
-                <div class="lhdfoot">
-                    <div class="lhdbottom"  >
-                    </div>
-                </div>
 
-            </div>
-            <div class="lbd">
-                <div class="lbd1"style="display: block">
-                    <div id="memberLoginAcct" class="J_memberLoginItem memberLoginDialogItem">
-                        <input id="memberAcct" class="generateInput memberAcctInput" type="text" value="" placeholder="账号">
-                    </div>
-                    <div id="memberLoginPwd" class="J_memberLoginItem memberLoginDialogItem itemSpace">
-                        <input id="memberPwd" class="generateInput memberPwdInput" type="password" placeholder="密码"}>
-                    </div>
-                    <div class="loginButton loginButton">
-                        <div class="middle">登录</div>
-                    </div>
-                    <div class="bott"></div>
-                </div>
-                <div class="lbd1">
-                    <div class="msv">
-                        <div class="memberSignupItem">
-                            <div class="itemMiddle">
-                                <input type="text" placeholder="账号" >
-                            </div>
-                            <div class="itemRight">*</div>
-                        </div>
-                        <div class="memberSignupItem ">
-                            <div class="itemMiddle">
-                                <input type="password" id="memberSignupPwd" placeholder="密码" maxlength="50">
-                            </div>
-                            <div class="itemRight">*</div>
-                        </div>
-                        <div class="memberSignupItem">
-                            <div class="itemMiddle">
-                                <input type="password" id="memberSignupRepwd" placeholder="确认密码" maxlength="50">
-                            </div>
-                            <div class="itemRight">*</div>
-                        </div>
-                        <div class="memberSignupItem">
-                            <div class="itemMiddle">
-                                <input id="name" name="姓名" placeholder="姓名" class="userAddItem isCheckUAI" type="text" maxlength="50">
-                            </div>
-                            <div class="itemRight">*</div>
-                        </div>
-                        <div class="memberSignupItem">
-                            <div class="itemMiddle">
-                                <input id="email" name="邮箱" placeholder="邮箱" class="userAddItem" type="text" maxlength="50">
-                            </div>
-                            <div class="itemRight"></div>
-                        </div>
-                        <div class="memberSignupItem">
-                            <div class="itemMiddle">
-                                <input id="phone" name="电话" placeholder="电话" class="userAddItem" type="text" maxlength="50">
-                            </div>
-                            <div class="itemRight"></div>
-                        </div>
-                        <div class="memberSignupItem_remark">
-                            <div class="itemMiddle">
-                                <textarea id="memberSignupRemark" placeholder="留言" maxlength="200"></textarea>
-                            </div>
-                            <div class="itemRight"></div>
-                        </div>
-                        <div class="memberSignupItem_captcha">
-                            <div class="itemMiddle" style="float:left;width: 150px;">
-                                <input id="memberSignupCaptcha" type="text" maxlength="4" placeholder="验证码">
-                            </div>
-                            <div class="itemRightp">
-                                <img alt="" id="memberSignupCaptchaImg" class="memberSignupCaptchaImg" onclick="Site.changeCaptchaImg(this)" title="看不清，换一张" src="images/validateCode.jpg">
-                            </div>
-                        </div>
-                   </div>
-                    <div class="loginButton loginButton">
-                        <div class="middle">注册</div>
-                    </div>
-                    <div class="bott"></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!--弹框结束-->
 </body>
-<script src="js/orange.js"></script>
+
 </html>
