@@ -35,10 +35,10 @@
 	  	 <div class="Brand_img"><img src="product_img/rc-2.jpg"/><h3>南非柠檬</h3></div>
 	  </div>
 	 <ul>
-	  <li class="clearfix">
-		  <label class="label_name col-xs-1"><i>*</i>选择分类：&nbsp;&nbsp;</label>
-		  <div class="Add_content col-xs-11"><span id="cityDanXuan" name="fname" class="width200px fl_hsCheckData"></span></div>
-	  </li>
+	 <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品名称：&nbsp;&nbsp;
+	  </label><div class="Add_content col-xs-11"><input name="fname" type="text" class="col-xs-4"/></div></li>
+	 <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品产地：&nbsp;&nbsp;
+	  </label><div class="Add_content col-xs-11"><input name="fplace" type="text" class="col-xs-4"/></div></li>
 	  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>商品编号：&nbsp;&nbsp;
 	  </label><div class="Add_content col-xs-11"><input name="fin" type="text" class="col-xs-4"/></div></li>
 	  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;

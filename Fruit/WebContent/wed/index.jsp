@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+	if (request.getAttribute("fruitList") == null) {
+		request.getRequestDispatcher("../customer.s?buy=queryFruit").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -41,97 +48,34 @@
             <div class="rec-left">
                 <img src="images/rc-1.jpg">
             </div>
-
-            <div class="rec-right">
-
+ <div class="rec-right">
+<c:forEach items="${fruitList}" var="i">
                 <div class="rcr">
                     <div class="rcr-top">
-                        <img src="images/rc-2.jpg" width="100%">
+                        <img src="${i.ipic }" width="100%">
                     </div>
                     <div class="rcr-bot">
                         <div class="rb-top">
-                            南非进口黄柠檬 6个装
+                            ${i.fname }
                         </div>
                             <div class="second_P">
                                 <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">29
+                                <span class="fk-prop-price">${i.price }
                                     <span class="fk-prop-p">.00</span>
                                 </span>
                                 <span class="second_Marketprice">￥0.00</span>
                             </div>
                         <div class="buy">
-                            <a class="second_mallBuy" href="<%=request.getContextPath() %>/customer.s?buy=lemon">
+                            <a class="second_mallBuy" href="<%=request.getContextPath() %>/customer.s?buy=lemon&id=${i.fin}">
                                 <span style="color: white;">购买</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-3.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            智利进口新鲜蓝莓 4盒
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">99
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="blueberry.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-4.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            美国进口红啤梨 6个
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">48
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="redpears.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="rcr">
-                    <div class="rcr-top">
-                        <img src="images/rc-5.jpg" width="100%">
-                    </div>
-                    <div class="rcr-bot">
-                        <div class="rb-top">
-                            美国进口无籽红提 1kg
-                        </div>
-                        <div class="second_P">
-                            <span class="fk-prop">￥</span>
-                                <span class="fk-prop-price">39
-                                    <span class="fk-prop-p">.00</span>
-                                </span>
-                            <span class="second_Marketprice">￥0.00</span>
-                        </div>
-                        <div class="buy">
-                            <a class="second_mallBuy" href="redgrape.jsp">
-                                <span style="color: white;">购买</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              </c:forEach >
+              
+              
+                
                 <div class="rcr">
                     <div class="rcr-top">
                         <img src="images/rc-6.jpg" width="100%">

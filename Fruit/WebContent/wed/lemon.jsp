@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -46,7 +47,7 @@
     <div class="cont-top">
         <div class="cont-left">
             <div class="ctl-img">
-                <img src="images/org.jpg">
+                <img src="${fruitListLemon.ipic }" >
             </div>
             <div class="collect">
                 <div class="coll">
@@ -74,7 +75,7 @@
         </div>
         <div class="cont-right">
             <div class="J_productTitle title g_minor">
-                <span>南非进口黄柠檬 6个装</span>
+                <span name="describe">${fruitListLemon.fname }</span>
                 <span id="productQrCode" class="webSiteQrCode">&nbsp;
                 <div class="code">
                     <img src="images/qrCode%20(1).gif">
@@ -85,11 +86,11 @@
            <div class="pic">
            	   <span class="ppi">单价:</span>
                <span class="f-mallUnit">￥</span>
-               <span class="pcc" id="price" value="0">29.00</span>
+               <span class="pcc" id="price" name="price" value="0">${fruitListLemon.price }</span>
                
                <span class="ppi">总价格:</span>
                <span class="f-mallUnit">￥</span>
-               <span class="pcc" id="prices" value="0">29.00</span>
+               <span class="pcc" id="prices" name="prices" value="0">${fruitListLemon.price }</span>
            </div>
             <div class="pict">
                 <div class="f-proSatifySumWrap">
@@ -115,9 +116,10 @@
                 </div>
             </div>
             <div class="fk-pd5MallActBtns">
-                <Button class="buttn" type="submit" name="buy" value="add">
+                <Button class="buttn" type="submit" name="buy" value="addCar">
                     加入购物车
                 </Button>
+                <input type="hidden" name="addcar" value="${fruitListLemon.fin }"/>
                 <Button class="buttn butto" type="submit" name="buy" value="buy">
                     立即购买
                 </Button>
@@ -151,10 +153,9 @@
         </div>
         <div class="bd">
             <div class="bd1"style="display: block">
-                <img src="images/or-1.png">
-                <img src="images/or-2.png">
-                <img src="images/or-3.png">
-                <img src="images/or-4.png">
+                <img src="${fruitListLemon.ipic }">
+                <img src="${fruitListLemon.ipic }">
+            
             </div>
             <div class="bd1">
                 <img src="images/or-5.jpg">
@@ -180,5 +181,10 @@
 <!--底部结束-->
 
 </body>
+<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+</c:if>
 
 </html>

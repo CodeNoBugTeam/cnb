@@ -18,7 +18,7 @@
         </div>
         <div class="headr-right" >
             <i class="iconfont" style="font-size: 16px;margin-right: 10px">&#xe7d5;</i>
-          <a href="Shopping.jsp">我的购物车 ∨</a>  
+          <a href="<%=request.getContextPath() %>/wed/Shopping.jsp">我的购物车 ∨</a>  
             <div class="hr-car">
                 <i class="iconfont"style="font-size: 40px;margin-right: 10px">&#xe633;</i>
                 您的购物车内暂时没有任何产品。

@@ -11,6 +11,7 @@ import Bean.worker;
 import Expection.LoginException;
 import ly.DBHelper;
 import Bean.record;
+import Bean.shoppingCart;
 
 public class BizeMethod {
 
@@ -121,6 +122,36 @@ public class BizeMethod {
 		String sql1 = "select * from record";
 		DBHelper.insert(sql, name,time);
 		return DBHelper.select(sql1, record.class);
+	}
+	public static List<introduce> queryFruit(introduce fruit) {
+		String sql = "select * from introduce";
+		return  DBHelper.select(sql, introduce.class);
+		
+	}
+	public static introduce queryFruitLemon(introduce fruit, String fin) {
+		String sql = "select * from introduce where fin=? ";
+		return  DBHelper.unique(sql, introduce.class,fin);
+	}
+	public static introduce queryFruitCar(String fin) {
+		String sql = "select * from introduce where fin=?";
+		return DBHelper.unique(sql, introduce.class, fin);
+		
+	}
+	
+	public static void addcar(introduce f, String id) {
+		String sql = "insert into shoppingCart(uid,fin,ctime,fname,fdetails,fprice,fipic)"
+				+ "values(?,?,?,?,?,?,?)";
+		java.sql.Timestamp now = new Timestamp(System.currentTimeMillis());
+		DBHelper.update(sql, id,f.getFin(),now,f.getFname(),f.getDetails(),f.getPrice(),f.getIpic());
+		
+	}
+	public static List<shoppingCart> queryCar(String uid) {
+		String sql = "select * from shoppingCart where uid=? ";
+		return DBHelper.select(sql, shoppingCart.class,uid);
+	}
+	public static void deleteCar(String uid, String fin) {
+		String sql =  "delete from shoppingCart where uid=? and fin=? ";
+		DBHelper.update(sql, uid,fin);	
 	}
 	
 
