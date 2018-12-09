@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-	//判断有没有用户列表数据，如果没有则跳转到user.s?op=query
 	if (request.getAttribute("userList") == null) {
-		request.getRequestDispatcher("user.s?op=query").forward(request, response);
+		request.getRequestDispatcher("user.s?op=queryUser").forward(request, response);
 	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,20 +11,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link href="css/shop.css" type="text/css" rel="stylesheet" />
-	<link href="css/Sellerber.css" type="text/css" rel="stylesheet" />
-	<link href="css/bkg_ui.css" type="text/css" rel="stylesheet" />
-	<link href="font/css/font-awesome.min.css" rel="stylesheet"
-		type="text/css" />
-	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script src="js/shopFrame.js" type="text/javascript"></script>
-	<script src="js/Sellerber.js" type="text/javascript"></script>
-	<script src="js/layer/layer.js" type="text/javascript"></script>
-	<script src="js/laydate/laydate.js" type="text/javascript"></script>
-	<script type="text/javascript" src="js/proTree.js"></script>
-	<title>会员管理</title>
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="css/shop.css" type="text/css" rel="stylesheet" />
+<link href="css/Sellerber.css" type="text/css" rel="stylesheet" />
+<link href="css/bkg_ui.css" type="text/css" rel="stylesheet" />
+<link href="font/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css" />
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script src="js/shopFrame.js" type="text/javascript"></script>
+<script src="js/Sellerber.js" type="text/javascript"></script>
+<script src="js/layer/layer.js" type="text/javascript"></script>
+<script src="js/laydate/laydate.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/proTree.js"></script>
+<title>会员管理</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -33,144 +33,59 @@
   <![endif]-->
 <body>
 	<div class="margin" id="page_style">
-		<div class="operation clearfix same_module mb15">
-			<ul class="choice_search">
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">会员名称：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">电话：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">地址：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<li class="clearfix col-xs-2 col-lg-2 col-ms-3 "><label
-					class="label_name ">邮箱：</label> <input name="" type="text"
-					class="form-control col-xs-6 col-lg-5" /></li>
-				<button class="btn button_btn bg-deep-blue " onclick=""
-					type="button">
-					<i class="fa  fa-search"></i>&nbsp;搜索
-				</button>
-			</ul>
-		</div>
-		<div class="h_products_list clearfix" id="Sellerber">
-			<div class="Sellerber_left menu" id="menuBar">
-
-				<div class="menu_style" id="menu_style">
-					<div class="list_content">
-						<div class="side_list">
-							<div class="st_tree_style tree"></div>
-						</div>
-					</div>
-				</div>
+		<div class="operation clearfix">
+			<div class="search  clearfix">
+				<form action="user.s">
+					<input name="op" type="hidden" value="queryUser"/> 
+					用户名：<input name="uname" value="${param.uname}"/> 
+					电话：<input name="utel" value="${param.utel}"/> 
+					地址：<input name="uaddress" value="${param.uaddress}"/> 
+					邮箱：<input name="email" value="${param.email}"/> 
+					<input type="submit" value="查询"/>
+				</form>
 			</div>
-			<div class="bkg_List_style list_Exhibition list_show padding15">
-				<div class="bkg_List_operation clearfix searchs_style"></div>
-				<div class="datalist_show">
-					<div class="bkg_List clearfix datatable_height confirm">
-						<table class="table  table_list table_striped table-bordered">
-							<thead>
+		</div>
+		<div class="datalist_show">
+			<div class="bkg_List clearfix datatable_height confirm">
+				<table class="table  table_list table_striped table-bordered">
+					<thead>
+						<tr>
+							<th>会员ID</th>
+							<th>用户名</th>
+							<th>真实姓名</th>
+							<th>电话</th>
+							<th>邮箱</th>
+							<th>地址</th>
+							<th>加入时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<c:forEach items="${userList}" var="i">
 								<tr>
-									<th>序号</th>
-									<th>会员名称</th>
-									<th>真实姓名</th>
-									<th>邮箱</th>
-									<th>地址</th>
-									<th>加入时间</th>
-									<th>电话</th>
-									<th>编辑</th>
+									<td>${i.uid}</td>
+									<td>${i.uname}</td>
+									<td>${i.truename}</td>
+									<td>${i.utel}</td>
+									<td>${i.email}</td>
+									<td>${i.uaddress}</td>
+									<td>${i.jointime}</td>
+									<td class="td-manage">
+									<a title="停用" onclick="member_stop(this,'12')" href="javascript:;"
+									class="btn button_btn btn-Dark-success">停用</a> 
+									<a title="编辑" href="user.s?op=edituser&userId=${i.uid}"
+									class="btn button_btn bg-deep-blue">编辑</a> 
+									<a title="删除" href="user.s?op=moveuser&userId=${i.uid}"
+									class="btn button_btn btn-danger"> 删除</a> 
+									<a title="查看" href="javascript:;" onclick="Competence_View(this,'1')"
+									class="btn button_btn btn-green">查看</a>
+									</td>
 								</tr>
-							</thead>
-							<tbody>
-								<tr>
-								<c:forEach items="${userList}" var="u">
-									<tr>
-										<td>${u.uid}</td>
-										<td>${u.uname}</td>
-										<td>${u.truename}</td>
-										<td>${u.email}</td>
-										<td>${u.uaddress}</td>
-										<td>${u.jointime}</td>
-										<td>${u.utel}</td>
-										<td><a rel="${u.uid}" onClick="member_stop(this,'10001')"
-											href="javascript:;" title="停用" class="btn btn-xs btn-status">停用</a>
-											<a rel="${u.uid}" title="编辑"
-											onclick="member_edit('编辑','member-add.html','4','','510')"
-											href="javascript:;" class="btn btn-xs btn-info">编辑</a> <a
-											rel="${u.uid}" title="删除" href="javascript:;"
-											onclick="member_del(this,'1')" class="btn btn-xs btn-delete">删除</a>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--添加用户图层-->
-	<div class="add_menber" id="add_menber_style" style="display: none">
-
-		<ul class=" page-content">
-			<li>
-			<label class="label_name">会员名称：</label>
-			<span class="add_name">
-			<input value="" name="会员名称" type="text" class="text_add" />
-			</span>
-				<div class="prompt r_f"></div>
-			</li>
-			
-			<li>
-			<label class="label_name">真实姓名：</label>
-			<span class="add_name">
-			<input name="真实姓名" type="text" class="text_add" /></span>
-				<div class="prompt r_f"></div>
-			</li>
-			<li>
-			<label class="label_name">邮箱：</label>
-			<span class="add_name">
-			<input name="邮箱" type="text" class="text_add" /></span>
-				<div class="prompt r_f"></div>
-			</li>
-			
-			<li class="adderss">
-			<label class="label_name">地址：</label>
-			<span class="add_name">
-			<input name="地址" type="text" class="text_add" style="width: 350px" /></span>
-				<div class="prompt r_f"></div>
-			</li>
-			<li>
-			<label class="label_name">电话：</label>
-			<span class="add_name">
-			<input name="电话" type="text" class="text_add" /></span>
-				<div class="prompt r_f"></div>
-			</li>
-		</ul>
-	</div>
-	<!--用户信息-->
-	<div class="userinfo_style" id="userinfo_style" style="display: none">
-		<div class="member_show">
-			<div class="member_jbxx clearfix">
-				<img class="img" src="images/user.png">
-					<dl class="right_xxln">
-						<dt>
-							<span class="">张三</span> <span class="">余额：40</span>
-						</dt>
-						<dd class="" style="margin-left: 0">这家伙很懒，什么也没有留下</dd>
-					</dl>
-			</div>
-			<div class="member_content">
-				<!-- <ul>
-					
-					<li><label class="label_name">手机：</label><span class="name">13456765555</span></li>
-					<li><label class="label_name">固定电话：</label><span class="name">021-454443344</span></li>
-					<li><label class="label_name">邮箱：</label><span class="name">admin@mail.com</span></li>
-					<li><label class="label_name">地址：</label><span class="name">江苏南京市雨花台区创业路5号紫荆花园2懂4单元402</span></li>
-					<li><label class="label_name">注册时间：</label><span class="name">2014.12.20</span></li>
-					<li><label class="label_name">积分：</label><span class="name">330</span></li>
-					<li><label class="label_name">等级：</label><span class="name">普通用户</span></li>
-
-				</ul> -->
+							</c:forEach>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -189,7 +104,6 @@
 
 		});
 	});
-
 	//树状图插件
 	$(".tree").ProTree({
 		arr : arr,//数据
@@ -198,54 +112,15 @@
 		mouIconClose : "fa fa-folder",//含多个标题的关闭的字体图标  不传默认glyphicon-folder-close
 
 	})
-
 	function userinfo(id) {
 		layer.open({
 			type : 1,
 			title : '用户信息',
 			maxmin : true,
-			shadeClose : false, //点击遮罩关闭层
+			//shadeClose : false, //点击遮罩关闭层
 			area : [ '600px', '' ],
 			content : $('#userinfo_style'),
 		})
-	}
-	/*用户-编辑*/
-	function member_edit(id) {
-		layer.open({
-			type : 1,
-			title : '修改用户信息',
-			maxmin : true,
-			shadeClose : false, //点击遮罩关闭层
-			area : [ '800px', '' ],
-			content : $('#add_menber_style'),
-			btn : [ '提交', '取消' ],
-			yes : function(index, layero) {
-				var num = 0;
-				var str = "";
-				$(".add_menber input[type$='text']").each(
-						function(n) {
-							if ($(this).val() == "") {
-
-								layer.alert(str += "" + $(this).attr("name")
-										+ "不能为空！\r\n", {
-									title : '提示框',
-									icon : 0,
-								});
-								num++;
-								return false;
-							}
-						});
-				if (num > 0) {
-					return false;
-				} else {
-					layer.alert('添加成功！', {
-						title : '提示框',
-						icon : 1,
-					});
-					layer.close(index);
-				}
-			}
-		});
 	}
 	/*停用*/
 	function member_stop(obj, id) {
@@ -257,7 +132,7 @@
 									.parents("tr")
 									.find(".td-manage")
 									.prepend(
-											'<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="启用">启用</a>');
+											'<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="上架">上架</a>');
 							$(obj)
 									.parents("tr")
 									.find(".td-status")
@@ -280,7 +155,7 @@
 									.parents("tr")
 									.find(".td-manage")
 									.prepend(
-											'<a style="text-decoration:none" class="btn btn-xs btn-status" onClick="member_stop(this,id)" href="javascript:;" title="停用">停用</a>');
+											'<a style="text-decoration:none" class="btn btn-xs btn-status" onClick="member_stop(this,id)" href="javascript:;" title="下架">下架</a>');
 							$(obj)
 									.parents("tr")
 									.find(".td-status")
@@ -293,16 +168,6 @@
 							});
 						});
 	}
-	/*用户-删除*/
-	function member_del(obj, id) {
-		layer.confirm('确认要删除吗？', function(index) {
-			$(obj).parents("tr").remove();
-			layer.msg('已删除!', {
-				icon : 1,
-				time : 1000
-			});
-		});
-	}
 	/********************列表操作js******************/
 	$('table th input:checkbox').on(
 			'click',
@@ -313,7 +178,5 @@
 					this.checked = that.checked;
 					$(this).closest('tr').toggleClass('selected');
 				});
-
 			});
 </script>
-

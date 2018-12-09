@@ -37,10 +37,9 @@
 			<button class="btn button_btn btn-danger" type="button" onclick="">
 				<i class="fa fa-trash-o"></i>&nbsp;删除
 			</button>
-			<a id="administrator_add"
-				class="btn button_btn bg-deep-blue"><i class="fa  fa-edit"></i>&nbsp;添加管理员</a>
+			<a id="administrator_add" class="btn button_btn bg-deep-blue"><i
+				class="fa  fa-edit"></i>&nbsp;添加管理员</a>
 			<div class="search  clearfix">
-
 				<input name="" type="text" class="form-control col-xs-8" />
 				<button class="btn button_btn bg-deep-blue " onclick=""
 					type="button">
@@ -77,10 +76,11 @@
 							<td>${i.jointime}</td>
 							<td class="td-manage"><a title="停用"
 								onclick="Competence_close(this,'12')" href="javascript:;"
-								class="btn button_btn btn-Dark-success">停用</a> 
-								<a title="编辑" href="user.s?op=edit&workerId=${i.wid}" class="btn button_btn bg-deep-blue" >编辑</a> 
-								<a title="删除" href="user.s?op=move&workerId=${i.wid}"class="btn button_btn btn-danger">
-								删除</a> <a title="查看"
+								class="btn button_btn btn-Dark-success">停用</a> <a title="编辑"
+								href="user.s?op=edit&workerId=${i.wid}"
+								class="btn button_btn bg-deep-blue">编辑</a> <a title="删除"
+								href="user.s?op=move&workerId=${i.wid}"
+								class="btn button_btn btn-danger"> 删除</a> <a title="查看"
 								href="javascript:;" onclick="Competence_View(this,'1')"
 								class="btn button_btn btn-green">查看</a></td>
 						</tr>
@@ -96,17 +96,18 @@
 	<div id="add_administrator" class=" add_administrator"
 		style="display: none">
 		<div class="add_style add_administrator_style">
-		
-		<form action="user.s" method="post" id="form-admin-add">
-			<input type="hidden" value="addWorker" name="op"/>
-			
+
+			<form action="user.s" method="post" id="form-admin-add">
+				<input type="hidden" value="addWorker" name="op" />
+
 				<ul>
 					<li class="clearfix"><label
 						class="label_name col-xs-2 col-lg-2"><i>*</i>用户名：</label>
 						<div class="formControls col-xs-6">
 							<input type="text" name="wname" placeholder="用户名"
 								class="input-text col-xs-12" value="" placeholder=""
-								id="user-name" datatype="*2-16" nullmsg="用户名不能为空" value="${param.wokername}"> 
+								id="user-name" datatype="*2-16" nullmsg="用户名不能为空"
+								value="${param.wokername}">
 						</div>
 						<div class="col-4">
 							<span class="Validform_checktip"></span>
@@ -135,18 +136,18 @@
 					<li class="clearfix"><label
 						class="label_name col-xs-2 col-lg-2"><i class="c-red">*</i>性&nbsp;别：</label>
 						<div class="formControls  skin-minimal col-xs-6">
-							<label><input name="wsex" type="radio"
-								class="ace" checked="checked"><span class="lbl">保密</span></label>&nbsp;&nbsp;
-							<label><input name="wsex" type="radio"
-								class="ace"><span class="lbl">男</span></label>&nbsp;&nbsp; <label><input
-								name="wsex" type="radio" class="ace"><span
-								class="lbl">女</span></label>
+							<label><input name="wsex" type="radio" class="ace"
+								checked="checked"><span class="lbl">保密</span></label>&nbsp;&nbsp;
+							<label><input name="wsex" type="radio" class="ace"><span
+								class="lbl">男</span></label>&nbsp;&nbsp; <label><input
+								name="wsex" type="radio" class="ace"><span class="lbl">女</span></label>
 						</div></li>
 					<li class="clearfix"><label
 						class="label_name col-xs-2 col-lg-2"><i class="c-red">*</i>手&nbsp;机：</label>
 						<div class="formControls col-xs-6">
-							<input type="text" class="input-text col-xs-12" value="${param.usertel}"
-								placeholder="" id="user-tel" name="wtel" datatype="m" nullmsg="手机不能为空">
+							<input type="text" class="input-text col-xs-12"
+								value="${param.usertel}" placeholder="" id="user-tel"
+								name="wtel" datatype="m" nullmsg="手机不能为空">
 						</div>
 						<div class="col-4">
 							<span class="Validform_checktip"></span>
@@ -155,7 +156,8 @@
 						class="label_name col-xs-2 col-lg-2"><i class="c-red">*</i>邮&nbsp;箱：</label>
 						<div class="formControls col-xs-6">
 							<input type="text" name="wemail" class="input-text col-xs-12"
-								placeholder="@" id="email" datatype="e" nullmsg="请输入邮箱！" value="${param.email}">
+								placeholder="@" id="email" datatype="e" nullmsg="请输入邮箱！"
+								value="${param.email}">
 						</div>
 						<div class="col-4">
 							<span class="Validform_checktip"></span>
@@ -172,8 +174,8 @@
 						</div></li>
 					<li class="clearfix col-xs-12 col-lg-12 align"><input
 						class="btn button_btn bg-deep-blue btn_height" type="submit"
-						id="Add_Administrator" value="提交注册" /> 
-						<input name="reset" type="reset" class="btn button_btn btn-infobtn-gray btn_height"
+						id="Add_Administrator" value="提交注册" /> <input name="reset"
+						type="reset" class="btn button_btn btn-infobtn-gray btn_height"
 						value="取消重置" /></li>
 				</ul>
 			</form>
@@ -193,7 +195,7 @@
 
 		});
 	})
-	
+
 	/*编辑管理员*/
 	$('#edit').on('click', function() {
 		layer.open({
@@ -205,7 +207,7 @@
 
 		});
 	})
-	
+
 	$(function() {
 		$("#Competence_sort").click(
 				function() {

@@ -32,6 +32,7 @@ public class BizeMethod {
 		worker user = DBHelper.unique(sql,worker.class,name,pwd);
 		return user;
 	}
+	
 	public Object findUser(user u) {
 		String sql = "select * from user where 1=1";
 		ArrayList<Object> params = new ArrayList<Object>();
@@ -40,11 +41,11 @@ public class BizeMethod {
 			params.add("%" + u.getUname() + "%");
 		}
 		if(u.getUtel() != null && u.getUtel().trim().isEmpty() == false) {
-			sql += " and tel like ? ";
+			sql += " and utel like ? ";
 			params.add("%" + u.getUtel() + "%");
 		}
 		if(u.getUaddress() != null && u.getUaddress().trim().isEmpty() == false) {
-			sql += " and address like ?";
+			sql += " and uaddress like ?";
 			params.add("%" + u.getUaddress() + "%");
 		}
 		if(u.getEmail() != null && u.getEmail().trim().isEmpty() == false) {
@@ -52,9 +53,6 @@ public class BizeMethod {
 			params.add("%" + u.getEmail() + "%");
 		}
 		return DBHelper.select(sql,user.class, params);
-		/*String sql = "SELECT * from user where uname = ? and upwd = ?";
-		Bean.user user = DBHelper.unique(sql, Bean.user.class,name,pwd);
-		return user;*/
 	}
 
 	public static Object findWorker(worker workers) {
@@ -82,23 +80,30 @@ public class BizeMethod {
 		
 		if(! w.getWpwd().equals(newpwd)) {
 			throw new LoginException("两次输入的密码不一致，注意字母大小写！");
-			
 		}
 		//String date = getDate();
 		java.sql.Timestamp now = new Timestamp(System.currentTimeMillis());
 		String sql = "insert into worker(wname,wpwd,wsex,wtel,wemail,jointime) values(?,?,?,?,?,?)";
 		DBHelper.insert(sql,w.getWname(),w.getWpwd(),w.getWsex(),w.getWtel(),w.getWemail(), now);	
 	}
+	
 	public static worker editquery(String id) {
 		String sql = "select * from worker where wid = ?";
 		worker workers = DBHelper.unique(sql, worker.class, id);
 		return workers;
 		
 	}
+	public static user equery(String id) {
+		String sql = "select * from user where uid = ?";
+		user u = DBHelper.unique(sql, user.class,id);
+		return u;
+	}
+	
 	public static void wupdate(worker w) {
 		String sql = "update worker set wname=?,wtel=?,wemail=?,wage=?,wsex=? where wid=?";
 		DBHelper.update(sql,w.getWname(),w.getWtel(),w.getWemail(),w.getWage(),w.getWsex(),w.getWid() );	
 	}
+	
 	public static void move(String id) {
 		String sql = "delete from worker where wid=? ";
 		DBHelper.update(sql,id);
@@ -152,6 +157,12 @@ public class BizeMethod {
 	public static void deleteCar(String uid, String fin) {
 		String sql =  "delete from shoppingCart where uid=? and fin=? ";
 		DBHelper.update(sql, uid,fin);	
+	}
+
+	public static void moveuser(String id) {
+		String sql = "delete from user where uid = ?";
+		DBHelper.update(sql, id);
+		
 	}
 	
 

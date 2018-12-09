@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
+<% 
+	if(request.getAttribute("messageList") == null){
+		request.getRequestDispatcher("message.s?op=messa").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -47,12 +54,18 @@
 <div class="operation clearfix mb15  searchs_style">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
 <span class="submenu">
-<a href="add_Article.html" name="" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加文章</a>
-<a href="add_product.html" name="" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加分类</a>
+<a href="add_Article.jsp" name="" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加文章</a>	
+<a href="add_product.jsp" name="" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加分类</a>
 </span>
 <div class="search  clearfix">
- <label class="label_name">搜索：</label><input name="" type="text"  class="form-control col-xs-5"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
- <span>数量：3433件</span>
+<form action="message.s">
+<input type="hidden" name="op" value="messa">
+ <label class="label_name">搜索：</label>
+ <input name="mtitle" type="text" value="${param.mtitle }"  class="form-control col-xs-5"/>
+ <input  class="btn button_btn bg-deep-blue " type="submit" value="搜索"/>
+ <span>数量:3433件</span>
+ </form>
+
 </div>
 </div>
  <div class=" datalist_show">
@@ -71,211 +84,22 @@
 			</tr>
 		</thead>
         <tbody>
-         <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
+      	 <c:forEach items= "${messageList }" var="u">
+         	
+	         <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	         <td>${u.theme}</td>
+	         <td>${u.mid }</td>
+	         <td> ${u.mtitle }</td>
+	         <td class="displayPart" displayLength="60">${u.mdescription }</td>
+	         <td>${u.mtime }</td>
+	         <td class="td-status">${u.mstate }</td>
+	         <td class="td-manage">
+	         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
+	         <a title="编辑" onclick="member_edit('编辑','add_Article.jsp','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
+	         <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
+         	 </td>
          </tr>
-         <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>3</td>
-          <td> 我所在的地区支持货到付款吗？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status"><span class="label label-success radius">已发布</span></td>
-          <td class="td-manage">   
-                <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="add_Article.html"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-         <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>1</td>
-          <td> 支付方式有哪些？如何支付？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-            <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a>    
-           <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-            <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>3</td>
-          <td> 我所在的地区支持货到付款吗？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status"><span class="label label-success radius">已发布</span></td>
-          <td class="td-manage">   
-                <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="add_Article.html"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-            <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>3</td>
-          <td> 我所在的地区支持货到付款吗？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status"><span class="label label-success radius">已发布</span></td>
-          <td class="td-manage">   
-                <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="add_Article.html"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-            <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>常见问题</td>
-          <td>3</td>
-          <td> 我所在的地区支持货到付款吗？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status"><span class="label label-success radius">已发布</span></td>
-          <td class="td-manage">   
-                <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="add_Article.html"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-            <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>常见问题</td>
-          <td>3</td>
-          <td> 我所在的地区支持货到付款吗？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status"><span class="label label-success radius">已发布</span></td>
-          <td class="td-manage">   
-                <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="add_Article.html"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
-           <tr>
-          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>帮助中心</td>
-          <td>2</td>
-          <td> 订单已提交成功，如何付款？</td>
-          <td class="displayPart" displayLength="60">付款方式分为以下几种：（注：先款订单请您在订单提交后24小时内完成支付， 否则订单会自动取消）</td>
-          <td>2016-7-25 12:34</td>
-          <td class="td-status">待发布</td>
-          <td class="td-manage">
-              <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-              <a title="编辑" onclick="member_edit('编辑','add_Article.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-            <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
-          </td>
-         </tr>
+         </c:forEach>
         </tbody>
      </table>
     </div>
@@ -286,7 +110,7 @@
 </body>
 </html>
 <script>
-	$(function () { $(".displayPart").displayPart();  });
+	/*$(function () { $(".displayPart").displayPart();  });*/
  	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
@@ -299,40 +123,8 @@ $(function() {
 		mwidth:200,//菜单栏宽度
 		
 	});
-});
-//后台传入的 标题列表
-var arr = [{
-		id: 1,
-		name: "帮助中心",
-	    amount:234,
-		pid: 0,
-	    
-	}, {
-		id: 2,
-		name: "常见问题",
-		amount:64,
-		pid: 0,
-		
-	}, {
-		id: 3,
-		name: "客服服务",
-		amount:64,
-		pid: 0,
-		
-	}, {
-		id: 4,
-		name: "购物指南",
-		amount:64,
-		pid: 0,
-		
-	}, {
-		id: 5,
-		name: "配送方式",
-		amount:64,
-		pid: 0,
-		
-	}, 
-];
+}); 
+
 //树状图插件
 $(".tree").ProTree({
 	arr: arr,//数据

@@ -12,7 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 
-@WebFilter(urlPatterns = {"*.jsp","*.c"})
+//@WebFilter(urlPatterns = {"*.jsp","*.c"})
 public class UserFilter implements Filter {
 
 	public void destroy() {

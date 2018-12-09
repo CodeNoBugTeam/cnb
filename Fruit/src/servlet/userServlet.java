@@ -33,8 +33,7 @@ public class userServlet extends HttpServlet {
 			login(request, response);
 		}else if("queryWorker".equals(op)){
 			queryWorker(request, response);
-
-		}else if("query".equals(op)) {
+		}else if("queryUser".equals(op)) {
 			queryUser(request,response);
 		}else if("addWorker".equals(op)) {
 			addWorker(request,response);
@@ -46,6 +45,10 @@ public class userServlet extends HttpServlet {
 			wmove(request,response);
 		}else if("productadd".equals(op)) {
 			productadd(request,response);
+		}else if("edituser".equals(op)) {
+			edituser(request,response);
+		}else if("moveuser".equals(op)) {
+			moveuser(request,response);
 		}
 	}
 
@@ -62,9 +65,15 @@ public class userServlet extends HttpServlet {
 		} catch (LoginException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("失败");
+			//System.out.println("失败");
 		}
+	}
 		
+	private void moveuser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("userId");
+		BizeMethod.moveuser(id);
+		request.setAttribute("msg", "删除成功！");
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
 	}
 
 	private void wmove(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -111,11 +120,17 @@ public class userServlet extends HttpServlet {
 		worker workers = BeanUtils.asBean(request, worker.class);
 		request.setAttribute("workerList",BizeMethod.findWorker(workers));
 		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
-		
 	}
 
-	private void login(HttpServletRequest request, HttpServletResponse response)
+	
+	private void edituser(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		String id = request.getParameter("u");
+		user u = BizeMethod.equery(id);
+		request.setAttribute("editUser", u);
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
+	}
+	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String code = request.getParameter("code");
 		String name = request.getParameter("username"); 
@@ -165,7 +180,7 @@ public class userServlet extends HttpServlet {
 			throws ServletException, IOException{
 		user u = BeanUtils.asBean(request, user.class);
 		request.setAttribute("userList", bmtd.findUser(u));
-		request.getRequestDispatcher("manage-user.jsp").forward(request, response);
+		request.getRequestDispatcher("member_list.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
