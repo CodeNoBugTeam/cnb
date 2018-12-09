@@ -65,7 +65,7 @@ public class userServlet extends HttpServlet {
 		} catch (LoginException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			//System.out.println("失败");
+			System.out.println("失败");
 		}
 	}
 		
@@ -169,11 +169,12 @@ public class userServlet extends HttpServlet {
 				}
 			} else {
 				request.setAttribute("msg", "验证码填写错误！");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 
 		} catch (LoginException e) {
 			request.setAttribute("msg", e.getMessage());
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			
 		}
 	}
 	private void queryUser(HttpServletRequest request, HttpServletResponse response) 
