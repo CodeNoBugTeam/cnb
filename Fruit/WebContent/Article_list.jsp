@@ -85,7 +85,7 @@
 		</thead>
         <tbody>
       	 <c:forEach items= "${messageList }" var="u">
-         	
+         	<tr>
 	         <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
 	         <td>${u.theme}</td>
 	         <td>${u.mid }</td>
