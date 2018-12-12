@@ -9,26 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.ShoppingAddress;
 import Bean.introduce;
+import Bean.message;
 import Bean.shoppingCart;
 import Bean.worker;
 import Bize.BizeMethod;
+import Bize.ShoppingBiz;
 import ly.BeanUtils;
 
 
 @WebServlet("/customer.s")
-public class Message extends HttpServlet {
+public class ShoppingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	ShoppingBiz shoppingBiz=new ShoppingBiz();
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String buy = request.getParameter("buy");
-		if("lemon".equals(buy)) {
-			
+		if("lemon".equals(buy)) {			
 			lemon(request,response);
 		}else if("addCar".equals(buy)) {
-			addCar(request,response);
-			
+			addCar(request,response);			
 		}else if("buy".equals(buy)) {
 			request.getRequestDispatcher("Order_detailed.jsp").forward(request, response);
 		}else if("queryFruit".equals(buy)) {
@@ -37,11 +39,40 @@ public class Message extends HttpServlet {
 			queryCar(request,response);
 		}else if("deleteCar".equals(buy)) {
 			deleteCar(request,response);
+		}else if("addr".equals(buy)) {
+			addr(request,response);
+		}else if("addadres".equals(buy)) {
+			addadres(request,response);
 		}
 			
 	}
 
 	
+	private void addadres(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		System.out.println("======================================");
+		response.setCharacterEncoding("utf-8");
+		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
+		String msg;
+		try {
+			shoppingBiz.add(shoppingAddress);
+			System.out.println("1");
+		} catch (Exception e) {
+			e.printStackTrace();	
+			request.setAttribute("msg", e.getMessage());
+		}
+		addr(request,response);
+	}
+
+
+	private void addr(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
+		request.setAttribute("ShoppingList", shoppingBiz.find(shoppingAddress));		
+		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request,response);
+	}
+
+
 	private void deleteCar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		//获取用户id
