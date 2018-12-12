@@ -96,7 +96,7 @@
 	         <td class="td-manage">
 	         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
 	         <a title="编辑" onclick="member_edit('编辑','add_Article.jsp','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-	         <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
+	         <a title="删除" href="message.s?op=delete&messageId"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
          	 </td>
          </tr>
          </c:forEach>
@@ -114,7 +114,7 @@
  	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
-		float : 'left',
+		
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',
 		page_content:'.list_show',//内容

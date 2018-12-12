@@ -18,7 +18,7 @@ import Bize.MessageBiz;
  */
 @WebServlet("/message.s")
 public class messageServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L; 
 	MessageBiz mbBiz=new MessageBiz();
 	
        
@@ -32,7 +32,15 @@ public class messageServlet extends HttpServlet {
 			messa(request,response);
 		}else if ("add".equals(op)) {
 			add(request,response);
+		}else if("delete".equals(op)) {
+			delete(request,response);
 		}
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("messageId");
+		
+		
 	}
 
 	private void add(HttpServletRequest request, HttpServletResponse response) 
