@@ -89,7 +89,7 @@
 		<div class="w">
 			<div class="logo_v2013">
 				<a href="#"> <img class="border_r" src="images/logo.jpg"
-					width="140" height="50">
+					width="140" height="50" />
 
 				</a>
 			</div>
@@ -97,7 +97,7 @@
 				<form action="#">
 					<input name="search" type="text" class="header_search_input"
 						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
-						x-webkit-grammar="builtin:search" lang="zh">
+						x-webkit-grammar="builtin:search" lang="zh" />
 					<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
@@ -110,8 +110,9 @@
 			</div>
 			<div id="cart_box" class="cart_box">
 				<a id="cart" class="cart_link" href="#" rel="nofollow"> <span
-					class="text">去购物车结算</span> <img src="images/shopping_icon.png"
-					width="24" height="24" class="cart_gif"> <!-- 购物车没有物品时，隐藏此num -->
+					class="text">去购物车结算</span>
+					 <img src="images/shopping_icon.png" width="24" height="24" class="cart_gif" /> 
+					 <!-- 购物车没有物品时，隐藏此num -->
 					<span class="num">12</span> <s class="icon_arrow_right"></s>
 				</a>
 
@@ -119,7 +120,7 @@
 					<i class="cart-icons"></i>
 					<!-- 购物车没有物品时，显示cart_content_null、隐藏cart_content_all -->
 					<div class="cart_content_null" style="display: none;">
-						购物车中还没有商品，<br>快去挑选心爱的商品吧！
+						购物车中还没有商品，<br/>快去挑选心爱的商品吧！
 					</div>
 					<div class="cart_content_all" style="display: block;">
 						<div class="cart_left_time">
@@ -218,8 +219,7 @@
 				<form id="checkoutForm" action="#" method="post">
 					<div class="checkout-box-bd">
 						<!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
-						<input type="hidden" name="Checkout[addressState]" id="addrState"
-							value="0">
+						<input type="hidden" name="Checkout[addressState]" id="addrState" value="0" />
 						<!-- 收货地址 -->
 						<div class="xm-box">
 							<div class="box-hd ">
@@ -228,6 +228,7 @@
 							</div>
 							<div class="box-bd">					
 								<div class="clearfix xm-address-list" id="checkoutAddrList">
+									
 									<c:forEach items= "${ShoppingList }" var="u">
 									<dl class="item">
 									<dt>
@@ -243,7 +244,7 @@
 									
 									<dd style="display: none">
 										<input type="radio" name="Checkout[address]"
-												class="addressId" value="10140916720030323">
+												class="addressId" value="10140916720030323" />
 									</dd>
 									</dl>
 									</c:forEach>
@@ -265,64 +266,62 @@
 								<input type="hidden" name="stel" id="newTel">
 								<input type="hidden" name="sinput" id="newTag"> -->
 								<!--点击弹出新增/收货地址界面start-->
-								<form action="customer.s" method="post">
-								<input type="hidden" name="buy" value="addadres">
+							
 								<div class="xm-edit-addr-box" id="J_editAddrBox">
+								
 									<div class="bd">
 										<div class="item">
-											<label>收货人姓名<span>*</span></label> <input type="text"
-												name="sname" id="Consignee" class="input"
-												placeholder="收货人姓名" maxlength="15" autocomplete='off'>
+											<label>收货人姓名<span>*</span></label> 
+											<input type="text" name="sname" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off' />
 											<p class="tip-msg tipMsg"></p>
 										</div>
 										<div class="item">
 											<label>联系电话<span>*</span></label> 
-											<input type="text" name="stel" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off'>
+											<input type="text" name="stel" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off' />
 											<p class="tel-modify-tip" id="telModifyTip"></p>
 											<p class="tip-msg tipMsg"></p>
 										</div>
 										<div class="item">
-											<label>地址<span>*</span></label> <select
-												name="sprovince" id="Provinces" class="select-1">
+											<label>地址<span>*</span></label>
+											 <select name="sprovince" id="Provinces" class="select-1">
 												<option>省份/自治区</option>
-											</select> <select name="scity" id="Citys" class="select-2"
-												disabled>
+											</select> 
+											<select name="scity" id="Citys" class="select-2" disabled>
 												<option>城市/地区/自治州</option>
-											</select> <select name="scounty" id="Countys"
-												class="select-3" disabled>
+											</select> 
+											<select name="scounty" id="Countys" class="select-3" disabled>
 												<option>区/县</option>
 											</select>
-											<textarea name="sstreet" class="input-area"
-												id="Street" placeholder="路名或街道地址，门牌号"></textarea>
+											<textarea name="sstreet" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
 											<p class="tip-msg tipMsg"></p>
 										</div>
 										<div class="item">
-											<label>邮政编码<span>*</span></label> <input type="text"
-												name="spostcode" id="Zipcode" class="input"
-												placeholder="邮政编码" autocomplete='off'>
+											<label>邮政编码<span>*</span></label>
+											 <input type="text" name="spostcode" id="Zipcode" class="input" placeholder="邮政编码" autocomplete='off' />
 											<p class="zipcode-tip" id="zipcodeTip"></p>
 											<p class="tip-msg tipMsg"></p>
 										</div>
 										<div class="item">
-											<label>地址标签<span>*</span></label> <input type="text"
-												name="sinput" id="Tag" class="input"
-												placeholder='地址标签：如"家"、"公司"。限5个字内'>
+											<label>地址标签<span>*</span></label> 
+											<input type="text" name="sinput" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内' />
 											<p class="tip-msg tipMsg"></p>
 										</div>
 									</div>
 									<div class="ft clearfix">
 										<button type="button" class="btn btn-lineDake btn-small "
 											id="J_editAddrCancel">取消</button>
-										<button type="submit" class="btn btn-primary  btn-small "
-											id="J_editAddrOk" >保存</button>
-									</div>
-									
+										<button type="button" class="btn btn-primary  btn-small "
+											  onclick="addadres()" >保存</button>
+									</div>								
 								</div>
-								</form>
+								
+								
 								<!--点击弹出新增/收货地址界面end-->
 								<div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
 							</div>
 						</div>
+
+
 						<!-- 收货地址 END-->
 					
 						<div id="checkoutPayment">
@@ -334,8 +333,8 @@
 								<div class="box-bd">
 									<ul id="checkoutPaymentList"
 										class="checkout-option-list clearfix J_optionList">
-										<li class="item selected"><input type="radio"
-											name="Checkout[pay_id]" checked="checked" value="1">
+										<li class="item selected">
+										<input type="radio" name="Checkout[pay_id]" checked="checked" value="1" />
 											<p>
 												在线支付 <span></span>
 											</p></li>
@@ -350,9 +349,9 @@
 								<div class="box-bd">
 									<ul id="checkoutShipmentList"
 										class="checkout-option-list clearfix J_optionList">
-										<li class="item selected"><input type="radio"
-											data-price="0" name="Checkout[shipment_id]" checked="checked"
-											value="1">
+										<li class="item selected">
+										<input type="radio" data-price="0" 
+										name="Checkout[shipment_id]" checked="checked" value="1" />
 											<p>
 												快递配送（免运费） <span></span>
 											</p></li>
@@ -369,18 +368,19 @@
 							</div>
 							<div class="box-bd">
 								<ul class="checkout-option-list clearfix J_optionList">
-									<li class="item selected"><input type="radio"
-										checked="checked" name="Checkout[best_time]" value="1">
+									<li class="item selected">
+									<input type="radio"
+										checked="checked" name="Checkout[best_time]" value="1" />
 									<p>
 											不限送货时间<span>周一至周日</span>
 										</p></li>
 									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="2">
+										name="Checkout[best_time]" value="2" />
 									<p>
 											工作日送货<span>周一至周五</span>
 										</p></li>
 									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="3">
+										name="Checkout[best_time]" value="3" />
 									<p>
 											双休日、假日送货<span>周六至周日</span>
 										</p></li>
@@ -401,11 +401,11 @@
 										<li class="item selected">
 											<!--<label><input type="radio"  class="needInvoice" value="0" name="Checkout[invoice]">不开发票</label>-->
 											<input type="radio" checked="checked" value="4"
-											name="Checkout[invoice]">
+											name="Checkout[invoice]" />
 											<p>电子发票（非纸质）</p>
 										</li>
-										<li class="item "><input type="radio" value="1"
-											name="Checkout[invoice]">
+										<li class="item ">
+										<input type="radio" value="1" name="Checkout[invoice]" />
 											<p>普通发票（纸质）</p></li>
 									</ul>
 									<p id="eInvoiceTip" class="e-invoice-tip ">
@@ -422,7 +422,7 @@
 										<p>
 											<span class="hide"><input type="radio" value="4"
 												name="Checkout[invoice_type]" checked="checked"
-												id="electronicPersonal" class="invoiceType"></span>
+												id="electronicPersonal" class="invoiceType" /></span>
 										<dl>
 											<dt>什么是电子发票?</dt>
 											<dd>&#903;
@@ -441,19 +441,22 @@
 										<p>发票内容：购买商品明细</p>
 										<p>发票抬头：请确认单位名称正确,以免因名称错误耽搁您的报销。注：合约机话费仅能开个人发票</p>
 										<ul class="type clearfix J_invoiceType">
-											<li class="hide"><input type="radio" value="0"
-												name="Checkout[invoice_type]" id="noNeedInvoice"></li>
-											<li class=""><input class="invoiceType" type="radio"
-												id="commonPersonal" name="Checkout[invoice_type]" value="1">
+											<li class="hide">
+											<input type="radio" value="0"
+												name="Checkout[invoice_type]" id="noNeedInvoice" /></li>
+											<li class="">
+											<input class="invoiceType" type="radio"
+												id="commonPersonal" name="Checkout[invoice_type]" value="1" />
 												个人</li>
-											<li class=""><input class="invoiceType" type="radio"
-												name="Checkout[invoice_type]" value="2"> 单位</li>
+											<li class="">
+											<input class="invoiceType" type="radio"
+												name="Checkout[invoice_type]" value="2" /> 单位</li>
 										</ul>
 										<div id='CheckoutInvoiceTitle' class=" hide  invoice-title">
-											<label for="Checkout[invoice_title]">单位名称：</label> <input
-												name="Checkout[invoice_title]" type="text" maxlength="49"
-												value="" class="input"> <span
-												class="tip-msg J_tipMsg"></span>
+											<label for="Checkout[invoice_title]">单位名称：</label> 
+											<input name="Checkout[invoice_title]" type="text" maxlength="49"
+												value="" class="input" /> 
+											<span class="tip-msg J_tipMsg"></span>
 										</div>
 
 									</div>
@@ -570,8 +573,8 @@
 							<!--S 加价购 产品选择弹框 -->
 							<div class="modal hide modal-choose-pro" id="J_choosePro-664">
 								<div class="modal-header">
-									<span class="close" data-dismiss='modal'><i
-										class="iconfont">&#xe617;</i></span>
+									<span class="close" data-dismiss='modal'>
+									<i class="iconfont">&#xe617;</i></span>
 									<h3>选择产品</h3>
 									<div class="more">
 										<div class="xm-recommend-page clearfix">
@@ -599,9 +602,8 @@
 
 						</div>
 						<!-- 商品清单 END -->
-						<input type="hidden" id="couponType" name="Checkout[couponsType]">
-						<input type="hidden" id="couponValue"
-							name="Checkout[couponsValue]">
+						<input type="hidden" id="couponType" name="Checkout[couponsType]" />
+						<input type="hidden" id="couponValue" name="Checkout[couponsValue]" />
 						<div class="checkout-confirm">
 
 							<a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
@@ -694,5 +696,41 @@
 	</div>
 
 	<!--收货地址body部分结束-->
+<script>
+function addadres(){
+	var ShoppingAddress={};
+	ShoppingAddress.sname=$('#Consignee').val();
+	ShoppingAddress.stel=$('#Telephone').val();
+	//ShoppingAddress.sprovince=$('#Provinces').text();
+	
+	
+	var s = $("#Provinces").get(0);
+	ShoppingAddress.sprovince = s.options[s.selectedIndex].innerText;
+	var d = $("#Citys").get(0);
+	ShoppingAddress.scity = s.options[s.selectedIndex].innerText;
+	var f = $("#Countys").get(0);
+	ShoppingAddress.scounty = s.options[s.selectedIndex].innerText;
+	
+	//ShoppingAddress.scity=$('#Citys').val();
+	//ShoppingAddress.scounty=$('#Countys').val();
+	ShoppingAddress.sstreet=$('#Street').val();
+	ShoppingAddress.spostcode=$('#Zipcode').val();
+	ShoppingAddress.sinput=$('#Tag').val();
+	
+	//alert($('#Provinces').find("option:selected").text(););
+	//alert(ShoppingAddress.sprovince);
+	$.post("../customer.s?buy=addadres",ShoppingAddress,
+			function(data) {
+				/* alert(data); */
+				var data = JSON.parse(data);
+				if(data.userString != null){
+					alert(data.userString);
+				}else{
+					alert("系统繁忙!请稍后再试");
+				}
+			}); 
+}
+</script>
+
 </body>
 </html>

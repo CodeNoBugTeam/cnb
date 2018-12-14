@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSON;
+
 import Bean.ShoppingAddress;
 import Bean.introduce;
 import Bean.message;
@@ -51,24 +53,29 @@ public class ShoppingServlet extends HttpServlet {
 	private void addadres(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{
 		System.out.println("======================================");
+		
 		response.setCharacterEncoding("utf-8");
 		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
-		String msg;
+		System.out.println(shoppingAddress.getSname()+"========");
+		String msg = null;
 		try {
 			shoppingBiz.add(shoppingAddress);
-			System.out.println("1");
+			msg = "录入成功";
 		} catch (Exception e) {
 			e.printStackTrace();	
-			request.setAttribute("msg", e.getMessage());
+			msg=e.getMessage();
 		}
-		addr(request,response);
+		String userString =JSON.toJSONString(msg);
+		
+		response.getWriter().append(userString);
 	}
 
 
 	private void addr(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{
 		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
-		request.setAttribute("ShoppingList", shoppingBiz.find(shoppingAddress));		
+		request.setAttribute("ShoppingList", shoppingBiz.find(shoppingAddress));	
+		System.out.println(request.getAttribute("ShoppingList"));
 		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request,response);
 	}
 
