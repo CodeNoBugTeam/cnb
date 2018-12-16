@@ -4,7 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import Bean.Order;
 import Bean.introduce;
 import Bean.user;
 import Bean.worker;
@@ -128,9 +132,9 @@ public class BizeMethod {
 		DBHelper.insert(sql, name,time);
 		return DBHelper.select(sql1, record.class);
 	}
-	public static List<introduce> queryFruit(introduce fruit) {
-		String sql = "select * from introduce";
-		return  DBHelper.select(sql, introduce.class);
+	public static List<introduce> queryFruit(introduce fruit,HttpServletRequest request,String searchTop) {
+		
+		return  page(searchTop,request);
 		
 	}
 	public static introduce queryFruitLemon(introduce fruit, String fin) {
@@ -163,6 +167,160 @@ public class BizeMethod {
 		String sql = "delete from user where uid = ?";
 		DBHelper.update(sql, id);
 		
+	}
+
+	public static List<Order> UnfinishedOrder(String state) {
+		String sql = "SELECT a.* ,introduce.fname from orderList a,introduce where a.fid=introduce.fin and state=?";
+		return DBHelper.select(sql, Order.class,state);
+	}
+	
+	public static List<introduce> page(String searchTop,HttpServletRequest request) {
+		
+		int totalSize = 0;//总记录数
+		int perPageSize = 0;//每页显示多少条
+		int totalPage = 0;//总页数
+		int nowPage = 0;//当前页数
+		int start = 0;//开始页
+		int end = 0;//结束页
+		int beforePage = 0;//前一页
+		int afterPage = 0;//后一页
+		
+		
+		String sql2 = "select * from introduce ";
+		
+		boolean flag = false;
+		if(!"".equals(searchTop) && searchTop != null && searchTop.trim().length() > 0){
+			sql2 = sql2 + " where fin like '%"+searchTop+"%'";
+			flag = true;
+			System.out.println("这是查询语句2"+sql2);
+			
+		}
+		
+		List<Map<String,Object> > list2 =  DBHelper.select(sql2);
+		
+		
+		
+		//总计录条数
+		totalSize = list2.size() ;
+		//System.out.print(totalSize);
+		//每页显示2条
+		perPageSize = 4;
+		//总页数
+		if(totalSize % perPageSize == 0 ){
+			totalPage = totalSize / perPageSize;
+		}else {
+			totalPage = totalSize / perPageSize + 1; 
+		}
+		//当前页
+		if(request.getParameter("nowPage") == null || "".equals(request.getParameter("nowPage")) ){
+			nowPage = 1;
+		}else{
+			nowPage = Integer.parseInt(request.getParameter("nowPage")) ;
+		}
+		//判断上下页是否存在
+		if(nowPage == 1){
+			beforePage = 1;
+		}else if("beforePage".equals(request.getParameter("before"))){
+			nowPage = nowPage - 1; 
+		}
+		
+		if(nowPage  == totalPage){
+			nowPage = totalPage;
+		}else if("afterPage".equals(request.getParameter("after"))){
+			nowPage = nowPage + 1;
+		}
+		
+		start = (nowPage-1)*perPageSize;
+		end = perPageSize;
+		String sql = "";
+		if(flag){
+			sql = "select * from introduce where fin like'%"+searchTop+"%' limit "+start+","+end;
+		}else{
+			sql = "select * from introduce limit "+start+","+end;
+		}
+		List<introduce> list = DBHelper.select(sql, introduce.class);
+		return list;
+	}
+
+	public static void faHuo(String express, String id) {
+		String state="已完成";
+		String sql ="update orderList set express=?,state=? where id=?";
+		DBHelper.update(sql, express,state,id);
+		
+	}
+
+	
+	public static List<introduce> queryHotFruit(introduce fruit,HttpServletRequest request,String searchTop) {
+		
+		return  page1(searchTop,request);
+		
+	}
+
+	private static List<introduce> page1(String searchTop, HttpServletRequest request) {
+		int totalSize = 0;//总记录数
+		int perPageSize = 0;//每页显示多少条
+		int totalPage = 0;//总页数
+		int nowPage = 0;//当前页数
+		int start = 0;//开始页
+		int end = 0;//结束页
+		int beforePage = 0;//前一页
+		int afterPage = 0;//后一页
+		
+		
+		String sql2 = "select * from introduce ";
+		
+		boolean flag = false;
+		if(!"".equals(searchTop) && searchTop != null && searchTop.trim().length() > 0){
+			sql2 = sql2 + " where fin like '%"+searchTop+"%'";
+			flag = true;
+			System.out.println("这是查询语句2"+sql2);
+			
+		}
+		
+		List<Map<String,Object> > list2 =  DBHelper.select(sql2);
+		
+		
+		
+		//总计录条数
+		totalSize = list2.size() ;
+		//System.out.print(totalSize);
+		//每页显示2条
+		perPageSize = 6;
+		//总页数
+		if(totalSize % perPageSize == 0 ){
+			totalPage = totalSize / perPageSize;
+		}else {
+			totalPage = totalSize / perPageSize + 1; 
+		}
+		//当前页
+		if(request.getParameter("nowPage") == null || "".equals(request.getParameter("nowPage")) ){
+			nowPage = 1;
+		}else{
+			nowPage = Integer.parseInt(request.getParameter("nowPage")) ;
+		}
+		//判断上下页是否存在
+		if(nowPage == 1){
+			beforePage = 1;
+		}else if("beforePage".equals(request.getParameter("before"))){
+			nowPage = nowPage - 1; 
+		}
+		
+		if(nowPage  == totalPage){
+			nowPage = totalPage;
+		}else if("afterPage".equals(request.getParameter("after"))){
+			nowPage = nowPage + 1;
+		}
+		
+		start = (nowPage-1)*perPageSize;
+		end = perPageSize;
+		String sql = "";
+		if(flag){
+			sql = "select * from introduce where fin like'%"+searchTop+"%' limit "+start+","+end;
+		}else{
+			sql = "select * from introduce limit "+start+","+end;
+		}
+		List<introduce> list = DBHelper.select(sql, introduce.class);
+		return list;
 	}
 	
 

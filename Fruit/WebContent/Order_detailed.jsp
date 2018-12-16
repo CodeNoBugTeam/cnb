@@ -28,7 +28,7 @@
 <body>
 <div class="margin clearfix" id="page_style">
 <div class="Order_Details_style">
-<div class="Numbering">订单编号:<b>NJHDXJ201509-001</b></div></div>
+<div class="Numbering">订单编号:<b>${param.cid}</b></div></div>
  <div class="detailed_style">
  <!--收件人信息-->
     <div class="Receiver_style">

@@ -49,7 +49,7 @@ Check(	cid int,
 		uid int,
 		cdate datetime);
 		
-	商品(账单编号，果蔬编号，购买数量，产品单价	)
+	商品(账单编号，果蔬编号，购买数量，产品单价)
 food(	cid int,
 		fid int,
 		buynum int,

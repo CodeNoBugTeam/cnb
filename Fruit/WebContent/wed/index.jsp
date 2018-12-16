@@ -16,6 +16,12 @@
     <link href="<%=request.getContextPath() %>/css/share.css"rel="stylesheet">
     <script src="<%=request.getContextPath() %>/js/jquery-1.12.3.js"></script>
     </script><script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.SuperSlide.2.1.1.js"></script>
+    <style type="text/css">
+    p>span{
+	  	display:inline-block;
+	  	vertical-align:middle;    
+		}
+</style>
 </head>
 <body>
 <!--顶部导航-->
@@ -117,12 +123,21 @@
                             <a class="second_mallBuy" href="orange.jsp">
                                 <span style="color: white;">购买</span>
                             </a>
-                        </div>
+                      </div>
                     </div>
                 </div>
+                <div>
+                	  <p>
+			          	<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=1&buy=queryFruit">首页</a></span>
+						<span><a href = "<%=request.getContextPath() %>/customer.s?before=beforePage&buy=queryFruit">上一页</a></span>
+						<span><a href = "<%=request.getContextPath() %>/customer.s?after=afterPage&buy=queryFruit">下一页</a></span>
+						<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=totalPage&buy=queryFruit">末页</a></span>
+            		</p>  
+            		
+            
             </div>
-
-
+ 			
+		
         </div>
     </div>
 
