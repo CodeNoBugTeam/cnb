@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+	String s = request.getParameter("state");
+	
+	if (request.getAttribute("UnfinishedOrder") == null) {
+		request.getRequestDispatcher("user.s?op=Order_form&state="+s).forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,6 +32,18 @@
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
 <title>订单列表</title>
+<script type="text/javascript">
+function Delivery_stop(){
+	$("#Delivery_stop").css('display','block');
+	var name = document.getElementById("fahuo").rel;
+	var name1 = document.getElementById("s1");
+	name1.value=name;
+	console.log(name);
+	console.log(name1.value);
+}
+
+
+</script>
 </head>
 <body>
 <div class="margin" id="page_style">
@@ -78,7 +99,6 @@
 		<th width="120px">订单编号</th>
 		<th width="250px">产品名称</th>
 		<th width="100px">总价</th>
-		<th width="100px">优惠</th>
 		<th width="100px">订单时间</th>				
 		<th width="180px">所属类型</th>
 		<th width="80px">数量</th>
@@ -87,238 +107,100 @@
 	</tr>  
   </thead>
   <tbody>
-     <tr>
-         <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-      <td class="td-status"><span class="label label-success radius">代发货</span></td>
-     <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
-     </td>
-     </tr>
-     <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-      <td class="td-status"><span class="label label-success radius">代发货</span></td>
-     <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
-     </td>
-     </tr>
-     <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-      <td class="td-status"><span class="label label-success radius">代发货</span></td>
-     <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
-     </td>
-     </tr>
-     <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_1.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_2.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-      <td class="td-status"><span class="label label-success radius">代发货</span></td>
-     <td>
-     <a onClick="Delivery_stop(this,'10001')"  href="javascript:;" title="发货"  class="btn btn-xs btn-status">发货</a> 
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
-     <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_12.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_4.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-      <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>      
-     </td>
-     </tr>
-     <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
-          <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
-          <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
-          <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
-          <tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-     <td>20160705445622</td>
-     <td class="order_product_name">
-      <a href="#"><img src="product_img/p_3.jpg"  title="产品名称"/></a>
-      <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_7.jpg"  title="产品名称"/></a>
-       <i class="fa fa-plus"></i>
-       <a href="#"><img src="product_img/p_8.jpg"  title="产品名称"/></a>
-     </td>
-     <td>456.5</td>
-     <td>14</td>
-     <td>2016-7-5</td>
-     <td>食品</td>
-     <td>2</td>
-       <td class="td-status"><span class="label label-defaunt radius">代发货</span></td>
-     <td>
-     <a title="订单详细"  href="order_detailed.html"  class="btn btn-xs btn-info" >详细</a> 
-     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>       
-     </td>
-     </tr>
+  
+<c:forEach items="${UnfinishedOrder}" var="i">
+	     <tr>
+	     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	     <td>${i.cid}</td>
+	     <td class="order_product_name">
+	      ${i.fname}
+	     </td>
+	     <td>456.5</td>
+	     <td>${i.cdate}</td>
+	     <td>${i.type}</td>
+	     <td>${i.buynum}</td>
+	      <td class="td-status"><span class="label label-success radius">${i.state}</span></td>
+	     <td>
+	     <a name="see" href="javascript:;" title="发货"  id="faHuo" rel="${i.id}" class="btn btn-xs btn-status">发货</a> 
+	     <a title="订单详细"  href="user.s?op=detailed&id=${i.id}"  class="btn btn-xs btn-info" >详细</a> 
+	     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
+	     </td>
+	     </tr>
+</c:forEach>
      </tbody>
      </table>
+     <p>
+          	<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=1&buy=queryFruit">首页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?before=beforePage&buy=queryFruit">上一页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?after=afterPage&buy=queryFruit">下一页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=totalPage&buy=queryFruit">末页</a></span>
+             </p>  
     </div>
     </div>
 	</div>
    </div>
  </div>
   <!--发货-->
- <div id="Delivery_stop" style=" display:none">
+  <form action="" method="post">
+ <div id="Delivery_stop" style=" display:none">    
   <div class="padding15">
     <div class="content_style">
   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">快递公司 </label>
-       <div class="col-sm-9"><select class="form-control col-xs-8 col-sm-8 col-md-8" id="form-field-select-1">
+       <div class="col-sm-9"><select name="text" class="form-control col-xs-8 col-sm-8 col-md-8" id="sel">
 																<option value="">--选择快递--</option>
 																<option value="1">天天快递</option>
 																<option value="2">圆通快递</option>
 																<option value="3">中通快递</option>
-																<option value="4">顺丰快递</option>
-																<option value="5">申通快递</option>
-																<option value="6">邮政EMS</option>
-																<option value="7">邮政小包</option>
-																<option value="8">韵达快递</option>
 															</select></div>
 	</div>
+	<!--
    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 快递号 </label>
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9"><input type="text" id="form-field-1" placeholder="快递号" class="col-xs-10 col-sm-8 col-xs-8" style="margin-left:0px;"></div>
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
+    <input type="text" id="form-field-1" placeholder="快递号" class="col-xs-10 col-sm-8 col-xs-8" style="margin-left:0px;"></div>
 	</div>
+	-->
     <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">货到付款 </label>
-     <div class="col-sm-9"><label class="col-sm-2 " style="display: block; margin-top:6px"><input name="checkbox" type="checkbox" class="ace" id="checkbox"><span class="lbl"></span></label></div>
+     <div class="col-sm-9"><label class="col-sm-2 " style="display: block; margin-top:6px">
+     <input name="checkbox" type="checkbox" class="ace" id="checkbox"><span class="lbl"></span></label></div>
+	</div>
+	<div class="layui-layer-btn">
+		<input type="hidden" name="op" id="orderId" value="faHuo"/>
+		<button style="height: 35px;width: 60px" type="submit">确定</button>
+		<a class="layui-layer-btn1">取消</a>
 	</div>
  </div>
   </div>
  </div>
+ </form>
 </body>
+<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+	</c:if>
 </html>
 <script type="text/javascript">
+
+$(function(){
+	$("#faHuo").click(function(){
+		var name = $(this);
+		var id = name.attr("rel");
+		if(name.attr("name") === "see"){
+			$.ajax({
+				type: "post",
+				url: "user.s?op=faHuo",
+				data: "id="+id,
+				cache: false,
+				success: function(data){
+					
+				}
+			})
+		}
+	});
+});
+
+
+
 	//设置内页框架布局
 $(function() { 
 	$("#Sellerber").frame({
@@ -483,7 +365,7 @@ function Delivery_stop(obj,id){
 		shadeClose:false,
         area : ['500px' , ''],
         content:$('#Delivery_stop'),
-		btn:['确定','取消'],
+		//btn:['确定','取消'],
 		yes: function(index, layero){		
 		if($('#form-field-1').val()==""){
 			layer.alert('快递号不能为空！',{

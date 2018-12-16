@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+	if (request.getAttribute("hot") == null) {
+		request.getRequestDispatcher("../customer.s?buy=queryhotFruit").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -26,58 +33,30 @@
 				<div class="rec-right">
 					<div class="bd">
 						<div class="bd1" style="display: block">
+						
+						
+							
+				<c:forEach items="${hot}" var="i">	
 							<div class="rcr">
 								<div class="rcr-top">
-									<img src="images/ht-1.jpg" width="100%">
+									<img src="${i.ipic}" width="100%">
 								</div>
 								<div class="rcr-bot">
-									<div class="rb-top">菠菜280g</div>
+									<div class="rb-top">${i.fname }</div>
 									<div class="second_P">
-										<span class="fk-prop">￥</span> <span class="fk-prop-price">19
+										<span class="fk-prop">￥</span> <span class="fk-prop-price">${i.price }
 											<span class="fk-prop-p">.00</span>
 										</span> <span class="second_Marketprice">￥0.00</span>
 									</div>
 									<div class="buy">
-										<a class="second_mallBuy"> <span style="color: white;">购买</span>
+										<a class="second_mallBuy" href="<%=request.getContextPath() %>/customer.s?buy=lemon&id=${i.fin}"> <span style="color: white;">购买</span>
 										</a>
 									</div>
 								</div>
 							</div>
-							<div class="rcr">
-								<div class="rcr-top">
-									<img src="images/ht-2.jpg" width="100%">
-								</div>
-								<div class="rcr-bot">
-									<div class="rb-top">进口香蕉超甜蕉</div>
-									<div class="second_P">
-										<span class="fk-prop">￥</span> <span class="fk-prop-price">49
-											<span class="fk-prop-p">.00</span>
-										</span> <span class="second_Marketprice">￥0.00</span>
-									</div>
-									<div class="buy">
-										<a class="second_mallBuy"> <span style="color: white;">购买</span>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="rcr">
-								<div class="rcr-top">
-									<img src="images/ht-3.jpg" width="100%">
-								</div>
-								<div class="rcr-bot">
-									<div class="rb-top">菲律宾进口菠萝凤梨 2个</div>
-									<div class="second_P">
-										<span class="fk-prop">￥</span> <span class="fk-prop-price">38
-											<span class="fk-prop-p">.00</span>
-										</span> <span class="second_Marketprice">￥0.00</span>
-									</div>
-									<div class="buy">
-										<a class="second_mallBuy"> <span style="color: white;">购买</span>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="rcr">
+			</c:forEach >	
+			
+						<!--  	<div class="rcr">
 								<div class="rcr-top">
 									<img src="images/ht-4.jpg" width="100%">
 								</div>
@@ -162,6 +141,7 @@
 									</div>
 								</div>
 							</div>
+							-->
 							<div class="rcr">
 								<div class="rcr-top">
 									<img src="images/ht-9.jpg" width="100%">
@@ -269,12 +249,12 @@
 						</div>
 					</div>
 					<div class="hd">
-						<div class="net">上一页</div>
+						<div class="net"><a href = "<%=request.getContextPath() %>/customer.s?before=beforePage&buy=queryhotFruit">上一页</a></div>
 						<ul>
 							<li><a href="#" class="active">1</a></li>
 							<li><a href="#">2</a></li>
 						</ul>
-						<div class="next">下一页</div>
+						<div class="next"><a href = "<%=request.getContextPath() %>/customer.s?after=afterPage&buy=queryhotFruit">下一页</a></div>
 
 					</div>
 				</div>

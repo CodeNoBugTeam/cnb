@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import Bean.introduce;
 import Bean.shoppingCart;
-import Bean.worker;
 import Bize.BizeMethod;
 import ly.BeanUtils;
 
 
 @WebServlet("/customer.s")
-public class Message extends HttpServlet {
+public class ShoppingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	String searchTop = "";
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String buy = request.getParameter("buy");
@@ -37,11 +37,28 @@ public class Message extends HttpServlet {
 			queryCar(request,response);
 		}else if("deleteCar".equals(buy)) {
 			deleteCar(request,response);
+		}else if("queryhotFruit".equals(buy)) {
+			queryHotFruit(request,response);
 		}
 			
 	}
 
 	
+	private void queryHotFruit(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		searchTop = "";
+		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source,"UTF-8");
+		}
+		introduce fruit = BeanUtils.asBean(request, introduce.class);
+		request.setAttribute("hot", BizeMethod.queryHotFruit(fruit,request,searchTop));
+		request.getRequestDispatcher("wed/hot.jsp").forward(request, response);	
+		
+	}
+
+
 	private void deleteCar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		//获取用户id
@@ -88,9 +105,14 @@ public class Message extends HttpServlet {
 
 
 	private void queryFruit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 searchTop = "";
+		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source,"UTF-8");
+		}
 		introduce fruit = BeanUtils.asBean(request, introduce.class);
-		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit));
+		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit,request,searchTop));
 		request.getRequestDispatcher("wed/index.jsp").forward(request, response);	
 	}
 

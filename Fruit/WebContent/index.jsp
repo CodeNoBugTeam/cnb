@@ -166,9 +166,9 @@
   <div class="col-xs-3 col-lg-6 ">   
    <div class="prompt_name"><i class="icon_Order"></i>订单& 商品</div>
    <ul class="padding list_info">   
-   <li>代发货订单 &nbsp;<a href="">(02)</a></li>
-   <li>已完成订单 &nbsp;<a href="">(32)</a></li>
-   <li>未完成订单 &nbsp;<a href="">(02)</a></li>
+   <li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(1)</a></li>
+   <li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(32)</a></li>
+   <li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(02)</a></li>
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6">    
