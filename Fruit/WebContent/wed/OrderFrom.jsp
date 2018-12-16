@@ -483,8 +483,7 @@
 											<div class="item-row">
 												<div class="col col-1">
 													<div class="g-pic">
-														<img
-															src="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!40x40.jpg"
+														<img src="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!40x40.jpg"
 															srcset="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!80x80.jpg 2x"
 															width="40" height="40" />
 													</div>
@@ -498,44 +497,7 @@
 												<div class="col col-4">39元</div>
 											</div>
 										</dd>
-										<dd class="item clearfix">
-											<div class="item-row">
-												<div class="col col-1">
-													<div class="g-pic">
-														<img
-															src="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!40x40.jpg"
-															srcset="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
-													</div>
-													<div class="g-info">
-														<a href="#"> 招财猫米兔 白色 </a>
-													</div>
-												</div>
-
-												<div class="col col-2">49元</div>
-												<div class="col col-3">1</div>
-												<div class="col col-4">49元</div>
-											</div>
-										</dd>
-										<dd class="item clearfix">
-											<div class="item-row">
-												<div class="col col-1">
-													<div class="g-pic">
-														<img
-															src="http://i1.mifile.cn/a1/T1rrDgB4DT1RXrhCrK!40x40.jpg"
-															srcset="http://i1.mifile.cn/a1/T1rrDgB4DT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
-													</div>
-													<div class="g-info">
-														<a href="#"> 小米圆领纯色T恤 男款 红色 XXL </a>
-													</div>
-												</div>
-
-												<div class="col col-2">39元</div>
-												<div class="col col-3">4</div>
-												<div class="col col-4">156元</div>
-											</div>
-										</dd>
+										
 									</dl>
 									<div class="checkout-count clearfix">
 										<div class="checkout-count-extend xm-add-buy">
@@ -701,16 +663,13 @@ function addadres(){
 	var ShoppingAddress={};
 	ShoppingAddress.sname=$('#Consignee').val();
 	ShoppingAddress.stel=$('#Telephone').val();
-	//ShoppingAddress.sprovince=$('#Provinces').text();
-	
-	
+	//ShoppingAddress.sprovince=$('#Provinces').text();	
 	var s = $("#Provinces").get(0);
 	ShoppingAddress.sprovince = s.options[s.selectedIndex].innerText;
 	var d = $("#Citys").get(0);
 	ShoppingAddress.scity = s.options[s.selectedIndex].innerText;
 	var f = $("#Countys").get(0);
-	ShoppingAddress.scounty = s.options[s.selectedIndex].innerText;
-	
+	ShoppingAddress.scounty = s.options[s.selectedIndex].innerText;	
 	//ShoppingAddress.scity=$('#Citys').val();
 	//ShoppingAddress.scounty=$('#Countys').val();
 	ShoppingAddress.sstreet=$('#Street').val();
@@ -719,16 +678,16 @@ function addadres(){
 	
 	//alert($('#Provinces').find("option:selected").text(););
 	//alert(ShoppingAddress.sprovince);
-	$.post("../customer.s?buy=addadres",ShoppingAddress,
-			function(data) {
-				/* alert(data); */
+	$.post("../customer.s?buy=addadres",ShoppingAddress
+			/*function(data) {
+				 alert(data); 
 				var data = JSON.parse(data);
-				if(data.userString != null){
-					alert(data.userString);
+				if(data.userString == null){
+					alert("添加成功");
 				}else{
 					alert("系统繁忙!请稍后再试");
-				}
-			}); 
+				}*/
+			); 
 }
 </script>
 

@@ -8,23 +8,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import Bean.introduce;
+import Bean.shoppingCart;
+import Bize.BizeMethod;
+import ly.BeanUtils;
 import com.alibaba.fastjson.JSON;
 
 import Bean.ShoppingAddress;
-import Bean.introduce;
-import Bean.message;
-import Bean.shoppingCart;
-import Bean.worker;
-import Bize.BizeMethod;
 import Bize.ShoppingBiz;
-import ly.BeanUtils;
-
 
 @WebServlet("/customer.s")
 public class ShoppingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ShoppingBiz shoppingBiz=new ShoppingBiz();
+	String searchTop = "";
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -45,10 +42,25 @@ public class ShoppingServlet extends HttpServlet {
 			addr(request,response);
 		}else if("addadres".equals(buy)) {
 			addadres(request,response);
+		}else if("queryhotFruit".equals(buy)) {
+			queryHotFruit(request,response);
 		}
 			
 	}
 
+	private void queryHotFruit(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		searchTop = "";
+		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source,"UTF-8");
+		}
+		introduce fruit = BeanUtils.asBean(request, introduce.class);
+		request.setAttribute("hot", BizeMethod.queryHotFruit(fruit,request,searchTop));
+		request.getRequestDispatcher("wed/hot.jsp").forward(request, response);	
+		
+	}
 	
 	private void addadres(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{
@@ -126,10 +138,14 @@ public class ShoppingServlet extends HttpServlet {
 
 
 	private void queryFruit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 searchTop = "";
+		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source,"UTF-8");
+		}
 		introduce fruit = BeanUtils.asBean(request, introduce.class);
-		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit));
-		request.getRequestDispatcher("wed/index.jsp").forward(request, response);	
+		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit,request,searchTop));
 	}
 
 
