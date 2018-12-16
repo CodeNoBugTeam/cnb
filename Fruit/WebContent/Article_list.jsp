@@ -85,7 +85,7 @@
 		</thead>
         <tbody>
       	 <c:forEach items= "${messageList }" var="u">
-         	
+         	<tr>
 	         <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
 	         <td>${u.theme}</td>
 	         <td>${u.mid }</td>
@@ -95,8 +95,8 @@
 	         <td class="td-status">${u.mstate }</td>
 	         <td class="td-manage">
 	         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-	         <a title="编辑" onclick="member_edit('编辑','add_Article.jsp','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" >编辑</a> 
-	         <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
+	         <a title="编辑"  rel="${u.mid}" name ="op"  value="edit" href="message.s"  class="btn btn-xs btn-info" >编辑</a> 
+	         <a title="删除" rel="${u.mid}" name="delete" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
          	 </td>
          </tr>
          </c:forEach>
@@ -110,6 +110,7 @@
 </body>
 </html>
 <script>
+
 	/*$(function () { $(".displayPart").displayPart();  });*/
  	//设置内页框架布局
 $(function() { 
@@ -167,12 +168,6 @@ function member_stop(obj,id){
 		layer.msg('已发布!',{icon: 6,time:1000});
 	});
 }
-/*删除*/
-function member_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
-	});
-}
+
 </script>
 

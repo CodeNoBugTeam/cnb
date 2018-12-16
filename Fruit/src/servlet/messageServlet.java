@@ -32,7 +32,16 @@ public class messageServlet extends HttpServlet {
 			messa(request,response);
 		}else if ("add".equals(op)) {
 			add(request,response);
+		}else if ("edit".equals(op)) {
+			edit(request,response);
 		}
+	}
+
+	private void edit(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		String id=request.getParameter("rel");
+		System.out.println("+========="+id);
+		
 	}
 
 	private void add(HttpServletRequest request, HttpServletResponse response) 

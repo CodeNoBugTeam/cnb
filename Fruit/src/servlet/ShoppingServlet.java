@@ -8,27 +8,28 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import Bean.introduce;
 import Bean.shoppingCart;
 import Bize.BizeMethod;
 import ly.BeanUtils;
+import com.alibaba.fastjson.JSON;
 
+import Bean.ShoppingAddress;
+import Bize.ShoppingBiz;
 
 @WebServlet("/customer.s")
 public class ShoppingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	ShoppingBiz shoppingBiz=new ShoppingBiz();
 	String searchTop = "";
-    
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String buy = request.getParameter("buy");
-		if("lemon".equals(buy)) {
-			
+		if("lemon".equals(buy)) {			
 			lemon(request,response);
 		}else if("addCar".equals(buy)) {
-			addCar(request,response);
-			
+			addCar(request,response);			
 		}else if("buy".equals(buy)) {
 			request.getRequestDispatcher("Order_detailed.jsp").forward(request, response);
 		}else if("queryFruit".equals(buy)) {
@@ -37,13 +38,16 @@ public class ShoppingServlet extends HttpServlet {
 			queryCar(request,response);
 		}else if("deleteCar".equals(buy)) {
 			deleteCar(request,response);
+		}else if("addr".equals(buy)) {
+			addr(request,response);
+		}else if("addadres".equals(buy)) {
+			addadres(request,response);
 		}else if("queryhotFruit".equals(buy)) {
 			queryHotFruit(request,response);
 		}
 			
 	}
 
-	
 	private void queryHotFruit(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		searchTop = "";
@@ -56,6 +60,35 @@ public class ShoppingServlet extends HttpServlet {
 		request.setAttribute("hot", BizeMethod.queryHotFruit(fruit,request,searchTop));
 		request.getRequestDispatcher("wed/hot.jsp").forward(request, response);	
 		
+	}
+	
+	private void addadres(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		System.out.println("======================================");
+		
+		response.setCharacterEncoding("utf-8");
+		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
+		System.out.println(shoppingAddress.getSname()+"========");
+		String msg = null;
+		try {
+			shoppingBiz.add(shoppingAddress);
+			msg = "录入成功";
+		} catch (Exception e) {
+			e.printStackTrace();	
+			msg=e.getMessage();
+		}
+		String userString =JSON.toJSONString(msg);
+		
+		response.getWriter().append(userString);
+	}
+
+
+	private void addr(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
+		request.setAttribute("ShoppingList", shoppingBiz.find(shoppingAddress));	
+		System.out.println(request.getAttribute("ShoppingList"));
+		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request,response);
 	}
 
 
@@ -113,7 +146,6 @@ public class ShoppingServlet extends HttpServlet {
 		}
 		introduce fruit = BeanUtils.asBean(request, introduce.class);
 		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit,request,searchTop));
-		request.getRequestDispatcher("wed/index.jsp").forward(request, response);	
 	}
 
 
