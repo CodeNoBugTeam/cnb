@@ -84,7 +84,7 @@
 					</label>
 					<label class="inline">
 					<input type="checkbox" class="ace" name="checkbox"/> 
-					<a href="">注册管理员--></a>
+					<a href="">刷新验证码</a>
 					</label>
 	
 				</div>

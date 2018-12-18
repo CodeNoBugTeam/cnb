@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
 <head>
@@ -26,11 +27,12 @@
 				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登录</label>
 				<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">注册</label>
 				<div class="login-form">
-					<form>
+				<form action="../web.s" method="post">
+				<input type="hidden" name="op" value="login"/>
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">用户名</label>
-							<input id="username" name="username" value="admin" type="text" class="input">
+							<input id="username" name="username" value="admin" type="text" class="input" value="${param.username}">
 						</div>
 						<div class="group">
 							<label for="pass" class="label">密码</label>
@@ -43,11 +45,11 @@
 							</div>
 						</div>
 						<div class="group">
-							<input id="check" type="checkbox" class="check" checked>
+							<input id="check" type="checkbox" class="check" >
 							<label for="check"><span class="icon"></span> 保持登录</label>
 						</div>						
 						<div class="group">
-							<input type="button" class="button" value="登录" onClick="sub()">
+							<input type="submit" value="登录" >
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
@@ -88,7 +90,7 @@
 	</div>	
 	<script src="js/jigsaw.js"></script>
 <script>
-	var flag=false;	
+	/* var flag=false;	
 	function sub(){
 		var name=document.getElementById('username').value;
 		var pass=document.getElementById('password').value;
@@ -108,7 +110,7 @@
  	 jigsaw.init(document.getElementById('captcha'), function () {
   	 flag=true;
     document.getElementById('msg').innerHTML = '登录成功！'  
-  })
+  }) */
 </script>
 </body>
 </html>
