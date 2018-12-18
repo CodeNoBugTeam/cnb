@@ -6,6 +6,13 @@ public class check {
 	private int cid;
 	private int uid;
 	private Timestamp cdate;
+	private String sendname;
+	private String sendaddr;
+	
+	private String senddata;
+	private String fapiao;
+	private String sleave;
+	private double zongji;
 	public int getCid() {
 		return cid;
 	}
@@ -24,9 +31,51 @@ public class check {
 	public void setCdate(Timestamp cdate) {
 		this.cdate = cdate;
 	}
+	public String getSendname() {
+		return sendname;
+	}
+	public void setSendname(String sendname) {
+		this.sendname = sendname;
+	}
+	public String getSendaddr() {
+		return sendaddr;
+	}
+	public void setSendaddr(String sendaddr) {
+		this.sendaddr = sendaddr;
+	}
+	public String getSenddata() {
+		return senddata;
+	}
+	public void setSenddata(String senddata) {
+		this.senddata = senddata;
+	}
+	public String getFapiao() {
+		return fapiao;
+	}
+	public void setFapiao(String fapiao) {
+		this.fapiao = fapiao;
+	}
+	public String getSleave() {
+		return sleave;
+	}
+	public void setSleave(String sleave) {
+		this.sleave = sleave;
+	}
+	public double getZongji() {
+		return zongji;
+	}
+	public void setZongji(double zongji) {
+		this.zongji = zongji;
+	}
 	@Override
 	public String toString() {
-		return "check [cid=" + cid + ", uid=" + uid + ", cdate=" + cdate + "]";
+		return "check [cid=" + cid + ", uid=" + uid + ", cdate=" + cdate + ", sendname=" + sendname + ", sendaddr="
+				+ sendaddr + ", senddata=" + senddata + ", fapiao=" + fapiao + ", sleave=" + sleave + ", zongji="
+				+ zongji + "]";
 	}
+	
+	
+	
+	
 	
 }

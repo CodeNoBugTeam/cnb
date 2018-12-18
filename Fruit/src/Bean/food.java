@@ -5,6 +5,7 @@ public class food {
 	private int fid;
 	private int buynum;
 	private double perprice;
+	private double xiaoji;
 	public int getCid() {
 		return cid;
 	}
@@ -29,8 +30,15 @@ public class food {
 	public void setPerprice(double perprice) {
 		this.perprice = perprice;
 	}
+	public double getXiaoji() {
+		return xiaoji;
+	}
+	public void setXiaoji(double xiaoji) {
+		this.xiaoji = xiaoji;
+	}
 	@Override
 	public String toString() {
-		return "food [cid=" + cid + ", fid=" + fid + ", buynum=" + buynum + ", perprice=" + perprice + "]";
+		return "food [cid=" + cid + ", fid=" + fid + ", buynum=" + buynum + ", perprice=" + perprice + ", xiaoji="
+				+ xiaoji + "]";
 	}
 }
