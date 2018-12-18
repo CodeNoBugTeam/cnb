@@ -322,6 +322,11 @@ public class BizeMethod {
 		List<introduce> list = DBHelper.select(sql, introduce.class);
 		return list;
 	}
+
+	public static List<introduce> buy(String fin) {
+		String sql = "select * from introduce where fin=?";
+		return DBHelper.select(sql, introduce.class, fin);
+	}
 	
 
 }

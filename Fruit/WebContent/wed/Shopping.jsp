@@ -38,23 +38,13 @@
         </div>
 
         <div class="cartBox">
-            <div class="shop_info">
-                <div class="all_check">
-                    <!--店铺全选-->
-                    <input type="checkbox" id="shop_a" class="shopChoice">
-                    <label for="shop_a" class="shop"></label>
-                </div>
-                <div class="shop_name">
-                    店铺：<a href="javascript:;">搜猎人艺术生活</a>
-                </div>
-            </div>
          
                 
             <c:forEach items="${carList}" var="i">
                 <ul class="order_lists">
                     <li class="list_chk">
-                        <input type="checkbox" id="checkbox_3" class="son_check">
-                        <label for="checkbox_3"></label>
+                        <input type="checkbox" id="checkbox_2" class="son_check">
+                        <label for="checkbox_2"></label>
                     </li>
                     <li class="list_con">
                         <div class="list_img"><a href="javascript:;"><img src="${i.fipic}" alt=""></a></div>
@@ -81,7 +71,8 @@
                         <p class="del"><a href="../customer.s?buy=deleteCar&fin=${i.fin}" class="delBtn">移除商品</a></p>
                     </li>
                 </ul>
-            </c:forEach>    
+            </c:forEach>   
+            </div> 
                
          <!--底部-->
         <div class="bar-wrapper">

@@ -479,63 +479,29 @@
 											<span class="col col-1">商品名称</span> <span class="col col-2">购买价格</span>
 											<span class="col col-3">购买数量</span> <span class="col col-4">小计（元）</span>
 										</dt>
+										
+										<c:forEach items="${buy}" var="i">
 										<dd class="item clearfix">
 											<div class="item-row">
 												<div class="col col-1">
 													<div class="g-pic">
 														<img
-															src="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!40x40.jpg"
-															srcset="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
-													</div>
-													<div class="g-info">
-														<a href="#"> 小米T恤 忍者米兔双截棍 军绿 XXL </a>
-													</div>
-												</div>
-
-												<div class="col col-2">39元</div>
-												<div class="col col-3">1</div>
-												<div class="col col-4">39元</div>
-											</div>
-										</dd>
-										<dd class="item clearfix">
-											<div class="item-row">
-												<div class="col col-1">
-													<div class="g-pic">
-														<img
-															src="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!40x40.jpg"
+															src="${i.ipic }"
 															srcset="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!80x80.jpg 2x"
 															width="40" height="40" />
 													</div>
 													<div class="g-info">
-														<a href="#"> 招财猫米兔 白色 </a>
+														<a href="#"> ${i.fname } </a>
 													</div>
 												</div>
 
-												<div class="col col-2">49元</div>
+												<div class="col col-2">${i.price }</div>
 												<div class="col col-3">1</div>
-												<div class="col col-4">49元</div>
+												<div class="col col-4">${i.price }</div>
 											</div>
 										</dd>
-										<dd class="item clearfix">
-											<div class="item-row">
-												<div class="col col-1">
-													<div class="g-pic">
-														<img
-															src="http://i1.mifile.cn/a1/T1rrDgB4DT1RXrhCrK!40x40.jpg"
-															srcset="http://i1.mifile.cn/a1/T1rrDgB4DT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
-													</div>
-													<div class="g-info">
-														<a href="#"> 小米圆领纯色T恤 男款 红色 XXL </a>
-													</div>
-												</div>
-
-												<div class="col col-2">39元</div>
-												<div class="col col-3">4</div>
-												<div class="col col-4">156元</div>
-											</div>
-										</dd>
+										</c:forEach>
+										
 									</dl>
 									<div class="checkout-count clearfix">
 										<div class="checkout-count-extend xm-add-buy">

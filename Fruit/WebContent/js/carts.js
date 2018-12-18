@@ -48,7 +48,7 @@ $(function () {
                     $wholeChexbox.next('label').addClass('mark');
                 }
             } else {
-                //单个商品取消勾选，全局全选取消勾选  
+                //单个商品取消勾选，全局全选取消勾选
                 $wholeChexbox.prop("checked", false);
                 $wholeChexbox.next('label').removeClass('mark');
             }
