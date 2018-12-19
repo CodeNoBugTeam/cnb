@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
+	
 	if (request.getAttribute("ShoppingList") == null) {
 		request.getRequestDispatcher("../customer.s?buy=addr").forward(request, response);
 	}
@@ -215,8 +216,10 @@
 			var miniCartDisable = true;
 		</script>
 		<div class="container">
+		<form id="checkoutForm" action="../customer.s" method="post">
+		<input type="hidden" name="buy" value="ljBuy"/>
 			<div class="checkout-box">
-				<form id="checkoutForm" action="#" method="post">
+				
 					<div class="checkout-box-bd">
 						<!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
 						<input type="hidden" name="Checkout[addressState]" id="addrState" value="0" />
@@ -230,21 +233,24 @@
 								<div class="clearfix xm-address-list" id="checkoutAddrList">
 									
 									<c:forEach items= "${ShoppingList }" var="u">
+									
 									<dl class="item">
 									<dt>
 										<strong class="itemConsignee">${u.sname }</strong> 
+										<input type="hidden" name="shouname" value="${u.sname }"/>
 										<span class="itemTag tag">${u.sinput }</span>
 									</dt>
 									<dd>
 										<p class="tel itemTel">${u.stel }</p>
+										<input type="hidden" name="shoutel" value="${u.stel }"/>
 										<p class="itemRegion">${u.sprovince}&nbsp;${ u.scity }&nbsp;${u.scounty }</p>
 										<p class="itemStreet">${u.sstreet}(${u.spostcode })</p>
 										<span class="edit-btn J_editAddr">编辑</span>
 									</dd>
 									
 									<dd style="display: none">
-										<input type="radio" name="Checkout[address]"
-												class="addressId" value="10140916720030323" />
+										<input type="radio" name="addr"
+												class="addressId" value="${u.sname } ${u.stel }  ${u.sprovince}${ u.scity }${u.scounty }${u.sstreet}(${u.spostcode })" />
 									</dd>
 									</dl>
 									</c:forEach>
@@ -481,11 +487,11 @@
 										</dt>
 										
 										<c:forEach items="${buy}" var="i">
+										
 										<dd class="item clearfix">
 											<div class="item-row">
 												<div class="col col-1">
 													<div class="g-pic">
-<<<<<<< HEAD
 														<img
 															src="${i.ipic }"
 															srcset="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!80x80.jpg 2x"

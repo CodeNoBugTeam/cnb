@@ -12,6 +12,37 @@ public class introduce {
 	private String number;
 	private Timestamp jointime;
 	private String fname;
+	private String addr;
+	private String shouname;
+	private float sumprice;
+	private String shoutel;
+	
+	
+	
+	public String getShoutel() {
+		return shoutel;
+	}
+	public void setShoutel(String shoutel) {
+		this.shoutel = shoutel;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getShouname() {
+		return shouname;
+	}
+	public void setShouname(String shouname) {
+		this.shouname = shouname;
+	}
+	public float getSumprice() {
+		return sumprice;
+	}
+	public void setSumprice(float sumprice) {
+		this.sumprice = sumprice;
+	}
 	public int getFin() {
 		return fin;
 	}

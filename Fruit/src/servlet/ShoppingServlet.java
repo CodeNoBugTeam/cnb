@@ -27,6 +27,8 @@ public class ShoppingServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String buy = request.getParameter("buy");
 		if("lemon".equals(buy)) {			
 			lemon(request,response);
@@ -47,9 +49,40 @@ public class ShoppingServlet extends HttpServlet {
 			addadres(request,response);
 		}else if("queryhotFruit".equals(buy)) {
 			queryHotFruit(request,response);
+		}else if("ljBuy".equals(buy)) {
+			ljBuy(request,response);
+		}else if("carshopping".equals(buy)) {
+			carshopping(request,response);
 		}
 			
 	}
+
+	private void carshopping(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String s[] = request.getParameterValues("fruit"); 
+		
+		buy1(request,response,s);
+		
+		
+		//request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
+	}
+
+	private void ljBuy(HttpServletRequest request, HttpServletResponse response) {
+		String s = request.getParameter("addr");
+		introduce intro = BeanUtils.asBean(request, introduce.class);
+		System.out.println("================="+s+"==================================");
+		
+	}
+	
+	
+	private void buy1(HttpServletRequest request, HttpServletResponse response,String[] a) 
+			throws ServletException, IOException {
+		//String fin = request.getParameter("addcar");
+		request.setAttribute("buy",BizeMethod.buy1(a));
+		
+		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
+	}
+	
 
 	private void buy(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {

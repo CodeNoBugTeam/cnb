@@ -327,6 +327,18 @@ public class BizeMethod {
 		String sql = "select * from introduce where fin=?";
 		return DBHelper.select(sql, introduce.class, fin);
 	}
+
+	public static List<introduce>  buy1(String[] a) { 
+		List<introduce> list = new ArrayList<introduce>();
+		for(int i=0;i<a.length;i++) {
+			if(!"".equals(a[i]) && a[i] != null) {
+				String sql = "select * from introduce where fin=?";
+				introduce intor  = DBHelper.unique(sql, introduce.class, a[i]);
+				list.add(intor);
+			}
+		}
+		return list;
+	}
 	
 
 }
