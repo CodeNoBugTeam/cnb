@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
+	
 	if (request.getAttribute("ShoppingList") == null) {
 		request.getRequestDispatcher("../customer.s?buy=addr").forward(request, response);
 	}
@@ -95,9 +96,7 @@
 			</div>
 			<div class="header_searchbox">
 				<form action="#">
-					<input name="search" type="text" class="header_search_input"
-						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
-						x-webkit-grammar="builtin:search" lang="zh" />
+					<input name="search" type="text" class="header_search_input" default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh" />
 					<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
@@ -214,13 +213,13 @@
 			};
 			var miniCartDisable = true;
 		</script>
-		<div class="container">
-		<form  action="#" method="post">
+		<form id="checkoutForm" action="customer.s" method="post">
+		<input type="hidden" name="buy" value="ljBuy"/>
+		<div class="container">				
 			<div class="checkout-box">
 				
 					<div class="checkout-box-bd">
 						<!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
-						<input type="hidden" name="Checkout[addressState]" id="addrState" value="0" />
 						<!-- 收货地址 -->
 						<div class="xm-box">
 							<div class="box-hd ">
@@ -231,6 +230,7 @@
 								<div class="clearfix xm-address-list" id="checkoutAddrList">
 									
 									<c:forEach items= "${ShoppingList }" var="u">
+									
 									<dl class="item">
 									<dt>
 										<strong class="itemConsignee">${u.sname }</strong> 
@@ -244,8 +244,8 @@
 									</dd>
 									
 									<dd style="display: none">
-										<input type="radio" name="Checkout[address]"
-												class="addressId" value="10140916720030323" />
+										<input type="radio" name="sendaddr"
+												class="addressId" value="${u.sname } ${u.stel }  ${u.sprovince}${ u.scity }${u.scounty }${u.sstreet}(${u.spostcode })" />
 									</dd>
 									</dl>
 									</c:forEach>
@@ -310,18 +310,17 @@
 							<div class="box-bd">
 								<ul class="checkout-option-list clearfix J_optionList">
 									<li class="item selected">
-									<input type="radio"
-										checked="checked" name="Checkout[best_time]" value="1" />
+									<input type="radio" checked="checked" name="senddata" value="不限送货时间" />
 									<p>
-											不限送货时间<span>周一至周日</span>
-										</p></li>
-									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="2" />
+										不限送货时间<span>周一至周日</span>
+									</p></li>
+									<li class="item ">
+									<input type="radio" name="senddata" value="工作日送货" />
 									<p>
 											工作日送货<span>周一至周五</span>
 										</p></li>
-									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="3" />
+									<li class="item ">
+									<input type="radio" name="senddata" value="双休日、假日送货" />
 									<p>
 											双休日、假日送货<span>周六至周日</span>
 										</p></li>
@@ -336,17 +335,15 @@
 									<h2 class="title">发票信息</h2>
 								</div>
 								<div class="box-bd">
-									<ul
-										class="checkout-option-list checkout-option-invoice clearfix J_optionList J_optionInvoice">
+									<ul class="checkout-option-list checkout-option-invoice clearfix J_optionList J_optionInvoice">
 										<li class="hide">电子个人发票4</li>
 										<li class="item selected">
 											<!--<label><input type="radio"  class="needInvoice" value="0" name="Checkout[invoice]">不开发票</label>-->
-											<input type="radio" checked="checked" value="4"
-											name="Checkout[invoice]" />
+											<input type="radio" checked="checked" value="电子发票（非纸质）" name="fapiao" />
 											<p>电子发票（非纸质）</p>
 										</li>
 										<li class="item ">
-										<input type="radio" value="1" name="Checkout[invoice]" />
+										<input type="radio" checked="checked" value="普通发票（纸质）" name="fapiao" />
 											<p>普通发票（纸质）</p></li>
 									</ul>
 									<p id="eInvoiceTip" class="e-invoice-tip ">
@@ -361,9 +358,8 @@
 										<p>发票内容：购买商品明细</p>
 										<p>发票抬头：个人</p>
 										<p>
-											<span class="hide"><input type="radio" value="4"
-												name="Checkout[invoice_type]" checked="checked"
-												id="electronicPersonal" class="invoiceType" /></span>
+											<span class="hide">
+											<input type="radio" value="4" name="Checkout[invoice_type]" checked="checked" id="electronicPersonal" class="invoiceType" /></span>
 										<dl>
 											<dt>什么是电子发票?</dt>
 											<dd>&#903;
@@ -377,7 +373,7 @@
 										</dl>
 										</p>
 									</div>
-									<div class="invoice-info invoice-info-2"
+									<!--<div class="invoice-info invoice-info-2"
 										id="checkoutInvoiceDetail" style="display: none;">
 										<p>发票内容：购买商品明细</p>
 										<p>发票抬头：请确认单位名称正确,以免因名称错误耽搁您的报销。注：合约机话费仅能开个人发票</p>
@@ -386,19 +382,18 @@
 											<input type="radio" value="0"
 												name="Checkout[invoice_type]" id="noNeedInvoice" /></li>
 											<li class="">
-											<input class="invoiceType" type="radio"
-												id="commonPersonal" name="Checkout[invoice_type]" value="1" />
-												个人</li>
+											<input class="invoiceType" checked="checked" type="radio" id="commonPersonal" name="fapiao" value="纸质（个人）" />
+												<p>个人</p></li>
 											<li class="">
 											<input class="invoiceType" type="radio"
 												name="Checkout[invoice_type]" value="2" /> 单位</li>
 										</ul>
-										<div id='CheckoutInvoiceTitle' class=" hide  invoice-title">
+										 <div id='CheckoutInvoiceTitle' class=" hide  invoice-title">
 											<label for="Checkout[invoice_title]">单位名称：</label> 
-											<input name="Checkout[invoice_title]" type="text" maxlength="49"
+											<input name="fapiao" type="text" maxlength="49"
 												value="" class="input" /> 
 											<span class="tip-msg J_tipMsg"></span>
-										</div>
+										</div> -->
 
 									</div>
 
@@ -420,24 +415,29 @@
 											<span class="col col-1">商品名称</span> <span class="col col-2">购买价格</span>
 											<span class="col col-3">购买数量</span> <span class="col col-4">小计（元）</span>
 										</dt>
+										
+										<c:forEach items="${buy}" var="i">
+										
 										<dd class="item clearfix">
 											<div class="item-row">
 												<div class="col col-1">
 													<div class="g-pic">
-														<img src="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!40x40.jpg"
-															srcset="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
+														<img src="${i.ipic }" width="40" height="40" />
 													</div>
 													<div class="g-info">
-														<a href="#"> 小米T恤 忍者米兔双截棍 军绿 XXL </a>
+														<a href="#"> ${i.fname } </a>
 													</div>
 												</div>
-
-												<div class="col col-2">39元</div>
+												<div class="col col-2">${i.price }</div>
 												<div class="col col-3">1</div>
-												<div class="col col-4">39元</div>
+												<div class="col col-4">${i.price }</div>
+												<input  type="hidden" name="fid" value="${i.fin }"/>
+												<input  type="hidden" name="perprice" value="${i.price }"/>
+												<input  type="hidden" name="buynum" value="1"/>
+												<input  type="hidden" name="xiaoji" value="${i.price }"/>
 											</div>
 										</dd>
+										</c:forEach>
 										
 									</dl>
 									<div class="checkout-count clearfix">
@@ -445,7 +445,8 @@
 											<h3 class="title">
 												会员留言
 												</h2>
-												</br> <input type="text" />
+												</br> 
+											<input type="text"  name="sleave" value=""/>
 										</div>
 										<!-- checkout-count-extend -->
 										<div class="checkout-price">
@@ -510,7 +511,7 @@
 						<div class="checkout-confirm">
 
 							<a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
-							<input type="submit" class="btn btn-primary" value="立即下单"
+							<input type="submit" class="btn btn-primary" value="立即付款"
 								id="checkoutToPay" />
 						</div>
 					</div>

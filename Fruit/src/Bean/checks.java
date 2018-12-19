@@ -2,13 +2,11 @@ package Bean;
 
 import java.sql.Timestamp;
 
-public class check {
+public class checks {
 	private int cid;
 	private int uid;
 	private Timestamp cdate;
-	private String sendname;
-	private String sendaddr;
-	
+	private String sendaddr;	
 	private String senddata;
 	private String fapiao;
 	private String sleave;
@@ -30,12 +28,6 @@ public class check {
 	}
 	public void setCdate(Timestamp cdate) {
 		this.cdate = cdate;
-	}
-	public String getSendname() {
-		return sendname;
-	}
-	public void setSendname(String sendname) {
-		this.sendname = sendname;
 	}
 	public String getSendaddr() {
 		return sendaddr;
@@ -69,9 +61,8 @@ public class check {
 	}
 	@Override
 	public String toString() {
-		return "check [cid=" + cid + ", uid=" + uid + ", cdate=" + cdate + ", sendname=" + sendname + ", sendaddr="
-				+ sendaddr + ", senddata=" + senddata + ", fapiao=" + fapiao + ", sleave=" + sleave + ", zongji="
-				+ zongji + "]";
+		return "check [cid=" + cid + ", uid=" + uid + ", cdate=" + cdate + ", sendaddr=" + sendaddr + ", senddata="
+				+ senddata + ", fapiao=" + fapiao + ", sleave=" + sleave + ", zongji=" + zongji + "]";
 	}
 	
 	
