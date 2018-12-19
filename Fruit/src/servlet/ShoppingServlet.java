@@ -60,7 +60,6 @@ public class ShoppingServlet extends HttpServlet {
 	private void carshopping(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String s[] = request.getParameterValues("fruit"); 
-		
 		buy1(request,response,s);
 		
 		
@@ -79,6 +78,7 @@ public class ShoppingServlet extends HttpServlet {
 			throws ServletException, IOException {
 		//String fin = request.getParameter("addcar");
 		request.setAttribute("buy",BizeMethod.buy1(a));
+		request.setAttribute("sum",BizeMethod.buysum(a));
 		
 		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
 	}
@@ -88,6 +88,7 @@ public class ShoppingServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String fin = request.getParameter("addcar");
 		request.setAttribute("buy",BizeMethod.buy(fin));
+		request.setAttribute("sum",BizeMethod.buyPrice(fin));
 		
 		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
 	}

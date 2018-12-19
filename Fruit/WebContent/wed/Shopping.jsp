@@ -17,6 +17,9 @@
     <title>购物车</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/carts.css">
+    <script>
+
+</script>
 </head>
 <body>
     <section class="cartMain">
@@ -77,13 +80,12 @@
                 </ul>
             </c:forEach>   
             </div> 
-               
          <!--底部-->
         <div class="bar-wrapper">
             <div class="bar-right">
                 <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                <div class="calBtn"><input type="submit" value="结算" style="height: 49px ; width: 100px ;font-size: 26px ;background: orange"/></div>
+                <div class="totalMoney">共计: <span class="total_text">0.00</span></div>
+                <div class="calBtn"><input onclick="ck()" type="submit" value="结算" style="height: 49px ; width: 100px ;font-size: 26px ;background: orange"/></div>
             </div>
         </div>
 </form>

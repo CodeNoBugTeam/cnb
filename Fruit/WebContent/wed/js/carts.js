@@ -223,6 +223,7 @@ $(function () {
             }
         });
         $('.total_text').html('￥'+total_money);
+        $('#sum').val(total_money);
         $('.piece_num').html(total_count);
 
         // console.log(total_money,total_count);
