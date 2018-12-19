@@ -33,7 +33,7 @@ public class ShoppingServlet extends HttpServlet {
 		}else if("addCar".equals(buy)) {
 			addCar(request,response);			
 		}else if("buy".equals(buy)) {
-			request.getRequestDispatcher("Order_detailed.jsp").forward(request, response);
+			request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
 		}else if("queryFruit".equals(buy)) {
 			queryFruit(request,response);
 		}else if("queryCar".equals(buy)) {
@@ -148,6 +148,7 @@ public class ShoppingServlet extends HttpServlet {
 		}
 		introduce fruit = BeanUtils.asBean(request, introduce.class);
 		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit,request,searchTop));
+		request.getRequestDispatcher("wed/index.jsp").forward(request, response);
 	}
 
 
