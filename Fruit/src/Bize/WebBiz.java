@@ -1,5 +1,7 @@
 package Bize;
 
+import java.util.List;
+
 import Bean.user;
 import Expection.LoginException;
 import ly.DBHelper;
@@ -14,8 +16,13 @@ public class WebBiz {
 			throw new LoginException("密码不能为空！");
 		}
 		String sql = "select * from user where uname = ? and upwd = ?";
-		user user = DBHelper.unique(sql,user.class,name,pwd);
-		return user;
+		user u = DBHelper.unique(sql,user.class,name,pwd);
+		return u;
+	}
+
+	public static List<List<Object>> addUser(user u) {
+		String sql = "insert into user(uname,truename,utel,email,uaddress,upwd) value(?,?,?,?,?,?)";
+		return DBHelper.insert(sql, u.getUname(),u.getTruename(),u.getUtel(),u.getEmail(),u.getUaddress(),u.getUpwd());
 	}
 
 }

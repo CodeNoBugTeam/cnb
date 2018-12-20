@@ -9,7 +9,6 @@ public class user {
 	private String email;//邮箱
 	private String upwd;//密码
 	private String uaddress;//地址
-	private Timestamp jointime;//加入时间
 	private String utel;//电话
 	public int getUid() {
 		return uid;
@@ -53,16 +52,10 @@ public class user {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Timestamp getJointime() {
-		return jointime;
-	}
-	public void setJointime(Timestamp jointime) {
-		this.jointime = jointime;
-	}
 	@Override
 	public String toString() {
 		return "user [uid=" + uid + ", uname=" + uname + ", truename=" + truename + ", email=" + email + ", upwd="
-				+ upwd + ", uaddress=" + uaddress + ", jointime=" + jointime + ", utel=" + utel + "]";
+				+ upwd + ", uaddress=" + uaddress + ", jointime=" + ", utel=" + utel + "]";
 	}
 	
 	

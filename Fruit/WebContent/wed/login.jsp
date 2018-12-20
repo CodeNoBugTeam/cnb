@@ -32,11 +32,11 @@
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">用户名</label>
-							<input id="username" name="username" value="admin" type="text" class="input" value="${param.username}">
+							<input id="username" name="username" value="${uname}" type="text" class="input" value="${param.username}">
 						</div>
 						<div class="group">
 							<label for="pass" class="label">密码</label>
-							<input id="password" type="password" class="input" data-type="password">
+							<input id="password" name="password" type="password" class="input" data-type="password">
 						</div>
 						<div class="group">
 							<div class="container">
@@ -49,7 +49,7 @@
 							<label for="check"><span class="icon"></span> 保持登录</label>
 						</div>						
 						<div class="group">
-							<input type="submit" value="登录" >
+							<input type="submit" class="button"  value="登录" >
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
@@ -57,23 +57,36 @@
 						</div>
 					</div>
 					</form>
-					<form>
+					<form action="../web.s" method="post">
+					<input type="hidden" name="op" value="register"/>
 					<div class="sign-up-htm">
 						<div class="group">
 							<label for="user" class="label">用户名</label>
-							<input id="users" type="text" class="input">
+							<input id="uname" name="uname" type="text" class="input">
+						</div>
+						<div class="group">
+							<label for="user" class="label">真实姓名</label>
+							<input id="truename" name="truename" type="text" class="input">
+						</div>
+						<div class="group">
+							<label for="user" class="label">电话</label>
+							<input id="utel" name="utel" type="text" class="input">
+						</div>
+						<div class="group">
+							<label for="user" class="label">邮箱</label>
+							<input id="email" name="email" type="text" class="input">
+						</div>
+						<div class="group">
+							<label for="pass" class="label">地址</label>
+							<input id="uaddress" name="uaddress" type="text" class="input">
 						</div>
 						<div class="group">
 							<label for="pass" class="label">密码</label>
-							<input id="passs" type="password" class="input" data-type="password">
+							<input id="upwd" name="upwd" type="password" class="input" data-type="password">
 						</div>
 						<div class="group">
 							<label for="pass" class="label">重复密码</label>
-							<input id="passs" type="password" class="input" data-type="password">
-						</div>
-						<div class="group">
-							<label for="pass" class="label">邮箱地址</label>
-							<input id="pass" type="text" class="input">
+							<input id="repassword" name="repassword" type="password" class="input" data-type="password">
 						</div>
 						<div class="group">
 							<a href="register.html"><input type="submit" class="button" value="注册"></a>
