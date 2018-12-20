@@ -22,17 +22,25 @@ public class ShoppingBiz {
 				shoppingAddress.getScounty(),shoppingAddress.getSstreet(),shoppingAddress.getSpostcode(),shoppingAddress.getSinput());
 		
 	}
-	public void zhangdan(checks check, food food) {
+	public void zhangdan(checks check) {
 		String sql1="insert into checks(uid,cdate,sendaddr,senddata,fapiao,sleave,zongji) values(?,?,?,?,?,?,?) ";
-		String sql2="insert into food(cid,fid,buynum,perprice,xiaoji) values(?,?,?,?,?) ";
+			
+		DBHelper.insert(sql1, 1,check.getCdate(),check.getSendaddr(),check.getSenddata(),check.getFapiao(),
+				check.getSleave(),check.getZongji());		
 		
-		java.sql.Timestamp now=new Timestamp(System.currentTimeMillis());
-		DBHelper.insert(sql1, 1,now,check.getSendaddr(),check.getSenddata(),check.getFapiao(),check.getSleave(),check.getZongji());
-		checks  params =new checks();
-		params=DBHelper.unique("select cid from checks where cdata = ? ",checks.class, now);
+	}
+	public void sanchu(String[] fids) {
+		for (int i = 0; i < fids.length; i++) {
+			DBHelper.update("delete from shoppingCart where uid=? and fin=?", 1,fids[i]);
+		}
 		
-		DBHelper.insert(sql2, params.getCid(),food.getFid(),food.getPerprice(),food.getBuynum(),food.getXiaoji());
-
+	}
+	public void zhangdan2(List<food> list) {
+		for(food food1 : list) {
+			String sql2="insert into food(cid,fid,buynum,perprice,xiaoji) values(?,?,?,?,?) ";	
+			DBHelper.insert(sql2, food1.getCid(),food1.getFid(),food1.getPerprice(),food1.getBuynum(),
+					food1.getXiaoji());
+		}
 	}
 
 }

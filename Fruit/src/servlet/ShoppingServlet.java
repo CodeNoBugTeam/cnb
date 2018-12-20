@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import Bean.introduce;
 import Bean.shoppingCart;
 import Bize.BizeMethod;
 import ly.BeanUtils;
+import ly.DBHelper;
 
 import com.alibaba.fastjson.JSON;
 
@@ -69,16 +72,39 @@ public class ShoppingServlet extends HttpServlet {
 
 	private void ljBuy(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{	
+		List<food> list = new ArrayList<food>();
 		checks check= BeanUtils.asBean(request, checks.class);
-		food food=BeanUtils.asBean(request, food.class);
-		
+		String[] fids=request.getParameterValues("fid");
+		String[] perprices=request.getParameterValues("perprice");
+		String[] buynums=request.getParameterValues("buynum");
+		String[] xiaojis=request.getParameterValues("xiaoji");
+		java.sql.Timestamp now=new Timestamp(System.currentTimeMillis());
+		check.setCdate(now);
+		checks  params =new checks();		
 		try {
-			shoppingBiz.zhangdan(check,food);
+			shoppingBiz.zhangdan(check);		
+			params=DBHelper.unique("select cid from checks where cdate = ?",checks.class, now);
+			for(int i=0;i<fids.length;i++) {
+				food food1 = new food();
+				food1.setFid(Integer.valueOf(fids[i]));
+				food1.setBuynum(Integer.valueOf(buynums[i]));
+				food1.setPerprice(Double.valueOf(perprices[i]));
+				food1.setXiaoji(Double.valueOf(xiaojis[i]));
+				food1.setCid(params.getCid());
+				list.add(food1);
+			}
+			check.setCid(params.getCid());
+			shoppingBiz.zhangdan2(list);
+			if(fids.length >1) {
+			shoppingBiz.sanchu(fids);
+			}
+			
+			request.setAttribute("zhangdan", check);
+			request.getRequestDispatcher("wed/fukuan.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-		}
-		
+			request.setAttribute("msg", e.getMessage());
+		}		
 	}
 	
 	

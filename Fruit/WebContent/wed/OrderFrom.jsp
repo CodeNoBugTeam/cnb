@@ -44,11 +44,6 @@
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">您好，欢迎来到果然新鲜</div></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">请登录</a>
-					</div></li>
-				<li class="fl"><div class="menu_hd">
-						<a href="#">免费注册</a>
-					</div></li>
 			</ul>
 			<ul class="fr 1h">
 				<li class="fl"><div class="menu_hd">
@@ -56,7 +51,7 @@
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">我的锡货</a>
+						<a href="#">我的果然</a>
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
@@ -109,53 +104,7 @@
 					<li><a target="_blank" href="#">电子产品</a></li>
 				</ul>
 			</div>
-			<div id="cart_box" class="cart_box">
-				<a id="cart" class="cart_link" href="#" rel="nofollow"> <span
-					class="text">去购物车结算</span>
-					 <img src="images/shopping_icon.png" width="24" height="24" class="cart_gif" /> 
-					 <!-- 购物车没有物品时，隐藏此num -->
-					<span class="num">12</span> <s class="icon_arrow_right"></s>
-				</a>
-
-				<div class="cart_content" id="cart_content">
-					<i class="cart-icons"></i>
-					<!-- 购物车没有物品时，显示cart_content_null、隐藏cart_content_all -->
-					<div class="cart_content_null" style="display: none;">
-						购物车中还没有商品，<br/>快去挑选心爱的商品吧！
-					</div>
-					<div class="cart_content_all" style="display: block;">
-						<div class="cart_left_time">
-							<span>06分49.9秒</span> 后购物车将被清空，请及时结算
-						</div>
-						<div class="cart_content_center">
-							<div class="cart_con_single">
-								<div class="single_pic">
-									<a href="#" target="_blank" alt="兰蔻 (Lancome)根源补养洁颜啫哩 125ml">
-										<img src="images/goods_img01.jpg" />
-									</a>
-								</div>
-								<div class="single_info">
-									<a href="#" target="_blank" alt="兰蔻 (Lancome)根源补养洁颜啫哩 125ml"
-										class="name">兰蔻 (Lancome)根源补养洁颜啫哩 125ml</a> <span
-										class="price">￥269.00</span> <span class="price_plus">
-										x </span> <span class="price_num">1</span>
-								</div>
-							</div>
-						</div>
-						<div class="con_all">
-							<div class="price_whole">
-								<span>共<span class="num_all">12</span>件商品
-								</span>
-							</div>
-							<div>
-								<span class="price_gongji">共计<em>￥</em><span
-									class="total_price">69</span></span><a href="#" class="cart_btn"
-									rel="nofollow">去购物车结算</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<span class="clr"></span>
 		</div>
 	</div>
@@ -174,8 +123,8 @@
 				<li><a href="" target="_blank" class="yMenua">首页</a></li>
 				<li><a href="" target="_blank">大划算</a></li>
 				<li><a href="" target="_blank">抢拍</a></li>
-				<li><a href="" target="_blank">锡货专场</a></li>
-				<li><a href="" target="_blank">锡货超市</a></li>
+				<li><a href="" target="_blank">果然专场</a></li>
+				<li><a href="" target="_blank">果然超市</a></li>
 			</ul>
 			<div class="fr r_icon">
 				<i class="i01"></i><span>30天退货</span><i class="i02"></i><span>满59包邮</span>
@@ -379,27 +328,7 @@
 										</dl>
 										</p>
 									</div>
-									<!--<div class="invoice-info invoice-info-2"
-										id="checkoutInvoiceDetail" style="display: none;">
-										<p>发票内容：购买商品明细</p>
-										<p>发票抬头：请确认单位名称正确,以免因名称错误耽搁您的报销。注：合约机话费仅能开个人发票</p>
-										<ul class="type clearfix J_invoiceType">
-											<li class="hide">
-											<input type="radio" value="0"
-												name="Checkout[invoice_type]" id="noNeedInvoice" /></li>
-											<li class="">
-											<input class="invoiceType" checked="checked" type="radio" id="commonPersonal" name="fapiao" value="纸质（个人）" />
-												<p>个人</p></li>
-											<li class="">
-											<input class="invoiceType" type="radio"
-												name="Checkout[invoice_type]" value="2" /> 单位</li>
-										</ul>
-										 <div id='CheckoutInvoiceTitle' class=" hide  invoice-title">
-											<label for="Checkout[invoice_title]">单位名称：</label> 
-											<input name="fapiao" type="text" maxlength="49"
-												value="" class="input" /> 
-											<span class="tip-msg J_tipMsg"></span>
-										</div> -->
+					
 
 									</div>
 
@@ -691,4 +620,9 @@ function addadres(){
 </script>
 
 </body>
+<c:if test="${ ! empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>
 </html>
