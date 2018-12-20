@@ -17,6 +17,8 @@
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <script type="text/javascript" src="js/jquery_cart.js"></script>
 <link rel="stylesheet" type="text/css" href="css/checkOut.css" />
+
+
 </head>
 
 <body>
@@ -213,6 +215,10 @@
 			};
 			var miniCartDisable = true;
 		</script>
+<<<<<<< HEAD
+=======
+		<div class="container">
+>>>>>>> branch 'master' of https://github.com/CodeNoBugTeam/cnb.git
 		<form id="checkoutForm" action="customer.s" method="post">
 		<input type="hidden" name="buy" value="ljBuy"/>
 		<div class="container">				
@@ -434,7 +440,7 @@
 												<input  type="hidden" name="fid" value="${i.fin }"/>
 												<input  type="hidden" name="perprice" value="${i.price }"/>
 												<input  type="hidden" name="buynum" value="1"/>
-												<input  type="hidden" name="xiaoji" value="${i.price }"/>
+												<input  type="hidden" name="xiaoji" value="${i.price }"/> 
 											</div>
 										</dd>
 										</c:forEach>
@@ -452,12 +458,11 @@
 										<div class="checkout-price">
 											<ul>
 
-												<li>订单总额：<span>244元</span>
+												<li>订单总额：<span>${sum }元</span>
 												</li>
 												<li>活动优惠：<span>-0元</span> <script
 														type="text/javascript">
-													checkoutConfig.activityDiscountMoney = 0;
-													checkoutConfig.totalPrice = 244.00;
+									
 												</script>
 												</li>
 												<li>优惠券抵扣：<span id="couponDesc">-0元</span>
@@ -466,7 +471,7 @@
 												</li>
 											</ul>
 											<p class="checkout-total">
-												应付总额：<span><strong id="totalPrice">244</strong>元</span>
+												应付总额：<span style="font-size: 26px">${sum }元</span>
 											</p>
 										</div>
 										<!--  -->

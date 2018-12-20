@@ -327,6 +327,11 @@ public class BizeMethod {
 		String sql = "select * from introduce where fin=?";
 		return DBHelper.select(sql, introduce.class, fin);
 	}
+	public static float buyPrice(String fin) {
+		String sql = "select * from introduce where fin=?";
+		introduce a = DBHelper.unique(sql, introduce.class, fin);
+		return a.getPrice();
+	}
 
 	public static List<introduce>  buy1(String[] a) { 
 		List<introduce> list = new ArrayList<introduce>();
@@ -338,6 +343,19 @@ public class BizeMethod {
 			}
 		}
 		return list;
+	}
+	public static float  buysum(String[] a) { 
+		//List<introduce> list = new ArrayList<introduce>();
+		float b=0;
+		for(int i=0;i<a.length;i++) {
+			if(!"".equals(a[i]) && a[i] != null) {
+				String sql = "select * from introduce where fin=?";
+				introduce intor  = DBHelper.unique(sql, introduce.class, a[i]);
+				//list.add(intor);
+				b=b+intor.getPrice();
+			}
+		}
+		return b;
 	}
 	
 
