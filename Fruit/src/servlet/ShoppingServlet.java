@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,10 +15,13 @@ import Bean.introduce;
 import Bean.shoppingCart;
 import Bize.BizeMethod;
 import ly.BeanUtils;
+import ly.DBHelper;
 
 import com.alibaba.fastjson.JSON;
 
 import Bean.ShoppingAddress;
+import Bean.checks;
+import Bean.food;
 import Bize.ShoppingBiz;
 
 @WebServlet("/customer.s")
@@ -36,7 +41,6 @@ public class ShoppingServlet extends HttpServlet {
 			addCar(request,response);			
 		}else if("buy".equals(buy)) {
 			buy(request,response);
-			
 		}else if("queryFruit".equals(buy)) {
 			queryFruit(request,response);
 		}else if("queryCar".equals(buy)) {
@@ -66,11 +70,41 @@ public class ShoppingServlet extends HttpServlet {
 		//request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
 	}
 
-	private void ljBuy(HttpServletRequest request, HttpServletResponse response) {
-		String s = request.getParameter("addr");
-		introduce intro = BeanUtils.asBean(request, introduce.class);
-		System.out.println("================="+s+"==================================");
-		
+	private void ljBuy(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{	
+		List<food> list = new ArrayList<food>();
+		checks check= BeanUtils.asBean(request, checks.class);
+		String[] fids=request.getParameterValues("fid");
+		String[] perprices=request.getParameterValues("perprice");
+		String[] buynums=request.getParameterValues("buynum");
+		String[] xiaojis=request.getParameterValues("xiaoji");
+		java.sql.Timestamp now=new Timestamp(System.currentTimeMillis());
+		check.setCdate(now);
+		checks  params =new checks();		
+		try {
+			shoppingBiz.zhangdan(check);		
+			params=DBHelper.unique("select cid from checks where cdate = ?",checks.class, now);
+			for(int i=0;i<fids.length;i++) {
+				food food1 = new food();
+				food1.setFid(Integer.valueOf(fids[i]));
+				food1.setBuynum(Integer.valueOf(buynums[i]));
+				food1.setPerprice(Double.valueOf(perprices[i]));
+				food1.setXiaoji(Double.valueOf(xiaojis[i]));
+				food1.setCid(params.getCid());
+				list.add(food1);
+			}
+			check.setCid(params.getCid());
+			shoppingBiz.zhangdan2(list);
+			if(fids.length >1) {
+			shoppingBiz.sanchu(fids);
+			}
+			
+			request.setAttribute("zhangdan", check);
+			request.getRequestDispatcher("wed/fukuan.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("msg", e.getMessage());
+		}		
 	}
 	
 	
@@ -79,7 +113,7 @@ public class ShoppingServlet extends HttpServlet {
 		//String fin = request.getParameter("addcar");
 		request.setAttribute("buy",BizeMethod.buy1(a));
 		request.setAttribute("sum",BizeMethod.buysum(a));
-		
+		//request.getParameterValues("fid");
 		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);
 	}
 	
@@ -109,11 +143,8 @@ public class ShoppingServlet extends HttpServlet {
 	
 	private void addadres(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{
-		System.out.println("======================================");
-		
 		response.setCharacterEncoding("utf-8");
 		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
-		System.out.println(shoppingAddress.getSname()+"========");
 		String msg = null;
 		try {
 			shoppingBiz.add(shoppingAddress);

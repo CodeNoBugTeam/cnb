@@ -44,11 +44,6 @@
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">您好，欢迎来到果然新鲜</div></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">请登录</a>
-					</div></li>
-				<li class="fl"><div class="menu_hd">
-						<a href="#">免费注册</a>
-					</div></li>
 			</ul>
 			<ul class="fr 1h">
 				<li class="fl"><div class="menu_hd">
@@ -56,7 +51,7 @@
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">我的锡货</a>
+						<a href="#">我的果然</a>
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
@@ -98,9 +93,7 @@
 			</div>
 			<div class="header_searchbox">
 				<form action="#">
-					<input name="search" type="text" class="header_search_input"
-						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
-						x-webkit-grammar="builtin:search" lang="zh" />
+					<input name="search" type="text" class="header_search_input" default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="zh" />
 					<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
@@ -111,53 +104,7 @@
 					<li><a target="_blank" href="#">电子产品</a></li>
 				</ul>
 			</div>
-			<div id="cart_box" class="cart_box">
-				<a id="cart" class="cart_link" href="#" rel="nofollow"> <span
-					class="text">去购物车结算</span>
-					 <img src="images/shopping_icon.png" width="24" height="24" class="cart_gif" /> 
-					 <!-- 购物车没有物品时，隐藏此num -->
-					<span class="num">12</span> <s class="icon_arrow_right"></s>
-				</a>
-
-				<div class="cart_content" id="cart_content">
-					<i class="cart-icons"></i>
-					<!-- 购物车没有物品时，显示cart_content_null、隐藏cart_content_all -->
-					<div class="cart_content_null" style="display: none;">
-						购物车中还没有商品，<br/>快去挑选心爱的商品吧！
-					</div>
-					<div class="cart_content_all" style="display: block;">
-						<div class="cart_left_time">
-							<span>06分49.9秒</span> 后购物车将被清空，请及时结算
-						</div>
-						<div class="cart_content_center">
-							<div class="cart_con_single">
-								<div class="single_pic">
-									<a href="#" target="_blank" alt="兰蔻 (Lancome)根源补养洁颜啫哩 125ml">
-										<img src="images/goods_img01.jpg" />
-									</a>
-								</div>
-								<div class="single_info">
-									<a href="#" target="_blank" alt="兰蔻 (Lancome)根源补养洁颜啫哩 125ml"
-										class="name">兰蔻 (Lancome)根源补养洁颜啫哩 125ml</a> <span
-										class="price">￥269.00</span> <span class="price_plus">
-										x </span> <span class="price_num">1</span>
-								</div>
-							</div>
-						</div>
-						<div class="con_all">
-							<div class="price_whole">
-								<span>共<span class="num_all">12</span>件商品
-								</span>
-							</div>
-							<div>
-								<span class="price_gongji">共计<em>￥</em><span
-									class="total_price">69</span></span><a href="#" class="cart_btn"
-									rel="nofollow">去购物车结算</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<span class="clr"></span>
 		</div>
 	</div>
@@ -176,8 +123,8 @@
 				<li><a href="" target="_blank" class="yMenua">首页</a></li>
 				<li><a href="" target="_blank">大划算</a></li>
 				<li><a href="" target="_blank">抢拍</a></li>
-				<li><a href="" target="_blank">锡货专场</a></li>
-				<li><a href="" target="_blank">锡货超市</a></li>
+				<li><a href="" target="_blank">果然专场</a></li>
+				<li><a href="" target="_blank">果然超市</a></li>
 			</ul>
 			<div class="fr r_icon">
 				<i class="i01"></i><span>30天退货</span><i class="i02"></i><span>满59包邮</span>
@@ -217,14 +164,17 @@
 			};
 			var miniCartDisable = true;
 		</script>
+<<<<<<< HEAD
+=======
 		<div class="container">
+>>>>>>> branch 'master' of https://github.com/CodeNoBugTeam/cnb.git
 		<form id="checkoutForm" action="customer.s" method="post">
 		<input type="hidden" name="buy" value="ljBuy"/>
+		<div class="container">				
 			<div class="checkout-box">
 				
 					<div class="checkout-box-bd">
 						<!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
-						<input type="hidden" name="Checkout[addressState]" id="addrState" value="0" />
 						<!-- 收货地址 -->
 						<div class="xm-box">
 							<div class="box-hd ">
@@ -239,19 +189,17 @@
 									<dl class="item">
 									<dt>
 										<strong class="itemConsignee">${u.sname }</strong> 
-										<input type="hidden" name="shouname" value="${u.sname }"/>
 										<span class="itemTag tag">${u.sinput }</span>
 									</dt>
 									<dd>
 										<p class="tel itemTel">${u.stel }</p>
-										<input type="hidden" name="shoutel" value="${u.stel }"/>
 										<p class="itemRegion">${u.sprovince}&nbsp;${ u.scity }&nbsp;${u.scounty }</p>
 										<p class="itemStreet">${u.sstreet}(${u.spostcode })</p>
 										<span class="edit-btn J_editAddr">编辑</span>
 									</dd>
 									
 									<dd style="display: none">
-										<input type="radio" name="addr"
+										<input type="radio" name="sendaddr"
 												class="addressId" value="${u.sname } ${u.stel }  ${u.sprovince}${ u.scity }${u.scounty }${u.sstreet}(${u.spostcode })" />
 									</dd>
 									</dl>
@@ -263,68 +211,8 @@
 									</div>
 									
 								</div>
-								
-								<!-- <input type="hidden" name="newAddress[type]" id="newType" value="common"> 
-								<input type="hidden" name="sname" id="newConsignee">
-								<input type="hidden" name="sprovince" id="newProvince">
-								<input type="hidden" name="scity" id="newCity">
-								<input type="hidden" name="scounty" id="newCounty">
-								<input type="hidden" name="sstreet" id="newStreet">
-								<input type="hidden" name="spostcode" id="newZipcode">
-								<input type="hidden" name="stel" id="newTel">
-								<input type="hidden" name="sinput" id="newTag"> -->
-								<!--点击弹出新增/收货地址界面start-->
-							
-								<div class="xm-edit-addr-box" id="J_editAddrBox">
-								
-									<div class="bd">
-										<div class="item">
-											<label>收货人姓名<span>*</span></label> 
-											<input type="text" name="sname" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off' />
-											<p class="tip-msg tipMsg"></p>
-										</div>
-										<div class="item">
-											<label>联系电话<span>*</span></label> 
-											<input type="text" name="stel" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off' />
-											<p class="tel-modify-tip" id="telModifyTip"></p>
-											<p class="tip-msg tipMsg"></p>
-										</div>
-										<div class="item">
-											<label>地址<span>*</span></label>
-											 <select name="sprovince" id="Provinces" class="select-1">
-												<option>省份/自治区</option>
-											</select> 
-											<select name="scity" id="Citys" class="select-2" disabled>
-												<option>城市/地区/自治州</option>
-											</select> 
-											<select name="scounty" id="Countys" class="select-3" disabled>
-												<option>区/县</option>
-											</select>
-											<textarea name="sstreet" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
-											<p class="tip-msg tipMsg"></p>
-										</div>
-										<div class="item">
-											<label>邮政编码<span>*</span></label>
-											 <input type="text" name="spostcode" id="Zipcode" class="input" placeholder="邮政编码" autocomplete='off' />
-											<p class="zipcode-tip" id="zipcodeTip"></p>
-											<p class="tip-msg tipMsg"></p>
-										</div>
-										<div class="item">
-											<label>地址标签<span>*</span></label> 
-											<input type="text" name="sinput" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内' />
-											<p class="tip-msg tipMsg"></p>
-										</div>
-									</div>
-									<div class="ft clearfix">
-										<button type="button" class="btn btn-lineDake btn-small "
-											id="J_editAddrCancel">取消</button>
-										<button type="button" class="btn btn-primary  btn-small "
-											  onclick="addadres()" >保存</button>
-									</div>								
-								</div>
-								
-								
-								<!--点击弹出新增/收货地址界面end-->
+
+		
 								<div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
 							</div>
 						</div>
@@ -377,18 +265,17 @@
 							<div class="box-bd">
 								<ul class="checkout-option-list clearfix J_optionList">
 									<li class="item selected">
-									<input type="radio"
-										checked="checked" name="Checkout[best_time]" value="1" />
+									<input type="radio" checked="checked" name="senddata" value="不限送货时间" />
 									<p>
-											不限送货时间<span>周一至周日</span>
-										</p></li>
-									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="2" />
+										不限送货时间<span>周一至周日</span>
+									</p></li>
+									<li class="item ">
+									<input type="radio" name="senddata" value="工作日送货" />
 									<p>
 											工作日送货<span>周一至周五</span>
 										</p></li>
-									<li class="item "><input type="radio"
-										name="Checkout[best_time]" value="3" />
+									<li class="item ">
+									<input type="radio" name="senddata" value="双休日、假日送货" />
 									<p>
 											双休日、假日送货<span>周六至周日</span>
 										</p></li>
@@ -403,17 +290,15 @@
 									<h2 class="title">发票信息</h2>
 								</div>
 								<div class="box-bd">
-									<ul
-										class="checkout-option-list checkout-option-invoice clearfix J_optionList J_optionInvoice">
+									<ul class="checkout-option-list checkout-option-invoice clearfix J_optionList J_optionInvoice">
 										<li class="hide">电子个人发票4</li>
 										<li class="item selected">
 											<!--<label><input type="radio"  class="needInvoice" value="0" name="Checkout[invoice]">不开发票</label>-->
-											<input type="radio" checked="checked" value="4"
-											name="Checkout[invoice]" />
+											<input type="radio" checked="checked" value="电子发票（非纸质）" name="fapiao" />
 											<p>电子发票（非纸质）</p>
 										</li>
 										<li class="item ">
-										<input type="radio" value="1" name="Checkout[invoice]" />
+										<input type="radio" checked="checked" value="普通发票（纸质）" name="fapiao" />
 											<p>普通发票（纸质）</p></li>
 									</ul>
 									<p id="eInvoiceTip" class="e-invoice-tip ">
@@ -428,9 +313,8 @@
 										<p>发票内容：购买商品明细</p>
 										<p>发票抬头：个人</p>
 										<p>
-											<span class="hide"><input type="radio" value="4"
-												name="Checkout[invoice_type]" checked="checked"
-												id="electronicPersonal" class="invoiceType" /></span>
+											<span class="hide">
+											<input type="radio" value="4" name="Checkout[invoice_type]" checked="checked" id="electronicPersonal" class="invoiceType" /></span>
 										<dl>
 											<dt>什么是电子发票?</dt>
 											<dd>&#903;
@@ -444,28 +328,7 @@
 										</dl>
 										</p>
 									</div>
-									<div class="invoice-info invoice-info-2"
-										id="checkoutInvoiceDetail" style="display: none;">
-										<p>发票内容：购买商品明细</p>
-										<p>发票抬头：请确认单位名称正确,以免因名称错误耽搁您的报销。注：合约机话费仅能开个人发票</p>
-										<ul class="type clearfix J_invoiceType">
-											<li class="hide">
-											<input type="radio" value="0"
-												name="Checkout[invoice_type]" id="noNeedInvoice" /></li>
-											<li class="">
-											<input class="invoiceType" type="radio"
-												id="commonPersonal" name="Checkout[invoice_type]" value="1" />
-												个人</li>
-											<li class="">
-											<input class="invoiceType" type="radio"
-												name="Checkout[invoice_type]" value="2" /> 单位</li>
-										</ul>
-										<div id='CheckoutInvoiceTitle' class=" hide  invoice-title">
-											<label for="Checkout[invoice_title]">单位名称：</label> 
-											<input name="Checkout[invoice_title]" type="text" maxlength="49"
-												value="" class="input" /> 
-											<span class="tip-msg J_tipMsg"></span>
-										</div>
+					
 
 									</div>
 
@@ -494,19 +357,19 @@
 											<div class="item-row">
 												<div class="col col-1">
 													<div class="g-pic">
-														<img
-															src="${i.ipic }"
-															srcset="http://i1.mifile.cn/a1/T14BLvBKJT1RXrhCrK!80x80.jpg 2x"
-															width="40" height="40" />
+														<img src="${i.ipic }" width="40" height="40" />
 													</div>
 													<div class="g-info">
 														<a href="#"> ${i.fname } </a>
 													</div>
 												</div>
-
 												<div class="col col-2">${i.price }</div>
 												<div class="col col-3">1</div>
 												<div class="col col-4">${i.price }</div>
+												<input  type="hidden" name="fid" value="${i.fin }"/>
+												<input  type="hidden" name="perprice" value="${i.price }"/>
+												<input  type="hidden" name="buynum" value="1"/>
+												<input  type="hidden" name="xiaoji" value="${i.price }"/> 
 											</div>
 										</dd>
 										</c:forEach>
@@ -517,7 +380,8 @@
 											<h3 class="title">
 												会员留言
 												</h2>
-												</br> <input type="text" />
+												</br> 
+											<input type="text"  name="sleave" value=""/>
 										</div>
 										<!-- checkout-count-extend -->
 										<div class="checkout-price">
@@ -581,13 +445,65 @@
 						<div class="checkout-confirm">
 
 							<a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
-							<input type="submit" class="btn btn-primary" value="立即下单"
+							<input type="submit" class="btn btn-primary" value="立即付款"
 								id="checkoutToPay" />
 						</div>
 					</div>
 			</div>
 
 			</form>
+									<!--点击弹出新增/收货地址界面start-->
+							
+								<div class="xm-edit-addr-box" id="J_editAddrBox">
+								
+									<div class="bd">
+										<div class="item">
+											<label>收货人姓名<span>*</span></label> 
+											<input type="text" name="sname" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off' />
+											<p class="tip-msg tipMsg"></p>
+										</div>
+										<div class="item">
+											<label>联系电话<span>*</span></label> 
+											<input type="text" name="stel" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off' />
+											<p class="tel-modify-tip" id="telModifyTip"></p>
+											<p class="tip-msg tipMsg"></p>
+										</div>
+										<div class="item">
+											<label>地址<span>*</span></label>
+											 <select name="sprovince" id="Provinces" class="select-1">
+												<option>省份/自治区</option>
+											</select> 
+											<select name="scity" id="Citys" class="select-2" disabled>
+												<option>城市/地区/自治州</option>
+											</select> 
+											<select name="scounty" id="Countys" class="select-3" disabled>
+												<option>区/县</option>
+											</select>
+											<textarea name="sstreet" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
+											<p class="tip-msg tipMsg"></p>
+										</div>
+										<div class="item">
+											<label>邮政编码<span>*</span></label>
+											 <input type="text" name="spostcode" id="Zipcode" class="input" placeholder="邮政编码" autocomplete='off' />
+											<p class="zipcode-tip" id="zipcodeTip"></p>
+											<p class="tip-msg tipMsg"></p>
+										</div>
+										<div class="item">
+											<label>地址标签<span>*</span></label> 
+											<input type="text" name="sinput" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内' />
+											<p class="tip-msg tipMsg"></p>
+										</div>
+									</div>
+									<div class="ft clearfix">
+										<button type="button" class="btn btn-lineDake btn-small "
+											id="J_editAddrCancel">取消</button>
+										<button type="button" class="btn btn-primary  btn-small "
+											  onclick="addadres()" >保存</button>
+									</div>								
+								</div>
+								
+								
+								<!--点击弹出新增/收货地址界面end-->
 
 		</div>
 		<!-- 禮品卡提示 S-->
@@ -704,4 +620,9 @@ function addadres(){
 </script>
 
 </body>
+<c:if test="${ ! empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>
 </html>
