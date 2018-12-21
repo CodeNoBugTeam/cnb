@@ -131,7 +131,7 @@
   <div class="operating_style Quick_operation menuUl" >
   <ul class="submenu">
    <li class=""><a href="add_product.jsp"  class="btn" title="添加产品">添加产品</a></li> 
-   <li class=""><a href="add_Advertising.jsp"  class="btn" title="添加广告">添加广告</a></li>
+   <li class=""><a href="allFruit.jsp"  class="btn" title="添加广告">查看水果</a></li>
    <li class=""><a href="administrator_list.jsp"  class="btn" title="查看管理员">查看管理员</a></li>
    <li class=""><a href="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
    <li class=""><a href="add_Singlepag.jsp"  class="btn" title="新增单页面">新增单页面</a></li>
@@ -166,9 +166,9 @@
   <div class="col-xs-3 col-lg-6 ">   
    <div class="prompt_name"><i class="icon_Order"></i>订单& 商品</div>
    <ul class="padding list_info">   
-   <li>代发货订单 &nbsp;<a href="">(02)</a></li>
-   <li>已完成订单 &nbsp;<a href="">(32)</a></li>
-   <li>未完成订单 &nbsp;<a href="">(02)</a></li>
+   <li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(1)</a></li>
+   <li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(32)</a></li>
+   <li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(02)</a></li>
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6">    

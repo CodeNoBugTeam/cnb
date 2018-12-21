@@ -76,9 +76,15 @@
 	         <td>${u.mtime }</td>
 	         <td class="td-status">${u.mstate }</td>
 	         <td class="td-manage">
+<<<<<<< HEAD
 	         <a rel="${u.mid }" title="发布" href="javascript:;" class="btn btn-xs btn-status">发布</a> 
 	         <a rel="${u.mid }" title="编辑" href="message.s?op=edit&messageId"  class="btn btn-xs btn-info" >编辑</a> 
 	         <a rel="${u.mid }" title="删除" href="message.s?op=delete&messageId" class="btn btn-xs btn-delete" >删除</a>
+=======
+	         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
+	         <a title="编辑"  rel="${u.mid}" name ="op"  value="edit" href="message.s"  class="btn btn-xs btn-info" >编辑</a> 
+	         <a title="删除" rel="${u.mid}" name="delete" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
+>>>>>>> refs/remotes/origin/master
          	 </td>
          </tr>
          </c:forEach>
@@ -92,6 +98,7 @@
 </body>
 </html>
 <script>
+
 	/*$(function () { $(".displayPart").displayPart();  });*/
  	//设置内页框架布局
 $(function() { 
@@ -107,20 +114,6 @@ $(function() {
 	});
 }); 
 
-/*产品-停用*/
-/* function member_stop(obj,id){
-	layer.confirm('确认发布该信息？',function(index){
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布!',{icon: 6,time:1000});
-	});
-} */
-/*删除*/
-/* function member_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
-	});
-} */
+
 </script>
 

@@ -3,6 +3,7 @@ package Bean;
 import java.sql.Timestamp;
 
 public class shoppingCart {
+	private int id;
 	private int cid;
 	private int uid;
 	private int fin;
@@ -11,6 +12,20 @@ public class shoppingCart {
 	private String fdetails;
 	private String fprice;
 	private String fipic;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getFin() {
+		return fin;
+	}
+	public void setFin(int fin) {
+		this.fin = fin;
+	}
 	public int getCid() {
 		return cid;
 	}

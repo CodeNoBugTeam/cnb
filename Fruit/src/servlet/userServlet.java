@@ -20,6 +20,7 @@ import Expection.LoginException;
 @WebServlet("/user.s")
 public class userServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String searchTop;
 	BizeMethod bmtd = new BizeMethod();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -48,7 +49,49 @@ public class userServlet extends HttpServlet {
 			edituser(request,response);
 		}else if("moveuser".equals(op)) {
 			moveuser(request,response);
+		}else if("Order_form".equals(op)) {
+			Order_form(request,response);
+		}else if("faHuo".equals(op)) {
+			faHuo(request,response);
+		}else if("detailed".equals(op)) {
+			detailed(request,response);
 		}
+	}
+
+	private void detailed(HttpServletRequest request, HttpServletResponse response) {
+		
+		
+	}
+
+	private void faHuo(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		System.out.println(id+"id====================");
+		String express="圆通速运";
+		BizeMethod.faHuo(express,id);
+		request.setAttribute("msg","发货成功！");
+		//request.getRequestDispatcher("Order_form.jsp?state=yes").forward(request, response);
+		response.sendRedirect("Order_form.jsp?state=yes");
+	}
+
+	private void Order_form(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String state = request.getParameter("state");
+		if(state.equals("no")) {
+			state="未发货";
+		}else if(state.equals("yes")) {
+			state="已完成";
+		}else if(state.equals("noYes")) {
+			state="未完成";
+		}
+		searchTop = "";
+		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source,"UTF-8");
+		}
+		request.setAttribute("UnfinishedOrder", BizeMethod.UnfinishedOrder(state));
+		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
 	private void productadd(HttpServletRequest request, HttpServletResponse response) 

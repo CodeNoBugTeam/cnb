@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
@@ -27,7 +28,7 @@
 				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登录</label>
 				<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">注册</label>
 				<div class="login-form">
-				<form action="../web.s" method="post">
+				<form action="../userLogin.s" method="post">
 				<input type="hidden" name="op" value="login"/>
 					<div class="sign-in-htm">
 						<div class="group">
@@ -45,7 +46,7 @@
 							</div>
 						</div>
 						<div class="group">
-							<input id="check" type="checkbox" class="check" >
+							<input id="check" type="checkbox" class="check" name="checkbox" checked>
 							<label for="check"><span class="icon"></span> 保持登录</label>
 						</div>						
 						<div class="group">
@@ -127,3 +128,8 @@
 </script>
 </body>
 </html>
+	<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+	</c:if>

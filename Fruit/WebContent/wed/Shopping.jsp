@@ -17,6 +17,9 @@
     <title>购物车</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/carts.css">
+    <script>
+
+</script>
 </head>
 <body>
     <section class="cartMain">
@@ -36,27 +39,21 @@
                 <li class="list_op">操作</li>
             </ul>
         </div>
-
+<form action="../customer.s" method="post">
+	<input type="hidden" value="carshopping" name="buy"/>
         <div class="cartBox">
-            <div class="shop_info">
-                <div class="all_check">
-                    <!--店铺全选-->
-                    <input type="checkbox" id="shop_a" class="shopChoice">
-                    <label for="shop_a" class="shop"></label>
-                </div>
-                <div class="shop_name">
-                    店铺：<a href="javascript:;">搜猎人艺术生活</a>
-                </div>
-            </div>
          
                 
             <c:forEach items="${carList}" var="i">
                 <ul class="order_lists">
                     <li class="list_chk">
-                        <input type="checkbox" id="checkbox_3" class="son_check">
-                        <label for="checkbox_3"></label>
+                        <input type="checkbox" id="checkbox_${i }" class="son_check" name="fruit" value="${i.fin }">
+                        <label for="checkbox_${i }"></label>
                     </li>
                     <li class="list_con">
+                    <!-- 	<input type="hidden" name="minid" value="${i.cid }"/>
+                    		<input type="hidden" name="fid${i.cid }" value="${i.fin }"/>
+                     -->
                         <div class="list_img"><a href="javascript:;"><img src="${i.fipic}" alt=""></a></div>
                         <div class="list_text"><a href="javascript:;">${i.fname}${i.fdetails}</a></div>
                     </li>
@@ -70,7 +67,7 @@
                     <li class="list_amount">
                         <div class="amount_box">
                             <a href="javascript:;" class="reduce reSty">-</a>
-                            <input type="text" value="1" class="sum">
+                            <input type="text" value="1" class="sum" id="number">
                             <a href="javascript:;" class="plus">+</a>
                         </div>
                     </li>
@@ -81,16 +78,17 @@
                         <p class="del"><a href="../customer.s?buy=deleteCar&fin=${i.fin}" class="delBtn">移除商品</a></p>
                     </li>
                 </ul>
-            </c:forEach>    
-               
+            </c:forEach>   
+            </div> 
          <!--底部-->
         <div class="bar-wrapper">
             <div class="bar-right">
                 <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
-                <div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-                <div class="calBtn"><a href="javascript:;">结算</a></div>
+                <div class="totalMoney">共计: <span class="total_text">0.00</span></div>
+                <div class="calBtn"><input onclick="ck()" type="submit" value="结算" style="height: 49px ; width: 100px ;font-size: 26px ;background: orange"/></div>
             </div>
         </div>
+</form>
     </section>
     <section class="model_bg"></section>
     <section class="my_model">
