@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
 <head>
@@ -26,7 +27,8 @@
 				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登录</label>
 				<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">注册</label>
 				<div class="login-form">
-					<form>
+					<form action="<%=request.getContextPath() %>/userLogin.s" method="post">
+					<input name="op" type="hidden" value="login"/>
 					<div class="sign-in-htm">
 						<div class="group">
 							<label for="user" class="label">用户名</label>
@@ -34,20 +36,14 @@
 						</div>
 						<div class="group">
 							<label for="pass" class="label">密码</label>
-							<input id="password" type="password" class="input" data-type="password">
+							<input id="password" name="password" type="password" class="input" data-type="password">
 						</div>
 						<div class="group">
-							<div class="container">
-							    <div id="captcha" style="position: relative" data-type="password"></div>
-								<div id="msg"></div>
-							</div>
-						</div>
-						<div class="group">
-							<input id="check" type="checkbox" class="check" checked>
+							<input id="check" type="checkbox" class="check" name="checkbox" checked>
 							<label for="check"><span class="icon"></span> 保持登录</label>
 						</div>						
 						<div class="group">
-							<input type="button" class="button" value="登录" onClick="sub()">
+							<input type="submit" class="button" value="登录" >
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
@@ -112,3 +108,8 @@
 </script>
 </body>
 </html>
+	<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+	</c:if>
