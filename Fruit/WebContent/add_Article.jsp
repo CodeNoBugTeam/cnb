@@ -30,14 +30,25 @@
   <form action="message.s">
   <input type="hidden" name="op" value="add">
     <ul>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称:</label><div class="Add_content col-xs-11">
-  <input name="mtitle"  type="text"  class="col-xs-6"/></div>  </li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述:</label><div class="Add_content col-xs-11">
-  <input name="mdescription" type="text" class="col-xs-4"/></div>
+  <li class="clearfix">
+  <label class="label_name col-xs-1">
+  <i>*</i>标题名称:
+  </label>
+  <div class="Add_content col-xs-11">
+  <input name="mtitle"  type="text"  class="col-xs-6" value="${mtitle}"/>
+  </div>  
+  </li>
+  <li class="clearfix">
+  <label class="label_name col-xs-1">
+  <i>*</i>简单描述:
+  </label>
+  <div class="Add_content col-xs-11">
+  <input name="mdescription" type="text" class="col-xs-4" value="${m.mdescription }"/>
+  </div>
   </li>
      <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>&nbsp;关&nbsp;键&nbsp;字:</label>
      <div class="Add_content col-xs-11">
-     <input name="mkeyword" type="text" class="col-xs-4"/>
+     <input name="mkeyword" type="text" class="col-xs-4" value="${mkeyword}"/>
      <em class="Prompt"> 请用","分隔关键字</em></div>
      </li>
      <li class="clearfix">

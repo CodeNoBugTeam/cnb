@@ -6,15 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import ly.BeanUtils;
 import Bean.message;
 import Bize.BizException;
 import Bize.MessageBiz;
 
-
 /**
- * Servlet implementation class message
+ * message的servlet
  */
 @WebServlet("/message.s")
 public class messageServlet extends HttpServlet {
@@ -34,13 +32,28 @@ public class messageServlet extends HttpServlet {
 			add(request,response);
 		}else if("delete".equals(op)) {
 			delete(request,response);
+		}else if("query".equals(op)) {
+			query(request,response);
+		}else if("edit".equals(op)) {
+			edit(request,response);
 		}
 	}
 
-	private void delete(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("messageId");
+	private void edit(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
 		
-		
+	}
+
+	private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		message m = BeanUtils.asBean(request, message.class);
+		request.setAttribute("messageList", mbBiz.find(m));
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		message m = BeanUtils.asBean(request, message.class);
+		request.setAttribute("messageList", mbBiz.delete(m));
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
 	}
 
 	private void add(HttpServletRequest request, HttpServletResponse response) 
