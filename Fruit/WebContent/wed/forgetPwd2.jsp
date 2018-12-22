@@ -46,7 +46,7 @@
        <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
       </div>
      </div><!--for-liucheng/-->
-     <form action="../forgetPwd.s" method="post" class="forget-pwd">
+     <form action="forgetPwd.s" method="post" class="forget-pwd">
      <input type="hidden" name="op" value="forgetPwd2"/>
        <dl>
         <dt>验证方式：</dt>
@@ -82,7 +82,7 @@
 			
 			$.ajax({
 				type:"POST",
-				url: "../forgetPwd.s?op=getCode",
+				url: "forgetPwd.s?op=getCode",
 				cache: false,
 				data: "email="+email,
 				success: function(data){

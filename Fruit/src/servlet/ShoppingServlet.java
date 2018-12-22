@@ -73,6 +73,7 @@ public class ShoppingServlet extends HttpServlet {
 	private void ljBuy(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{	
 		List<food> list = new ArrayList<food>();
+		String uid =String.valueOf(request.getSession().getAttribute("longinUser"));
 		checks check= BeanUtils.asBean(request, checks.class);
 		String[] fids=request.getParameterValues("fid");
 		String[] perprices=request.getParameterValues("perprice");
@@ -80,6 +81,7 @@ public class ShoppingServlet extends HttpServlet {
 		String[] xiaojis=request.getParameterValues("xiaoji");
 		java.sql.Timestamp now=new Timestamp(System.currentTimeMillis());
 		check.setCdate(now);
+		check.setUid(Integer.valueOf(uid));
 		checks  params =new checks();		
 		try {
 			shoppingBiz.zhangdan(check);		
@@ -95,9 +97,9 @@ public class ShoppingServlet extends HttpServlet {
 			}
 			check.setCid(params.getCid());
 			shoppingBiz.zhangdan2(list);
-			if(fids.length >1) {
-			shoppingBiz.sanchu(fids);
-			}
+			
+			shoppingBiz.sanchu(uid,fids);
+			
 			
 			request.setAttribute("zhangdan", check);
 			request.getRequestDispatcher("wed/fukuan.jsp").forward(request, response);
@@ -121,6 +123,13 @@ public class ShoppingServlet extends HttpServlet {
 	private void buy(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String fin = request.getParameter("addcar");
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
+		if(uid  == "null" || "".equals(uid)) {
+			request.setAttribute("msg","请先登录再购买！");
+			//response.sendRedirect("wed/login.jsp");
+			request.getRequestDispatcher("wed/login.jsp").forward(request, response);
+		}
+		
 		request.setAttribute("buy",BizeMethod.buy(fin));
 		request.setAttribute("sum",BizeMethod.buyPrice(fin));
 		
@@ -145,6 +154,8 @@ public class ShoppingServlet extends HttpServlet {
 			throws ServletException,IOException{
 		response.setCharacterEncoding("utf-8");
 		ShoppingAddress shoppingAddress=BeanUtils.asBean(request, ShoppingAddress.class);
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
+		shoppingAddress.setUid(Integer.valueOf(uid));
 		String msg = null;
 		try {
 			shoppingBiz.add(shoppingAddress);
@@ -171,7 +182,7 @@ public class ShoppingServlet extends HttpServlet {
 	private void deleteCar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		//获取用户id
-		String uid="1";
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
 		String fin = request.getParameter("fin");
 		BizeMethod.deleteCar(uid,fin);
 		request.setAttribute("msg", "购物车商品删除成功！");
@@ -182,8 +193,14 @@ public class ShoppingServlet extends HttpServlet {
 	private void queryCar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		//获取用户id
-		String uid = "1";
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
 		List<shoppingCart> car = BizeMethod.queryCar(uid);
+		
+		if(uid  == "null" || "".equals(uid)) {
+			request.setAttribute("msg","请先登录再购买！");
+			//response.sendRedirect("wed/login.jsp");
+			request.getRequestDispatcher("wed/login.jsp").forward(request, response);
+		}
 		request.setAttribute("carList", BizeMethod.queryCar(uid));
 		request.getRequestDispatcher("wed/Shopping.jsp").forward(request, response);
 		
@@ -194,11 +211,16 @@ public class ShoppingServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String fin = request.getParameter("addcar");
 		//得到用户id,以后的改；
-		String id="1";
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
+		if(uid  == "null" || "".equals(uid)) {
+			request.setAttribute("msg","请先登录再购买！");
+			//response.sendRedirect("wed/login.jsp");
+			request.getRequestDispatcher("wed/login.jsp").forward(request, response);
+		}
 		introduce car = BizeMethod.queryFruitCar(fin);
-		BizeMethod.addcar(car,id);
+		BizeMethod.addcar(car,uid);
 		request.setAttribute("msg", "加入购物车成功！");
-		request.getRequestDispatcher("wed/lemon.jsp").forward(request, response);
+		request.getRequestDispatcher("wed/customer.s?buy=lemon&id=" + car.getFin()).forward(request, response);
 		
 	}
 

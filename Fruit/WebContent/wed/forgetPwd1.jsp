@@ -24,7 +24,7 @@
        <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
       </div>
      </div><!--for-liucheng/-->
-     <form action="forgetPwd.s" method="post" class="forget-pwd">
+     <form action="<%=request.getContextPath() %>/forgetPwd.s" method="post" class="forget-pwd">
      <input name="op" type="hidden" value="forgetPwd1"/>
        <dl>
         <dt>账户名：</dt>

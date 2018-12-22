@@ -54,7 +54,7 @@
 						</div>
 						<div class="hr"></div>
 						<div class="foot-lnk">
-							<a href="#forgot">忘记密码?</a>
+							<a href="forgetPwd1.jsp">忘记密码?</a>
 						</div>
 					</div>
 					</form>
