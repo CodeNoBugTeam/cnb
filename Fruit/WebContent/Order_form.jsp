@@ -4,7 +4,7 @@
 
 <%
 	String s = request.getParameter("state");
-	
+	request.setAttribute("st", s);
 	if (request.getAttribute("UnfinishedOrder") == null) {
 		request.getRequestDispatcher("user.s?op=Order_form&state="+s).forward(request, response);
 	}
@@ -90,7 +90,7 @@ function Delivery_stop(){
 	 <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="end" type="text" name="end" value="${param.end }"/>
 	 <input name="miss" type="text"  class="form-control col-xs-3 col-lg-4" value="${param.miss }"/>
 	 <button class="btn button_btn bg-deep-blue " onclick=""  type="submit"><i class="fa  fa-search"></i>&nbsp;搜索</button>
-	 <span>数量：3433件</span>
+	 <span>订单</span>
 </div>
 </form>
 </div>
@@ -120,7 +120,7 @@ function Delivery_stop(){
 	      <td class="td-status"><span class="label label-success radius">${i.state}</span></td>
 	     <td>
 	     <a name="see" href="javascript:;" title="发货"  id="faHuo" rel="${i.cid}" class="btn btn-xs btn-status">发货</a> 
-	     <a title="订单详细"  href="user.s?op=detailed&id=${i.id}"  class="btn btn-xs btn-info" >详细</a> 
+	     <a title="订单详细"  href="user.s?op=detailed&id=${i.cid}&state=${st}"  class="btn btn-xs btn-info" >详细</a> 
 	     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
 	     </td>
 	     </tr>

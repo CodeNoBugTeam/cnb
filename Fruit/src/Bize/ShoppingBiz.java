@@ -42,5 +42,9 @@ public class ShoppingBiz {
 					food1.getXiaoji());
 		}
 	}
+	public static List<food> xiangqing(String id) {
+		String sql ="select * from food where cid = ?";
+		return DBHelper.select(sql, food.class, id);
+	}
 
 }

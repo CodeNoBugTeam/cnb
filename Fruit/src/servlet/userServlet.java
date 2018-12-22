@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.food;
 import Bean.introduce;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
 
 import Bize.BizeMethod;
+import Bize.ShoppingBiz;
 import Expection.LoginException;
 
 @WebServlet("/user.s")
@@ -70,8 +72,14 @@ public class userServlet extends HttpServlet {
 		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
-	private void detailed(HttpServletRequest request, HttpServletResponse response) {
+	private void detailed(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String state = request.getParameter("state");
 		
+		request.setAttribute("food", ShoppingBiz.xiangqing(id));
+		request.setAttribute("st", state);
+		request.getRequestDispatcher("Order_form2.jsp").forward(request, response);
 		
 	}
 
