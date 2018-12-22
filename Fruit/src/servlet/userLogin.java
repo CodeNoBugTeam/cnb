@@ -13,6 +13,7 @@ import Bean.worker;
 import Bize.BizeLogin;
 import Bize.BizeMethod;
 import Expection.LoginException;
+import ly.DBHelper;
 
 
 @WebServlet("/userLogin.s")
@@ -51,14 +52,16 @@ public class userLogin extends HttpServlet {
 				if (myCookie[i].getValue().equals(name)) {
 					request.getSession().setAttribute("longinUser", name);
 					System.out.println(request.getSession().getAttribute("longinUser"));
-					request.getRequestDispatcher("wed/index.jsp").forward(request, response);
+					//request.getRequestDispatcher("wed/index.jsp").forward(request, response);
+					response.sendRedirect("wed/index.jsp");
 				}
 			}
 		}
 		 user users = BizeLogin.login(name, pwd);
 
 				if (users != null) {
-					request.getSession().setAttribute("longinUser", name);
+					user u = DBHelper.unique("select * from user where uname=? ", user.class,name);
+					request.getSession().setAttribute("longinUser", u.getUid());
 					request.getRequestDispatcher("wed/index.jsp").forward(request, response);
 				} else {
 					request.setAttribute("msg", "账号或密码错误！");

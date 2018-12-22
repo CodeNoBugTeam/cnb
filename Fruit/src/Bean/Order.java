@@ -11,8 +11,16 @@ public class Order {
 	private String state;
 	private String cdate;
 	private String fname;
+	private double zongji;
 	
 	
+	
+	public double getZongji() {
+		return zongji;
+	}
+	public void setZongji(double zongji) {
+		this.zongji = zongji;
+	}
 	public int getId() {
 		return id;
 	}

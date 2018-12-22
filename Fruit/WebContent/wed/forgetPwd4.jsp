@@ -28,8 +28,11 @@
       <div class="successs">
        <h3>恭喜您，修改成功！</h3>
       </div>
+      
    </div><!--web-width/-->
   </div><!--content/-->
- 
+ <div style="text-align:center">
+ <a style="padding:20px; font-size:25px;color:#A0CD4E;" href="login.jsp">返回登录页面</a>
+ </div>
 </body>
 </html>

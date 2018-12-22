@@ -24,7 +24,8 @@
        <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
       </div>
      </div><!--for-liucheng/-->
-     <form action="../forgetPwd.s" method="post" class="forget-pwd">
+
+    <form action="<%=request.getContextPath() %>/forgetPwd.s" method="post" class="forget-pwd">
      <input name="op" type="hidden" value="forgetPwd1"/>
        <dl>
         <dt>账户名：</dt>
@@ -42,9 +43,12 @@
         <div class="clears"></div>
        </dl>
        <div class="subtijiao"><input type="submit" value="提交" /></div> 
-      </form><!--forget-pwd/-->
+      <!--forget-pwd/-->
+      </form>
    </div><!--web-width/-->
+   
   </div><!--content/-->
+  
   
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 <p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>

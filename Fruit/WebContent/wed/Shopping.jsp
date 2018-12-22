@@ -39,7 +39,7 @@
                 <li class="list_op">操作</li>
             </ul>
         </div>
-<form action="../customer.s" method="post">
+<form action="customer.s" method="post">
 	<input type="hidden" value="carshopping" name="buy"/>
         <div class="cartBox">
          
@@ -102,9 +102,4 @@
     <script src="js/carts.js"></script>
 	
 </body>
-<c:if test="${! empty msg }">
-		<script type="text/javascript">
-			alert('${msg}');
-		</script>
-</c:if>
 </html>

@@ -42,7 +42,7 @@
 </div>
 <!--banner图片结束-->
 <!--主页内容-->
-<form action="<%=request.getContextPath() %>/customer.s" method="post">
+<form action="customer.s" method="post">
 <div class="content">
     <div class="cont-top">
         <div class="cont-left">

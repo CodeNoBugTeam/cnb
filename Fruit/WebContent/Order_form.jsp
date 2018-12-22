@@ -81,14 +81,18 @@ function Delivery_stop(){
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
 <span class="submenu">
 </span>
+<form action="user.s" method="post">
+<input type="hidden" name ="op" value="select1"/>
 <div class="search  clearfix">
- <label class="label_name">商品搜索：</label>
- <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="start" type="text">
- <span style=" float:left; padding:0px 10px; line-height:32px;">至</span>
- <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="end" type="text">
- <input name="" type="text"  class="form-control col-xs-3 col-lg-4"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
- <span>数量：3433件</span>
+	 <label class="label_name">商品搜索：</label>
+	 <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="start" type="text" name="start" value="${param.start }"/>
+	 <span style=" float:left; padding:0px 10px; line-height:32px;">至</span>
+	 <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="end" type="text" name="end" value="${param.end }"/>
+	 <input name="miss" type="text"  class="form-control col-xs-3 col-lg-4" value="${param.miss }"/>
+	 <button class="btn button_btn bg-deep-blue " onclick=""  type="submit"><i class="fa  fa-search"></i>&nbsp;搜索</button>
+	 <span>数量：3433件</span>
 </div>
+</form>
 </div>
  <div class="datalist_show">
   <div class="datatable_height confirm">
@@ -97,10 +101,8 @@ function Delivery_stop(){
     <tr>
 		<th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
 		<th width="120px">订单编号</th>
-		<th width="250px">产品名称</th>
 		<th width="100px">总价</th>
 		<th width="100px">订单时间</th>				
-		<th width="180px">所属类型</th>
 		<th width="80px">数量</th>
 		<th width="70px">状态</th>                
 		<th width="200px">操作</th>
@@ -112,16 +114,12 @@ function Delivery_stop(){
 	     <tr>
 	     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
 	     <td>${i.cid}</td>
-	     <td class="order_product_name">
-	      ${i.fname}
-	     </td>
-	     <td>456.5</td>
+	     <td>${i.zongji}</td>
 	     <td>${i.cdate}</td>
-	     <td>${i.type}</td>
 	     <td>${i.buynum}</td>
 	      <td class="td-status"><span class="label label-success radius">${i.state}</span></td>
 	     <td>
-	     <a name="see" href="javascript:;" title="发货"  id="faHuo" rel="${i.id}" class="btn btn-xs btn-status">发货</a> 
+	     <a name="see" href="javascript:;" title="发货"  id="faHuo" rel="${i.cid}" class="btn btn-xs btn-status">发货</a> 
 	     <a title="订单详细"  href="user.s?op=detailed&id=${i.id}"  class="btn btn-xs btn-info" >详细</a> 
 	     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
 	     </td>

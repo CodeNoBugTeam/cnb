@@ -170,7 +170,8 @@ public class BizeMethod {
 	}
 
 	public static List<Order> UnfinishedOrder(String state) {
-		String sql = "SELECT a.* ,introduce.fname from orderList a,introduce where a.fid=introduce.fin and state=?";
+		String sql = "SELECT a.* ,checks.* from food a,"
+				+ "checks where a.cid=checks.cid and state=?";
 		return DBHelper.select(sql, Order.class,state);
 	}
 	
@@ -244,7 +245,7 @@ public class BizeMethod {
 
 	public static void faHuo(String express, String id) {
 		String state="已完成";
-		String sql ="update orderList set express=?,state=? where id=?";
+		String sql ="update checks set express=?,state=? where cid=?";
 		DBHelper.update(sql, express,state,id);
 		
 	}
@@ -356,6 +357,25 @@ public class BizeMethod {
 			}
 		}
 		return b;
+	}
+
+	public static List<Order> select1(String start, String end, String miss) {
+		String sql = "select * from checks where 1 = 1 ";
+		ArrayList<Object> param = new ArrayList<Object>();
+		if(start!=null && !"".equals(start)) {
+			sql= sql+"and cdate > ?";
+			param.add(start);
+		}
+		if(end!=null && !"".equals(end)) {
+			sql= sql+"and cdate < ? ";
+			param.add(end);
+		}
+		if(miss !=null && !"".equals(miss)) {
+			sql += "and sendaddr like ?";
+			param.add("%"+miss+"%");
+		}
+		return DBHelper.select(sql, Order.class, param);
+		
 	}
 	
 

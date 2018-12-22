@@ -20,7 +20,7 @@ import mail.Mailtest;
 public class forgetPwd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String code ; 
-    
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
@@ -66,6 +66,7 @@ public class forgetPwd extends HttpServlet {
 
 	private user mail(String email) {
 		String sql = "select * from user where email=? ";
+		System.out.println(email);
 		return DBHelper.unique(sql, user.class, email);
 	}
 
@@ -73,6 +74,7 @@ public class forgetPwd extends HttpServlet {
 	private void forgetPwd2(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String mymail = request.getParameter("mymail");
+		System.out.println(mymail);
 		if(code.equalsIgnoreCase(mymail)) {
 			request.getRequestDispatcher("wed/forgetPwd3.jsp").forward(request, response);
 		}else {
@@ -91,7 +93,9 @@ public class forgetPwd extends HttpServlet {
 		String s = (String) request.getSession().getAttribute("piccode");
 		if(s.equalsIgnoreCase(code) && u != null) {
 			request.getRequestDispatcher("wed/forgetPwd2.jsp").forward(request, response);
-		}		
+		}else {
+			request.getRequestDispatcher("wed/forgetPwd1.jsp").forward(request, response);
+		}
 	}
 
 

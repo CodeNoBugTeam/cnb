@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.introduce;
-import Bean.record;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
@@ -56,7 +55,19 @@ public class userServlet extends HttpServlet {
 			faHuo(request,response);
 		}else if("detailed".equals(op)) {
 			detailed(request,response);
+		}else if("select1".equals(op)) {
+			select1(request,response);
 		}
+	}
+
+	private void select1(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String start = request.getParameter("start");
+		String end = request.getParameter("end");
+		String miss = request.getParameter("miss");
+		System.out.println(start+"::"+end+"::"+miss);
+		request.setAttribute("UnfinishedOrder",BizeMethod.select1(start,end,miss));
+		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
 	private void detailed(HttpServletRequest request, HttpServletResponse response) {
@@ -71,8 +82,8 @@ public class userServlet extends HttpServlet {
 		String express="圆通速运";
 		BizeMethod.faHuo(express,id);
 		request.setAttribute("msg","发货成功！");
-		//request.getRequestDispatcher("Order_form.jsp?state=yes").forward(request, response);
-		response.sendRedirect("Order_form.jsp?state=yes");
+		request.getRequestDispatcher("Order_form.jsp?state=yes").forward(request, response);
+		//response.sendRedirect("Order_form.jsp?state=yes");
 	}
 
 	private void Order_form(HttpServletRequest request, HttpServletResponse response) 
@@ -92,6 +103,8 @@ public class userServlet extends HttpServlet {
 			searchTop = new String(source,"UTF-8");
 		}
 		request.setAttribute("UnfinishedOrder", BizeMethod.UnfinishedOrder(state));
+		System.out.println(BizeMethod.UnfinishedOrder(state));
+		
 		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
