@@ -164,10 +164,8 @@
 			};
 			var miniCartDisable = true;
 		</script>
-<<<<<<< HEAD
-=======
-		<div class="container">
->>>>>>> branch 'master' of https://github.com/CodeNoBugTeam/cnb.git
+
+
 		<form id="checkoutForm" action="customer.s" method="post">
 		<input type="hidden" name="buy" value="ljBuy"/>
 		<div class="container">				
