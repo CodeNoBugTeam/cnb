@@ -50,11 +50,7 @@ public class MessageBiz {
 				messag.getTheme(),messag.getMstate(),messag.getContent());
 	}
 
-	public Object delete(message m) {
-		m.getMid();
-		String sql = "delete message where id=?";
-		return null;
-	}
+	
 
 	public Object findAll()  {
 		String sql=" select * from message where mstate = '已发布' ";		
@@ -65,6 +61,26 @@ public class MessageBiz {
 		
 		
 		return  DBHelper.unique(sql, message.class,mid);
+	}
+
+	public message edit(String mid) {
+		String sql="select * from message where mid = ?";
+		return DBHelper.unique(sql, message.class, mid);
+	}
+
+	public void delete(String mid) {
+		String sql="delete from message where mid = ?";
+		DBHelper.update(sql, mid);
+	}
+
+	public String fabu(String mid) {
+		String sql1="select mstate from message where mid = ? ";
+		if (DBHelper.unique(sql1, message.class, mid).getMstate().equals("已发布")) {
+			return "文章已发布";
+		}
+		String sql="update message set mstate = ?  where mid = ?";
+		DBHelper.update(sql,"已发布", mid);
+		return "发布成功";
 	}
 
 	

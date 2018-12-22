@@ -35,7 +35,7 @@
   <i>*</i>标题名称:
   </label>
   <div class="Add_content col-xs-11">
-  <input name="mtitle"  type="text"  class="col-xs-6" value="${mtitle}"/>
+  <input name="mtitle"  type="text"  class="col-xs-6" value="${message.mtitle}"/>
   </div>  
   </li>
   <li class="clearfix">
@@ -43,12 +43,12 @@
   <i>*</i>简单描述:
   </label>
   <div class="Add_content col-xs-11">
-  <input name="mdescription" type="text" class="col-xs-4" value="${m.mdescription }"/>
+  <input name="mdescription" type="text" class="col-xs-4" value="${message.mdescription }"/>
   </div>
   </li>
      <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>&nbsp;关&nbsp;键&nbsp;字:</label>
      <div class="Add_content col-xs-11">
-     <input name="mkeyword" type="text" class="col-xs-4" value="${mkeyword}"/>
+     <input name="mkeyword" type="text" class="col-xs-4" value="${message.mkeyword}"/>
      <em class="Prompt"> 请用","分隔关键字</em></div>
      </li>
      <li class="clearfix">
@@ -73,7 +73,7 @@
       <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>
     	  内容介绍:</label>
      <div class="Add_content col-xs-11">
-     <script id="editor" type="text/plain" style="width:100%;height:500px;"></script></div>
+     <script id="editor" type="text/plain" style="width:100%;height:500px;">${message.content}</script></div>
      </li> 
   </ul>
   <div class="Button_operation btn_width">

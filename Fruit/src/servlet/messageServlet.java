@@ -45,7 +45,17 @@ public class messageServlet extends HttpServlet {
 			suoying(request,response);
 		}else if("read".equals(op)) {
 			read(request,response);
+		}else if("fabu".equals(op)) {
+			fabu(request,response);
 		}
+	}
+
+	private void fabu(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException{
+		String mid=request.getParameter("mid");
+		String string=mbBiz.fabu(mid);
+		request.setAttribute("msg", string);
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
 	}
 
 	private void read(HttpServletRequest request, HttpServletResponse response) 
@@ -71,15 +81,17 @@ public class messageServlet extends HttpServlet {
 	}
 
 	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		message m = BeanUtils.asBean(request, message.class);
-		request.setAttribute("messageList", mbBiz.delete(m));
+		String mid=request.getParameter("mid");
+		mbBiz.delete(mid);
+		request.setAttribute("msg", "删除成功");
 		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
 	}
 
 	private void edit(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException,IOException{
-		String id=request.getParameter("rel");
-		System.out.println("+========="+id);
+		String mid=request.getParameter("mid");
+		request.setAttribute("message", mbBiz.edit(mid));
+		request.getRequestDispatcher("add_Article.jsp").forward(request, response);
 		
 
 	}
