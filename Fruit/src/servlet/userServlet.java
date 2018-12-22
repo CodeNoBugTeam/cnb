@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.introduce;
-import Bean.record;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;

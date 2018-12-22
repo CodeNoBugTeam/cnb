@@ -12,12 +12,18 @@ public class MessageBiz {
 	public Object find(message messag) {
 		String sql="select * from message where 1=1  ";
 		ArrayList< Object> params =new ArrayList<Object>();
+		if (messag.getTheme() != null && messag.getTheme().trim().isEmpty() == false) {
+			sql +=" and theme like ? ";
+			params.add("%"+messag.getTheme()+"%");
+		}
 		if (messag.getMtitle() != null && messag.getMtitle().trim().isEmpty() == false) {
 			sql +=" and mtitle like ? ";
 			params.add("%"+messag.getMtitle()+"%");
 		}
-	
-		
+		if (messag.getMstate() != null && messag.getMstate().trim().isEmpty() == false) {
+			sql +=" and mstate like ? ";
+			params.add("%"+messag.getMstate()+"%");
+		}
 		return DBHelper.select(sql, params);
 	}
 
@@ -42,7 +48,13 @@ public class MessageBiz {
 		String sql="insert into message(mtitle,mdescription,mkeyword,mtime,theme,mstate,content) values(?,?,?,?,?,?,?)";
 		DBHelper.insert(sql,messag.getMtitle(),messag.getMdescription(),messag.getMkeyword(),now,
 				messag.getTheme(),messag.getMstate(),messag.getContent());
-		
 	}
 
+	public Object delete(message m) {
+		m.getMid();
+		String sql = "delete message where id=?";
+		return null;
+	}
+
+	
 }

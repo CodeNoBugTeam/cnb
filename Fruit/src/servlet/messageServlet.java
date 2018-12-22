@@ -6,19 +6,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import ly.BeanUtils;
 import Bean.message;
 import Bize.BizException;
 import Bize.MessageBiz;
 
-
 /**
- * Servlet implementation class message
+ * message的servlet
  */
 @WebServlet("/message.s")
 public class messageServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L; 
 	MessageBiz mbBiz=new MessageBiz();
 	
        
@@ -32,9 +30,25 @@ public class messageServlet extends HttpServlet {
 			messa(request,response);
 		}else if ("add".equals(op)) {
 			add(request,response);
-		}else if ("edit".equals(op)) {
+		}else if("delete".equals(op)) {
+			delete(request,response);
+		}else if("query".equals(op)) {
+			query(request,response);
+		}else if("edit".equals(op)) {
 			edit(request,response);
 		}
+	}
+
+	private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		message m = BeanUtils.asBean(request, message.class);
+		request.setAttribute("messageList", mbBiz.find(m));
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		message m = BeanUtils.asBean(request, message.class);
+		request.setAttribute("messageList", mbBiz.delete(m));
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
 	}
 
 	private void edit(HttpServletRequest request, HttpServletResponse response) 
@@ -42,6 +56,7 @@ public class messageServlet extends HttpServlet {
 		String id=request.getParameter("rel");
 		System.out.println("+========="+id);
 		
+
 	}
 
 	private void add(HttpServletRequest request, HttpServletResponse response) 
