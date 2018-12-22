@@ -68,7 +68,7 @@
     <i class="fa  fa-volume-up "></i>
     <h3>通知</h3>
    </div>
-   <div class="right_info">456条</div>
+   <div class="right_info">456条</div>https://mini.eastday.com/a/njump.html?id=n181222124143190&qid=03123
    </div>
    </a>
   </div>

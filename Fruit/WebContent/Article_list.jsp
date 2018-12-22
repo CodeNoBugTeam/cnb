@@ -76,15 +76,11 @@
 	         <td>${u.mtime }</td>
 	         <td class="td-status">${u.mstate }</td>
 	         <td class="td-manage">
-<<<<<<< HEAD
-	         <a rel="${u.mid }" title="发布" href="javascript:;" class="btn btn-xs btn-status">发布</a> 
-	         <a rel="${u.mid }" title="编辑" href="message.s?op=edit&messageId"  class="btn btn-xs btn-info" >编辑</a> 
-	         <a rel="${u.mid }" title="删除" href="message.s?op=delete&messageId" class="btn btn-xs btn-delete" >删除</a>
-=======
-	         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="发布"  class="btn btn-xs btn-status">发布</a> 
-	         <a title="编辑"  rel="${u.mid}" name ="op"  value="edit" href="message.s"  class="btn btn-xs btn-info" >编辑</a> 
-	         <a title="删除" rel="${u.mid}" name="delete" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>
->>>>>>> refs/remotes/origin/master
+
+	         <a rel=" " title="发布" href="message.s?op=fabu&mid=${u.mid}" class="btn btn-xs btn-status">发布</a> 
+	         <a rel=" " title="编辑" href="message.s?op=edit&mid=${u.mid}"  class="btn btn-xs btn-info" >编辑</a> 
+	         <a rel="" title="删除" href="message.s?op=delete&mid=${u.mid}" class="btn btn-xs btn-delete" >删除</a>
+
          	 </td>
          </tr>
          </c:forEach>
@@ -96,6 +92,11 @@
    </div>
 </div>
 </body>
+<c:if test="${! empty msg }">
+		<script type="text/javascript">
+			alert('${msg}');
+		</script>
+	</c:if>
 </html>
 <script>
 
