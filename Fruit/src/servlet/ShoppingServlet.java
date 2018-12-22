@@ -121,6 +121,7 @@ public class ShoppingServlet extends HttpServlet {
 	private void buy(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String fin = request.getParameter("addcar");
+		
 		request.setAttribute("buy",BizeMethod.buy(fin));
 		request.setAttribute("sum",BizeMethod.buyPrice(fin));
 		

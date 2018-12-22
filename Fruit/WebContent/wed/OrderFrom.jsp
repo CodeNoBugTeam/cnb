@@ -401,6 +401,7 @@
 											</ul>
 											<p class="checkout-total">
 												应付总额：<span style="font-size: 26px">${sum }元</span>
+												<input  type="hidden" name="zongji" value="${sum }"/> 
 											</p>
 										</div>
 										<!--  -->

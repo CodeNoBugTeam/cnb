@@ -22,6 +22,8 @@ public class forgetPwd extends HttpServlet {
 	private String code ; 
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String op = request.getParameter("op");
 		if("forgetPwd1".equals(op)) {
 			forgetPwd1(request,response);
@@ -38,7 +40,7 @@ public class forgetPwd extends HttpServlet {
 	private void forgetPwd3(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		user u = BeanUtils.asBean(request, user.class);
 		String newPwd = request.getParameter("newUpwd");
-		String uid = (String) request.getSession().getAttribute("uid");
+		String uid = String.valueOf(request.getSession().getAttribute("uid"));
 		if(newPwd.equals(u.getUpwd())) {
 			String sql = "update user set upwd=? , utel=? where uid=? ";
 			DBHelper.update(sql, u.getUpwd(),u.getUtel(),uid);
