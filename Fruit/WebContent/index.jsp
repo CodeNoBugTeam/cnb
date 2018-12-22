@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	if (request.getAttribute("tongji") == null) {
+		request.getRequestDispatcher("user.s?op=tongji").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -166,9 +171,9 @@
   <div class="col-xs-3 col-lg-6 ">   
    <div class="prompt_name"><i class="icon_Order"></i>订单& 商品</div>
    <ul class="padding list_info">   
-   <li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(1)</a></li>
-   <li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(32)</a></li>
-   <li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(02)</a></li>
+   <li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(${tongji.weifahuo})</a></li>
+   <li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(${tongji.yiwancheng })</a></li>
+   <li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(${tongji.yifahuo})</a></li>
    </ul>
   </div>
    <div class="col-xs-3 col-lg-6">    

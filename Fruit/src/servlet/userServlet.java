@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,12 +11,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.Tongji;
+import Bean.checks;
 import Bean.food;
 import Bean.introduce;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
-
+import ly.DBHelper;
 import Bize.BizeMethod;
 import Bize.ShoppingBiz;
 import Expection.LoginException;
@@ -59,8 +63,25 @@ public class userServlet extends HttpServlet {
 			detailed(request,response);
 		}else if("select1".equals(op)) {
 			select1(request,response);
+		}else if("tongji".equals(op)) {
+			tongji(request,response);
 		}
 	}
+
+	private void tongji(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {	
+		Tongji tongji3=new Tongji();
+	
+		Tongji tongji=DBHelper.unique("select count(*) yiwancheng  from checks where state = ?", Tongji.class, "已完成");
+		Tongji tongji1=DBHelper.unique("select count(*) weifahuo  from checks where state = ?", Tongji.class, "未发货");
+		Tongji tongji2=DBHelper.unique("select count(*) yifahuo  from checks where state = ?", Tongji.class, "已发货");
+		tongji3.setYiwancheng(tongji.getYiwancheng());
+		tongji3.setWeifahuo(tongji1.getWeifahuo());
+		tongji3.setYifahuo(tongji2.getYifahuo());
+		System.out.println(tongji3);
+		request.setAttribute("tongji", tongji3);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 
 	private void select1(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
