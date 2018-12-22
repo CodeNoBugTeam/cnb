@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>锡货超市</title>
+<title>果然新鲜</title>
 <link href="css/public.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <script type="text/javascript" src="js/jquery_cart.js"></script>
@@ -75,7 +75,7 @@
 					<div class="menu">
 						<div class="menu_hd">
 							<a href="#"> <img src="images/top_phone_icon.png"
-								width="12px" height="16px" /> 手机锡货
+								width="12px" height="16px" /> 手机果然
 							</a> <b><em></em></b>
 						</div>
 						<div class="menu_bd">
@@ -97,7 +97,7 @@
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">我的锡货</a>
+						<a href="#">我的果然</a>
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
@@ -138,7 +138,7 @@
 			<div class="header_searchbox">
 				<form action="#">
 					<input name="search" type="text" class="header_search_input"
-						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
+						default_val="果然新鲜三期上线全场五折" autocomplete="off" x-webkit-speech=""
 						x-webkit-grammar="builtin:search" lang="zh">
 					<button type="submit" class="header_search_btn">搜索</button>
 				</form>
@@ -169,8 +169,8 @@
 				<li><a href="" target="_blank" class="yMenua">首页</a></li>
 				<li><a href="" target="_blank">大划算</a></li>
 				<li><a href="" target="_blank">抢拍</a></li>
-				<li><a href="" target="_blank">锡货专场</a></li>
-				<li><a href="" target="_blank">锡货超市</a></li>
+				<li><a href="" target="_blank">果然专场</a></li>
+				<li><a href="" target="_blank">果然超市</a></li>
 			</ul>
 			<div class="fr r_icon">
 				<i class="i01"></i><span>30天退货</span><i class="i02"></i><span>满59包邮</span>

@@ -74,15 +74,16 @@
 							<td>${i.wtel}</td>
 							<td>${i.wemail}</td>
 							<td>${i.jointime}</td>
-							<td class="td-manage"><a title="停用"
-								onclick="Competence_close(this,'12')" href="javascript:;"
-								class="btn button_btn btn-Dark-success">停用</a> <a title="编辑"
-								href="user.s?op=edit&workerId=${i.wid}"
-								class="btn button_btn bg-deep-blue">编辑</a> <a title="删除"
-								href="user.s?op=move&workerId=${i.wid}"
-								class="btn button_btn btn-danger"> 删除</a> <a title="查看"
-								href="javascript:;" onclick="Competence_View(this,'1')"
-								class="btn button_btn btn-green">查看</a></td>
+							<td class="td-manage">
+								<a title="停用" onclick="Competence_close(this,'12')" href="javascript:;"
+								class="btn button_btn btn-Dark-success">停用</a> 
+								<a title="编辑" href="user.s?op=edit&workerId=${i.wid}"
+								class="btn button_btn bg-deep-blue">编辑</a> 
+								<a title="删除" href="user.s?op=move&workerId=${i.wid}"
+								class="btn button_btn btn-danger"> 删除</a> 
+								<a title="查看" href="javascript:;" onclick="Competence_View(this,'1')"
+								class="btn button_btn btn-green">查看</a>
+							</td>
 						</tr>
 					</c:forEach>
 

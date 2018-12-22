@@ -50,11 +50,13 @@ public class MessageBiz {
 				messag.getTheme(),messag.getMstate(),messag.getContent());
 	}
 
-	public Object delete(message m) {
-		m.getMid();
-		String sql = "delete message where id=?";
-		return null;
+	public static void delete(String id) {
+		String sql = "delete from message where mid=?";
+		DBHelper.update(sql,id);
 	}
 
-	
+	public static void fabu(String id) {
+		String sql = "update message set mstate='已发布' where mid=?";
+		DBHelper.update(sql, id);
+	}
 }

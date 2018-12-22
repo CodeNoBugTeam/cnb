@@ -107,10 +107,10 @@
   <div class="left_shop">
   <div class="left_shop_logo">
    <div class="shop_logo"><span class="bg_yuan"></span><img src="images/dp_logo.jpg" /></div>
-   <a href="#" class="btn bg-deep-blue paddings">进入首页</a>
+   <a href="wed/index.jsp" class="btn bg-deep-blue paddings">进入首页</a>
    </div>
    <div class="Shops_content">
-   <p><label class="name">商城名称：</label>三台山购物网</p>
+   <p><label class="name">商城名称：</label>果然新鲜</p>
    <ul class="clearfix">
     <li><label class="name">店铺等级：</label>三级</li>
     <li><label class="name">商城类型：</label>电子商务</li>
@@ -283,7 +283,6 @@
 //设置框架
 $(function() {  		 
 	 $("#iframe_box").frame({
-	    float: 'left',
 		Scroll:'#index_style',
 		color_btn:'.skin_select',
 		Sellerber_menu:'.list_content',

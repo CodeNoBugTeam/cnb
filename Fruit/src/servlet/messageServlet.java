@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import ly.BeanUtils;
 import Bean.message;
 import Bize.BizException;
+import Bize.BizeMethod;
 import Bize.MessageBiz;
 
 /**
@@ -36,7 +37,16 @@ public class messageServlet extends HttpServlet {
 			query(request,response);
 		}else if("edit".equals(op)) {
 			edit(request,response);
+		}else if("fabu".equals(op)) {
+			fabu(request,response);
 		}
+	}
+
+	private void fabu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("messageId");
+		MessageBiz.fabu(id);
+		request.setAttribute("msg", "发布成功！");
+		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
 	}
 
 	private void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,9 +56,11 @@ public class messageServlet extends HttpServlet {
 	}
 
 	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		message m = BeanUtils.asBean(request, message.class);
-		request.setAttribute("messageList", mbBiz.delete(m));
+		String id = request.getParameter("messageId");
+		MessageBiz.delete(id);
+		request.setAttribute("msg", "删除成功！");
 		request.getRequestDispatcher("Article_list.jsp").forward(request, response);
+	
 	}
 
 	private void edit(HttpServletRequest request, HttpServletResponse response) 
