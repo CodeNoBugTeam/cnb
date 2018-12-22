@@ -9,7 +9,7 @@
     <link href="<%=request.getContextPath() %>/css/orange.css"rel="stylesheet">
     <link href="<%=request.getContextPath() %>/css/share.css"rel="stylesheet">
     <script src="<%=request.getContextPath() %>/js/jquery-1.12.3.js"></script>
-    </script><script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <script type="text/javascript">
 	function add(){
@@ -42,8 +42,9 @@
 </div>
 <!--banner图片结束-->
 <!--主页内容-->
-<form action="<%=request.getContextPath() %>/customer.s" method="post">
 <div class="content">
+<form action="<%=request.getContextPath() %>/customer.s" method="post">
+
     <div class="cont-top">
         <div class="cont-left">
             <div class="ctl-img">

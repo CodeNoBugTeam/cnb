@@ -139,7 +139,7 @@
 				<form action="#">
 					<input name="search" type="text" class="header_search_input"
 						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
-						x-webkit-grammar="builtin:search" lang="zh">
+						x-webkit-grammar="builtin:search" lang="zh" />
 					<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
@@ -388,7 +388,7 @@
 					短信验证码已下发至您的手机<span class="num"></span>
 				</p>
 				<input type="text" name="verifycode" id="verifycode" class="input"
-					placeholder="请输入验证码"> <span class="send-again"
+					placeholder="请输入验证码" /> <span class="send-again"
 					id="sendAgain">重新发送<em></em></span>
 				<p>
 					<input type="button" value="确认支付" class="btn btn-primary"

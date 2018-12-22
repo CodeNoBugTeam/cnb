@@ -1,7 +1,10 @@
 package Bize;
 
+
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import Bean.message;
 import Expection.LoginException;
@@ -56,5 +59,17 @@ public class MessageBiz {
 		return null;
 	}
 
+	public Object findAll()  {
+		String sql=" select * from message where mstate = '已发布' ";		
+		return DBHelper.select(sql, message.class);
+	}
+	public message findAll(String mid)  {
+		String sql=" select * from message where mstate = '已发布'  and mid = ? ";
+		
+		
+		return  DBHelper.unique(sql, message.class,mid);
+	}
+
+	
 	
 }
