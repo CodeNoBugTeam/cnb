@@ -137,7 +137,7 @@ public class BizeMethod {
 		return  page(searchTop,request);
 		
 	}
-	public static introduce queryFruitLemon(introduce fruit, String fin) {
+	public static introduce queryFruitLemon( String fin) {
 		String sql = "select * from introduce where fin=? ";
 		return  DBHelper.unique(sql, introduce.class,fin);
 	}

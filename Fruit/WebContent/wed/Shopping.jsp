@@ -17,11 +17,20 @@
     <title>购物车</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/carts.css">
+    <link href="css/public.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<script type="text/javascript" src="js/jquery_cart.js"></script>
+<link rel="stylesheet" type="text/css" href="css/buyConfirm.css" />
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/unslider.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script type="text/javascript">
     <script>
 
 </script>
 </head>
 <body>
+			
     <section class="cartMain">
         <div class="cartMain_hd">
             <ul class="order_lists cartTop">
@@ -39,10 +48,11 @@
                 <li class="list_op">操作</li>
             </ul>
         </div>
+        
 <form action="customer.s" method="post">
 	<input type="hidden" value="carshopping" name="buy"/>
         <div class="cartBox">
-         
+         		
                 
             <c:forEach items="${carList}" var="i">
                 <ul class="order_lists">
@@ -82,12 +92,22 @@
             </div> 
          <!--底部-->
         <div class="bar-wrapper">
+        	
             <div class="bar-right">
                 <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
                 <div class="totalMoney">共计: <span class="total_text">0.00</span></div>
+                <!-- <div class="totalMoney"><a  href="wed/index.jsp" style="font-size: 20px">继续购买</a></div> -->
+                
                 <div class="calBtn"><input onclick="ck()" type="submit" value="结算" style="height: 49px ; width: 100px ;font-size: 26px ;background: orange"/></div>
+                
             </div>
+            <div class="box-ft clearfix">
+					<a href="index.jsp" class="btn btn-primary"
+					id="payBtn" >继续购买</a> <span class="tip"></span>
+				</div>
+            
         </div>
+        
 </form>
     </section>
     <section class="model_bg"></section>

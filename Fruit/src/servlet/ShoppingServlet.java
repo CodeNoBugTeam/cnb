@@ -230,8 +230,9 @@ public class ShoppingServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String fin = request.getParameter("id");
-		introduce fruit = BeanUtils.asBean(request, introduce.class);
-		request.setAttribute("fruitListLemon", BizeMethod.queryFruitLemon(fruit,fin));
+		System.out.println("=========================="+fin);
+		//introduce fruit = BeanUtils.asBean(request, introduce.class);
+		request.setAttribute("fruitListLemon", BizeMethod.queryFruitLemon(fin));
 		request.getRequestDispatcher("wed/lemon.jsp").forward(request, response);
 	}
 

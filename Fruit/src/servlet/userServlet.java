@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.Paixu;
 import Bean.introduce;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
-
+import ly.DBHelper;
 import Bize.BizeMethod;
 import Expection.LoginException;
 
@@ -57,7 +58,22 @@ public class userServlet extends HttpServlet {
 			detailed(request,response);
 		}else if("select1".equals(op)) {
 			select1(request,response);
+		}else if("paixu".equals(op)) {
+			paixu(request,response);
 		}
+	}
+
+	private void paixu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String sql = "select count(fid) num,b.fid,b.fname " + 
+				"from (select a.fid,c.fname from food a,introduce c where a.fid=c.fin) b " + 
+				"GROUP BY b.fid " + 
+				"ORDER BY num desc";
+		//System.out.println(DBHelper.select(sql, Paixu.class));
+		request.setAttribute("paixu", DBHelper.select(sql, Paixu.class));
+		
+		//System.out.println(request.getAttribute("paixu"));
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
 	private void select1(HttpServletRequest request, HttpServletResponse response) 
