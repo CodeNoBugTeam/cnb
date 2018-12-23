@@ -1,7 +1,5 @@
 package Bize;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 import Bean.ShoppingAddress;
@@ -34,6 +32,10 @@ public class ShoppingBiz {
 		for (int i = 0; i < fids.length; i++) {
 			DBHelper.update("delete from shoppingCart where uid=? and fin=?", uid, fids[i]);
 		}
+	}
+	public static List<food> xiangqing(String id) {
+		String sql ="select * from food where cid = ?";
+		return DBHelper.select(sql, food.class, id);
 	}
 
 	public void zhangdan2(List<food> list) {

@@ -4,7 +4,7 @@
 
 <%
 	String s = request.getParameter("state");
-
+	request.setAttribute("st", s);
 	if (request.getAttribute("UnfinishedOrder") == null) {
 		request.getRequestDispatcher("user.s?op=Order_form&state=" + s).forward(request, response);
 	}
@@ -46,173 +46,95 @@ function Delivery_stop(){
 </script>
 </head>
 <body>
-	<div class="margin" id="page_style">
-		<div class="operation clearfix mb15 same_module cover_style p0"
-			id="Order_form_style">
-			<div class="type_title">购物产品比例</div>
-			<div class="hide_style clearfix">
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="20"
-						data-color="#D15B47">
-						<span class="percent">20</span>%
-					</div>
-					<span class="name">食品类</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="55"
-						data-color="#87CEEB">
-						<span class="percent">55</span>%
-					</div>
-					<span class="name">服装类</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="90"
-						data-color="#87B87F">
-						<span class="percent">90</span>%
-					</div>
-					<span class="name">数码配件</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="30"
-						data-color="#d63116">
-						<span class="percent">30</span>%
-					</div>
-					<span class="name">手机</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="60"
-						data-color="#ff6600">
-						<span class="percent">60</span>%
-					</div>
-					<span class="name">电脑</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="40"
-						data-color="#2ab023">
-						<span class="percent">40</span>%
-					</div>
-					<span class="name">电子产品</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="46"
-						data-color="#1e3ae6">
-						<span class="percent">46</span>%
-					</div>
-					<span class="name">厨房用品</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="65"
-						data-color="#c316a9">
-						<span class="percent">65</span>%
-					</div>
-					<span class="name">家用电器</span>
-				</div>
-				<div class="proportion">
-					<div class="easy-pie-chart percentage" data-percent="56"
-						data-color="#13a9e1">
-						<span class="percent">56</span>%
-					</div>
-					<span class="name">卫浴</span>
-				</div>
-			</div>
-		</div>
-		<!--列表展示-->
-		<div class="h_products_list clearfix" id="Sellerber">
-			<div class="Sellerber_left menu" id="menuBar">
-				<div class="show_btn" id="rightArrow">
-					<span></span>
-				</div>
-				<div class="side_title">
-					<a title="隐藏" class="close_btn"><span></span></a>
-				</div>
-				<div class="menu_style" id="menu_style">
-					<div class="list_content">
-						<div class="side_list">
-							<div class="column_title">
-								<h4 class="lighter smaller">订单类型</h4>
-							</div>
-							<div class="st_tree_style tree"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="list_Exhibition list_show padding15">
-				<div class="operation clearfix mb15 searchs_style">
-					<button class="btn button_btn btn-danger" type="button" onclick="">
-						<i class="fa fa-trash-o"></i>&nbsp;删除
-					</button>
-					<span class="submenu"> </span>
-					<form action="user.s" method="post">
-						<input type="hidden" name="op" value="select1" />
-						<div class="search  clearfix">
-							<label class="label_name">商品搜索：</label> <input
-								class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date"
-								id="start" type="text" name="start" value="${param.start }" /> <span
-								style="float: left; padding: 0px 10px; line-height: 32px;">至</span>
-							<input
-								class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date"
-								id="end" type="text" name="end" value="${param.end }" /> <input
-								name="miss" type="text" class="form-control col-xs-3 col-lg-4"
-								value="${param.miss }" />
-							<button class="btn button_btn bg-deep-blue " onclick=""
-								type="submit">
-								<i class="fa  fa-search"></i>&nbsp;搜索
-							</button>
-							<span>数量：3433件</span>
-						</div>
-					</form>
-				</div>
-				<div class="datalist_show">
-					<div class="datatable_height confirm">
-						<table class="table table_list table_striped table-bordered"
-							id="covar_list">
-							<thead>
-								<tr>
-									<th width="25px"><label><input type="checkbox"
-											class="ace"><span class="lbl"></span></label></th>
-									<th width="120px">订单编号</th>
-									<th width="100px">总价</th>
-									<th width="100px">订单时间</th>
-									<th width="80px">数量</th>
-									<th width="70px">状态</th>
-									<th width="200px">操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${UnfinishedOrder}" var="i">
-									<tr>
-										<td><label><input type="checkbox" class="ace"><span
-												class="lbl"></span></label></td>
-										<td>${i.cid}</td>
-										<td>${i.zongji}</td>
-										<td>${i.cdate}</td>
-										<td>${i.buynum}</td>
-										<td class="td-status"><span
-											class="label label-success radius">${i.state}</span></td>
-										<td><a name="see" href="javascript:;" title="发货"
-											id="faHuo" rel="${i.cid}" class="btn btn-xs btn-status">发货</a>
-											<a title="订单详细" href="user.s?op=detailed&id=${i.id}"
-											class="btn btn-xs btn-info">详细</a> <a title="删除"
-											href="javascript:;" onclick="Order_form_del(this,'1')"
-											class="btn btn-xs btn-delete">删除</a></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-						<p>
-							<span><a
-								href="<%=request.getContextPath()%>/customer.s?nowPage=1&buy=queryFruit">首页</a></span>
-							<span><a
-								href="<%=request.getContextPath()%>/customer.s?before=beforePage&buy=queryFruit">上一页</a></span>
-							<span><a
-								href="<%=request.getContextPath()%>/customer.s?after=afterPage&buy=queryFruit">下一页</a></span>
-							<span><a
-								href="<%=request.getContextPath()%>/customer.s?nowPage=totalPage&buy=queryFruit">末页</a></span>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="margin" id="page_style">
+<div class="operation clearfix mb15 same_module cover_style p0" id="Order_form_style">
+       <div class="type_title">购物产品比例</div>
+        <div class="hide_style clearfix">
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="20" data-color="#D15B47"><span class="percent">20</span>%</div><span class="name">食品类</span></div>									
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="55" data-color="#87CEEB"><span class="percent">55</span>%</div><span class="name">服装类</span></div>									
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="90" data-color="#87B87F"><span class="percent">90</span>%</div><span class="name">数码配件</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="30" data-color="#d63116"><span class="percent">30</span>%</div><span class="name">手机</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="60" data-color="#ff6600"><span class="percent">60</span>%</div><span class="name">电脑</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="40" data-color="#2ab023"><span class="percent">40</span>%</div><span class="name">电子产品</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="46" data-color="#1e3ae6"><span class="percent">46</span>%</div><span class="name">厨房用品</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="65" data-color="#c316a9"><span class="percent">65</span>%</div><span class="name">家用电器</span></div>
+       <div class="proportion"> <div class="easy-pie-chart percentage" data-percent="56" data-color="#13a9e1"><span class="percent">56</span>%</div><span class="name">卫浴</span></div>  
+    </div>
+</div>
+<!--列表展示-->
+<div class="h_products_list clearfix" id="Sellerber">
+  <div class="Sellerber_left menu" id="menuBar">
+    <div class="show_btn" id="rightArrow"><span></span></div>
+    <div class="side_title"><a title="隐藏" class="close_btn"><span></span></a></div> 
+    <div class="menu_style" id="menu_style">
+    <div class="list_content">
+     <div class="side_list">
+        <div class="column_title"><h4 class="lighter smaller">订单类型</h4></div>
+       <div class="st_tree_style tree">
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+<div class="list_Exhibition list_show padding15">
+<div class="operation clearfix mb15 searchs_style">
+<button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
+<span class="submenu">
+</span>
+<form action="user.s" method="post">
+<input type="hidden" name ="op" value="select1"/>
+<div class="search  clearfix">
+	 <label class="label_name">商品搜索：</label>
+	 <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="start" type="text" name="start" value="${param.start }"/>
+	 <span style=" float:left; padding:0px 10px; line-height:32px;">至</span>
+	 <input class="laydate-icon col-xs-2 col-lg-2 form-control Select_Date" id="end" type="text" name="end" value="${param.end }"/>
+	 <input name="miss" type="text"  class="form-control col-xs-3 col-lg-4" value="${param.miss }"/>
+	 <button class="btn button_btn bg-deep-blue " onclick=""  type="submit"><i class="fa  fa-search"></i>&nbsp;搜索</button>
+	 <span>订单</span>
+</div>
+</form>
+</div>
+ <div class="datalist_show">
+  <div class="datatable_height confirm">
+ <table class="table table_list table_striped table-bordered" id="covar_list">
+  <thead>
+    <tr>
+		<th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
+		<th width="120px">订单编号</th>
+		<th width="100px">总价</th>
+		<th width="100px">订单时间</th>				
+		<th width="80px">数量</th>
+		<th width="70px">状态</th>                
+		<th width="200px">操作</th>
+	</tr>  
+  </thead>
+  <tbody>
+  
+<c:forEach items="${UnfinishedOrder}" var="i">
+	     <tr>
+	     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	     <td>${i.cid}</td>
+	     <td>${i.zongji}</td>
+	     <td>${i.cdate}</td>
+	     <td>${i.buynum}</td>
+	      <td class="td-status"><span class="label label-success radius">${i.state}</span></td>
+	     <td>
+	     <a name="see" href="javascript:;" title="发货"  id="faHuo" rel="${i.cid}" class="btn btn-xs btn-status">发货</a> 
+	     <a title="订单详细"  href="user.s?op=detailed&id=${i.cid}&state=${st}"  class="btn btn-xs btn-info" >详细</a> 
+	     <a title="删除" href="javascript:;"  onclick="Order_form_del(this,'1')" class="btn btn-xs btn-delete" >删除</a>    
+	     </td>
+	     </tr>
+</c:forEach>
+     </tbody>
+     </table>
+     <p>
+          	<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=1&buy=queryFruit">首页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?before=beforePage&buy=queryFruit">上一页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?after=afterPage&buy=queryFruit">下一页</a></span>
+			<span><a href = "<%=request.getContextPath() %>/customer.s?nowPage=totalPage&buy=queryFruit">末页</a></span>
+             </p>  
+    </div>
+    </div>
 	</div>
 	<!--发货-->
 	<form action="" method="post">

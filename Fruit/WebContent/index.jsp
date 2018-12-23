@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	if (request.getAttribute("tongji") == null) {
+		request.getRequestDispatcher("user.s?op=tongji").forward(request, response);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -180,9 +185,9 @@
 								<i class="icon_Order"></i>订单& 商品
 							</div>
 							<ul class="padding list_info">
-								<li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(1)</a></li>
-								<li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(32)</a></li>
-								<li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(02)</a></li>
+								<li>代发货订单 &nbsp;<a href="Order_form.jsp?state=no">(${tongji.weifahuo})</a></li>
+								<li>已完成订单 &nbsp;<a href="Order_form.jsp?state=yes">(${tongji.yiwancheng })</a></li>
+								<li>未完成订单 &nbsp;<a href="Order_form.jsp?state=noYes">(${tongji.yifahuo})</a></li>
 							</ul>
 						</div>
 						<div class="col-xs-3 col-lg-6">
@@ -299,6 +304,63 @@
 			</div>
 		</div>
 	</div>
+
+ <div class="col-lg-7 col-xs-6 col-md-6 ">
+ <div class="Shops_info clearfix frame">
+  <div class="left_shop">
+  <div class="left_shop_logo">
+   <div class="shop_logo"><span class="bg_yuan"></span><img src="images/dp_logo.jpg" /></div>
+   <a href="#" class="btn bg-deep-blue paddings">进入首页</a>
+   </div>
+   <div class="Shops_content">
+   <p><label class="name">商城名称：</label>三台山购物网</p>
+   <ul class="clearfix">
+    <li><label class="name">店铺等级：</label>三级</li>
+    <li><label class="name">商城类型：</label>电子商务</li>
+    <li><label class="name">销售类型：</label>综合</li>
+    </ul>
+   </div>
+  
+  
+  <div class="right_shop">
+   <p> 店铺动态评分：</p>
+   <ul>
+   <li><label class="name">相符描述</label><span class="score">4.5分</span></li>
+   <li><label class="name">服务态度</label><span class="score">4.0分</span></li>
+   <li><label class="name">发货速度</label><span class="score">4.6分</span></li>
+   </ul>
+  </div>
+  </div>
+  <div class="operating_style Quick_operation menuUl" >
+  <ul class="submenu">
+   <li class=""><a href="add_product.jsp"  class="btn" title="添加产品">添加产品</a></li> 
+   <li class=""><a href="allFruit.jsp"  class="btn" title="添加广告">查看水果</a></li>
+   <li class=""><a href="administrator_list.jsp"  class="btn" title="查看管理员">查看管理员</a></li>
+   <li class=""><a href="add_Article.jsp" class="btn" title="添加文章">添加文章</a></li>
+   <li class=""><a href="add_Singlepag.jsp"  class="btn" title="新增单页面">新增单页面</a></li>
+   
+  </ul>  
+  </div>
+ </div>
+ </div>
+ <div class=" col-xs-3">
+  <div class="admin_info frame clearfix">
+  <div class="title_name"><i></i>登陆记录 <a href="#">+更多</a></div>
+  <table class="record_list table table_list">
+  <tbody>
+  <!--  recordsList -->
+  
+  <c:forEach items="${recordsList}" var="i">
+   <tr><td>${i.wname }</td><td>${i.logintime }</td></tr>
+  </c:forEach>
+  
+  
+   </tbody>
+  </table>
+  </div>
+ </div>
+ 
+
 </body>
 </html>
 <script>

@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,12 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.Tongji;
+import Bean.checks;
+import Bean.food;
 import Bean.introduce;
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
-
+import ly.DBHelper;
 import Bize.BizeMethod;
+import Bize.ShoppingBiz;
 import Expection.LoginException;
 
 @WebServlet("/user.s")
@@ -32,36 +38,53 @@ public class userServlet extends HttpServlet {
 
 		if ("login".equals(op)) {
 			login(request, response);
-		} else if ("queryWorker".equals(op)) {
+		}else if("queryWorker".equals(op)){
 			queryWorker(request, response);
-		} else if ("queryUser".equals(op)) {
-			queryUser(request, response);
-		} else if ("addWorker".equals(op)) {
-			addWorker(request, response);
-		} else if ("edit".equals(op)) {
-			edit(request, response);
-		} else if ("wupdate".equals(op)) {
-			wupdate(request, response);
-		} else if ("move".equals(op)) {
-			wmove(request, response);
-		} else if ("productadd".equals(op)) {
-			productadd(request, response);
-		} else if ("edituser".equals(op)) {
-			edituser(request, response);
-		} else if ("moveuser".equals(op)) {
-			moveuser(request, response);
-		} else if ("Order_form".equals(op)) {
-			Order_form(request, response);
-		} else if ("faHuo".equals(op)) {
-			faHuo(request, response);
-		} else if ("detailed".equals(op)) {
-			detailed(request, response);
-		} else if ("select1".equals(op)) {
-			select1(request, response);
-		}
+		}else if("queryUser".equals(op)) {
+			queryUser(request,response);
+		}else if("addWorker".equals(op)) {
+			addWorker(request,response);
+		}else if("edit".equals(op)) {
+			edit(request,response);
+		}else if("wupdate".equals(op)) {
+			wupdate(request,response);
+		}else if("move".equals(op)) {
+			wmove(request,response);
+		}else if("productadd".equals(op)) {
+			productadd(request,response);
+		}else if("edituser".equals(op)) {
+			edituser(request,response);
+		}else if("moveuser".equals(op)) {
+			moveuser(request,response);
+		}else if("Order_form".equals(op)) {
+			Order_form(request,response);
+		}else if("faHuo".equals(op)) {
+			faHuo(request,response);
+		}else if("detailed".equals(op)) {
+			detailed(request,response);
+		}else if("select1".equals(op)) {
+			select1(request,response);
+		}else if("tongji".equals(op)) {
+			tongji(request,response);
+			}
 	}
 
-	private void select1(HttpServletRequest request, HttpServletResponse response)
+	private void tongji(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {	
+		Tongji tongji3=new Tongji();
+	
+		Tongji tongji=DBHelper.unique("select count(*) yiwancheng  from checks where state = ?", Tongji.class, "已完成");
+		Tongji tongji1=DBHelper.unique("select count(*) weifahuo  from checks where state = ?", Tongji.class, "未发货");
+		Tongji tongji2=DBHelper.unique("select count(*) yifahuo  from checks where state = ?", Tongji.class, "已发货");
+		tongji3.setYiwancheng(tongji.getYiwancheng());
+		tongji3.setWeifahuo(tongji1.getWeifahuo());
+		tongji3.setYifahuo(tongji2.getYifahuo());
+		System.out.println(tongji3);
+		request.setAttribute("tongji", tongji3);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+
+	private void select1(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String start = request.getParameter("start");
 		String end = request.getParameter("end");
@@ -71,9 +94,15 @@ public class userServlet extends HttpServlet {
 		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
-	private void detailed(HttpServletRequest request, HttpServletResponse response) {
-
-	}
+	private void detailed(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String state = request.getParameter("state");
+		
+		request.setAttribute("food", ShoppingBiz.xiangqing(id));
+		request.setAttribute("st", state);
+		request.getRequestDispatcher("Order_form2.jsp").forward(request, response);
+		}
 
 	private void faHuo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
