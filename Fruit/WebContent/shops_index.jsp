@@ -224,7 +224,7 @@
 		 id:26,
 		 pid:1,
 		 icon:'fa fa-angle-double-right',
-		 url:'index.jsp',
+		 url:'index1.jsp',
 		 name:'首页',
 
   },

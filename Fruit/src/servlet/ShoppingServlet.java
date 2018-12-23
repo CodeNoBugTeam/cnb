@@ -217,8 +217,10 @@ public class ShoppingServlet extends HttpServlet {
 	private void lemon(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String fin = request.getParameter("id");
-		introduce fruit = BeanUtils.asBean(request, introduce.class);
-		request.setAttribute("fruitListLemon", BizeMethod.queryFruitLemon(fruit, fin));
+
+		
+		//introduce fruit = BeanUtils.asBean(request, introduce.class);
+		request.setAttribute("fruitListLemon", BizeMethod.queryFruitLemon(fin));
 		request.getRequestDispatcher("wed/lemon.jsp").forward(request, response);
 	}
 
@@ -232,7 +234,7 @@ public class ShoppingServlet extends HttpServlet {
 		}
 		introduce fruit = BeanUtils.asBean(request, introduce.class);
 		request.setAttribute("fruitList", BizeMethod.queryFruit(fruit, request, searchTop));
-		request.getRequestDispatcher("wed/index.jsp").forward(request, response);
+		request.getRequestDispatcher("wed/index1.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -459,7 +459,7 @@
 				<button type="button" class="btn btn-lineDake btn-small "
 					id="J_editAddrCancel">取消</button>
 				<button type="button" class="btn btn-primary  btn-small "
-					onclick="addadres()">保存</button>
+					onclick="addadres()">保存 </button>
 			</div>
 		</div>
 		<!--点击弹出新增/收货地址界面end-->

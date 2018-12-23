@@ -2,10 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
+
+	if(request.getAttribute("paixu") == null){
+		request.getRequestDispatcher("user.s?op=paixu").forward(request, response);
+	}
 	if (request.getAttribute("tongji") == null) {
 		request.getRequestDispatcher("user.s?op=tongji").forward(request, response);
 	}
+	if (request.getAttribute("recordsList") == null) {
+		request.getRequestDispatcher("user.s?op=recordsList").forward(request, response);
+	}
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -160,7 +168,6 @@
 					<table class="record_list table table_list">
 						<tbody>
 							<!--  recordsList -->
-
 							<c:forEach items="${recordsList}" var="i">
 								<tr>
 									<td>${i.wname }</td>
@@ -237,66 +244,15 @@
 							<th width="80">销售数量</th>
 						</thead>
 						<tbody>
-							<tr>
-								<td><em>1</em></td>
-								<td>2345776</td>
-								<td><a href="#">联想（ThinkPad ）轻薄系列</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>2</em></td>
-								<td>2345776</td>
-								<td><a href="#">施巴（sebamed）婴儿泡泡沐浴露200ml家庭装</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>3</em></td>
-								<td>2345776</td>
-								<td><a href="#">七匹狼纯棉时尚休闲条纹翻领POLO衫T恤</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>4</em></td>
-								<td>2345776</td>
-								<td><a href="#">桂格即食燕麦片超值装1478g</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>5</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>6</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>7</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>8</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>9</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
-							<tr>
-								<td><em>10</em></td>
-								<td>2345776</td>
-								<td><a href="#">韩国爱敬挚爱香氛花香洗护套装（洗发水600ml+护发素</a></td>
-								<td>23</td>
-							</tr>
+							<c:forEach items="${paixu}" var="i">
+								<tr>
+									<td><em>1</em></td>
+									<td>${i.fid}</td>
+									<td><a href="customer.s?buy=lemon&id=${i.fid}">${i.fname}</a></td>
+									<td>${i.num}</td>
+								</tr>
+							</c:forEach>
+
 						</tbody>
 					</table>
 				</div>
@@ -358,8 +314,10 @@
   </table>
   </div>
  </div>
- 
+ </div>
+ <!---->
 
+</div>
 </body>
 </html>
 <script>

@@ -35,9 +35,35 @@
 	}
 </script>
 <body>
-	<!--顶部导航-->
-	<jsp:include page="/public/head.jsp"></jsp:include>
-	<!--顶部导航结束-->
+<!--顶部导航-->
+<div class="headr">
+    <div class="heard-con">
+        <img src="images/logo.jpg" style="margin-top: 7px;float: left;position: absolute">
+        <div class="headr-nav">
+            <ul>
+                <li><a href="wed/index1.jsp"style="color: #4AB344"><span style="color: #4AB344">首页</span></a> </li>
+                <li><a href="wed/hot.jsp">蔬果热卖</a> </li>
+                <li><a href="wed/produ.jsp">全部产品</a> </li>
+                <li><a href="wed/consult.jsp">最新资讯</a></li>
+                <li><a href="wed/touch.jsp">联系我们</a> </li>
+            </ul>
+            <div class="sptopfoot">
+                <div class="spbottom"  >
+                </div>
+            </div>
+        </div>
+        <div class="headr-right" >
+            <i class="iconfont" style="font-size: 16px;margin-right: 10px">&#xe7d5;</i>
+          <a href="<%=request.getContextPath() %>/wed/Shopping.jsp">我的购物车 ∨</a>  
+            <div class="hr-car">
+                <i class="iconfont"style="font-size: 40px;margin-right: 10px">&#xe633;</i>
+                您的购物车内暂时没有任何产品。
+            </div>
+        </div>
+    </div>
+</div>
+<!--顶部导航结束-->
+<!--banner图片-->
 	<!--banner图片-->
 	<div class="her-banner"></div>
 	<!--banner图片结束-->

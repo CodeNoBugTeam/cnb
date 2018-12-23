@@ -127,13 +127,21 @@ public class BizeMethod {
 
 	}
 
+	public static void records(String name) {
+		Timestamp time = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into record (wname,logintime)values(?,?)";
+		DBHelper.insert(sql, name, time);
+	}
+
 	public static List<introduce> queryFruit(introduce fruit, HttpServletRequest request, String searchTop) {
 
 		return page(searchTop, request);
 
 	}
 
-	public static introduce queryFruitLemon(introduce fruit, String fin) {
+	public static introduce queryFruitLemon( String fin) {
+
+	
 		String sql = "select * from introduce where fin=? ";
 		return DBHelper.unique(sql, introduce.class, fin);
 	}
@@ -369,11 +377,8 @@ public class BizeMethod {
 		return DBHelper.select(sql, Order.class, param);
 
 	}
-	public static void records(String name) {
-		Timestamp time = new Timestamp(System.currentTimeMillis());
-		String sql = "insert into record (wname,logintime)values(?,?)";
-		DBHelper.insert(sql, name, time);
-	}
+
+
 	public static List<record>  records() {
 		String sql1 = "select * from record";
 		return DBHelper.select(sql1, record.class);
@@ -406,7 +411,5 @@ public class BizeMethod {
 		}
 		return DBHelper.unique(sql, worker.class, param);
 	}
-
-
 
 }

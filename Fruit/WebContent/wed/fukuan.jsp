@@ -321,8 +321,8 @@
 						</div>
 					</div>
 					<div class="box-ft clearfix">
-						<a href="wed/index1.jsp" class="btn btn-primary"
-							id="payBtn">付款成功</a> <span class="tip"></span>
+						<a href="wed/index1.jsp" 
+						class="btn btn-primary" id="payBtn" >继续购买</a> <span class="tip"></span>
 					</div>
 				</div>
 			</form>

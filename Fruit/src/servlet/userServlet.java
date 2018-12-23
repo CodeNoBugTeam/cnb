@@ -11,10 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import Bean.Paixu;
+
 import Bean.Tongji;
 import Bean.checks;
 import Bean.food;
+
 import Bean.introduce;
+
 import Bean.user;
 import Bean.worker;
 import ly.BeanUtils;
@@ -64,9 +69,34 @@ public class userServlet extends HttpServlet {
 			detailed(request,response);
 		}else if("select1".equals(op)) {
 			select1(request,response);
+
+		}else if("paixu".equals(op)) {
+			paixu(request,response);
 		}else if("tongji".equals(op)) {
 			tongji(request,response);
-			}
+		}else if("recordsList".equals(op)) {
+			recordsList(request,response);
+		}
+	}
+
+	private void recordsList(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.setAttribute("recordsList", BizeMethod.records());
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+	}
+
+	private void paixu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String sql = "select count(fid) num,b.fid,b.fname " + 
+				"from (select a.fid,c.fname from food a,introduce c where a.fid=c.fin) b " + 
+				"GROUP BY b.fid " + 
+				"ORDER BY num desc";
+		//System.out.println(DBHelper.select(sql, Paixu.class));
+		request.setAttribute("paixu", DBHelper.select(sql, Paixu.class));
+		
+		//System.out.println(request.getAttribute("paixu"));
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
 	private void tongji(HttpServletRequest request, HttpServletResponse response) 
@@ -228,26 +258,26 @@ public class userServlet extends HttpServlet {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 		
-//		if(pwd == null || pwd.trim().isEmpty()) {
-//			request.setAttribute("msg", "密码不能为空！");
-//			request.getRequestDispatcher("login.jsp").forward(request, response);
-//		}
+	if(pwd == null || pwd.trim().isEmpty()) {
+			request.setAttribute("msg", "密码不能为空！");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 		
 		if(DBHelper.unique("select * from worker where wname=? and wpwd=? ", user.class,name,pwd ) != null) {
 			if(!s.equalsIgnoreCase(code)) {
 				request.setAttribute("msg", "验证码错误！");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-			if(arr != null && arr.length >=0) {
+			/*if(arr != null && arr.length >=0) {
 				Cookie cookie = new Cookie(name,pwd);
 				response.addCookie(cookie);
 				cookie.setMaxAge(60*60*24*7);
 				response.addCookie(cookie);
-			}
+			}*/
 			BizeMethod.records(name);
 			request.getSession().setAttribute("longinUser", u.getWid());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		}else {
+		}/*else {
 			Cookie[] cookies = request.getCookies();
 			if(cookies == null || cookies.length == 0) {
 				response.sendRedirect("login.jsp");
@@ -265,7 +295,7 @@ public class userServlet extends HttpServlet {
 			}else {
 				response.sendRedirect("login.jsp");
 			}
-		}
+		}*/
 	}
 
 
