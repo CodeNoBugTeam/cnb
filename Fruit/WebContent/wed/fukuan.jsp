@@ -65,7 +65,6 @@
 	}
 </script>
 </head>
-
 <body>
 	<!--顶部快捷菜单-->
 	<div class="shortcut_v2013 alink_v2013">
@@ -89,7 +88,6 @@
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">您好，欢迎来到果然新鲜！</div></li>
 				<li class="fl"><div class="menu_hd">
-						
 			</ul>
 			<ul class="fr 1h">
 				<li class="fl"><div class="menu_hd">
@@ -126,8 +124,6 @@
 		</div>
 	</div>
 	<!--顶部快捷菜单-->
-
-
 	<!--顶部Logo及搜索-->
 	<div class="header_2013">
 		<div class="w">
@@ -140,7 +136,7 @@
 					<input name="search" type="text" class="header_search_input"
 						default_val="果然新鲜三期上线全场五折" autocomplete="off" x-webkit-speech=""
 						x-webkit-grammar="builtin:search" lang="zh">
-					<button type="submit" class="header_search_btn">搜索</button>
+						<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
 					<li><a class="red" href="#" target="_blank">礼品卡</a></li>
@@ -155,7 +151,6 @@
 		</div>
 	</div>
 	<!--顶部Logo及搜索-->
-
 	<!--  导航条    start-->
 	<div class="yHeader">
 		<div class="shop_Nav">
@@ -178,24 +173,15 @@
 		</div>
 	</div>
 	<!--  导航条    end-->
-
-
-
 	<div class="banner_red_top"></div>
-
-
 	<!--订单提交body部分开始-->
-
-
 	<div class="border_top_cart">
-
 		<div class="container payment-con">
 			<form target="_blank" action="#" id="pay-form" method="post">
 				<div class="order-info">
 					<div class="msg">
 						<h3>您的订单已提交成功！付款咯～</h3>
 						<p></p>
-
 						<p class="post-date">成功付款后，7天发货</p>
 					</div>
 					<div class="info">
@@ -204,15 +190,15 @@
 						</p>
 						<p>订单：${zhangdan.cid }</p>
 						<p>
-							配送：${zhangdan.sendaddr }<span class="line">/</span> ${zhangdan.senddata }<span
-								class="line">/</span> ${zhangdan.fapiao }
+							配送：${zhangdan.sendaddr }<span class="line">/</span>
+							${zhangdan.senddata }<span class="line">/</span>
+							${zhangdan.fapiao }
 						</p>
 					</div>
 					<div class="icon-box">
 						<i class="iconfont"><img src="images/yes_ok.png" /></i>
 					</div>
 				</div>
-
 				<div class="xm-plain-box">
 					<!-- 选择支付方式 -->
 					<div class="box-hd bank-title clearfix">
@@ -247,24 +233,18 @@
 														src="images/zxzf.png" alt="" /></label></li>
 											</ul>
 											<div>
-
 												<div id="test4_2" style="display: none;"></div>
 												<div id="test4_3" style="display: none;"></div>
 												<div id="test4_4" style="display: none;"></div>
-
-
-
 											</div>
 										</fieldset>
 									</dd>
 								</dl>
 							</form>
-
 							<dl class="clearfix payment-box">
 								<dt>
 									<strong>银行网银</strong>
 									<p>支持以下各银行借记卡及信用卡</p>
-
 								</dt>
 								<dd>
 									<ul class="payment-list clearfix">
@@ -338,10 +318,6 @@
 									</ul>
 								</dd>
 							</dl>
-
-
-
-
 						</div>
 					</div>
 					<div class="box-ft clearfix">
@@ -388,8 +364,7 @@
 					短信验证码已下发至您的手机<span class="num"></span>
 				</p>
 				<input type="text" name="verifycode" id="verifycode" class="input"
-					placeholder="请输入验证码"> <span class="send-again"
-					id="sendAgain">重新发送<em></em></span>
+					placeholder="请输入验证码" /> <span class="send-again" id="sendAgain">重新发送<em></em></span>
 				<p>
 					<input type="button" value="确认支付" class="btn btn-primary"
 						id="toPay" />
@@ -397,7 +372,6 @@
 						<p>
 							<span id="bankName"></span> <span class="num">49.00元</span>
 						</p>
-
 					</div>
 					<a href="javascript:;" id="chooseOther">选择其他方式支付&gt;</a>
 			</div>

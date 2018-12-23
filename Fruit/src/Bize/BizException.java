@@ -1,6 +1,6 @@
 package Bize;
 
-public class BizException  extends Exception{
+public class BizException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +28,5 @@ public class BizException  extends Exception{
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
 
 }

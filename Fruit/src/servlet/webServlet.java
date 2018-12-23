@@ -19,29 +19,34 @@ import ly.BeanUtils;
 @WebServlet("/web.s")
 public class webServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-      
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
 		String op = request.getParameter("op");
-		
+
 		if ("login".equals(op)) {
 			login(request, response);
-		}if("register".equals(op)) {
-			register(request,response);
+		}
+		if ("register".equals(op)) {
+			register(request, response);
 		}
 	}
-	private void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	private void register(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		user u = BeanUtils.asBean(request, user.class);
 		List<List<Object>> list = WebBiz.addUser(u);
-		if(list != null) {
-			//request.getRequestDispatcher("wed/login.jsp").forward(request, response);
+		if (list != null) {
+			// request.getRequestDispatcher("wed/login.jsp").forward(request, response);
 			response.sendRedirect("wed/login.jsp");
 		}
 	}
+
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("username"); 
+		String name = request.getParameter("username");
 		String pwd = request.getParameter("password");
 		System.out.println("pwd=" + pwd);
 		String[] arr = request.getParameterValues("checkbox");
@@ -73,7 +78,9 @@ public class webServlet extends HttpServlet {
 			request.setAttribute("msg", e.getMessage());
 		}
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

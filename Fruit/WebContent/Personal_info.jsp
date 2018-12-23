@@ -31,40 +31,40 @@
 	<div class="margin" id="page_style">
 		<div class="personal_info mb15 same_module">
 			<div class="add_style clearfix border_style relative">
-		<form id="user_info" action="user.s" method="post">
-			<input type="hidden" name="op" value="wupdate"/>
+				<form id="user_info" action="user.s" method="post">
+					<input type="hidden" name="op" value="wupdate" />
 					<div class="user_left_info">
 						<div class="clearfix">
 							<div class="form-group clearfix col-xs-3">
 								<label class="col-xs-3 label_name col-md-5" for="form-field-1">用户名：</label>
 								<div class="col-xs-9 line_height1 col-md-6">
-									<input type="text" name="wname" 
-										id="username" value="${editWorker.wname}" class="col-xs-12 text_info"
+									<input type="text" name="wname" id="username"
+										value="${editWorker.wname}" class="col-xs-12 text_info"
 										disabled="disabled" />
 								</div>
 							</div>
-							
 							<div class="form-group clearfix col-xs-3">
 								<label class="col-xs-3 label_name col-md-5" for="form-field-1">性别：
 								</label>
 								<div class="col-xs-9 line_height1 col-md-6">
 									<span class="sex">男</span>
 									<div class="add_sex">
-										<label></label>&nbsp;&nbsp; <label><input
-											name="wsex" type="radio" id="" class="ace"
-											value="男"><span class="lbl" />男</span></label>&nbsp;&nbsp; <label><input
+										<label></label>&nbsp;&nbsp; <label><input name="wsex"
+											type="radio" id="" class="ace" value="男"><span
+												class="lbl" />男</span></label>&nbsp;&nbsp; <label><input
 											name="form-field-radio" type="radio" id="" class="ace"
 											value="女"><span class="lbl" />女</span></label>
 									</div>
 								</div>
 							</div>
-							<input type="hidden" value="${editWorker.wid }" name="wid"/>
+							<input type="hidden" value="${editWorker.wid }" name="wid" />
 							<div class="form-group clearfix col-xs-3">
 								<label class="col-xs-3 col-md-6 label_name col-md-5"
 									for="form-field-1">年龄： </label>
 								<div class="col-xs-9 line_height1 col-md-6">
 									<input type="text" name="wage" id="age"
-										value="${editWorker.wage}" class="col-xs-12 text_info" disabled="disabled" />
+										value="${editWorker.wage}" class="col-xs-12 text_info"
+										disabled="disabled" />
 								</div>
 							</div>
 							<div class="form-group clearfix col-xs-3">
@@ -94,15 +94,14 @@
 										disabled="disabled" />
 								</div>
 							</div>
-
 						</div>
 						<div class="Button_operation clearfix">
 							<input type="button" onclick="modify();"
-								class="btn btn-danger operation_btn" value="修改信息" /> 
-								<input type="button" onclick="change_Password();" class="btn bg-green operation_btn" 
-								value="修改密码" /> 
-								<input type="submit" id="save_info" class="btn bg-deep-blue operation_btn save " 
-								value="保存修改" />
+								class="btn btn-danger operation_btn" value="修改信息" /> <input
+								type="button" onclick="change_Password();"
+								class="btn bg-green operation_btn" value="修改密码" /> <input
+								type="submit" id="save_info"
+								class="btn bg-deep-blue operation_btn save " value="保存修改" />
 						</div>
 					</div>
 					<div class="user_avatar">
@@ -113,7 +112,6 @@
 			</div>
 			<div id="text_name"></div>
 		</div>
-
 		<!--操作记录-->
 		<div class="h_products_list clearfix same_module" id="Sellerber">
 			<div class="Sellerber_left menu" id="menuBar">
@@ -302,13 +300,12 @@
 		</ul>
 	</div>
 </body>
-
 </html>
 <c:if test="${! empty msg }">
-		<script type="text/javascript">
+	<script type="text/javascript">
 			alert('${msg}');
 		</script>
-	</c:if>
+</c:if>
 <script>
 	//设置内页框架布局
 $(function() { 
@@ -336,11 +333,9 @@ function change_Password(){
 	 var num=0;
      var str="";
 	 var $paddword=/^[a-z0-9_-]{5,18}$/;
-	
      $("input[type$='password']").each(function(n){
           if($(this).val()=="")
           {
-               
 			   layer.alert(str+=""+$(this).attr("data-name")+"不能为空！\r\n",{
                 title: '提示框',				
 				icon:0,								
@@ -354,13 +349,11 @@ function change_Password(){
         {
             layer.alert('密码不一致!',{
               title: '提示框',				
-				icon:0,
-			    
+				icon:0,			    
 			 });
 			 return false;
         }   
-		 else{	
-		     		  
+		 else{			     		  
 			  layer.alert('修改成功！',{
                title: '提示框',				
 			icon:1,		
@@ -384,12 +377,10 @@ function modify(){
 	};
 ("#save_info").click(function(){
 	    var num=0;
-		 var str="";
-		 
+		 var str="";		 
      $(".xinxi input[type$='text']").each(function(n){
           if($(this).val()=="")
-          {
-               
+          {           
 			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
                 title: '提示框',				
 				icon:0,								
@@ -452,4 +443,3 @@ $(function(){
 	})
 	});
 </script>
-

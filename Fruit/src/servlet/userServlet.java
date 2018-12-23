@@ -22,86 +22,98 @@ public class userServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String searchTop;
 	BizeMethod bmtd = new BizeMethod();
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
 		String op = request.getParameter("op");
-		
+
 		if ("login".equals(op)) {
 			login(request, response);
-		}else if("queryWorker".equals(op)){
+		} else if ("queryWorker".equals(op)) {
 			queryWorker(request, response);
-		}else if("queryUser".equals(op)) {
-			queryUser(request,response);
-		}else if("addWorker".equals(op)) {
-			addWorker(request,response);
-		}else if("edit".equals(op)) {
-			edit(request,response);
-		}else if("wupdate".equals(op)) {
-			wupdate(request,response);
-		}else if("move".equals(op)) {
-			wmove(request,response);
-		}else if("productadd".equals(op)) {
-			productadd(request,response);
-		}else if("edituser".equals(op)) {
-			edituser(request,response);
-		}else if("moveuser".equals(op)) {
-			moveuser(request,response);
-		}else if("Order_form".equals(op)) {
-			Order_form(request,response);
-		}else if("faHuo".equals(op)) {
-			faHuo(request,response);
-		}else if("detailed".equals(op)) {
-			detailed(request,response);
+		} else if ("queryUser".equals(op)) {
+			queryUser(request, response);
+		} else if ("addWorker".equals(op)) {
+			addWorker(request, response);
+		} else if ("edit".equals(op)) {
+			edit(request, response);
+		} else if ("wupdate".equals(op)) {
+			wupdate(request, response);
+		} else if ("move".equals(op)) {
+			wmove(request, response);
+		} else if ("productadd".equals(op)) {
+			productadd(request, response);
+		} else if ("edituser".equals(op)) {
+			edituser(request, response);
+		} else if ("moveuser".equals(op)) {
+			moveuser(request, response);
+		} else if ("Order_form".equals(op)) {
+			Order_form(request, response);
+		} else if ("faHuo".equals(op)) {
+			faHuo(request, response);
+		} else if ("detailed".equals(op)) {
+			detailed(request, response);
+		} else if ("select1".equals(op)) {
+			select1(request, response);
 		}
 	}
 
-	private void detailed(HttpServletRequest request, HttpServletResponse response) {
-		
-		
-	}
-
-	private void faHuo(HttpServletRequest request, HttpServletResponse response)
+	private void select1(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String id = request.getParameter("id");
-		System.out.println(id+"id====================");
-		String express="圆通速运";
-		BizeMethod.faHuo(express,id);
-		request.setAttribute("msg","发货成功！");
-		//request.getRequestDispatcher("Order_form.jsp?state=yes").forward(request, response);
-		response.sendRedirect("Order_form.jsp?state=yes");
-	}
-
-	private void Order_form(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		String state = request.getParameter("state");
-		if(state.equals("no")) {
-			state="未发货";
-		}else if(state.equals("yes")) {
-			state="已完成";
-		}else if(state.equals("noYes")) {
-			state="未完成";
-		}
-		searchTop = "";
-		if(request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))){
-			searchTop = request.getParameter("searchTop");
-			byte source[] = searchTop.getBytes("iso8859-1");
-			searchTop = new String(source,"UTF-8");
-		}
-		request.setAttribute("UnfinishedOrder", BizeMethod.UnfinishedOrder(state));
+		String start = request.getParameter("start");
+		String end = request.getParameter("end");
+		String miss = request.getParameter("miss");
+		System.out.println(start + "::" + end + "::" + miss);
+		request.setAttribute("UnfinishedOrder", BizeMethod.select1(start, end, miss));
 		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
 	}
 
-	private void productadd(HttpServletRequest request, HttpServletResponse response) 
+	private void detailed(HttpServletRequest request, HttpServletResponse response) {
+
+	}
+
+	private void faHuo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		System.out.println(id + "id====================");
+		String express = "圆通速运";
+		BizeMethod.faHuo(express, id);
+		request.setAttribute("msg", "发货成功！");
+		request.getRequestDispatcher("Order_form.jsp?state=yes").forward(request, response);
+		// response.sendRedirect("Order_form.jsp?state=yes");
+	}
+
+	private void Order_form(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String state = request.getParameter("state");
+		if (state.equals("no")) {
+			state = "未发货";
+		} else if (state.equals("yes")) {
+			state = "已完成";
+		} else if (state.equals("noYes")) {
+			state = "未完成";
+		}
+		searchTop = "";
+		if (request.getParameter("searchTop") != null && !"".equals(request.getParameter("searchTop"))) {
+			searchTop = request.getParameter("searchTop");
+			byte source[] = searchTop.getBytes("iso8859-1");
+			searchTop = new String(source, "UTF-8");
+		}
+		request.setAttribute("UnfinishedOrder", BizeMethod.UnfinishedOrder(state));
+		System.out.println(BizeMethod.UnfinishedOrder(state));
+		request.getRequestDispatcher("Order_form.jsp").forward(request, response);
+	}
+
+	private void productadd(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		introduce introduces = BeanUtils.asBean(request, introduce.class);
 		String family = request.getParameter("family");
 		String[] name = request.getParameterValues("fname");
 		System.out.println(name);
 		try {
-			BizeMethod.productadd(introduces,family);
+			BizeMethod.productadd(introduces, family);
 			request.setAttribute("msg", "商品添加成功！");
 			request.getRequestDispatcher("add_product.jsp").forward(request, response);
 		} catch (LoginException e) {
@@ -110,8 +122,9 @@ public class userServlet extends HttpServlet {
 			System.out.println("失败");
 		}
 	}
-		
-	private void moveuser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	private void moveuser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String id = request.getParameter("userId");
 		BizeMethod.moveuser(id);
 		request.setAttribute("msg", "删除成功！");
@@ -125,60 +138,59 @@ public class userServlet extends HttpServlet {
 		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
 	}
 
-	private void wupdate(HttpServletRequest request, HttpServletResponse response) 
+	private void wupdate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		worker workers = BeanUtils.asBean(request, worker.class);
 		BizeMethod.wupdate(workers);
 		request.setAttribute("msg", "修改成功！");
-		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);	
+		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
 	}
 
-	private void edit(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("workerId");
 		worker workers = BizeMethod.editquery(id);
 		request.setAttribute("editWorker", workers);
 		request.getRequestDispatcher("Personal_info.jsp").forward(request, response);
 	}
 
-	private void addWorker(HttpServletRequest request, HttpServletResponse response) 
+	private void addWorker(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		worker workers = BeanUtils.asBean(request, worker.class);
 		String newpwd = request.getParameter("newpwd");
 		String nwpwd = request.getParameter("wpwd");
-		System.out.println(newpwd+""+nwpwd);
+		System.out.println(newpwd + "" + nwpwd);
 		try {
-			BizeMethod.addWorker(workers,newpwd);
-			queryWorker(request,response);
+			BizeMethod.addWorker(workers, newpwd);
+			queryWorker(request, response);
 		} catch (LoginException e) {
 			e.printStackTrace();
 			request.setAttribute("msg", e.getMessage());
 		}
-	
+
 	}
 
-	private void queryWorker(HttpServletRequest request, HttpServletResponse response) 
+	private void queryWorker(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		worker workers = BeanUtils.asBean(request, worker.class);
-		request.setAttribute("workerList",BizeMethod.findWorker(workers));
+		request.setAttribute("workerList", BizeMethod.findWorker(workers));
 		request.getRequestDispatcher("administrator_list.jsp").forward(request, response);
 	}
 
-	
-	private void edituser(HttpServletRequest request, HttpServletResponse response) 
+	private void edituser(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("u");
 		user u = BizeMethod.equery(id);
 		request.setAttribute("editUser", u);
 		request.getRequestDispatcher("member_list.jsp").forward(request, response);
 	}
+
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String code = request.getParameter("code");
-		String name = request.getParameter("username"); 
+		String name = request.getParameter("username");
 		String pwd = request.getParameter("userpwd");
 		request.setAttribute("recordsList", BizeMethod.records(name));
-		
+
 		String s = (String) request.getSession().getAttribute("piccode");
 		String[] arr = request.getParameterValues("checkbox");
 		if (arr != null) {
@@ -201,7 +213,6 @@ public class userServlet extends HttpServlet {
 		try {
 			worker users = BizeMethod.login(code, name, pwd);
 			if (s.equalsIgnoreCase(code)) {
-
 				if (users != null) {
 					request.getSession().setAttribute("longinUser", name);
 					request.getRequestDispatcher("index.jsp").forward(request, response);
@@ -213,14 +224,13 @@ public class userServlet extends HttpServlet {
 				request.setAttribute("msg", "验证码填写错误！");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-
 		} catch (LoginException e) {
 			request.setAttribute("msg", e.getMessage());
-			
 		}
 	}
-	private void queryUser(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException{
+
+	private void queryUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		user u = BeanUtils.asBean(request, user.class);
 		request.setAttribute("userList", bmtd.findUser(u));
 		request.getRequestDispatcher("member_list.jsp").forward(request, response);
@@ -230,5 +240,4 @@ public class userServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

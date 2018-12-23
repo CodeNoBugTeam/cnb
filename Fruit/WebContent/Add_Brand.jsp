@@ -48,9 +48,8 @@
                     <div class="progress-num">上传进度：<b>0%</b></div>
                     <div class="progress-bar"><div style="width:0%;" class="bar-line"></div></div>
                   </div>
-              </div>            
-                      
-           </div> <div class="prompt"><p>图片大小<b>120px*60px</b>图片大小小于5MB,</p><p>支持.jpg;.gif;.png;.jpeg格式的图片</p></div>  
+              </div>
+			</div> <div class="prompt"><p>图片大小<b>120px*60px</b>图片大小小于5MB,</p><p>支持.jpg;.gif;.png;.jpeg格式的图片</p></div>  
     </li>
          <li class=" clearfix"><label class="label_name"><i>*</i>所属地区：</label> <input name="" type="text" class="add_text" style="width:120px"/></li>
          <li class=" clearfix"><label class="label_name">品牌描述：</label> <textarea name="" cols="" rows="" class="textarea" onkeyup="checkLength(this);"></textarea><span class="wordage">剩余字数：<span id="sy" style="color:Red;">500</span>字</span></li>
@@ -66,15 +65,12 @@
  </div>
  <div class="right_add list_Exhibition list_show">
   <div class="column_title">添加商品</div>
- 
     <div class="p_select_list clearfix">
         <div class="left_produt produt_select_style" >
            <span class="seach_style"><input name="" type="text"  id="seach" class="seach"><i class="fa fa-search"></i></span>
            <div id="select_style" class="datatable_height"></div>   
-          
         </div>
         <div  class="Switching_btn"> 
-        
           <span id="add_all"  class="Switching">
           <input type="button" class="btn button_btn btn-success" value=">>"/>
           </span>
@@ -316,4 +312,3 @@ $(document).ready(function() {
 	swfImageUpload = new SWFUpload(settings);
 });
 </script>
-
