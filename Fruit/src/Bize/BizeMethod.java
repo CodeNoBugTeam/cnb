@@ -127,14 +127,6 @@ public class BizeMethod {
 
 	}
 
-	public static List<record> records(String name) {
-		Timestamp time = new Timestamp(System.currentTimeMillis());
-		String sql = "insert into record (wname,logintime)values(?,?)";
-		String sql1 = "select * from record";
-		DBHelper.insert(sql, name, time);
-		return DBHelper.select(sql1, record.class);
-	}
-
 	public static List<introduce> queryFruit(introduce fruit, HttpServletRequest request, String searchTop) {
 
 		return page(searchTop, request);
@@ -377,5 +369,44 @@ public class BizeMethod {
 		return DBHelper.select(sql, Order.class, param);
 
 	}
+	public static void records(String name) {
+		Timestamp time = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into record (wname,logintime)values(?,?)";
+		DBHelper.insert(sql, name, time);
+	}
+	public static List<record>  records() {
+		String sql1 = "select * from record";
+		return DBHelper.select(sql1, record.class);
+	}
+
+	public static user getUid(String name, String pwd) {
+		String sql = "select * from user where 1 = 1 ";
+		ArrayList<Object> param = new ArrayList<Object>();
+		if (name != null && !"".equals(name)) {
+			sql = sql + "and uname = ?";
+			param.add(name);
+		}
+		if (pwd != null && !"".equals(pwd)) {
+			sql = sql + "and upwd = ?";
+			param.add(pwd);
+		}
+		return DBHelper.unique(sql, user.class, param);
+	}
+
+	public static worker getUid1(String name, String pwd) {
+		String sql = "select * from worker where 1 = 1 ";
+		ArrayList<Object> param = new ArrayList<Object>();
+		if (name != null && !"".equals(name)) {
+			sql = sql + "and wname = ?";
+			param.add(name);
+		}
+		if (pwd != null && !"".equals(pwd)) {
+			sql = sql + "and wpwd = ?";
+			param.add(pwd);
+		}
+		return DBHelper.unique(sql, worker.class, param);
+	}
+
+
 
 }

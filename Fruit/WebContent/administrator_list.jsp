@@ -33,6 +33,7 @@
 <body>
 	<div class="margin Competence_style" id="page_style">
 		<div class="operation clearfix">
+			<a href="index.jsp" class="btn button_btn bg-deep-blue">&nbsp;返回首页</a>
 			<button class="btn button_btn btn-danger" type="button" onclick="">
 				<i class="fa fa-trash-o"></i>&nbsp;删除
 			</button>

@@ -10,8 +10,8 @@ import ly.DBHelper;
 public class ShoppingBiz {
 
 	public Object find(ShoppingAddress shoppingAddress) {
-		String sql = "select * from shoppingaddress where 1=1  ";
-		return DBHelper.select(sql, ShoppingAddress.class);
+		String sql = "select * from shoppingaddress where uid = ? ";
+		return DBHelper.select(sql, ShoppingAddress.class,shoppingAddress.getUid());
 	}
 
 	public void add(ShoppingAddress shoppingAddress) {

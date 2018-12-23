@@ -218,45 +218,56 @@ public class userServlet extends HttpServlet {
 		String code = request.getParameter("code");
 		String name = request.getParameter("username");
 		String pwd = request.getParameter("userpwd");
-		request.setAttribute("recordsList", BizeMethod.records(name));
+		worker u = BizeMethod.getUid1(name,pwd);
+		//request.setAttribute("recordsList", BizeMethod.records(name));
 
 		String s = (String) request.getSession().getAttribute("piccode");
 		String[] arr = request.getParameterValues("checkbox");
-		if (arr != null) {
-			Cookie cookieName = new Cookie("cname", name);
-			cookieName.setMaxAge(7 * 3600 * 24);
-			response.addCookie(cookieName);
+		if(name == null || name.trim().isEmpty()) {
+			request.setAttribute("msg", "用户名不能为空！");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
-
-		System.out.println(code + "," + s);
-		Cookie[] myCookie = request.getCookies();
-		if (myCookie != null) {
-			for (int i = 0; i < myCookie.length; i++) {
-				if (myCookie[i].getValue().equals(name)) {
-					request.getSession().setAttribute("longinUser", name);
-					System.out.println(request.getSession().getAttribute("longinUser"));
-					request.getRequestDispatcher("index.jsp").forward(request, response);
-				}
-			}
-		}
-		try {
-			worker users = BizeMethod.login(code, name, pwd);
-			if (s.equalsIgnoreCase(code)) {
-				if (users != null) {
-					request.getSession().setAttribute("longinUser", name);
-					request.getRequestDispatcher("index.jsp").forward(request, response);
-				} else {
-					request.setAttribute("msg", "账号或密码错误！");
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-				}
-			} else {
-				request.setAttribute("msg", "验证码填写错误！");
+		
+//		if(pwd == null || pwd.trim().isEmpty()) {
+//			request.setAttribute("msg", "密码不能为空！");
+//			request.getRequestDispatcher("login.jsp").forward(request, response);
+//		}
+		
+		if(DBHelper.unique("select * from worker where wname=? and wpwd=? ", user.class,name,pwd ) != null) {
+			if(!s.equalsIgnoreCase(code)) {
+				request.setAttribute("msg", "验证码错误！");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-		} catch (LoginException e) {
-			request.setAttribute("msg", e.getMessage());
+			if(arr != null && arr.length >=0) {
+				Cookie cookie = new Cookie(name,pwd);
+				response.addCookie(cookie);
+				cookie.setMaxAge(60*60*24*7);
+				response.addCookie(cookie);
+			}
+			BizeMethod.records(name);
+			request.getSession().setAttribute("longinUser", u.getWid());
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}else {
+			Cookie[] cookies = request.getCookies();
+			if(cookies == null || cookies.length == 0) {
+				response.sendRedirect("login.jsp");
+			}
+			boolean falg = false;
+			for(Cookie c : cookies) {
+				if(c.getValue().equals(name)) {
+					falg=true;
+				}
+			}
+			if(falg) {
+				BizeMethod.records(name);
+				request.getSession().setAttribute("longinUser", u.getWid());
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}else {
+				response.sendRedirect("login.jsp");
+			}
 		}
 	}
+
 
 	private void queryUser(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

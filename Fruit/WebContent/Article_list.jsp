@@ -77,20 +77,13 @@
 										<td class="displayPart" displayLength="60">${u.mdescription }</td>
 										<td>${u.mtime }</td>
 										<td class="td-status">${u.mstate }</td>
-										<td class="td-manage"><<<<<<< HEAD <a rel="${u.mid }"
-											title="发布" href="message.s?op=fabu&messageId"
-											class="btn btn-xs btn-status">发布</a> <a rel="${u.mid }"
-											title="编辑" href="add_Article.jsp" class="btn btn-xs btn-info">编辑</a>
-											<a rel="${u.mid }" title="删除"
-											href="message.s?op=delete&messageId"
-											class="btn btn-xs btn-delete">删除</a> ======= <a rel=" "
-											title="发布" href="message.s?op=fabu&mid=${u.mid}"
-											class="btn btn-xs btn-status">发布</a> <a rel=" " title="编辑"
-											href="message.s?op=edit&mid=${u.mid}"
-											class="btn btn-xs btn-info">编辑</a> <a rel="" title="删除"
-											href="message.s?op=delete&mid=${u.mid}"
-											class="btn btn-xs btn-delete">删除</a> >>>>>>> branch 'master'
-											of https://github.com/CodeNoBugTeam/cnb.git
+										<td class="td-manage"> 
+											<a rel=" " title="发布" href="message.s?op=fabu&mid=${u.mid}"
+											class="btn btn-xs btn-status">发布</a> 
+											<a rel=" " title="编辑" href="message.s?op=edit&mid=${u.mid}"
+											class="btn btn-xs btn-info">编辑</a> 
+											<a rel="" title="删除" href="message.s?op=delete&mid=${u.mid}"
+											class="btn btn-xs btn-delete">删除</a> 
 										</td>
 									</tr>
 								</c:forEach>

@@ -321,8 +321,8 @@
 						</div>
 					</div>
 					<div class="box-ft clearfix">
-						<input type="submit" class="btn btn-primary" value="付款成功"
-							id="payBtn" /> <span class="tip"></span>
+						<a href="wed/index1.jsp" class="btn btn-primary"
+							id="payBtn">付款成功</a> <span class="tip"></span>
 					</div>
 				</div>
 			</form>

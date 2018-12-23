@@ -33,37 +33,37 @@ public class userLogin extends HttpServlet {
 
 		String name = request.getParameter("username");
 		String pwd = request.getParameter("password");
+		
 
-		// String s = (String) request.getSession().getAttribute("piccode");
 		String[] arr = request.getParameterValues("checkbox");
-		if (arr != null) {
-			Cookie cookie = new Cookie("username", name);
-			cookie.setMaxAge(7 * 3600 * 24);
-			response.addCookie(cookie);
-		}
-
-		Cookie[] myCookie = request.getCookies();
-		if (myCookie != null) {
-			for (int i = 0; i < myCookie.length; i++) {
-				if (myCookie[i].getValue().equals(name)) {
-					request.getSession().setAttribute("longinUser", name);
-					System.out.println(request.getSession().getAttribute("longinUser"));
-					// request.getRequestDispatcher("wed/index.jsp").forward(request, response);
-					response.sendRedirect("wed/index.jsp");
+		user u = BizeMethod.getUid(name,pwd);
+		if(DBHelper.unique("select * from user where uname=? and upwd=? ", user.class,name,pwd ) != null) {
+			if(arr != null && arr.length >=0) {
+				Cookie cookie = new Cookie(name,pwd);
+				response.addCookie(cookie);
+				cookie.setMaxAge(60*60*24*7);
+				response.addCookie(cookie);
+			}
+			request.getSession().setAttribute("longinUser", u.getUid());
+			request.getRequestDispatcher("wed/index1.jsp").forward(request, response);
+		}else {
+			Cookie[] cookies = request.getCookies();
+			if(cookies == null || cookies.length == 0) {
+				response.sendRedirect("wed/login.jsp");
+			}
+			boolean falg = false;
+			for(Cookie c : cookies) {
+				if(c.getValue().equals(name)) {
+					request.getSession().setAttribute("longinUser", u.getUid());
+					falg=true;
 				}
 			}
+			if(falg) {
+				request.getRequestDispatcher("wed/index1.jsp").forward(request, response);
+			}else {
+				response.sendRedirect("wed/login.jsp");
+			}
 		}
-		user users = BizeLogin.login(name, pwd);
-
-		if (users != null) {
-			user u = DBHelper.unique("select * from user where uname=? ", user.class, name);
-			request.getSession().setAttribute("longinUser", u.getUid());
-			request.getRequestDispatcher("wed/index.jsp").forward(request, response);
-		} else {
-			request.setAttribute("msg", "账号或密码错误！");
-			request.getRequestDispatcher("wed/login.jsp").forward(request, response);
-		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

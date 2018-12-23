@@ -165,6 +165,8 @@ public class ShoppingServlet extends HttpServlet {
 
 	private void addr(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ShoppingAddress shoppingAddress = BeanUtils.asBean(request, ShoppingAddress.class);
+		String uid = String.valueOf(request.getSession().getAttribute("longinUser"));
+		shoppingAddress.setUid(Integer.valueOf(uid));
 		request.setAttribute("ShoppingList", shoppingBiz.find(shoppingAddress));
 		System.out.println(request.getAttribute("ShoppingList"));
 		request.getRequestDispatcher("wed/OrderFrom.jsp").forward(request, response);

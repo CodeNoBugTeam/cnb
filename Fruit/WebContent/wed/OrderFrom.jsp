@@ -549,7 +549,11 @@
 			ShoppingAddress.sstreet = $('#Street').val();
 			ShoppingAddress.spostcode = $('#Zipcode').val();
 			ShoppingAddress.sinput = $('#Tag').val();
-			$.post("../customer.s?buy=addadres", ShoppingAddress
+			$.post("../customer.s?buy=addadres", ShoppingAddress,
+					funcation(userString){
+				alert(userString);
+				location.reload(true);
+			}
 			);
 		}
 	</script>

@@ -189,14 +189,6 @@
 		 name:'管理员',
     },
     {
-		 id:8,
-		 pid:0,
-		 url:"#",
-		 icon:'fa fa-user',
-		 name:'会员管理',	  
-    },
-    
-    {
 		 id:10,
 		 pid:0,
 		 url:"#",
@@ -214,18 +206,6 @@
 		 url:"#",
 		 icon:'fa fa-home',
 		 name:'前端管理',
-    },{
-		 id:13,
-		 pid:0,
-		 url:"#",
-		 icon:'fa fa-comments',
-		 name:'留言管理',
-    },{
-		 id:14,
-		 pid:0,
-		 url:"#",
-		 icon:'fa fa-laptop',
-		 name:'店铺管理',
     },{
 		 id:20,
 		 pid:11,
@@ -366,8 +346,7 @@
 		 url:'feedback.jsp',
 		 name:'留言反馈',
 
-	},	
-	{
+	},{
 		 id:55,
 		 pid:6,
 		 icon:'fa fa-angle-double-right',

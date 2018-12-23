@@ -50,7 +50,7 @@
 							</div>
 							<div class="group">
 								<input id="check" type="checkbox" class="check" name="checkbox"
-									checked> <label for="check"><span class="icon"></span>
+									> <label for="check"><span class="icon"></span>
 									保持登录</label>
 							</div>
 							<div class="group">

@@ -61,7 +61,7 @@
 			<div class="Button_operation btn_width">
 				<button class="btn button_btn bg-deep-blue" type="button">保存并提交</button>
 				<button class="btn button_btn bg-orange" type="button">保存草稿</button>
-				<button class="btn button_btn bg-gray" type="button">取消添加</button>
+				<a class="btn button_btn bg-gray" href="index.jsp">取消添加</a>
 			</div>
 		</div>
 	</div>
