@@ -4,82 +4,112 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="css/shop.css" type="text/css" rel="stylesheet" />
-<link href="css/Sellerber.css" type="text/css"  rel="stylesheet" />
-<link href="css/bkg_ui.css" type="text/css"  rel="stylesheet" />
-<link href="font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
-<link href="css/summernote/summernote.css" rel="stylesheet" type="text/css" />
-<link href="css/summernote/summernote-bs3.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery-1.9.1.min.js" type="text/javascript" ></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
-<script src="js/beautifyhtml.js" type="text/javascript"></script>
-<script src="js/shopFrame.js" type="text/javascript"></script>
-<script src="js/Sellerber.js" type="text/javascript"></script>
-<script src="js/layer/layer.js" type="text/javascript"></script>
-<script src="js/laydate/laydate.js" type="text/javascript"></script>
-<title>表单构建器</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="css/shop.css" type="text/css" rel="stylesheet" />
+	<link href="css/Sellerber.css" type="text/css" rel="stylesheet" />
+	<link href="css/bkg_ui.css" type="text/css" rel="stylesheet" />
+	<link href="font/css/font-awesome.min.css" rel="stylesheet"
+		type="text/css" />
+	<link href="css/summernote/summernote.css" rel="stylesheet"
+		type="text/css" />
+	<link href="css/summernote/summernote-bs3.css" rel="stylesheet"
+		type="text/css" />
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
+	<script src="js/beautifyhtml.js" type="text/javascript"></script>
+	<script src="js/shopFrame.js" type="text/javascript"></script>
+	<script src="js/Sellerber.js" type="text/javascript"></script>
+	<script src="js/layer/layer.js" type="text/javascript"></script>
+	<script src="js/laydate/laydate.js" type="text/javascript"></script>
+	<title>表单构建器</title>
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <script src="js/respond.min.js"></script>
   <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
 <![endif]-->
-  <style>
-.droppable-active {background-color: #ffe !important;}
-.tools a {cursor: pointer;font-size: 80%;}
-.form-body .col-md-6,
-.form-body .col-md-12 {min-height: 400px;}
-.draggable {cursor: move;}
-.modal-body textarea{ width:100%;}
-.tools a{ margin:0px 5px; color:#1D9FC0}
-.ibox-content .alert{ margin-top:0px;}
- </style>
+<style>
+.droppable-active {
+	background-color: #ffe !important;
+}
+
+.tools a {
+	cursor: pointer;
+	font-size: 80%;
+}
+
+.form-body .col-md-6, .form-body .col-md-12 {
+	min-height: 400px;
+}
+
+.draggable {
+	cursor: move;
+}
+
+.modal-body textarea {
+	width: 100%;
+}
+
+.tools a {
+	margin: 0px 5px;
+	color: #1D9FC0
+}
+
+.ibox-content .alert {
+	margin-top: 0px;
+}
+</style>
 <body class="gray-bg">
-<div class="margin" id="page_style">
-        <div class="wrapper wrapper-content" id="Sellerber">
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title"><h5>元素</h5></div>
-                    <div class="ibox-content">
-                        <div class="alert alert-info">
-                        <p>拖拽左侧的表单元素到右侧区域，即可生成相应的HTML代码，表单代码，轻松搞定！</p>
-                        <p>时间设置需引用laydate.js到页面里</p></div>
-                        <form role="form" class="form-horizontal m-t">
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">文本框：</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="" class="form-control" placeholder="请输入文本">
-                                    <span class="help-block">说明文字</span>
-                                </div>
-                            </div>
-                             <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">文本框：</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="" class="form-control"  placeholder="请输入文本">
-                                    <span class="help-block m-b-none">说明文字</span>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">多行文本：</label>
-                                <div class="col-sm-9">
-                                    <textarea name="" cols="" rows=""></textarea>
-                                    <span class="help-block m-b-none">说明文字</span>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">密码框：</label>
-                                <div class="col-sm-9">
-                                    <input type="password" class="form-control" name="password" placeholder="请输入密码">
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">选择时间：</label>
-                                <div class="col-sm-9">
-                                   <input type="text" name="" class="form-control laydate-icon"  id="times"  style=" height:30px;">
-                                   <script>laydate({
+	<div class="margin" id="page_style">
+		<div class="wrapper wrapper-content" id="Sellerber">
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>元素</h5>
+						</div>
+						<div class="ibox-content">
+							<div class="alert alert-info">
+								<p>拖拽左侧的表单元素到右侧区域，即可生成相应的HTML代码，表单代码，轻松搞定！</p>
+								<p>时间设置需引用laydate.js到页面里</p>
+							</div>
+							<form role="form" class="form-horizontal m-t">
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">文本框：</label>
+									<div class="col-sm-9">
+										<input type="text" name="" class="form-control"
+											placeholder="请输入文本"> <span class="help-block">说明文字</span>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">文本框：</label>
+									<div class="col-sm-9">
+										<input type="text" name="" class="form-control"
+											placeholder="请输入文本"> <span
+											class="help-block m-b-none">说明文字</span>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">多行文本：</label>
+									<div class="col-sm-9">
+										<textarea name="" cols="" rows=""></textarea>
+										<span class="help-block m-b-none">说明文字</span>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">密码框：</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control" name="password"
+											placeholder="请输入密码">
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">选择时间：</label>
+									<div class="col-sm-9">
+										<input type="text" name="" class="form-control laydate-icon"
+											id="times" style="height: 30px;"> <script>laydate({
 									              elem: '#times',
 												  format: 'YYYY/MM/DD',
 												  min: laydate.now(), //设定最小日期为当前日期
@@ -87,16 +117,19 @@
 												  istime: true,
 												  istoday: false,})
                                     </script>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">时间段：</label>
-                                <div class="col-sm-9">
-                                     <span class="laydate-icon" id="start" style="width:150px;height:30px; line-height:30px; float:left"></span>
-                                     <span  style=" float:left; margin:0px 5px; color:#666; line-height:32px;">至</span>
-                                     <span class="laydate-icon" id="end" style="width:150px;height:30px; line-height:30px; float:left"></span>
-                                </div>
-                                <script>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">时间段：</label>
+									<div class="col-sm-9">
+										<span class="laydate-icon" id="start"
+											style="width: 150px; height: 30px; line-height: 30px; float: left"></span>
+										<span
+											style="float: left; margin: 0px 5px; color: #666; line-height: 32px;">至</span>
+										<span class="laydate-icon" id="end"
+											style="width: 150px; height: 30px; line-height: 30px; float: left"></span>
+									</div>
+									<script>
                                 var start = {
 								  elem: '#start',
 								  format: 'YYYY/MM/DD ',
@@ -123,94 +156,102 @@
 							  laydate(start);
 							  laydate(end);
                                 </script>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">下拉列表：</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control"  style=" width:200px" name="">
-                                        <option>选项 1</option>
-                                        <option>选项 2</option>
-                                        <option>选项 3</option>
-                                        <option>选项 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                              <label class="col-sm-3 label_nameedit ">文件域：</label>
-                              <div class="col-sm-9">
-                                <div class="line"> 
-                                <span class="span"> 
-                                <input name="" type="text" id="viewfile" onmouseout="document.getElementById('upload').style.display='none';" class="inputstyle form-control" /> 
-                                </span> 
-                                <label for="unload" onmouseover="document.getElementById('upload').style.display='block';" class="file1">浏览...</label> 
-                                <input type="file" onchange="document.getElementById('viewfile').value=this.value;this.style.display='none';" class="file" id="upload" /> 
-                                </div>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">纯文本：</label>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">下拉列表：</label>
+									<div class="col-sm-9">
+										<select class="form-control" style="width: 200px" name="">
+											<option>选项 1</option>
+											<option>选项 2</option>
+											<option>选项 3</option>
+											<option>选项 4</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">文件域：</label>
+									<div class="col-sm-9">
+										<div class="line">
+											<span class="span"> <input name="" type="text"
+												id="viewfile"
+												onmouseout="document.getElementById('upload').style.display='none';"
+												class="inputstyle form-control" />
+											</span> <label for="unload"
+												onmouseover="document.getElementById('upload').style.display='block';"
+												class="file1">浏览...</label> <input type="file"
+												onchange="document.getElementById('viewfile').value=this.value;this.style.display='none';"
+												class="file" id="upload" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">纯文本：</label>
 
-                                <div class="col-sm-9">
-                                    <p class="form-control-static">这里是纯文字信息</p>
-                                </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit ">单选框：
-                                </label>
+									<div class="col-sm-9">
+										<p class="form-control-static">这里是纯文字信息</p>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit ">单选框： </label>
 
-                                <div class="col-sm-9">
-                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">单选框</span></label>
-                                   <label class="radio-inline"><input type="radio"  name="optionsRadios" class="ace radio"><span class="lbl">单选框</span></label>
-                               </div>
-                            </div>
-                            <div class="form-group draggable">
-                                <label class="col-sm-3 label_nameedit">复选框：</label>
+									<div class="col-sm-9">
+										<label class="radio-inline"><input type="radio"
+											name="optionsRadios" class="ace radio"><span
+												class="lbl">单选框</span></label> <label class="radio-inline"><input
+											type="radio" name="optionsRadios" class="ace radio"><span
+												class="lbl">单选框</span></label>
+									</div>
+								</div>
+								<div class="form-group draggable">
+									<label class="col-sm-3 label_nameedit">复选框：</label>
 
-                                <div class="col-sm-9">
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
-                                   <label class="checkbox-inline"><input type="checkbox" class="ace"><span class="lbl">复选框名称</span></label>
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group draggable">
-                                <div class="Button_operation">
-                                    <button class="btn button_btn bg-deep-blue" type="submit">保存内容</button>
-                                    <button class="btn button_btn bg-gray" type="submit">取消</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-    <div class="col-sm-7">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <h5>拖拽左侧表单元素到此区域</h5>
-                <div class="ibox-tools ibox-columns" >
-                    请选择显示的列数：
-                    <select id="n-columns">
-                        <option value="1">显示1列</option>
-                        <option value="2">显示2列</option>
-                    </select>
-                </div>
-            </div>
-            <div class="ibox-content">
-                <div class="row form-body form-horizontal m-t clearfix">
-                    <div class="col-md-12 droppable sortable">
-                    </div>
-                    <div class="col-md-6 droppable sortable" style="display: none;">
-                    </div>
-                    <div class="col-md-6 droppable sortable" style="display: none;">
-                    </div>
-                </div>
-                <button type="submit" class="btn button_btn bg-deep-blue" data-clipboard-text="testing" id="copy-to-clipboard">复制代码</button>
-        </div>
-     </div>
-    </div>        
-   </div>
- </div>
-</div>
+									<div class="col-sm-9">
+										<label class="checkbox-inline"><input type="checkbox"
+											class="ace"><span class="lbl">复选框名称</span></label> <label
+											class="checkbox-inline"><input type="checkbox"
+											class="ace"><span class="lbl">复选框名称</span></label> <label
+											class="checkbox-inline"><input type="checkbox"
+											class="ace"><span class="lbl">复选框名称</span></label>
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group draggable">
+									<div class="Button_operation">
+										<button class="btn button_btn bg-deep-blue" type="submit">保存内容</button>
+										<button class="btn button_btn bg-gray" type="submit">取消</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>拖拽左侧表单元素到此区域</h5>
+							<div class="ibox-tools ibox-columns">
+								请选择显示的列数： <select id="n-columns">
+									<option value="1">显示1列</option>
+									<option value="2">显示2列</option>
+								</select>
+							</div>
+						</div>
+						<div class="ibox-content">
+							<div class="row form-body form-horizontal m-t clearfix">
+								<div class="col-md-12 droppable sortable"></div>
+								<div class="col-md-6 droppable sortable" style="display: none;">
+								</div>
+								<div class="col-md-6 droppable sortable" style="display: none;">
+								</div>
+							</div>
+							<button type="submit" class="btn button_btn bg-deep-blue"
+								data-clipboard-text="testing" id="copy-to-clipboard">复制代码</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 <script>
@@ -223,10 +264,8 @@
 		datalist:".ibox",//数据列表高度取值
 		header:65,//顶部高度
 		mwidth:200,//菜单栏宽度
-		
 	});
 });
-	
 /***********构建器***********/
 $(document).ready(function () {
 	setup_draggable();
@@ -353,4 +392,3 @@ $(document).on("click", ".remove-link", function (ev) {
 	$(this).parent().parent().remove();
 });
 </script>
-

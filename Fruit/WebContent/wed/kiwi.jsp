@@ -16,7 +16,6 @@
 <!--顶部导航结束-->
 <!--banner图片-->
 <div class="her-banner">
-
 </div>
 <!--banner图片结束-->
 <!--主页内容-->
@@ -35,7 +34,6 @@
                     <i class="iconfont">&#xe617;</i>
                     分享
                     <div class="share">
-
                     </div>
                 </div>
             </div>
@@ -47,8 +45,6 @@
                     下一个
                 </div>
             </div>
-
-
         </div>
         <div class="cont-right">
             <div class="J_productTitle title g_minor">
@@ -76,7 +72,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="fk-pd5MallCartCount">
                 <div class="f-cartbuyCountWrap">
                     <span class="f-propName g_minor" style="width:75px;min-width:75px;max-width: 75px;">购买数量：</span>
@@ -94,12 +89,9 @@
                 <div class="buttn butto">
                     立即购买
                 </div>
-
             </div>
-
         </div>
     </div>
-
     <div class="cont-bot">
         <div class="hd">
             <ul>
@@ -119,7 +111,6 @@
                     销售记录(0)
                 </li>
             </ul>
-
         </div>
         <div class="bd">
             <div class="bd1"style="display: block">
@@ -144,7 +135,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <!--主页内容结束-->
 <!--底部-->
@@ -164,7 +154,6 @@
                     <div class="lhdbottom"  >
                     </div>
                 </div>
-
             </div>
             <div class="lbd">
                 <div class="lbd1"style="display: block">
@@ -238,7 +227,6 @@
                     <div class="bott"></div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

@@ -22,7 +22,6 @@
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<title>用户登录</title>
 </head>
-
 <body class="login-layout Reg_log_style">
 	<div class="logintop">
 		<span>欢迎后台管理界面平台</span>
@@ -45,65 +44,50 @@
 							<div class="login_icon">
 								<img src="images/login_img.png" />
 							</div>
-<form action="user.s" method="post">
-								<input type="hidden" name="op" value="login"/>
-								
+							<form action="user.s" method="post">
+								<input type="hidden" name="op" value="login" />
 								<h4 class="title_name">
 									<img src="images/login_title.png" />
 								</h4>
 								<fieldset>
-				<ul>
-						<li class="frame_style form_error">
-						<label class="user_icon"></label>
-      <input name="username" type="text" id="username" placeholder="用户名" value="${param.username}"/>
-      							</li>
-					<li class="frame_style form_error">
-						<label class="password_icon"></label>
-		<input name="userpwd" type="password" id="userpwd" placeholder="密码"/>
-					</li>
-					
-					<li class="frame_style form_error">
-				     <label class="Codes_icon"></label>
-					  <input  type="text" id="Codes_text" name="code" placeholder="验证码"/>
-						<div class="Codes_region">
-							<img src="imageServlet" width="100%" height="38px"/>
-						</div>
-					</li>
-				</ul>
-				<div class="space">
-				</div>
-				<div class="clearfix">
-					<label class="inline">
-					<input type="checkbox" class="ace" name="checkbox"/> 
-					<span class="lbl">保存密码</span>
-					</label>
+									<ul>
+										<li class="frame_style form_error"><label
+											class="user_icon"></label> <input name="username" type="text"
+											id="username" placeholder="用户名" value="${param.username}" />
+										</li>
+										<li class="frame_style form_error"><label
+											class="password_icon"></label> <input name="userpwd"
+											type="password" id="userpwd" placeholder="密码" /></li>
 
-					<label class="inline">
-					<input type="checkbox" class="ace" name="checkbox"/> 
-					<input type="submit" value="请确认登陆"/>
-					</label>
-					<label class="inline">
-					<input type="checkbox" class="ace" name="checkbox"/> 
-					<a href="">刷新验证码</a>
-					</label>
-	
-				</div>
-
-				<div class="space-4"></div>
-				</fieldset>
-		
+										<li class="frame_style form_error"><label
+											class="Codes_icon"></label> <input type="text"
+											id="Codes_text" name="code" placeholder="验证码" />
+											<div class="Codes_region">
+												<img src="imageServlet" width="100%" height="38px" />
+											</div></li>
+									</ul>
+									<div class="space"></div>
+									<div class="clearfix">
+										<label class="inline"> <input type="checkbox"
+											class="ace" name="checkbox" /> <span class="lbl">保存密码</span>
+										</label> <label class="inline"> <input type="checkbox"
+											class="ace" name="checkbox" /> <input type="submit"
+											value="请确认登陆" />
+										</label> <label class="inline"> <input type="checkbox"
+											class="ace" name="checkbox" /> <a href="">刷新验证码</a>
+										</label>
+									</div>
+									<div class="space-4"></div>
+								</fieldset>
 						</div>
-	</form>
+						</form>
 						<div class="social-or-login center">
 							<span class="bigger-110">通知</span>
 						</div>
-
 						<div class="social-login ">
 							为了更好的体验性，本网站系统不再对IE8（含IE8）以下浏览器支持，请见谅。</div>
 					</div>
 					<!-- /login-main -->
-
-
 					<!-- /widget-body -->
 				</div>
 				<!-- /login-box -->
@@ -117,69 +101,8 @@
 	<strong></strong>
 </body>
 </html>
-	<c:if test="${! empty msg }">
-		<script type="text/javascript">
-			alert('${msg}');
-		</script>
-	</c:if>
-<script type="text/javascript">
-	/*$('#login_btn').on(
-			'click',
-			function() {
-				var num = 0;
-				var str = "";
-				$("input[type$='text'],input[type$='password']").each(
-						function(n) {
-							if ($(this).val() == "") {
-
-								layer.alert(str += ""
-										+ $(this).attr("data-name")
-										+ "を入力してください!", {
-									title : '提示框',
-									icon : 0,
-								});
-								num++;
-								return false;
-							}
-						});
-				if (num > 0) {
-					return false;
-				} else {
-					layer.alert('登陆成功！', {
-						title : '提示框',
-						icon : 1,
-					});
-					location.href = "shops_index.html";
-					layer.close(index);
-				}
-			});
-	$(document).ready(
-			function() {
-				$("input[type='text'],input[type='password']").blur(
-						function() {
-							var $el = $(this);
-							var $parent = $el.parent();
-							$parent.attr('class', 'frame_style').removeClass(
-									' form_error');
-							if ($el.val() == '') {
-								$parent.attr('class', 'frame_style').addClass(
-										' form_error');
-							}
-						});
-				$("input[type='text'],input[type='password']").focus(
-						function() {
-							var $el = $(this);
-							var $parent = $el.parent();
-							$parent.attr('class', 'frame_style').removeClass(
-									' form_errors');
-							if ($el.val() == '') {
-								$parent.attr('class', 'frame_style').addClass(
-										' form_errors');
-							} else {
-								$parent.attr('class', 'frame_style')
-										.removeClass(' form_errors');
-							}
-						});
-			})*/
-</script>
-</script>
+<c:if test="${! empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>

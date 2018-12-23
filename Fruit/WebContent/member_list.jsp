@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	if (request.getAttribute("userList") == null) {
 		request.getRequestDispatcher("user.s?op=queryUser").forward(request, response);
@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href="css/shop.css" type="text/css" rel="stylesheet" />
 <link href="css/Sellerber.css" type="text/css" rel="stylesheet" />
 <link href="css/bkg_ui.css" type="text/css" rel="stylesheet" />
@@ -36,12 +36,11 @@
 		<div class="operation clearfix">
 			<div class="search  clearfix">
 				<form action="user.s">
-					<input name="op" type="hidden" value="queryUser"/> 
-					用户名：<input name="uname" value="${param.uname}"/> 
-					电话：<input name="utel" value="${param.utel}"/> 
-					地址：<input name="uaddress" value="${param.uaddress}"/> 
-					邮箱：<input name="email" value="${param.email}"/> 
-					<input type="submit" value="查询"/>
+					<input name="op" type="hidden" value="queryUser" /> 用户名：<input
+						name="uname" value="${param.uname}" /> 电话：<input name="utel"
+						value="${param.utel}" /> 地址：<input name="uaddress"
+						value="${param.uaddress}" /> 邮箱：<input name="email"
+						value="${param.email}" /> <input type="submit" value="查询" />
 				</form>
 			</div>
 		</div>
@@ -71,16 +70,15 @@
 									<td>${i.email}</td>
 									<td>${i.uaddress}</td>
 									<td>${i.jointime}</td>
-									<td class="td-manage">
-									<a title="停用" onclick="member_stop(this,'12')" href="javascript:;"
-									class="btn button_btn btn-Dark-success">停用</a> 
-									<a title="编辑" href="user.s?op=edituser&userId=${i.uid}"
-									class="btn button_btn bg-deep-blue">编辑</a> 
-									<a title="删除" href="user.s?op=moveuser&userId=${i.uid}"
-									class="btn button_btn btn-danger"> 删除</a> 
-									<a title="查看" href="javascript:;" onclick="Competence_View(this,'1')"
-									class="btn button_btn btn-green">查看</a>
-									</td>
+									<td class="td-manage"><a title="停用"
+										onclick="member_stop(this,'12')" href="javascript:;"
+										class="btn button_btn btn-Dark-success">停用</a> <a title="编辑"
+										href="user.s?op=edituser&userId=${i.uid}"
+										class="btn button_btn bg-deep-blue">编辑</a> <a title="删除"
+										href="user.s?op=moveuser&userId=${i.uid}"
+										class="btn button_btn btn-danger"> 删除</a> <a title="查看"
+										href="javascript:;" onclick="Competence_View(this,'1')"
+										class="btn button_btn btn-green">查看</a></td>
 								</tr>
 							</c:forEach>
 						</tr>

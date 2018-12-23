@@ -108,7 +108,7 @@
   </div>
 <!--底部-->
   <div class="Sellerber_bottom info" id="bottom">
-  <span class="l_f">版权所有：南京版石软件系统有限公司</span>
+  <span class="l_f"></span>
   </div>
   <!--消息提示板块内容-->
 <div class="prompt_style prompt">
@@ -305,14 +305,6 @@
 		 icon:'fa fa-angle-double-right',
 		 url:'Personal_info.jsp',
 		 name:'管理员信息',
-
-	},
-		{
-		 id:56,
-		 pid:2,
-		 icon:'fa fa-angle-double-right',
-		 url:'Products.jsp',
-		 name:'分类管理',
 
 	},
 	{

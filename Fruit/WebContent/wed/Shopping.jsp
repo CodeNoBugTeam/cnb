@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	if (request.getAttribute("carList") == null) {
 		request.getRequestDispatcher("../customer.s?buy=queryCar").forward(request, response);
@@ -96,13 +95,12 @@
             <div class="bar-right">
                 <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
                 <div class="totalMoney">共计: <span class="total_text">0.00</span></div>
-                <!-- <div class="totalMoney"><a  href="wed/index.jsp" style="font-size: 20px">继续购买</a></div> -->
                 
                 <div class="calBtn"><input onclick="ck()" type="submit" value="结算" style="height: 49px ; width: 100px ;font-size: 26px ;background: orange"/></div>
                 
             </div>
             <div class="box-ft clearfix">
-					<a href="index.jsp" class="btn btn-primary"
+					<a href="<%=request.getContextPath() %>/wed/index1.jsp" class="btn btn-primary"
 					id="payBtn" >继续购买</a> <span class="tip"></span>
 				</div>
             
@@ -120,6 +118,6 @@
 	
     <script src="js/jquery.min.js"></script>
     <script src="js/carts.js"></script>
-	
+
 </body>
 </html>

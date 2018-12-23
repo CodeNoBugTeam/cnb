@@ -1,7 +1,7 @@
 package Expection;
 
-public class LoginException extends Exception{
-	
+public class LoginException extends Exception {
+
 	private static final long serialVersionUID = 1L;
 
 	public LoginException() {

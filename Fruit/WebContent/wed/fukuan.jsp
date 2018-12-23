@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>锡货超市</title>
+<title>果然新鲜</title>
 <link href="css/public.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <script type="text/javascript" src="js/jquery_cart.js"></script>
@@ -65,7 +65,6 @@
 	}
 </script>
 </head>
-
 <body>
 	<!--顶部快捷菜单-->
 	<div class="shortcut_v2013 alink_v2013">
@@ -75,7 +74,7 @@
 					<div class="menu">
 						<div class="menu_hd">
 							<a href="#"> <img src="images/top_phone_icon.png"
-								width="12px" height="16px" /> 手机锡货
+								width="12px" height="16px" /> 手机果然
 							</a> <b><em></em></b>
 						</div>
 						<div class="menu_bd">
@@ -89,7 +88,6 @@
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">您好，欢迎来到果然新鲜！</div></li>
 				<li class="fl"><div class="menu_hd">
-						
 			</ul>
 			<ul class="fr 1h">
 				<li class="fl"><div class="menu_hd">
@@ -97,7 +95,7 @@
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
-						<a href="#">我的锡货</a>
+						<a href="#">我的果然</a>
 					</div></li>
 				<li class="fl"><i class="shortcut_s"></i></li>
 				<li class="fl"><div class="menu_hd">
@@ -126,8 +124,6 @@
 		</div>
 	</div>
 	<!--顶部快捷菜单-->
-
-
 	<!--顶部Logo及搜索-->
 	<div class="header_2013">
 		<div class="w">
@@ -138,9 +134,9 @@
 			<div class="header_searchbox">
 				<form action="#">
 					<input name="search" type="text" class="header_search_input"
-						default_val="锡货网三期上线全场五折" autocomplete="off" x-webkit-speech=""
-						x-webkit-grammar="builtin:search" lang="zh" />
-					<button type="submit" class="header_search_btn">搜索</button>
+						default_val="果然新鲜三期上线全场五折" autocomplete="off" x-webkit-speech=""
+						x-webkit-grammar="builtin:search" lang="zh">
+						<button type="submit" class="header_search_btn">搜索</button>
 				</form>
 				<ul class="hot_word">
 					<li><a class="red" href="#" target="_blank">礼品卡</a></li>
@@ -155,7 +151,6 @@
 		</div>
 	</div>
 	<!--顶部Logo及搜索-->
-
 	<!--  导航条    start-->
 	<div class="yHeader">
 		<div class="shop_Nav">
@@ -169,8 +164,8 @@
 				<li><a href="" target="_blank" class="yMenua">首页</a></li>
 				<li><a href="" target="_blank">大划算</a></li>
 				<li><a href="" target="_blank">抢拍</a></li>
-				<li><a href="" target="_blank">锡货专场</a></li>
-				<li><a href="" target="_blank">锡货超市</a></li>
+				<li><a href="" target="_blank">果然专场</a></li>
+				<li><a href="" target="_blank">果然超市</a></li>
 			</ul>
 			<div class="fr r_icon">
 				<i class="i01"></i><span>30天退货</span><i class="i02"></i><span>满59包邮</span>
@@ -178,24 +173,15 @@
 		</div>
 	</div>
 	<!--  导航条    end-->
-
-
-
 	<div class="banner_red_top"></div>
-
-
 	<!--订单提交body部分开始-->
-
-
 	<div class="border_top_cart">
-
 		<div class="container payment-con">
 			<form target="_blank" action="#" id="pay-form" method="post">
 				<div class="order-info">
 					<div class="msg">
 						<h3>您的订单已提交成功！付款咯～</h3>
 						<p></p>
-
 						<p class="post-date">成功付款后，7天发货</p>
 					</div>
 					<div class="info">
@@ -204,15 +190,15 @@
 						</p>
 						<p>订单：${zhangdan.cid }</p>
 						<p>
-							配送：${zhangdan.sendaddr }<span class="line">/</span> ${zhangdan.senddata }<span
-								class="line">/</span> ${zhangdan.fapiao }
+							配送：${zhangdan.sendaddr }<span class="line">/</span>
+							${zhangdan.senddata }<span class="line">/</span>
+							${zhangdan.fapiao }
 						</p>
 					</div>
 					<div class="icon-box">
 						<i class="iconfont"><img src="images/yes_ok.png" /></i>
 					</div>
 				</div>
-
 				<div class="xm-plain-box">
 					<!-- 选择支付方式 -->
 					<div class="box-hd bank-title clearfix">
@@ -247,24 +233,18 @@
 														src="images/zxzf.png" alt="" /></label></li>
 											</ul>
 											<div>
-
 												<div id="test4_2" style="display: none;"></div>
 												<div id="test4_3" style="display: none;"></div>
 												<div id="test4_4" style="display: none;"></div>
-
-
-
 											</div>
 										</fieldset>
 									</dd>
 								</dl>
 							</form>
-
 							<dl class="clearfix payment-box">
 								<dt>
 									<strong>银行网银</strong>
 									<p>支持以下各银行借记卡及信用卡</p>
-
 								</dt>
 								<dd>
 									<ul class="payment-list clearfix">
@@ -338,14 +318,10 @@
 									</ul>
 								</dd>
 							</dl>
-
-
-
-
 						</div>
 					</div>
 					<div class="box-ft clearfix">
-						<a href="index.jsp" class="btn btn-primary"
+						<a href="wed/index1.jsp" class="btn btn-primary"
 							id="payBtn" >继续购买</a> <span class="tip"></span>
 					</div>
 				</div>
@@ -388,8 +364,7 @@
 					短信验证码已下发至您的手机<span class="num"></span>
 				</p>
 				<input type="text" name="verifycode" id="verifycode" class="input"
-					placeholder="请输入验证码" /> <span class="send-again"
-					id="sendAgain">重新发送<em></em></span>
+					placeholder="请输入验证码" /> <span class="send-again" id="sendAgain">重新发送<em></em></span>
 				<p>
 					<input type="button" value="确认支付" class="btn btn-primary"
 						id="toPay" />
@@ -397,7 +372,6 @@
 						<p>
 							<span id="bankName"></span> <span class="num">49.00元</span>
 						</p>
-
 					</div>
 					<a href="javascript:;" id="chooseOther">选择其他方式支付&gt;</a>
 			</div>

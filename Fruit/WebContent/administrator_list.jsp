@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%
 	if (request.getAttribute("workerList") == null) {
 		request.getRequestDispatcher("user.s?op=queryWorker").forward(request, response);
@@ -85,21 +84,16 @@
 								class="btn button_btn btn-green">查看</a></td>
 						</tr>
 					</c:forEach>
-
 				</tbody>
 			</table>
 		</div>
 	</div>
-
-
 	<!--添加管理员-->
 	<div id="add_administrator" class=" add_administrator"
 		style="display: none">
 		<div class="add_style add_administrator_style">
-
 			<form action="user.s" method="post" id="form-admin-add">
 				<input type="hidden" value="addWorker" name="op" />
-
 				<ul>
 					<li class="clearfix"><label
 						class="label_name col-xs-2 col-lg-2"><i>*</i>用户名：</label>
@@ -192,10 +186,8 @@
 			area : [ '600px', '' ],
 			shadeClose : false,
 			content : $('#add_administrator'),
-
 		});
 	})
-
 	/*编辑管理员*/
 	$('#edit').on('click', function() {
 		layer.open({
@@ -204,17 +196,14 @@
 			area : [ '600px', '' ],
 			shadeClose : false,
 			content : $('#add_administrator'),
-
 		});
 	})
-
 	$(function() {
 		$("#Competence_sort").click(
 				function() {
 					var option = $(this).find("option:selected").text();
 					var value = $(this).val();
 					if (value == 0) {
-
 						$("#sample_table tbody tr").show()
 					} else {
 						$("#sample_table tbody tr").hide().filter(
@@ -222,7 +211,6 @@
 					}
 				}).click();
 	});
-
 	/*******滚动条*******/
 	$("body").niceScroll({
 		cursorcolor : "#888888",
@@ -232,53 +220,6 @@
 		cursorborder : "0",
 		cursorborderradius : "5px"
 	});
-	/*管理员-停用*/
-	/*function Competence_close(obj, id) {
-		layer
-				.confirm(
-						'确认要停用吗？',
-						function(index) {
-							$(obj)
-									.parents("tr")
-									.find(".td-manage")
-									.prepend(
-											'<a style="text-decoration:none" class="btn button_btn btn-gray" onClick="Competence_start(this,id)" href="javascript:;" title="启用">启用</a>');
-							$(obj)
-									.parents("tr")
-									.find(".td-status")
-									.html(
-											'<span class="label label-success label-sm">已停用</span>');
-							$(obj).remove();
-							layer.msg('已停用!', {
-								icon : 5,
-								time : 1000
-							});
-						});
-	}*/
-
-	/*管理员-启用*/
-	/*function Competence_start(obj, id) {
-		layer
-				.confirm(
-						'确认要启用吗？',
-						function(index) {
-							$(obj)
-									.parents("tr")
-									.find(".td-manage")
-									.prepend(
-											'<a style="text-decoration:none" class="btn button_btn  btn-Dark-success" onClick="Competence_close(this,id)" href="javascript:;" title="停用">停用</a>');
-							$(obj)
-									.parents("tr")
-									.find(".td-status")
-									.html(
-											'<span class="label label-success label-sm">已启用</span>');
-							$(obj).remove();
-							layer.msg('已启用!', {
-								icon : 6,
-								time : 1000
-							});
-						});
-	}*/
 	/****复选框选中******/
 	$('table th input:checkbox').on(
 			'click',
@@ -291,29 +232,6 @@
 				});
 
 			});
-	//表单验证提交
-	/*$("#form-admin-add").Validform({
-		tiptype : 2,
-		callback : function(data) {
-			//form[0].submit();
-			if (data.status == 1) {
-				layer.msg(data.info, {
-					icon : data.status,
-					time : 1000
-				}, function() {
-					location.reload();//刷新页面 
-				});
-			} else {
-				layer.msg(data.info, {
-					icon : data.status,
-					time : 3000
-				});
-			}
-			var index = parent.$("#iframe").attr("src");
-			parent.layer.close(index);
-			//
-		}
-	});*/
 	//字数限制
 	function checkLength(which) {
 		var maxChars = 100; //
@@ -332,5 +250,4 @@
 			return true;
 		}
 	};
-</script>
 </script>
